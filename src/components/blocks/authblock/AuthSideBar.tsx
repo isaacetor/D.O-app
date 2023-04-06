@@ -61,7 +61,7 @@ const Bottom = styled.div`
 const Testimonies = styled.div`
   width: 100%;
   height: 30vh;
-  background-color: #015c01a7;
+  background-color: #01860188;
   display: flex;
   /* align-self: center; */
   /* justify-content: center; */
@@ -102,7 +102,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   width: 500px;
   height: 100vh;
-  background-color: green;
+  background-color: #03b903;
 
   display: flex;
   justify-content: center;
