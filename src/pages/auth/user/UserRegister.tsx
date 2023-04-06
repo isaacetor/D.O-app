@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const UserRegister = () => {
   return (
@@ -7,7 +8,19 @@ const UserRegister = () => {
       <Container>
         <Wrapper>
           <h2>Register</h2>
-          <p>Have an account? Log in</p>
+          <p>
+            Have an account?
+            <NavLink
+              to="/user/login"
+              style={{
+                textDecoration: "none",
+                margin: "3px",
+                color: "#03b903",
+              }}
+            >
+              Log in
+            </NavLink>
+          </p>
 
           <Form>
             <InputHold1>
@@ -16,16 +29,11 @@ const UserRegister = () => {
                 <input type="text" required />
               </InputHold2>
               <InputHold2>
-                {/* <span>Email</span>
-                <input type="email" required /> */}
                 <span>Phone Number</span>
                 <input type="number" required />
               </InputHold2>
             </InputHold1>
-            {/* <InputHold>
-              <span>Phone Number</span>
-              <input type="number" required />
-            </InputHold> */}
+
             <InputHold>
               <span>Address</span>
               <input type="text" required />
@@ -35,7 +43,7 @@ const UserRegister = () => {
               <input type="password" required />
             </InputHold>
 
-            <Button> create account</Button>
+            <Button type="submit"> Create account</Button>
           </Form>
         </Wrapper>
       </Container>
@@ -47,19 +55,23 @@ export default UserRegister;
 
 const Button = styled.button`
   padding: 20px 30px;
-  background-color: green;
+  background-color: #03b903;
   border: 0;
   margin: 0;
   margin-top: 30px;
   color: #fff;
   font-size: 18px;
   border-radius: 10px;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const InputHold1 = styled.div`
   width: 700px;
   display: flex;
-  gap: 35px;
+  gap: 30px;
   margin-bottom: 10px;
   span {
     margin: 0;
@@ -90,12 +102,12 @@ const InputHold2 = styled.div`
   }
 
   input {
-    width: 320px;
+    width: 300px;
     height: 37px;
     padding: 10px;
     font-size: 17px;
     color: #000000d5;
-    border: 2px solid green;
+    border: 2px solid #03b903;
     border-radius: 5px;
     outline: 0;
   }
@@ -112,7 +124,7 @@ const InputHold = styled.div`
   }
 
   input {
-    width: 75%;
+    width: 70%;
     height: 35px;
     padding: 10px;
     font-size: 17px;
@@ -122,7 +134,7 @@ const InputHold = styled.div`
     outline: 0;
 
     :focus {
-      border: 1px solid green;
+      border: 1px solid #03b903;
     }
   }
 `;
@@ -136,14 +148,15 @@ const Wrapper = styled.div`
 
   h2 {
     margin: 0;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-weight: 600;
+    font-size: 2rem;
   }
 
   p {
     margin: 0;
     font-size: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
 `;
 
