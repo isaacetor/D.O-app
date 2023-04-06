@@ -21,7 +21,7 @@ const Header = () => {
           <Nav>Pricing</Nav>
           <Nav>Category</Nav>
           <Button>
-            <Globalbutton bg="yellow" wd="100px" hgt="40px" />
+            <Globalbutton bg="#fff" wd="100px" hgt="40px" col="#7ae582" />
           </Button>
         </NavHold>
         {show ? (
@@ -34,16 +34,17 @@ const Header = () => {
             </Toggle>
           </ToggleWrapper>
         ) : null}
+
+        {show ? (
+          <Menu onClick={toggle}>
+            <ImCancelCircle />
+          </Menu>
+        ) : (
+          <Menu onClick={toggle}>
+            <AiOutlineMenu />
+          </Menu>
+        )}
       </Wrapper>
-      {show ? (
-        <Menu onClick={toggle}>
-          <ImCancelCircle />
-        </Menu>
-      ) : (
-        <Menu onClick={toggle}>
-          <AiOutlineMenu />
-        </Menu>
-      )}
     </Container>
   );
 };
@@ -51,6 +52,8 @@ const Header = () => {
 export default Header;
 const Menu = styled.div`
   display: none;
+  font-size: 20px;
+  color: #fff;
 
   @media screen and (max-width: 770px) {
     display: flex;
@@ -64,8 +67,6 @@ const ToggleWrapper = styled.div`
   display: none;
   position: absolute;
   top: 70px;
-  /* justify-content: center; */
-  /* background-color: red; */
   backdrop-filter: blur(5px);
 
   @media screen and (max-width: 770px) {
@@ -79,7 +80,7 @@ const Toggle = styled.div`
 `;
 const ToggleNav = styled.div`
   margin-bottom: 30px;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   margin-top: 20px;
   color: #fff;
   font-weight: bold;
@@ -107,10 +108,15 @@ const Nav = styled.div`
 const Logo = styled.div`
   color: #fff;
   margin: 0;
+  font-size: 20px;
+  font-weight: bold;
 `;
 const Wrapper = styled.div`
-  width: 95%;
-  height: 70px;
+  width: 90%;
+  height: 65%;
+  padding: 8px;
+  border-radius: 30px;
+  border: 1px solid #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;

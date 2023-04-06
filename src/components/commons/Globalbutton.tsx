@@ -5,11 +5,12 @@ interface button {
   wd: string;
   hgt: string;
   bg: string;
+  col: string;
 }
 
-const Globalbutton: React.FC<button> = ({ wd, hgt, bg }) => {
+const Globalbutton: React.FC<button> = ({ wd, hgt, bg, col }) => {
   return (
-    <Button wd={wd} hgt={hgt} bg={bg}>
+    <Button wd={wd} hgt={hgt} bg={bg} col={col}>
       Get-started
     </Button>
   );
@@ -17,12 +18,26 @@ const Globalbutton: React.FC<button> = ({ wd, hgt, bg }) => {
 
 export default Globalbutton;
 
-const Button = styled.button<{ wd: string; hgt: string; bg: string }>`
+const Button = styled.button<{
+  wd: string;
+  hgt: string;
+  bg: string;
+  col: string;
+}>`
   width: ${(props) => props.wd};
   height: ${(props) => props.hgt};
   font-size: 14px;
   font-weight: bold;
   border: 0;
   border-radius: 30px;
-  background-color: ${(props) => props.bg}; ;
+  color: ${(props) => props.col};
+  background-color: ${(props) => props.bg};
+
+  :hover {
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid #fff;
+    color: #fff;
+    transition: all 350ms;
+  }
 `;
