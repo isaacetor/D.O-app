@@ -1,5 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import { AgentDashboard, HomeLayout, UserDashboardLayout } from "../components";
+import {
+  AgentDashboard,
+  AuthLayout,
+  HomeLayout,
+  UserDashboardLayout,
+} from "../components";
 import {
   AgentHome,
   AgentLogin,
@@ -55,14 +60,26 @@ export const element = createBrowserRouter([
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
+    ],
+  },
+  {
+    path: "/user/register",
+    element: <AuthLayout />,
+    children: [
       {
-        path: "register",
+        index: true,
         element: <UserRegister />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
+    ],
+  },
+  {
+    path: "/user/login",
+    element: <AuthLayout />,
+    children: [
       {
-        path: "login",
+        index: true,
         element: <UserLogin />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
