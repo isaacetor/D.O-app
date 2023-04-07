@@ -9,8 +9,8 @@ const AgentAuthLayout = () => {
       <AuthSideBar
         title="  Welcome agent 
               to your account."
-        desc="   Manage all user trash pick up request? 
-              from your home. "
+        desc="   Manage all user trash pick up request 
+              from your home/anywhere. "
         backgroundColor="#3c37ff"
         CardColor="#2520E3"
       />

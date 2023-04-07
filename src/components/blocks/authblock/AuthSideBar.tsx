@@ -135,6 +135,7 @@ const Title = styled.div`
   }
 
   p {
+    width: 75%;
     margin: 0;
     color: #ffffffb0;
   }
