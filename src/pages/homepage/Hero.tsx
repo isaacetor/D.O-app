@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { GlobalButton } from "../../components/commons";
+// import hero from "../../Assets/hero.webp";
 import { NavLink } from "react-router-dom";
+import { TfiWorld } from "react-icons/tfi";
 
 const Hero = () => {
   return (
@@ -17,17 +18,19 @@ const Hero = () => {
                 An awesome place to purchase securely with no worries or delay.
                 It is perfectly built for you.
               </p>
-              <NavLink
-                to="/login"
-                style={{
-                  textDecoration: "none",
-                }}
-              >
-                <GlobalButton wd="200px" ht="50px" bg="" col="" />
+              <NavLink to="/user/login" style={{ textDecoration: "none" }}>
+                <button>
+                  Use the Web App <TfiWorld />
+                </button>
               </NavLink>
             </TextHold>
           </Left>
-          <Right>{/* <img src={hero} alt="" /> */}</Right>
+          <Right>
+            {/* <img src={hero} alt="" /> */}
+
+            <Money>{/* <img src={money} alt="" /> */}</Money>
+            {/* <Hundred src={hundred} /> */}
+          </Right>
         </Wrapper>
       </Container>
     </div>
@@ -37,34 +40,37 @@ const Hero = () => {
 export default Hero;
 
 const TextHold = styled.div`
-  margin-left: 40px;
-
   p {
     margin-top: 30px;
     width: 90%;
     font-size: 1.3rem;
     line-height: 139.6%;
     margin-bottom: 4rem;
-    color: #fff;
-    margin-left: 0px;
 
     @media screen and (max-width: 768px) {
       font-size: 1.05rem;
-      /* text-align: center; */
-      width: 70%;
     }
-    @media screen and (max-width: 500px) {
-      margin-bottom: 1rem;
+  }
+
+  button {
+    padding: 15px 35px;
+    background-color: #03b903;
+    display: flex;
+    gap: 10px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 0;
+    transition: all 0.2s ease;
+
+    :hover {
+      cursor: pointer;
+      background-color: #03b903;
     }
   }
 
   @media screen and (max-width: 768px) {
-    margin-top: 20px;
-    margin-left: 0px;
-  }
-  @media screen and (max-width: 500px) {
-    margin-top: 50px;
-    margin-left: 0px;
+    margin-left: 20px;
   }
 `;
 
@@ -87,31 +93,22 @@ const Hundred = styled.img`
 const Title = styled.h1`
   width: 90%;
   font-weight: 700;
-  color: #fff;
   margin: 0;
-  /* margin-top: 30px; */
+  margin-top: 30px;
   font-size: 3rem;
   line-height: 4rem;
-
+  color: #03b903;
   @media screen and (max-width: 768px) {
     font-size: 1.7rem;
     width: 89%;
     margin-top: 20px;
     line-height: 2rem;
-    /* text-align: center; */
-  }
-  @media screen and (max-width: 500px) {
-    font-size: 1.7rem;
-    width: 89%;
-    margin-top: 20px;
-    line-height: 2rem;
-    /* text-align: center; */
   }
 `;
 
 const Right = styled.div`
   width: 50%;
-  height: 90vh;
+  height: 100vh;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -149,7 +146,8 @@ const Right = styled.div`
 
 const Left = styled.div`
   width: 50%;
-  height: 90vh;
+  height: 85vh;
+  /* background-color: blueviolet; */
   display: flex;
   align-items: center;
   animation: slide-in-bottom 1s ease-out;
@@ -174,106 +172,25 @@ const Left = styled.div`
   @media screen and (max-width: 1440px) {
     min-width: 50%;
   }
-  @media screen and (max-width: 500px) {
-    height: 100%;
-  }
 `;
 const Wrapper = styled.div`
   width: 90%;
-
+  /* background-color: #f9f9f9; */
+  /* background-color: red; */
   color: #333333;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-
   overflow: hidden;
 
   @media screen and (max-width: 768px) {
-    width: 85%;
-    flex-direction: column;
-    align-items: center;
-  }
-  @media screen and (max-width: 500px) {
-    justify-content: center;
+    width: 100%;
+    border-radius: 2rem;
   }
 `;
 const Container = styled.div`
   width: 100%;
   color: #00002d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #03b903;
+  margin-top: 110px;
   margin-bottom: 20px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
 `;
-
-// import React from "react";
-// import styled from "styled-components";
-// import pic from "../";
-// import { GlobalButton } from "../../components/commons";
-
-// const Hero = () => {
-//   return (
-//     <Container>
-//       <Wrapper>
-//         <Div1>
-//           <Text1>Reduce Waste and Recycle. Disposal Proper Go green!!</Text1>
-//           <Text2>
-//             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
-//             doloribus aut nam. Velit, officia quidem eligendi iusto explicabo et
-//             ipsa!
-//           </Text2>
-//           <Btn>
-//             <GlobalButton wd="150px" bg="" col="#3c37fe" hgt="40px" />
-//           </Btn>
-//         </Div1>
-
-//         <Div2>
-//           <Img src={} />
-//         </Div2>
-//       </Wrapper>
-//     </Container>
-//   );
-// };
-
-// export default Hero;
-
-// const Img = styled.img``;
-// const Div2 = styled.div`
-//   width: 50%;
-//   height: 500px;
-//   background-color: green;
-// `;
-// const Btn = styled.div``;
-// const Text2 = styled.div`
-//   font-size: 18px;
-//   color: #fff;
-//   margin-bottom: 30px;
-// `;
-// const Text1 = styled.div`
-//   margin: 0;
-//   width: 400px;
-//   font-size: 40px;
-//   font-weight: bold;
-//   margin-bottom: 30px;
-//   color: #fff;
-// `;
-// const Div1 = styled.div`
-//   width: 50%;
-// `;
-// const Wrapper = styled.div`
-//   width: 90%;
-//   display: flex;
-//   flex-wrap: wrap;
-//   margin-top: 40px;
-// `;
-// const Container = styled.div`
-//   width: 100%;
-
-//   display: flex;
-//   background-color: #3c37fe;
-//   justify-content: center;
-//   align-items: center;
-// `;

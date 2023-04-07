@@ -7,7 +7,12 @@ export type authPropsData = {
 };
 
 //types for managing global buttons
-export type GlobalButtonProp = {};
+export type GlobalButtonProp = {
+  padding: string;
+  bg: string;
+  col: string;
+  text: string;
+};
 
 //types for managing user details
 export type userData = {

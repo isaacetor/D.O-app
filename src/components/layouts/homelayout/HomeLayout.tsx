@@ -16,5 +16,5 @@ const HomeLayout = () => {
 export default HomeLayout;
 
 const Container = styled.div`
-  background-color: #fefefe;
+  background-color: #ffffff;
 `;
