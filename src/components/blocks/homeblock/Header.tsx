@@ -50,7 +50,7 @@ const Header = () => {
     scroll.scrollTo(2950);
   };
   return (
-    <div>
+    <div style={{ width: "100%", height: "100%" }}>
       {show ? (
         <Container boxShadow={show ? "value" : ""} fixed="jj">
           <Wrapper>
@@ -66,7 +66,7 @@ const Header = () => {
 
             <ButtonHold>
               <NavLink to="/select-account" style={{ textDecoration: "none" }}>
-                <Button2 color="#fff" bg="#9342F6" style={{}}>
+                <Button2 color="#03b903" bg="#fff" style={{}}>
                   Get Started
                 </Button2>
               </NavLink>
@@ -93,7 +93,7 @@ const Header = () => {
 
             <ButtonHold>
               <NavLink to="/select-account" style={{ textDecoration: "none" }}>
-                <Button2 color="#fff" bg="#9342F6">
+                <Button2 color="#03b903" bg="#fff">
                   Get Started
                 </Button2>
               </NavLink>
@@ -152,38 +152,39 @@ const Navigation = styled.p`
 
   :hover {
     cursor: pointer;
-    color: #5057fd;
+    color: red;
+    /* color: #5057fd; */
   }
 `;
 
-const Button = styled.button<{ color: string; bg: string }>`
-  padding: 10px 20px;
-  height: 6vh;
-  font-size: 16px;
-  background-color: ${({ bg }) => bg};
-  border: 0;
-  color: ${({ color }) => color};
-  border: 1px solid blue;
-  border-radius: 5px;
-  font-weight: 600;
-  margin-left: 40px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: all 0.2s ease;
+// const Button = styled.button<{ color: string; bg: string }>`
+//   padding: 10px 20px;
+//   height: 6vh;
+//   font-size: 16px;
+//   background-color: ${({ bg }) => bg};
+//   border: 0;
+//   color: ${({ color }) => color};
+//   border: 1px solid blue;
+//   border-radius: 5px;
+//   font-weight: 600;
+//   margin-left: 40px;
+//   display: flex;
+//   align-items: center;
+//   gap: 5px;
+//   transition: all 0.2s ease;
 
-  :hover {
-    cursor: pointer;
-  }
-`;
+//   :hover {
+//     cursor: pointer;
+//   }
+// `;
 const Button2 = styled.button<{ color: string; bg: string }>`
   padding: 10px 20px;
-  height: 6vh;
+  height: 40px;
   font-size: 16px;
   background-color: ${({ bg }) => bg};
   border: 0;
   color: ${({ color }) => color};
-  border-radius: 5px;
+  border-radius: 30px;
   font-weight: 600;
   margin-left: 40px;
   display: flex;
@@ -193,7 +194,9 @@ const Button2 = styled.button<{ color: string; bg: string }>`
 
   :hover {
     cursor: pointer;
-    background-color: #8929fd;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
   }
 `;
 
@@ -201,12 +204,12 @@ const Nav = styled.div`
   height: 70%;
   display: flex;
   align-items: center;
-  color: #333333;
+  color: #fff;
 `;
 const Logo = styled.div`
   display: flex;
   align-items: center;
-  color: #5352ec;
+  color: #fff;
   font-size: 1.3rem;
   font-weight: 500;
 
@@ -221,6 +224,7 @@ const Wrapper = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #fff;
   justify-content: space-between;
 `;
 
@@ -229,8 +233,8 @@ const Container = styled.div<{
   fixed: string;
 }>`
   width: 100%;
-  height: 80px;
-  background-color: #3c37fe;
+  height: 100%;
+  background-color: #03b903;
   display: flex;
   flex-wrap: wrap;
   /* position: absolute; */
