@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import {
-  AgentDashboard,
-  AuthLayout,
+  AgentAuthLayout,
+  UserAuthLayout,
   HomeLayout,
   UserDashboardLayout,
 } from "../components";
@@ -64,7 +64,7 @@ export const element = createBrowserRouter([
   },
   {
     path: "/user/register",
-    element: <AuthLayout />,
+    element: <UserAuthLayout />,
     children: [
       {
         index: true,
@@ -76,7 +76,7 @@ export const element = createBrowserRouter([
   },
   {
     path: "/user/login",
-    element: <AuthLayout />,
+    element: <UserAuthLayout />,
     children: [
       {
         index: true,
@@ -88,7 +88,7 @@ export const element = createBrowserRouter([
   },
   {
     path: "/agent/login",
-    element: <AgentDashboard />,
+    element: <AgentAuthLayout />,
     children: [
       {
         index: true,
@@ -100,7 +100,7 @@ export const element = createBrowserRouter([
   },
   {
     path: "/agent/register",
-    element: <AgentDashboard />,
+    element: <AgentAuthLayout />,
     children: [
       {
         index: true,

@@ -1,11 +1,17 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { NavLink } from "react-router-dom";
+import { authPropsData } from "../../../types";
 
-const AuthSideBar = () => {
+const AuthSideBar: FC<authPropsData> = ({
+  title,
+  desc,
+  backgroundColor,
+  CardColor,
+}) => {
   const settings = {
     dots: true,
     fade: true,
@@ -18,7 +24,7 @@ const AuthSideBar = () => {
   };
   return (
     <div>
-      <Container>
+      <Container backgroundColor={backgroundColor}>
         <Wrapper>
           <NavLink
             to="/"
@@ -32,18 +38,12 @@ const AuthSideBar = () => {
           </NavLink>
 
           <Title>
-            <h1>
-              Start your <br />
-              journey with us.
-            </h1>
-            <p>
-              Don't want to wait for the trash guy? <br />
-              You don't have to. <br /> You can request one anytime
-            </p>
+            <h1>{title}</h1>
+            <p>{desc}</p>
           </Title>
           <div>
             <Slider {...settings}>
-              <Testimonies>
+              <Testimonies CardColor={CardColor}>
                 <Top>
                   <p>
                     Simply unbelievable! i am really satisfied with the
@@ -55,7 +55,7 @@ const AuthSideBar = () => {
                   <p>Occupant</p>
                 </Bottom>
               </Testimonies>
-              <Testimonies>
+              <Testimonies CardColor={CardColor}>
                 <Top>
                   <p>
                     Truly Remarkable! i am really satisfied with the proficiency
@@ -68,7 +68,7 @@ const AuthSideBar = () => {
                   <p>CEO, BugaPay</p>
                 </Bottom>
               </Testimonies>
-              <Testimonies>
+              <Testimonies CardColor={CardColor}>
                 <Top>
                   <p>
                     Truly Remarkable! i am really satisfied with the proficiency
@@ -110,10 +110,10 @@ const Bottom = styled.div`
   }
 `;
 
-const Testimonies = styled.div`
+const Testimonies = styled.div<{ CardColor: string }>`
   width: 100%;
   height: 30vh;
-  background-color: #01860188;
+  background-color: ${({ CardColor }) => CardColor};
   display: flex;
   align-self: center;
   justify-content: center;
@@ -156,10 +156,10 @@ const Wrapper = styled.div`
   }
 `;
 
-const Container = styled.div`
+const Container = styled.div<{ backgroundColor: string }>`
   width: 500px;
   height: 100vh;
-  background-color: #03b903;
+  background-color: ${({ backgroundColor }) => backgroundColor};
   display: flex;
   justify-content: center;
   align-items: center;
