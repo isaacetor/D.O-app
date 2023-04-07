@@ -189,8 +189,8 @@ const CoverImg = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #8b008b97;
-  color: darkmagenta;
+  background-color: #03b903;
+  color: #088008;
   display: flex;
   align-items: center;
   justify-content: center;
