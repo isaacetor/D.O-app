@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { FiArrowUpRight } from "react-icons/fi";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { animateScroll as scroll, Link } from "react-scroll";
+import { GlobalButton } from "../../commons";
 
 const Header = () => {
   const [show, setShow] = React.useState(false);
@@ -15,14 +16,14 @@ const Header = () => {
   };
 
   const changeHeaderColor = () => {
-    if (window.scrollY >= 150) {
+    if (window.scrollY >= 250) {
       setShow(true);
     } else {
       setShow(false);
     }
   };
   const showBacktoTop = () => {
-    if (window.scrollY >= 300) {
+    if (window.scrollY >= 400) {
       settoTopShow(true);
     } else {
       settoTopShow(false);
@@ -50,12 +51,12 @@ const Header = () => {
     scroll.scrollTo(2950);
   };
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div>
       {show ? (
         <Container boxShadow={show ? "value" : ""} fixed="jj">
-          <Wrapper>
+          <Wrapper border={show ? "" : "value"}>
             <LogoNav>
-              <Logo onClick={backToTop}>Maverick</Logo>
+              <Logo onClick={backToTop}>GreenWaste</Logo>
               <Nav>
                 <Navigation onClick={toHero}>Home</Navigation>
                 <Navigation onClick={toAbout}>About</Navigation>
@@ -65,10 +66,13 @@ const Header = () => {
             </LogoNav>
 
             <ButtonHold>
-              <NavLink to="/select-account" style={{ textDecoration: "none" }}>
-                <Button2 color="#03b903" bg="#fff" style={{}}>
-                  Get Started
-                </Button2>
+              <NavLink to="/get-started" style={{ textDecoration: "none" }}>
+                <GlobalButton
+                  text="Create an account"
+                  bg="#03B903"
+                  col="#fff"
+                  padding="10px 20px"
+                />
               </NavLink>
             </ButtonHold>
           </Wrapper>
@@ -80,9 +84,9 @@ const Header = () => {
         </Container>
       ) : (
         <Container boxShadow={show ? "value" : ""} fixed="">
-          <Wrapper>
+          <Wrapper border="">
             <LogoNav>
-              <Logo onClick={backToTop}>Maverick</Logo>
+              <Logo onClick={backToTop}>GreenWaste</Logo>
               <Nav>
                 <Navigation onClick={toHero}>Home</Navigation>
                 <Navigation onClick={toAbout}>About</Navigation>
@@ -92,10 +96,13 @@ const Header = () => {
             </LogoNav>
 
             <ButtonHold>
-              <NavLink to="/select-account" style={{ textDecoration: "none" }}>
-                <Button2 color="#03b903" bg="#fff">
-                  Get Started
-                </Button2>
+              <NavLink to="/get-started" style={{ textDecoration: "none" }}>
+                <GlobalButton
+                  text="Create an account"
+                  bg="#03B903"
+                  col="#fff"
+                  padding="10px 20px"
+                />
               </NavLink>
             </ButtonHold>
           </Wrapper>
@@ -152,19 +159,17 @@ const Navigation = styled.p`
 
   :hover {
     cursor: pointer;
-    color: red;
-    /* color: #5057fd; */
+    color: #03b903;
   }
 `;
 
-// const Button = styled.button<{ color: string; bg: string }>`
+// const Button2 = styled.button<{ color: string; bg: string }>`
 //   padding: 10px 20px;
 //   height: 6vh;
 //   font-size: 16px;
 //   background-color: ${({ bg }) => bg};
 //   border: 0;
 //   color: ${({ color }) => color};
-//   border: 1px solid blue;
 //   border-radius: 5px;
 //   font-weight: 600;
 //   margin-left: 40px;
@@ -175,41 +180,24 @@ const Navigation = styled.p`
 
 //   :hover {
 //     cursor: pointer;
+//     background-color: #03b903;
+//   }
+
+//   @media screen and (max-width: 768px) {
+//     display: none;
 //   }
 // `;
-const Button2 = styled.button<{ color: string; bg: string }>`
-  padding: 10px 20px;
-  height: 40px;
-  font-size: 16px;
-  background-color: ${({ bg }) => bg};
-  border: 0;
-  color: ${({ color }) => color};
-  border-radius: 30px;
-  font-weight: 600;
-  margin-left: 40px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: all 0.2s ease;
-
-  :hover {
-    cursor: pointer;
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-  }
-`;
 
 const Nav = styled.div`
   height: 70%;
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #333333;
 `;
 const Logo = styled.div`
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #03b903;
   font-size: 1.3rem;
   font-weight: 500;
 
@@ -218,14 +206,14 @@ const Logo = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ border: string }>`
   width: 90%;
   margin: auto;
   height: 100%;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #fff;
   justify-content: space-between;
+  border-bottom: ${({ border }) => (border ? "" : "2px solid #03b903")};
 `;
 
 const Container = styled.div<{
@@ -233,11 +221,11 @@ const Container = styled.div<{
   fixed: string;
 }>`
   width: 100%;
-  height: 100%;
-  background-color: #03b903;
+  height: 80px;
+  background: #fff;
   display: flex;
   flex-wrap: wrap;
-  /* position: absolute; */
+  position: absolute;
   position: ${({ fixed }) => (fixed ? "fixed" : "")};
   top: 0;
   z-index: 10;

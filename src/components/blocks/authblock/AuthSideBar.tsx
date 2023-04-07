@@ -77,7 +77,7 @@ const AuthSideBar: FC<authPropsData> = ({
                 </Top>
                 <Bottom>
                   <h2> Mr. Abraham</h2>
-                  <p>Manager, LifeCare</p>
+                  <p>CEO, LifeCare</p>
                 </Bottom>
               </Testimonies>
             </Slider>
@@ -135,7 +135,7 @@ const Title = styled.div`
   }
 
   p {
-    width: 75%;
+    width: 70%;
     margin: 0;
     color: #ffffffb0;
   }
