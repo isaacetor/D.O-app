@@ -8,7 +8,7 @@ import {
 import {
   AgentHome,
   AgentLogin,
-  AgentReister,
+  AgentRegister,
   Feedback,
   Landing,
   MakePayment,
@@ -87,24 +87,24 @@ export const element = createBrowserRouter([
     ],
   },
   {
-    path: "/agent",
+    path: "/agent/login",
     element: <AgentDashboard />,
     children: [
       {
         index: true,
-        element: <AgentHome />,
-        errorElement: <ErrorBoundary />,
-        hasErrorBoundary: true,
-      },
-      {
-        path: "login",
         element: <AgentLogin />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
+    ],
+  },
+  {
+    path: "/agent/register",
+    element: <AgentDashboard />,
+    children: [
       {
-        path: "login",
-        element: <AgentReister />,
+        index: true,
+        element: <AgentRegister />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },

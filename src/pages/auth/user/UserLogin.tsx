@@ -113,6 +113,7 @@ const Wrapper = styled.div`
 
     @media screen and (max-width: 748px) {
       display: block;
+      margin: 0;
       margin-bottom: 50px;
       color: #03b903;
       letter-spacing: 2px;

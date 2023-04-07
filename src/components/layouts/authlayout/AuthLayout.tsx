@@ -17,6 +17,8 @@ export default AuthLayout;
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  background-color: #fefefe;
+  overflow: hidden;
 
   @media screen and (max-width: 748px) {
     display: block;

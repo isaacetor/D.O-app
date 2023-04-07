@@ -1,14 +1,26 @@
 import React from "react";
 import { AgentSidenav } from "../../blocks";
 import { Outlet } from "react-router-dom";
+import styled from "styled-components";
 
 const AgentDashboard = () => {
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <Container>
       <AgentSidenav />
       <Outlet />
-    </div>
+    </Container>
   );
 };
 
 export default AgentDashboard;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  background-color: #fefefe;
+  overflow: hidden;
+
+  @media screen and (max-width: 748px) {
+    display: block;
+  }
+`;
