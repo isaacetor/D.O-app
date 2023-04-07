@@ -1,14 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import {
-  AgentDashboard,
-  AuthLayout,
+  AgentAuthLayout,
+  UserAuthLayout,
   HomeLayout,
   UserDashboardLayout,
 } from "../components";
 import {
   AgentHome,
   AgentLogin,
-  AgentReister,
+  AgentRegister,
   Feedback,
   Landing,
   MakePayment,
@@ -64,7 +64,7 @@ export const element = createBrowserRouter([
   },
   {
     path: "/user/register",
-    element: <AuthLayout />,
+    element: <UserAuthLayout />,
     children: [
       {
         index: true,
@@ -76,7 +76,7 @@ export const element = createBrowserRouter([
   },
   {
     path: "/user/login",
-    element: <AuthLayout />,
+    element: <UserAuthLayout />,
     children: [
       {
         index: true,
@@ -87,24 +87,24 @@ export const element = createBrowserRouter([
     ],
   },
   {
-    path: "/agent",
-    element: <AgentDashboard />,
+    path: "/agent/login",
+    element: <AgentAuthLayout />,
     children: [
       {
         index: true,
-        element: <AgentHome />,
-        errorElement: <ErrorBoundary />,
-        hasErrorBoundary: true,
-      },
-      {
-        path: "login",
         element: <AgentLogin />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
+    ],
+  },
+  {
+    path: "/agent/register",
+    element: <AgentAuthLayout />,
+    children: [
       {
-        path: "login",
-        element: <AgentReister />,
+        index: true,
+        element: <AgentRegister />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },

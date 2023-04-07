@@ -1,1 +1,1 @@
-export { default as AgentDashboard } from "./AgentDashboard";
+export { default as AgentAuthLayout } from "./AgentAuthLayout";

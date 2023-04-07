@@ -1,19 +1,20 @@
 import React from "react";
 import { Footer, Header } from "../../blocks";
 import { Outlet } from "react-router-dom";
+import styled from "styled-components";
 
 const HomeLayout = () => {
   return (
-    <div>
-      <div style={{ width: "100vw", height: "75px" }}>
-        <Header />
-      </div>
-      <div style={{ width: "100vw" }}>
-        <Outlet />
-      </div>
+    <Container>
+      <Header />
+      <Outlet />
       <Footer />
-    </div>
+    </Container>
   );
 };
 
 export default HomeLayout;
+
+const Container = styled.div`
+  background-color: #fefefe;
+`;
