@@ -89,6 +89,11 @@ const InputHold1 = styled.div`
     border-radius: 5px;
     outline: 0;
   }
+
+  @media screen and (max-width: 748px) {
+    display: block;
+    width: 100%;
+  }
 `;
 const InputHold2 = styled.div`
   display: flex;
@@ -110,6 +115,10 @@ const InputHold2 = styled.div`
     border: 2px solid #03b903;
     border-radius: 5px;
     outline: 0;
+
+    @media screen and (max-width: 748px) {
+      width: 90%;
+    }
   }
 `;
 const InputHold = styled.div`
@@ -135,6 +144,10 @@ const InputHold = styled.div`
 
     :focus {
       border: 1px solid #03b903;
+    }
+
+    @media screen and (max-width: 748px) {
+      width: 90%;
     }
   }
 `;
@@ -167,4 +180,11 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #fefefe;
+
+  @media screen and (max-width: 1024px) {
+    width: calc(100vw - 400px);
+  }
+  @media screen and (max-width: 748px) {
+    width: 100%;
+  }
 `;

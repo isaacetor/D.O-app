@@ -1,12 +1,35 @@
 import React from "react";
 import styled from "styled-components";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { NavLink } from "react-router-dom";
 
 const AuthSideBar = () => {
+  const settings = {
+    dots: true,
+    fade: true,
+    arrows: false,
+    infinite: true,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 3500,
+    cssEase: "linear",
+  };
   return (
     <div>
       <Container>
         <Wrapper>
-          <h2>GREENWASTE</h2>
+          <NavLink
+            to="/"
+            style={{
+              textDecoration: "none",
+
+              color: "#fff",
+            }}
+          >
+            <h2>GREENWASTE</h2>
+          </NavLink>
 
           <Title>
             <h1>
@@ -18,18 +41,47 @@ const AuthSideBar = () => {
               You don't have to. <br /> You can request one anytime
             </p>
           </Title>
-          <Testimonies>
-            <Top>
-              <p>
-                Simply unbelievable! i am really satisfied with the proficiency
-                of this people. This is absolutely Wonderful
-              </p>
-            </Top>
-            <Bottom>
-              <h2> Mrs. Faith J.O</h2>
-              <p>Occupant</p>
-            </Bottom>
-          </Testimonies>
+          <div>
+            <Slider {...settings}>
+              <Testimonies>
+                <Top>
+                  <p>
+                    Simply unbelievable! i am really satisfied with the
+                    proficiency of this people. This is absolutely Wonderful
+                  </p>
+                </Top>
+                <Bottom>
+                  <h2> Mrs. Faith J.O</h2>
+                  <p>Occupant</p>
+                </Bottom>
+              </Testimonies>
+              <Testimonies>
+                <Top>
+                  <p>
+                    Truly Remarkable! i am really satisfied with the proficiency
+                    of this people. This is absolutely Wonderful. of this
+                    people. This is absolutely Wonderful.
+                  </p>
+                </Top>
+                <Bottom>
+                  <h2> Mrs. Esther Ogbu</h2>
+                  <p>CEO, BugaPay</p>
+                </Bottom>
+              </Testimonies>
+              <Testimonies>
+                <Top>
+                  <p>
+                    Truly Remarkable! i am really satisfied with the proficiency
+                    of this people. This is absolutely Wonderful
+                  </p>
+                </Top>
+                <Bottom>
+                  <h2> Mr. Abraham</h2>
+                  <p>Manager, LifeCare</p>
+                </Bottom>
+              </Testimonies>
+            </Slider>
+          </div>
         </Wrapper>
       </Container>
     </div>
@@ -63,11 +115,11 @@ const Testimonies = styled.div`
   height: 30vh;
   background-color: #01860188;
   display: flex;
-  /* align-self: center; */
-  /* justify-content: center; */
-  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  /* flex-direction: column; */
   border-radius: 20px;
-  overflow: hidden;
+  /* overflow: hidden; */
 `;
 
 const Title = styled.div`
@@ -75,6 +127,11 @@ const Title = styled.div`
     font-size: 3.2rem;
     font-weight: 600;
     line-height: 4rem;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 2.5rem;
+      line-height: 2.6rem;
+    }
   }
 
   p {
@@ -103,8 +160,14 @@ const Container = styled.div`
   width: 500px;
   height: 100vh;
   background-color: #03b903;
-
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 1024px) {
+    width: 400px;
+  }
+  @media screen and (max-width: 748px) {
+    display: none;
+  }
 `;

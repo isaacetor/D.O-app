@@ -17,4 +17,8 @@ export default AuthLayout;
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 748px) {
+    display: block;
+  }
 `;

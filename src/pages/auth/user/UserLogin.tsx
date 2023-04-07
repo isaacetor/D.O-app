@@ -5,9 +5,9 @@ import styled from "styled-components";
 const UserLogin = () => {
   return (
     <div>
-      {" "}
       <Container>
         <Wrapper>
+          <h4>GreenWaste</h4>
           <h2>Sign in</h2>
           <p>
             Don't have an account?
@@ -82,6 +82,10 @@ const InputHold = styled.div`
     :focus {
       border: 1px solid #03b903;
     }
+
+    @media screen and (max-width: 980px) {
+      width: 90%;
+    }
   }
 `;
 
@@ -90,8 +94,6 @@ const Form = styled.form``;
 const Wrapper = styled.div`
   width: 85%;
   height: 85%;
-
-  /* background-color: pink; */
 
   h2 {
     margin: 0;
@@ -105,6 +107,18 @@ const Wrapper = styled.div`
     font-size: 15px;
     margin-bottom: 35px;
   }
+
+  h4 {
+    display: none;
+
+    @media screen and (max-width: 748px) {
+      display: block;
+      margin-bottom: 50px;
+      color: #03b903;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+  }
 `;
 
 const Container = styled.div`
@@ -114,4 +128,11 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #fefefe;
+
+  @media screen and (max-width: 1024px) {
+    width: calc(100vw - 400px);
+  }
+  @media screen and (max-width: 748px) {
+    width: 100%;
+  }
 `;
