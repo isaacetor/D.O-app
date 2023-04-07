@@ -23,10 +23,10 @@ const UserDashboardHeader = () => {
               <h1>Continental</h1>
             </Logo>
             <Navigation>
-              <Nav to="/userdashboard">
+              <Nav to="/user">
                 <RxDashboard style={{ fontSize: "20px" }} /> Dashboard
               </Nav>
-              <Nav to="/invoices">
+              <Nav to="/user/makerequest">
                 <RiBillLine style={{ fontSize: "20px" }} /> View Bill
               </Nav>
               <Nav to="/payment">
@@ -140,7 +140,7 @@ const Container = styled.div`
   background: rgb(226, 24, 24);
   background: linear-gradient(
     159deg,
-     #3c37fe,#4e49e9
+     #03b903,#038f03
   );
   display: flex;
   justify-content: center;
