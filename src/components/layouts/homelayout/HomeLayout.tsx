@@ -5,8 +5,12 @@ import { Outlet } from "react-router-dom";
 const HomeLayout = () => {
   return (
     <div>
-      <Header />
-      <Outlet />
+      <div style={{ width: "100vw", height: "75px" }}>
+        <Header />
+      </div>
+      <div style={{ width: "100vw" }}>
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );
