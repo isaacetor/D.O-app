@@ -53,8 +53,12 @@ const Header = () => {
   return (
     <div>
       {show ? (
-        <Container boxShadow={show ? "value" : ""} fixed="jj">
-          <Wrapper border={show ? "" : "value"}>
+        <Container
+          boxShadow={show ? "value" : ""}
+          fixed="jj"
+          border={show ? "value" : ""}
+        >
+          <Wrapper border={show ? "" : "none"}>
             <LogoNav>
               <Logo onClick={backToTop}>GreenWaste</Logo>
               <Nav>
@@ -83,8 +87,12 @@ const Header = () => {
           ) : null}
         </Container>
       ) : (
-        <Container boxShadow={show ? "value" : ""} fixed="">
-          <Wrapper border="">
+        <Container
+          boxShadow={show ? "value" : ""}
+          fixed=""
+          border={show ? "value" : ""}
+        >
+          <Wrapper border={show ? "" : "value"}>
             <LogoNav>
               <Logo onClick={backToTop}>GreenWaste</Logo>
               <Nav>
@@ -162,8 +170,6 @@ const Navigation = styled.p`
     color: #03b903;
   }
 `;
-
-// const Button2 = styled.button<{ color: string; bg: string }>`
 //   padding: 10px 20px;
 //   height: 6vh;
 //   font-size: 16px;
@@ -213,12 +219,13 @@ const Wrapper = styled.div<{ border: string }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: ${({ border }) => (border ? "" : "2px solid #03b903")};
+  border-bottom: ${({ border }) => (border ? "2px solid #03c20376" : "none")};
 `;
 
 const Container = styled.div<{
   boxShadow: string;
   fixed: string;
+  border: string;
 }>`
   width: 100%;
   height: 80px;
@@ -233,6 +240,7 @@ const Container = styled.div<{
   color: ${({ color }) => color};
   box-shadow: ${({ boxShadow }) =>
     boxShadow ? "rgba(99, 99, 99, 0.079) 0px 2px 8px 0px" : "none"};
+  border-bottom: ${({ border }) => (border ? "2px solid #03c20376" : "none")};
   opacity: 0;
   animation: fade-in 450ms ease-out forwards;
 
