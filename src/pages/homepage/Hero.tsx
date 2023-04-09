@@ -12,15 +12,17 @@ const Hero = () => {
           <Left>
             <TextHold>
               <Title>
-                Reduce Waste and Recycle. Disposal Properly.. Go green!!
+                Reduce Waste, promote recycling, and dispose properly for a
+                greener future!
               </Title>
               <p>
-                An awesome place to purchase securely with no worries or delay.
-                It is perfectly built for you.
+                Ready to be an eco-champion? Let's team up to reduce waste,
+                promote recycling, and proper waste disposal. Small actions can
+                make a big impact on our planet! ♻️🌍
               </p>
-              <NavLink to="/user/login" style={{ textDecoration: "none" }}>
+              <NavLink to="/user/register" style={{ textDecoration: "none" }}>
                 <button>
-                  Use the Web App <TfiWorld />
+                  Join Now! <TfiWorld />
                 </button>
               </NavLink>
             </TextHold>
@@ -98,9 +100,10 @@ const Title = styled.h1`
   font-size: 3.5rem;
   line-height: 4rem;
   color: #333333;
+  text-transform: capitalize;
   @media screen and (max-width: 768px) {
     font-size: 1.7rem;
-    width: 89%;
+    width: 95%;
     margin-top: 20px;
     line-height: 2rem;
   }
