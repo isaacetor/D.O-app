@@ -10,22 +10,37 @@ const Hero = () => {
     <div>
       <Container>
         <Wrapper>
-          <Left>
-            <TextHold>
-              <Title>
-                The best & most trusted platform to buy your Gift Cards and shop
-                at any marketplace.
-              </Title>
-              <p>
-                An awesome place to purchase securely with no worries or delay.
-                It is perfectly built for you.
-              </p>
-              <NavLink to="/login" style={{ textDecoration: "none" }}>
-                <button>Use the Web App</button>
-              </NavLink>
-            </TextHold>
-          </Left>
-          <Right>{/* <img src={hero} alt="" /> */}</Right>
+          <Head>
+            <div>
+              <H>Joining us is very easy!</H>
+              <P>Get Started in few easy steps</P>
+              {/* <Picture src={pic} /> */}
+            </div>
+          </Head>
+          <Cards>
+            {/* <AboutCard
+              logo={create}
+              heading="Create Account"
+              par="Create an account with your valid details and add your bank account / mobile money."
+            />
+            <AboutCard
+              logo={trade}
+              heading="Choose a Gift Card"
+              par="A business card allows you shop in a particular marketplace."
+            />{" "}
+            <AboutCard
+              logo={wait}
+              heading="Buy a Gift Card"
+              par="Make payment to purchase a Gift Card through KoraPay's secure payment platform."
+            />{" "}
+            <AboutCard
+              logo={withdraw}
+              heading="Use the Gift Card"
+              par="You can excercise a gift card's value on purchasing products across our registered businesses without cash or money transfer"
+            />{" "}
+           
+            <Picture2 src={pic} /> */}
+          </Cards>
         </Wrapper>
       </Container>
     </div>
@@ -34,159 +49,76 @@ const Hero = () => {
 
 export default Hero;
 
-const TextHold = styled.div`
-  margin-left: 40px;
-
-  p {
-    margin-top: 30px;
-    width: 90%;
-    font-size: 1.3rem;
-    line-height: 139.6%;
-    margin-bottom: 4rem;
-
-    @media screen and (max-width: 768px) {
-      font-size: 1.05rem;
-    }
-  }
-
-  button {
-    padding: 15px 35px;
-    background-color: #9342f6;
-    color: #fff;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 0;
-    transition: all 0.2s ease;
-
-    :hover {
-      cursor: pointer;
-      background-color: #8725fe;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    margin-left: 20px;
-  }
-`;
-
-const Money = styled.div`
-  position: absolute;
-  right: 0px;
-  top: 200px;
-
-  img {
-    width: 10vw;
-  }
-`;
-const Hundred = styled.img`
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  position: absolute;
-`;
-
-const Title = styled.h1`
-  width: 90%;
-  font-weight: 700;
-  margin: 0;
-  margin-top: 30px;
-  font-size: 3rem;
-  line-height: 4rem;
-
-  @media screen and (max-width: 768px) {
-    font-size: 1.7rem;
-    width: 89%;
-    margin-top: 20px;
-    line-height: 2rem;
-  }
-`;
-
-const Right = styled.div`
-  width: 50%;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  animation: slide-in 1s ease-out;
-  animation-fill-mode: forwards;
-  opacity: 0;
-
-  @keyframes slide-in {
-    0% {
-      transform: translateX(-50%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0%);
-      opacity: 1;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    height: 55vh;
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  @media screen and (max-width: 1440px) {
-    min-width: 50%;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`;
-
-const Left = styled.div`
-  width: 50%;
-  height: 100vh;
+const Container = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
-  animation: slide-in-bottom 1s ease-out;
-  animation-fill-mode: forwards;
-  opacity: 0;
-
-  @keyframes slide-in-bottom {
-    0% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0%);
-      opacity: 1;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    height: 65vh;
-    width: 100%;
-  }
-  @media screen and (max-width: 1440px) {
-    min-width: 50%;
-  }
 `;
 const Wrapper = styled.div`
   width: 90%;
-  background-color: #f9f9f9;
-  color: #333333;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 4rem;
-  overflow: hidden;
-
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    border-radius: 2rem;
+  height: 95%;
+  margin-top: 120px;
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    gap: 60px;
   }
 `;
-const Container = styled.div`
+const H = styled.div`
+  font-size: 31px;
+  font-weight: bold;
+  color: #333333;
+  text-transform: capitalize;
+  @media screen and (min-width: 1000px) {
+    font-size: 40px;
+  }
+`;
+const P = styled.div`
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  @media screen and (min-width: 1000px) {
+    font-size: 20px;
+  }
+`;
+const Head = styled.div`
+  color: #383838;
+  @media screen and (min-width: 1200px) {
+    width: 25%;
+  }
+`;
+const Picture = styled.img`
   width: 100%;
-  color: #00002d;
-  margin-top: 110px;
-  margin-bottom: 20px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  display: none;
+  margin-top: 40px;
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
+`;
+const Picture2 = styled.img`
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  margin-top: 40px;
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 40%;
+  }
+`;
+const Cards = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  @media screen and (min-width: 1200px) {
+    width: calc(75% - 40px);
+  }
 `;

@@ -6,7 +6,6 @@ const Awareness = () => {
   return (
     <Container>
       <Wrapper>
-        <Right>{/* <img src={about} alt="" /> */}</Right>
         <Left>
           <h2>About GreenWaste</h2>
           <h1>
@@ -22,6 +21,7 @@ const Awareness = () => {
             generations. 🌍♻️
           </p>
         </Left>
+        <Right>{/* <img src={about} alt="" /> */}</Right>
       </Wrapper>
     </Container>
   );
@@ -31,7 +31,7 @@ export default Awareness;
 
 const Right = styled.div`
   width: 50%;
-  height: 85vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,7 +40,7 @@ const Right = styled.div`
   @media screen and (max-width: 768px) {
     height: 50vh;
     width: 100%;
-    /* margin-top: 20px; */
+    margin-top: 20px;
   }
 
   @media screen and (max-width: 1440px) {
@@ -61,13 +61,13 @@ const Right = styled.div`
 
 const Left = styled.div`
   width: 50%;
-  height: 85vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
 
   @media screen and (max-width: 768px) {
-    height: 50vh;
+    height: 70vh;
     width: 100%;
   }
   @media screen and (max-width: 1440px) {
@@ -96,10 +96,9 @@ const Left = styled.div`
     margin-bottom: 1rem;
     line-height: 3.5rem;
     font-weight: 700;
-    text-transform: capitalize;
 
     @media screen and (max-width: 768px) {
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       line-height: 2.3rem;
       width: 90%;
       margin-left: 20px;
@@ -133,12 +132,12 @@ const Wrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    flex-wrap: wrap-reverse;
   }
 `;
 const Container = styled.div`
   width: 100%;
   color: #00002d;
+  margin-top: 110px;
   margin-bottom: 20px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
