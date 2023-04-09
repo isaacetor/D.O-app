@@ -14,11 +14,12 @@ const Awareness = () => {
             environmental consciousness
           </h1>
           <p>
-            MAVERICKS is a registered gift card purchasing company established
-            in 2023 dedicated to providing world-class purchasing experience to
-            people in Nigeria and Ghana. Integrity, dedication and excellence in
-            value have been the pillars to which our company hinges its
-            practices and policies on.
+            GreenWaste, a is a waste management company dedicated to reducing
+            waste, promoting recycling, and proper waste disposal. Our team of
+            experts provides innovative and eco-friendly solutions for
+            businesses and communities. Join us in our mission to create a
+            cleaner and healthier environment for current and future
+            generations. 🌍♻️
           </p>
         </Left>
       </Wrapper>
@@ -39,7 +40,7 @@ const Right = styled.div`
   @media screen and (max-width: 768px) {
     height: 50vh;
     width: 100%;
-    margin-top: 20px;
+    /* margin-top: 20px; */
   }
 
   @media screen and (max-width: 1440px) {
@@ -66,7 +67,7 @@ const Left = styled.div`
   flex-direction: column;
 
   @media screen and (max-width: 768px) {
-    height: 70vh;
+    height: 50vh;
     width: 100%;
   }
   @media screen and (max-width: 1440px) {
@@ -81,7 +82,7 @@ const Left = styled.div`
     margin-bottom: 2rem;
 
     @media screen and (max-width: 768px) {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       width: 90%;
       margin-left: 20px;
       margin-bottom: 1.5rem;
@@ -98,7 +99,7 @@ const Left = styled.div`
     text-transform: capitalize;
 
     @media screen and (max-width: 768px) {
-      font-size: 2rem;
+      font-size: 1.7rem;
       line-height: 2.3rem;
       width: 90%;
       margin-left: 20px;
@@ -132,13 +133,12 @@ const Wrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
+    flex-wrap: wrap-reverse;
   }
 `;
 const Container = styled.div`
   width: 100%;
   color: #00002d;
-
-  /* margin-top: 110px; */
   margin-bottom: 20px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
