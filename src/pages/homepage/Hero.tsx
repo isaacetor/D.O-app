@@ -97,7 +97,7 @@ const Title = styled.h1`
   margin-top: 30px;
   font-size: 3.5rem;
   line-height: 4rem;
-  color: #03b903;
+  color: #333333;
   @media screen and (max-width: 768px) {
     font-size: 1.7rem;
     width: 89%;

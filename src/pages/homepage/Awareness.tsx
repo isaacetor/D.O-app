@@ -9,7 +9,10 @@ const Awareness = () => {
         <Right>{/* <img src={about} alt="" /> */}</Right>
         <Left>
           <h2>About GreenWaste</h2>
-          <h1>You probably want to know about us right?</h1>
+          <h1>
+            Years of diligent research and unwavering dedication to
+            environmental consciousness
+          </h1>
           <p>
             MAVERICKS is a registered gift card purchasing company established
             in 2023 dedicated to providing world-class purchasing experience to
@@ -71,7 +74,7 @@ const Left = styled.div`
   }
 
   h2 {
-    color: #03b903;
+    color: #3c37ff;
     font-weight: 500;
     font-size: 2.1rem;
     margin: 0;
@@ -87,11 +90,12 @@ const Left = styled.div`
 
   h1 {
     font-size: 2.8rem;
-    width: 70%;
+    width: 95%;
     margin: 0;
     margin-bottom: 1rem;
     line-height: 3.5rem;
     font-weight: 700;
+    text-transform: capitalize;
 
     @media screen and (max-width: 768px) {
       font-size: 2rem;
