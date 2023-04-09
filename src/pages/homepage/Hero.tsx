@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-// import hero from "../../Assets/hero.webp";
+import hero from "../../assets//images/DoHero.png";
 import { NavLink } from "react-router-dom";
 import { TfiWorld } from "react-icons/tfi";
 
@@ -26,7 +26,7 @@ const Hero = () => {
             </TextHold>
           </Left>
           <Right>
-            {/* <img src={hero} alt="" /> */}
+            <img src={hero} alt="" />
 
             <Money>{/* <img src={money} alt="" /> */}</Money>
             {/* <Hundred src={hundred} /> */}
@@ -95,9 +95,9 @@ const Title = styled.h1`
   font-weight: 700;
   margin: 0;
   margin-top: 30px;
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 4rem;
-  color: #03b903;
+  color: #333333;
   @media screen and (max-width: 768px) {
     font-size: 1.7rem;
     width: 89%;
@@ -108,7 +108,8 @@ const Title = styled.h1`
 
 const Right = styled.div`
   width: 50%;
-  height: 100vh;
+  height: 85vh;
+  display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -130,7 +131,6 @@ const Right = styled.div`
   @media screen and (max-width: 768px) {
     height: 55vh;
     width: 100%;
-    margin-top: 20px;
   }
 
   @media screen and (max-width: 1440px) {
@@ -138,16 +138,21 @@ const Right = styled.div`
   }
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+
+    @media screen and (max-width: 768px) {
+      height: 100%;
+      width: 90%;
+      /* margin-top: 20px; */
+    }
   }
 `;
 
 const Left = styled.div`
   width: 50%;
   height: 85vh;
-  /* background-color: blueviolet; */
   display: flex;
   align-items: center;
   animation: slide-in-bottom 1s ease-out;
@@ -166,7 +171,7 @@ const Left = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    height: 65vh;
+    height: 55vh;
     width: 100%;
   }
   @media screen and (max-width: 1440px) {
@@ -175,8 +180,6 @@ const Left = styled.div`
 `;
 const Wrapper = styled.div`
   width: 90%;
-  /* background-color: #f9f9f9; */
-  /* background-color: red; */
   color: #333333;
   margin: auto;
   display: flex;
@@ -192,5 +195,5 @@ const Container = styled.div`
   width: 100%;
   color: #00002d;
   margin-top: 110px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 `;

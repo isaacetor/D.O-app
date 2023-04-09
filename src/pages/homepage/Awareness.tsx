@@ -6,50 +6,21 @@ const Awareness = () => {
   return (
     <Container>
       <Wrapper>
-        <Div2></Div2>
-        <Div1>
-          <Text1>Reduce Waste and Recycle. Disposal Proper Go green!!</Text1>
-          <Text2>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
-            doloribus aut nam. Velit, officia quidem eligendi iusto explicabo et
-            ipsa!
-          </Text2>
-          <BtnHolder>
-            <Btn>
-              <Div3>
-                <Empty></Empty>
-              </Div3>
-              <Div4>
-                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
-                <P2>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </P2>
-              </Div4>
-            </Btn>
-            <Btn>
-              <Div3>
-                <Empty></Empty>
-              </Div3>
-              <Div4>
-                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
-                <P2>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </P2>
-              </Div4>
-            </Btn>
-            <Btn>
-              <Div3>
-                <Empty></Empty>
-              </Div3>
-              <Div4>
-                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
-                <P2>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </P2>
-              </Div4>
-            </Btn>
-          </BtnHolder>
-        </Div1>
+        <Right>{/* <img src={about} alt="" /> */}</Right>
+        <Left>
+          <h2>About GreenWaste</h2>
+          <h1>
+            Years of diligent research and unwavering dedication to
+            environmental consciousness
+          </h1>
+          <p>
+            MAVERICKS is a registered gift card purchasing company established
+            in 2023 dedicated to providing world-class purchasing experience to
+            people in Nigeria and Ghana. Integrity, dedication and excellence in
+            value have been the pillars to which our company hinges its
+            practices and policies on.
+          </p>
+        </Left>
       </Wrapper>
     </Container>
   );
@@ -57,87 +28,122 @@ const Awareness = () => {
 
 export default Awareness;
 
-const Empty = styled.div`
-  width: 40%;
-  height: 40%;
-  background-color: #3c37fe;
-  border-radius: 50px;
-`;
-const P2 = styled.div`
-  margin: 0;
-`;
-const P = styled.div`
-  margin: 0;
+const Right = styled.div`
+  width: 50%;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @media screen and (max-width: 768px) {
+    height: 50vh;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    min-width: 50%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      height: 90%;
+    }
+  }
 `;
 
-const BtnHolder = styled.div``;
-const Div3 = styled.div`
-  width: 35px;
-  height: 35px;
-  background-color: #9895eb;
-  border-radius: 50%;
+const Left = styled.div`
+  width: 50%;
+  height: 85vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-right: 10px;
-  margin-left: 15px;
-`;
-const Div4 = styled.div``;
-const Div2 = styled.div`
-  width: 50%;
-  /* height: 500px; */
-  background-color: green;
-`;
-const Btn = styled.div`
-  background-color: #fff;
-  width: 100%;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  height: fit-content;
-  display: flex;
-  border-radius: 5px;
-  align-items: center;
-  margin-bottom: 20px;
-`;
-const Text2 = styled.div`
-  font-size: 16px;
-  color: #000;
-  margin-bottom: 20px;
+  flex-direction: column;
 
   @media screen and (max-width: 768px) {
-    font-weight: 14px;
-    background-color: red;
-    width: 300px;
+    height: 70vh;
+    width: 100%;
   }
-`;
-const Text1 = styled.div`
-  margin: 0;
-  width: 400px;
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: #000;
+  @media screen and (max-width: 1440px) {
+    min-width: 50%;
+  }
 
-  @media screen and (max-width: 768px) {
-    /* width: 300px; */
-    font-size: 25px;
-    /* text-align: center; */
+  h2 {
+    color: #3c37ff;
+    font-weight: 500;
+    font-size: 2.1rem;
+    margin: 0;
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.6rem;
+      width: 90%;
+      margin-left: 20px;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    width: 95%;
+    margin: 0;
+    margin-bottom: 1rem;
+    line-height: 3.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2rem;
+      line-height: 2.3rem;
+      width: 90%;
+      margin-left: 20px;
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  p {
+    width: 85%;
+    font-size: 1.3rem;
+    line-height: 160.6%;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+      line-height: 1.7rem;
+      width: 90%;
+      margin-left: 20px;
+    }
   }
 `;
-const Div1 = styled.div`
-  width: 50%;
-  margin-left: 20px;
-`;
+
 const Wrapper = styled.div`
   width: 90%;
+  background-color: #ffffff;
+  color: #333333;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 40px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const Container = styled.div`
   width: 100%;
-  display: flex;
-  background-color: #fff;
-  justify-content: center;
-  align-items: center;
+  color: #00002d;
+
+  /* margin-top: 110px; */
+  margin-bottom: 20px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 50px;
+  }
 `;
