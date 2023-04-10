@@ -1,118 +1,5 @@
-// // import React from "react";
-// // import styled from "styled-components";
-
-// // const NotFound = () => {
-// //   return (
-// //     <Container>
-// //       <h1>
-// //         Ooops, Error.... <br />
-// //         Page Not Found
-// //       </h1>
-// //     </Container>
-// //   );
-// // };
-
-// // export default NotFound;
-
-// // const Container = styled.div`
-// //   width: 100%;
-// //   height: 100vh;
-// //   background-color: #03b903;
-// //   display: flex;
-// //   justify-content: center;
-// //   align-items: center;
-// // `;
-
-// import React from "react";
-// import { useNavigate } from "react-router-dom";
-// import styled from "styled-components";
-// import notfound from "../../assets/4041.png";
-
-// const Notfound = () => {
-//   const navigate = useNavigate();
-//   const back = () => {
-//     navigate(-1);
-//   };
-//   return (
-//     <Container>
-//       <Wrap>
-//         <Image>
-//           <img src={notfound} />
-//         </Image>
-//         <Button>
-//           <Oopsy>Oops. Looks like you're lost</Oopsy>
-//           <button onClick={back}>Go Back</button>
-//         </Button>
-//       </Wrap>
-//     </Container>
-//   );
-// };
-
-// export default Notfound;
-
-// const Container = styled.div`
-//   overflow: hidden;
-//   width: 100vw;
-//   height: 100vh;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// `;
-// const Wrap = styled.div`
-//   width: 90%;
-//   display: flex;
-//   flex-direction: column;
-//   background-color: red;
-//   flex-wrap: wrap;
-//   align-items: center;
-//   /* justify-content: center; */
-// `;
-// const Image = styled.div`
-//   width: 100%;
-//   height: 300px;
-//   display: flex;
-//   justify-content: center;
-//   @media screen and (min-width: 800px) {
-//     width: 50%;
-//     height: 600px;
-//   }
-//   img {
-//     width: 90%;
-//     height: 100%;
-//     object-fit: contain;
-//     object-position: center;
-//   }
-// `;
-// const Button = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   gap: 15px;
-//   width: 100%;
-//   height: 300px;
-//   @media screen and (min-width: 800px) {
-//     width: 45%;
-//     height: 600px;
-//   }
-//   button {
-//     padding: 15px 50px;
-//     border: none;
-//     outline: none;
-//     border-radius: 7px;
-//     color: white;
-//     background-color: blueviolet;
-//     font-weight: bold;
-//     font-size: 15px;
-//   }
-// `;
-// const Oopsy = styled.div`
-//   font-size: 30px;
-//   text-align: center;
-//   color: #511985;
-// `;
-
 import React from "react";
+
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import pic from "../../assets/4042.jpg";
@@ -134,13 +21,14 @@ const NotFound = () => {
             temporaily unavailable.
           </Texting3>
         </Oopsy>
-        {/* <Button onClick={back}>Go Back</Button> */}
-        <Globalbutton
-          padding="20px "
-          bg="#03b903"
-          col="#fff"
-          text="Back to Homepage"
-        />
+        <Button onClick={back}>
+          <Globalbutton
+            padding="20px "
+            bg="#03b903"
+            col="#fff"
+            text="Back to Homepage"
+          />
+        </Button>
       </Wrapper>
     </Container>
   );
@@ -173,7 +61,7 @@ const Texting = styled.div`
     font-size: 100px;
   }
 `;
-const Button = styled.button``;
+const Button = styled.div``;
 const Oopsy = styled.div`
   display: flex;
   justify-content: center;
