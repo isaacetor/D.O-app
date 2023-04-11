@@ -6,6 +6,11 @@ import hundred from "../../Assets/100.webp";
 import { NavLink } from "react-router-dom";
 import { AboutCard } from "../../components";
 
+import one from "../../assets/svgs/one.svg";
+import two from "../../assets/svgs/two.svg";
+import three from "../../assets/svgs/three.svg";
+import four from "../../assets/svgs/four.svg";
+
 const Hero = () => {
   return (
     <div>
@@ -20,26 +25,23 @@ const Hero = () => {
           </Head>
           <Cards>
             <AboutCard
-              // logo={create}
-              logo=""
+              logo={one}
+              // logo=""
               heading="Create account"
               par="Create an account with your valid details"
             />
             <AboutCard
-              // logo={trade}
-              logo=""
+              logo={two}
               heading="Fund account "
               par="Credit your account to be able to make trash pick up rrequest right in the app"
             />{" "}
             <AboutCard
-              // logo={wait}
-              logo=""
+              logo={three}
               heading="Make a request"
               par="Request for your trash pick up at a time convenient for you."
             />{" "}
             <AboutCard
-              // logo={withdraw}
-              logo=""
+              logo={four}
               heading="Close a request"
               par="After trash pick up, you can close the request to show that your trash has been picked up"
             />{" "}

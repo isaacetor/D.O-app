@@ -50,6 +50,6 @@ const P = styled.div`
   color: #636262;
 `;
 const Picture = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 `;
