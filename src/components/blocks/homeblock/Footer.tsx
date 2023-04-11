@@ -9,20 +9,12 @@ const Footer = () => {
     <div>
       <Container>
         <LogoPart>
-          <Logo>MAVERICKS</Logo>
+          <Logo>Dumpsters</Logo>
           <Text>
-            A Unique giftcard purchasing business perfectly built for you.
+            reduce waste, promote recycling, and proper waste disposal.
           </Text>
-          {/* <NavLink to="/get-started" style={{ textDecoration: "none" }}>
-            <GlobalButton
-              text="Create an account"
-              bg="#03B903"
-              col="#fff"
-              padding="10px 20px"
-            />
-          </NavLink> */}
         </LogoPart>
-        {/* <Connect>
+        <Connect>
           <Heading>Company</Heading>
           <Trailing>About us</Trailing>
           <Trailing>Terms</Trailing>
@@ -43,13 +35,33 @@ const Footer = () => {
           <Trailing>
             <FaLinkedin style={{ fontSize: "20px" }} /> LinkedIn
           </Trailing>
-        </Company> */}
+        </Company>
       </Container>
+      <Copyright>
+        <p>copyright © {new Date().getFullYear()} dumpsters ♻️🌍</p>
+      </Copyright>
     </div>
   );
 };
 
 export default Footer;
+
+const Copyright = styled.div`
+  width: 100%;
+  height: 7vh;
+  border-top: 2px solid #fff;
+  background-color: #f9f9fb;
+  display: flex;
+  align-items: center;
+
+  p {
+    width: 95%;
+
+    margin: auto;
+
+    font-size: 13px;
+  }
+`;
 
 const Container = styled.div`
   font-size: 12px;
@@ -60,16 +72,12 @@ const Container = styled.div`
     height: 30vh;
     margin-top: 80px;
     background-color: #f9f9fb;
-    /* padding: 50px; */
-    /* margin: auto; */
-    /* margin-bottom: 20px; */
   }
-  /* border-radius: 10px; */
-  /* margin: 10px; */
-  /* padding: 15px; */
-  background-color: #ffff;
+
+  background-color: #f9f9fb;
   color: #525151;
   display: flex;
+  margin-top: 50px;
 
   flex-wrap: wrap;
   gap: 100px;
@@ -89,7 +97,7 @@ const Heading = styled.div`
 `;
 const Trailing = styled.div`
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -112,4 +120,5 @@ const Text = styled.div`
   width: 70%;
   font-size: 15px;
   line-height: 1.2rem;
+  text-transform: capitalize;
 `;
