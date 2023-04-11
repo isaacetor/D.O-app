@@ -1,34 +1,52 @@
 import React from "react";
 import styled from "styled-components";
-import { GoPrimitiveDot } from "react-icons/go";
-import UserDashboardSidebar from "./UserDashboardSidebar";
+import { NavLink } from "react-router-dom";
 
 const WasteBill = () => {
   return (
     <div>
       <Container>
-        <Container>
-          <Wrapper>
-            <Text>Make A Request</Text>
-            <Main>
-              <First>
-                <Bill>
-                  <p>Your Payment</p>
-                  <h3>#13,000</h3>
-                  <span>Applied Gold Account</span>
-                </Bill>
-                <Request>
+        <Wrapper>
+          <h4>Greenwaste</h4>
+          <h2>Register</h2>
+          <p>
+            Have an account?
+            <NavLink
+              to="/user/login"
+              style={{
+                textDecoration: "none",
+                margin: "3px",
+                color: "#03b903",
+              }}
+            >
+              Log in
+            </NavLink>
+          </p>
 
-                </Request>
-                {/* <UserNotification />
-                <TransactionHistory /> */}
-              </First>
-              <Second>
-                <UserDashboardSidebar />
-              </Second>
-            </Main>
-          </Wrapper>
-        </Container>
+          <Form>
+            <InputHold1>
+              <InputHold2>
+                <span>Name</span>
+                <input type="text" required />
+              </InputHold2>
+              <InputHold2>
+                <span>Phone Number</span>
+                <input type="number" required />
+              </InputHold2>
+            </InputHold1>
+
+            <InputHold>
+              <span>Address</span>
+              <input type="text" required />
+            </InputHold>
+            <InputHold>
+              <span>Password</span>
+              <input type="password" required />
+            </InputHold>
+
+            <Button type="submit"> Create account</Button>
+          </Form>
+        </Wrapper>
       </Container>
     </div>
   );
@@ -36,104 +54,163 @@ const WasteBill = () => {
 
 export default WasteBill;
 
-const Request = styled.div`
-  width: 350px;
-  /* height: 100px; */
-  background-color:white;
+const Button = styled.button`
+  padding: 20px 30px;
+  background-color: #03b903;
+  border: 0;
+  margin: 0;
+  margin-top: 30px;
+  color: #fff;
+  font-size: 18px;
   border-radius: 10px;
-  display:flex;
-  flex-direction:column;
-  padding:10px;
-  margin-top:20px;
-  p{
-    color:#9b4508;
-  }
-  h3{
-     font-size:30px;
-     margin-top:-10px;
-    color:#9b4508;
-    margin-bottom:-0.1px;
-  }
-  span{
-    color:gray;
-    margin-top:10px;
 
-  }
-`;
-const Bill = styled.div`
-  width: 350px;
-  /* height: 100px; */
-  background-color:white;
-  border-radius: 10px;
-  display:flex;
-  flex-direction:column;
-  padding:10px;
-  p{
-    color:#9b4508;
-  }
-  h3{
-     font-size:30px;
-     margin-top:-10px;
-    color:#9b4508;
-    margin-bottom:-0.1px;
-  }
-  span{
-    color:gray;
-    margin-top:10px;
-
+  :hover {
+    cursor: pointer;
   }
 `;
 
-const Second = styled.div`
-  width: 35%;
-  height: 100%;
-`;
-
-const First = styled.div`
-  width: 70%;
-  height: 100%;
-  display:flex;
-  flex-direction:column;
-
+const InputHold1 = styled.div`
+  width: 700px;
   display: flex;
-  /* justify-content: space-between; */
-  flex-direction: column;
-`;
-
-const Main = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Text = styled.div`
-  width: 100%;
-  /* height: 10%; */
-  /* background-color: #9b4508; */
-  color: #1d1d41;
-  font-weight: 600;
-  font-size: 22px;
+  gap: 30px;
   margin-bottom: 10px;
-  margin-top: 20px;
-  margin-left: 15px;
+  span {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  input {
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    font-size: 17px;
+    color: #000000d5;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    outline: 0;
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: block;
+    width: 74%;
+  }
+  @media screen and (max-width: 748px) {
+    display: block;
+    width: 100%;
+  }
 `;
+const InputHold2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  span {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  input {
+    width: 300px;
+    height: 37px;
+    padding: 10px;
+    font-size: 17px;
+    color: #000000d5;
+    border: 2px solid #03b903;
+    border-radius: 5px;
+    outline: 0;
+
+    @media screen and (max-width: 1024px) {
+      display: block;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 748px) {
+      width: 90%;
+    }
+  }
+`;
+const InputHold = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  span {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  input {
+    width: 70%;
+    height: 35px;
+    padding: 10px;
+    font-size: 17px;
+    color: #000000d5;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    outline: 0;
+
+    :focus {
+      border: 1px solid #03b903;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: 74%;
+    }
+    @media screen and (max-width: 748px) {
+      width: 90%;
+    }
+  }
+`;
+
+const Form = styled.form``;
 
 const Wrapper = styled.div`
-  width: 95%;
-  /* height: 95%; */
-  /* background: brown; */
+  width: 85%;
+  height: 85%;
+  /* background-color: pink; */
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  h2 {
+    margin: 0;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 2rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    margin-bottom: 35px;
+  }
+
+  h4 {
+    display: none;
+
+    @media screen and (max-width: 748px) {
+      display: block;
+      margin: 0;
+      margin-bottom: 20px;
+      color: #03b903;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+  }
 `;
 
 const Container = styled.div`
-  width: calc(100vw - 270px);
-  /* height: 100vh; */
+  width: calc(100vw - 250px);
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #fff2ec92;
+  justify-content: center;
+  background-color: #fefefe;
+
+  @media screen and (max-width: 1024px) {
+    width: calc(100vw - 400px);
+  }
+  @media screen and (max-width: 748px) {
+    width: 100%;
+  }
 `;

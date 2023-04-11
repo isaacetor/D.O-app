@@ -7,6 +7,7 @@ import UserNotification from "./UserNotification";
 // import { UseAppSelector } from "../../Global/Store";
 import { useQuery } from "@tanstack/react-query";
 // import { getOneClient } from "../../Api/Endpoints";
+import BusinessHome from "./Home.Business";
 
 const UserDashboardHome = () => {
   // const user = UseAppSelector((state) => state.Client);
@@ -26,12 +27,12 @@ const UserDashboardHome = () => {
         <Wrapper>
           <Main>
             <First>
-              <UserNotification />
-              <TransactionHistory />
+              <BusinessHome />
+              {/* <TransactionHistory /> */}
             </First>
-            <Second>
+            {/* <Second>
               <UserDashboardSidebar />
-            </Second>
+            </Second> */}
           </Main>
         </Wrapper>
       </Container>
@@ -50,7 +51,7 @@ const Second = styled.div`
 `;
 
 const First = styled.div`
-  width: 70%;
+  width: 100%;
   height: 100%;
   display: flex;
   /* justify-content: space-between; */
