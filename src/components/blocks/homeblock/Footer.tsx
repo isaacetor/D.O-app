@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { GlobalButton } from "../../commons";
 
 const Footer = () => {
   return (
@@ -38,7 +36,7 @@ const Footer = () => {
         </Company>
       </Container>
       <Copyright>
-        <p>copyright © {new Date().getFullYear()} dumpsters ♻️🌍</p>
+        <p>copyright © {new Date().getFullYear()} Dumpsters ♻️🌍</p>
       </Copyright>
     </div>
   );
