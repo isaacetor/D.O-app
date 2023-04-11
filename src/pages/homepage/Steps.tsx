@@ -13,14 +13,14 @@ const Steps = () => {
             <Focus>
               <Right>
                 <h1>
-                  A Personalized Dashboard for every client, whether commercial
-                  or residential.
+                  A Personalized Dashboard for every user, whether a business or
+                  residential.
                 </h1>
               </Right>
               <Left>
                 <p>
-                  Doesn't really matter whether you are a new or returning
-                  client, you get your own dashboard.
+                  Doesn't really matter whether you are a new or returning user,
+                  you get your own dashboard.
                 </p>
                 <NavLink to="/signin" style={{ textDecoration: "none" }}>
                   <button>
@@ -60,7 +60,7 @@ const Left = styled.div`
     display: flex;
     align-items: center;
     gap: 5px;
-    border-radius: 25px;
+    border-radius: 5px;
 
     :hover {
       cursor: pointer;

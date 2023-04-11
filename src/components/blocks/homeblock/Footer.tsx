@@ -1,26 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { GlobalButton } from "../../commons";
 
 const Footer = () => {
   return (
     <div>
       <Container>
-        {/* <LogoPart>
-          <Logo>MAVERICKS</Logo>
+        <LogoPart>
+          <Logo>Dumpsters</Logo>
           <Text>
-            A Unique giftcard purchasing business perfectly built for you.
+            reduce waste, promote recycling, and proper waste disposal.
           </Text>
-          <NavLink to="/get-started" style={{ textDecoration: "none" }}>
-            <GlobalButton
-              text="Create an account"
-              bg="#03B903"
-              col="#fff"
-              padding="10px 20px"
-            />
-          </NavLink>
         </LogoPart>
         <Connect>
           <Heading>Company</Heading>
@@ -43,13 +33,33 @@ const Footer = () => {
           <Trailing>
             <FaLinkedin style={{ fontSize: "20px" }} /> LinkedIn
           </Trailing>
-        </Company> */}
+        </Company>
       </Container>
+      <Copyright>
+        <p>copyright © {new Date().getFullYear()} Dumpsters ♻️🌍</p>
+      </Copyright>
     </div>
   );
 };
 
 export default Footer;
+
+const Copyright = styled.div`
+  width: 100%;
+  height: 7vh;
+  border-top: 2px solid #fff;
+  background-color: #f9f9fb;
+  display: flex;
+  align-items: center;
+
+  p {
+    width: 95%;
+
+    margin: auto;
+
+    font-size: 13px;
+  }
+`;
 
 const Container = styled.div`
   font-size: 12px;
@@ -58,51 +68,55 @@ const Container = styled.div`
     font-size: 18px;
     width: 100%;
     height: 30vh;
-    margin-top: 50px;
-    /* padding: 50px; */
-    /* margin: auto; */
-    margin-bottom: 20px;
+    margin-top: 80px;
+    background-color: #f9f9fb;
   }
-  /* border-radius: 10px; */
-  /* margin: 10px; */
-  /* padding: 15px; */
-  background-color: #f5d4d4;
+
+  background-color: #f9f9fb;
   color: #525151;
   display: flex;
+  margin-top: 50px;
 
   flex-wrap: wrap;
   gap: 100px;
 `;
-// const LogoPart = styled.div``;
-// const Company = styled.div``;
-// const Heading = styled.div`
-//   font-size: 14px;
-//   @media screen and (min-width: 1000px) {
-//     font-size: 18px;
-//   }
-//   font-weight: 600;
-// `;
-// const Trailing = styled.div`
-//   margin-top: 10px;
-//   margin-bottom: 10px;
-//   font-size: 14px;
-//   display: flex;
-//   align-items: center;
-//   gap: 10px;
-//   cursor: pointer;
-//   :hover {
-//     color: #03b903;
-//   }
-// `;
-// const Connect = styled.div``;
-// const Logo = styled.div`
-//   font-weight: 600;
-//   color: #03b903;
-// `;
-// const Text = styled.div`
-//   margin-top: 20px;
-//   margin-bottom: 20px;
-//   width: 70%;
-//   font-size: 15px;
-//   line-height: 1.2rem;
-// `;
+const LogoPart = styled.div`
+  margin: 40px;
+`;
+const Company = styled.div`
+  margin: 40px;
+`;
+const Heading = styled.div`
+  font-size: 14px;
+  @media screen and (min-width: 1000px) {
+    font-size: 18px;
+  }
+  font-weight: 600;
+`;
+const Trailing = styled.div`
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  :hover {
+    color: #03b903;
+  }
+`;
+const Connect = styled.div`
+  margin: 40px;
+`;
+const Logo = styled.div`
+  font-weight: 600;
+  color: #03b903;
+`;
+const Text = styled.div`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 70%;
+  font-size: 15px;
+  line-height: 1.2rem;
+  text-transform: capitalize;
+`;

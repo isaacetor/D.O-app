@@ -34,7 +34,7 @@ const AuthSideBar: FC<authPropsData> = ({
               color: "#fff",
             }}
           >
-            <h2>GREENWASTE</h2>
+            <h2>DUMPSTERS</h2>
           </NavLink>
 
           <Title>

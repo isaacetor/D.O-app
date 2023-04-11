@@ -40,6 +40,10 @@ const UserRegister = () => {
               <input type="text" required />
             </InputHold>
             <InputHold>
+              <span>Select Station</span>
+              <input type="text" required />
+            </InputHold>
+            <InputHold>
               <span>Password</span>
               <input type="password" required />
             </InputHold>

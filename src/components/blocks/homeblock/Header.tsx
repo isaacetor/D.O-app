@@ -60,7 +60,7 @@ const Header = () => {
         >
           <Wrapper border={show ? "" : "none"}>
             <LogoNav>
-              <Logo onClick={backToTop}>GreenWaste</Logo>
+              <Logo onClick={backToTop}>Dumpsters</Logo>
               <Nav>
                 <Navigation onClick={toHero}>Home</Navigation>
                 <Navigation onClick={toAbout}>About</Navigation>
@@ -70,7 +70,7 @@ const Header = () => {
             </LogoNav>
 
             <ButtonHold>
-              <NavLink to="/get-started" style={{ textDecoration: "none" }}>
+              <NavLink to="/user/register" style={{ textDecoration: "none" }}>
                 <GlobalButton
                   text="Create an account"
                   bg="#03B903"
@@ -104,7 +104,7 @@ const Header = () => {
             </LogoNav>
 
             <ButtonHold>
-              <NavLink to="/get-started" style={{ textDecoration: "none" }}>
+              <NavLink to="/user/register" style={{ textDecoration: "none" }}>
                 <GlobalButton
                   text="Create an account"
                   bg="#03B903"
