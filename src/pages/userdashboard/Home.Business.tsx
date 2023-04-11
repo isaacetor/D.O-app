@@ -103,7 +103,7 @@ const BusinessHome = () => {
               </div>
               <CardButton>Custom Request</CardButton>
             </CardComponent>
-            <CardComponent2>
+            {/* <CardComponent2>
               <CardImage2>
                 <img src={two} />
               </CardImage2>
@@ -114,7 +114,7 @@ const BusinessHome = () => {
                 </LText2>
               </div>
               <CardButton2>Contact Us</CardButton2>
-            </CardComponent2>
+            </CardComponent2> */}
           </Cards>
           <Pending>
             <div style={{ marginBottom: "10px", fontWeight: "bold" }}>
@@ -370,7 +370,8 @@ const CardButton = styled.button`
   transition: all 350ms;
   :hover {
     cursor: pointer;
-    background-color: #03b903;
+    color: #03b903;
+    background-color: #fff;
   }
 `;
 const HText1 = styled.div`
