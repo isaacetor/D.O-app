@@ -18,8 +18,8 @@ const BusinessHome = () => {
       <Head>
         <InHead>
           <Message>
-            Welcome
-            <span style={{ marginLeft: "5px" }}>Judith.....</span>
+            Welcome,
+            <span style={{ marginLeft: "5px" }}>Judith</span>
           </Message>
           <SeeBalance>
             <BalanceDetails>
@@ -103,7 +103,7 @@ const BusinessHome = () => {
               </div>
               <CardButton>Custom Request</CardButton>
             </CardComponent>
-            <CardComponent2>
+            {/* <CardComponent2>
               <CardImage2>
                 <img src={two} />
               </CardImage2>
@@ -114,7 +114,7 @@ const BusinessHome = () => {
                 </LText2>
               </div>
               <CardButton2>Contact Us</CardButton2>
-            </CardComponent2>
+            </CardComponent2> */}
           </Cards>
           <Pending>
             <div style={{ marginBottom: "10px", fontWeight: "bold" }}>
@@ -157,7 +157,7 @@ const Container = styled.div`
   }
 `;
 const Head = styled.div`
-  width: 100%;
+  width: 83%;
   max-height: 200px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -165,7 +165,7 @@ const Head = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
 `;
@@ -173,6 +173,7 @@ const InHead = styled.div`
   width: 90%;
   display: flex;
   flex-direction: column;
+
   gap: 30px;
 
   @media screen and (max-width: 799px) {
@@ -181,6 +182,7 @@ const InHead = styled.div`
 `;
 const Message = styled.div`
   font-size: 18px;
+
   span {
     font-weight: 600;
   }
@@ -226,7 +228,7 @@ const WithdrawButton = styled.button`
 const Body = styled.div`
   width: 100%;
   color: #3d3d3d;
-  margin-top: 30px;
+  margin-top: 170px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -256,8 +258,8 @@ const QuickContain = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
 `;
 const QuickWrap = styled.div`
   width: 100%;
@@ -361,8 +363,8 @@ const CardComponent = styled.div`
 const CardButton = styled.button`
   max-width: 200px;
   border-radius: 5px;
-  color: white;
-  background-color: orange;
+  background-color: white;
+  color: #03b903;
   border: none;
   outline: none;
   font-weight: bold;
@@ -370,13 +372,16 @@ const CardButton = styled.button`
   transition: all 350ms;
   :hover {
     cursor: pointer;
-    background-color: #03b903;
+    color: #fff;
+    border: 2px solid #fff;
+    background-color: transparent;
+    transform: scale(0.98);
   }
 `;
 const HText1 = styled.div`
   font-size: 25px;
   font-weight: bold;
-  color: orange;
+  color: #fff;
   @media screen and (min-width: 800px) {
     font-size: 29px;
   }
