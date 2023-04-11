@@ -45,6 +45,7 @@ const BusinessHome = () => {
           </SeeBalance>
         </InHead>
       </Head>
+
       <Body>
         <InBody>
           <QuickActions>
@@ -149,7 +150,7 @@ const Container = styled.div`
   overflow-y: scroll;
   ::-webkit-scrollbar {
     width: 6px;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
   }
   ::-webkit-scrollbar-thumb {
     background-color: silver;
@@ -167,6 +168,7 @@ const Head = styled.div`
   align-items: center;
   position: fixed;
   top: 0;
+  margin-left: -12px;
   z-index: 1;
 `;
 const InHead = styled.div`
