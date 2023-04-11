@@ -4,6 +4,7 @@ import styled from "styled-components";
 import money from "../../Assets/money.webp";
 import hundred from "../../Assets/100.webp";
 import { NavLink } from "react-router-dom";
+import { AboutCard } from "../../components";
 
 const Hero = () => {
   return (
@@ -18,28 +19,31 @@ const Hero = () => {
             </div>
           </Head>
           <Cards>
-            {/* <AboutCard
-              logo={create}
-              heading="Create Account"
-              par="Create an account with your valid details and add your bank account / mobile money."
+            <AboutCard
+              // logo={create}
+              logo=""
+              heading="Create account"
+              par="Create an account with your valid details"
             />
             <AboutCard
-              logo={trade}
-              heading="Choose a Gift Card"
-              par="A business card allows you shop in a particular marketplace."
+              // logo={trade}
+              logo=""
+              heading="Fund account "
+              par="Credit your account to be able to make trash pick up rrequest right in the app"
             />{" "}
             <AboutCard
-              logo={wait}
-              heading="Buy a Gift Card"
-              par="Make payment to purchase a Gift Card through KoraPay's secure payment platform."
+              // logo={wait}
+              logo=""
+              heading="Make a request"
+              par="Request for your trash pick up at a time convenient for you."
             />{" "}
             <AboutCard
-              logo={withdraw}
-              heading="Use the Gift Card"
-              par="You can excercise a gift card's value on purchasing products across our registered businesses without cash or money transfer"
+              // logo={withdraw}
+              logo=""
+              heading="Close a request"
+              par="After trash pick up, you can close the request to show that your trash has been picked up"
             />{" "}
-           
-            <Picture2 src={pic} /> */}
+            {/* <Picture2 src={pic} /> */}
           </Cards>
         </Wrapper>
       </Container>

@@ -18,3 +18,11 @@ export type GlobalButtonProp = {
 export type userData = {
   name: string;
 };
+
+//types for the about section in the landing page
+
+export type aBout = {
+  logo: any;
+  heading: string;
+  par: string;
+};

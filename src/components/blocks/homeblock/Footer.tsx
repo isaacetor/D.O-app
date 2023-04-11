@@ -8,21 +8,21 @@ const Footer = () => {
   return (
     <div>
       <Container>
-        {/* <LogoPart>
+        <LogoPart>
           <Logo>MAVERICKS</Logo>
           <Text>
             A Unique giftcard purchasing business perfectly built for you.
           </Text>
-          <NavLink to="/get-started" style={{ textDecoration: "none" }}>
+          {/* <NavLink to="/get-started" style={{ textDecoration: "none" }}>
             <GlobalButton
               text="Create an account"
               bg="#03B903"
               col="#fff"
               padding="10px 20px"
             />
-          </NavLink>
+          </NavLink> */}
         </LogoPart>
-        <Connect>
+        {/* <Connect>
           <Heading>Company</Heading>
           <Trailing>About us</Trailing>
           <Trailing>Terms</Trailing>
@@ -58,51 +58,58 @@ const Container = styled.div`
     font-size: 18px;
     width: 100%;
     height: 30vh;
-    margin-top: 50px;
+    margin-top: 80px;
+    background-color: #f9f9fb;
     /* padding: 50px; */
     /* margin: auto; */
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
   /* border-radius: 10px; */
   /* margin: 10px; */
   /* padding: 15px; */
-  background-color: #f5d4d4;
+  background-color: #ffff;
   color: #525151;
   display: flex;
 
   flex-wrap: wrap;
   gap: 100px;
 `;
-// const LogoPart = styled.div``;
-// const Company = styled.div``;
-// const Heading = styled.div`
-//   font-size: 14px;
-//   @media screen and (min-width: 1000px) {
-//     font-size: 18px;
-//   }
-//   font-weight: 600;
-// `;
-// const Trailing = styled.div`
-//   margin-top: 10px;
-//   margin-bottom: 10px;
-//   font-size: 14px;
-//   display: flex;
-//   align-items: center;
-//   gap: 10px;
-//   cursor: pointer;
-//   :hover {
-//     color: #03b903;
-//   }
-// `;
-// const Connect = styled.div``;
-// const Logo = styled.div`
-//   font-weight: 600;
-//   color: #03b903;
-// `;
-// const Text = styled.div`
-//   margin-top: 20px;
-//   margin-bottom: 20px;
-//   width: 70%;
-//   font-size: 15px;
-//   line-height: 1.2rem;
-// `;
+const LogoPart = styled.div`
+  margin: 40px;
+`;
+const Company = styled.div`
+  margin: 40px;
+`;
+const Heading = styled.div`
+  font-size: 14px;
+  @media screen and (min-width: 1000px) {
+    font-size: 18px;
+  }
+  font-weight: 600;
+`;
+const Trailing = styled.div`
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  :hover {
+    color: #03b903;
+  }
+`;
+const Connect = styled.div`
+  margin: 40px;
+`;
+const Logo = styled.div`
+  font-weight: 600;
+  color: #03b903;
+`;
+const Text = styled.div`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 70%;
+  font-size: 15px;
+  line-height: 1.2rem;
+`;
