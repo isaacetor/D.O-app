@@ -19,7 +19,8 @@ const BusinessHome = () => {
         <InHead>
           <Message>
             Welcome,
-            <span style={{ marginLeft: "5px" }}>Judith</span>
+            {/* <span> {user?.name}</span> */}
+            <span> Judith</span>
           </Message>
           <SeeBalance>
             <BalanceDetails>
@@ -39,9 +40,16 @@ const BusinessHome = () => {
                   )}
                 </div>
               </Viewer>
-              {show ? <Info> ₦2300.00</Info> : <Info>*******</Info>}
+              {show ? (
+                <Info>
+                  {/* ₦{user?.Balance}.00</Info> */}
+                  ₦2800.00
+                </Info>
+              ) : (
+                <Info>*******</Info>
+              )}
             </BalanceDetails>
-            <WithdrawButton>Make Payment</WithdrawButton>
+            <WithdrawButton>Make Request</WithdrawButton>
           </SeeBalance>
         </InHead>
       </Head>
@@ -104,7 +112,7 @@ const BusinessHome = () => {
               </div>
               <CardButton>Custom Request</CardButton>
             </CardComponent>
-            {/* <CardComponent2>
+            <CardComponent2>
               <CardImage2>
                 <img src={two} />
               </CardImage2>
@@ -115,7 +123,7 @@ const BusinessHome = () => {
                 </LText2>
               </div>
               <CardButton2>Contact Us</CardButton2>
-            </CardComponent2> */}
+            </CardComponent2>
           </Cards>
           <Pending>
             <div style={{ marginBottom: "10px", fontWeight: "bold" }}>
@@ -143,19 +151,8 @@ const BusinessHome = () => {
 export default BusinessHome;
 
 const Container = styled.div`
-  width: 100%;
-  /* overflow: hidden; */
-  color: #3d3d3d;
-  gap: 30px;
-  overflow-y: scroll;
-  ::-webkit-scrollbar {
-    width: 6px;
-    /* background-color: #f5f5f5; */
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: silver;
-    border-radius: 10px;
-  }
+  width: calc(100vw - 270px);
+  /* background-color: rebeccapurple; */
 `;
 const Head = styled.div`
   width: 83%;
@@ -175,7 +172,6 @@ const InHead = styled.div`
   width: 90%;
   display: flex;
   flex-direction: column;
-
   gap: 30px;
 
   @media screen and (max-width: 799px) {
@@ -184,7 +180,6 @@ const InHead = styled.div`
 `;
 const Message = styled.div`
   font-size: 18px;
-
   span {
     font-weight: 600;
   }
@@ -224,7 +219,7 @@ const WithdrawButton = styled.button`
   transition: all 350ms;
   :hover {
     cursor: pointer;
-    background-color: #03b903;
+    background-color: #01a001;
   }
 `;
 const Body = styled.div`

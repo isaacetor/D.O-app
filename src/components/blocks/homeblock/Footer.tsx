@@ -67,15 +67,13 @@ const Container = styled.div`
   @media screen and (min-width: 1000px) {
     font-size: 18px;
     width: 100%;
-    height: 30vh;
-    margin-top: 80px;
+    /* height: 30vh; */
     background-color: #f9f9fb;
   }
 
   background-color: #f9f9fb;
   color: #525151;
   display: flex;
-  margin-top: 50px;
 
   flex-wrap: wrap;
   gap: 100px;

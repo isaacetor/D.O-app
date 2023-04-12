@@ -1,3 +1,12 @@
+//types for user dashboard navigation
+export type iBars = {
+  pic: any;
+  routeName: string;
+  cl: string;
+  bd: string;
+  hov: string;
+};
+
 //types for managing props state for user and agent auth sidebar
 export type authPropsData = {
   title: string;
