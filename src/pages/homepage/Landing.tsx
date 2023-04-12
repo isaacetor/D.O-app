@@ -3,6 +3,7 @@ import Hero from "./Hero";
 import Awareness from "./Awareness";
 import Steps from "./Steps";
 import GetStarted from "./GetStarted";
+import Block from "./Block";
 
 const Landing = () => {
   return (
@@ -11,6 +12,7 @@ const Landing = () => {
       <Awareness />
       <Steps />
       <GetStarted />
+      <Block />
     </div>
   );
 };

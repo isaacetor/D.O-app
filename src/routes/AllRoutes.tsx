@@ -13,6 +13,7 @@ import {
   Landing,
   MakePayment,
   MakeRequest,
+  Profile,
   UserHome,
   UserLogin,
   UserRegister,
@@ -57,6 +58,12 @@ export const element = createBrowserRouter([
       {
         path: "feedback",
         element: <Feedback />,
+        errorElement: <ErrorBoundary />,
+        hasErrorBoundary: true,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },

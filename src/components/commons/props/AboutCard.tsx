@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { aBout } from "../../types";
+import { aBout } from "../../../types";
 import styled from "styled-components";
 
 const AboutCard: FC<aBout> = ({ logo, par, heading }) => {

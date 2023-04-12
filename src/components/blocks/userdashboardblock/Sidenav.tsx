@@ -1,154 +1,207 @@
 import React from "react";
-import { RxDashboard } from "react-icons/rx";
-import { BiSupport, BiLogOut } from "react-icons/bi";
-import { BsPerson, BsWallet2 } from "react-icons/bs";
-import { RiBillLine } from "react-icons/ri";
 import styled from "styled-components";
+import { HiHome, HiBell } from "react-icons/hi";
+import { GiCardPickup } from "react-icons/gi";
+import { FaWallet } from "react-icons/fa";
+import { AiFillMessage } from "react-icons/ai";
+import { CiLogout } from "react-icons/ci";
+import { BsPersonFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+// import { UseAppDispatch } from "../../../Global/Store";
+// import { logout as LogOut } from "../../../Global/ReduxState";
+import { Navbars } from "../../commons";
 
-import { NavLink, useNavigate } from "react-router-dom";
-// import { logOut } from "../../Global/ReduxState";
-// import { UseAppDispatch } from "../../Global/Store";
+const SideNav = () => {
+  const [home, setHome] = React.useState(true);
+  const [wallet, setWallet] = React.useState(true);
+  const [notify, setNotify] = React.useState(true);
+  const [support, setSupport] = React.useState(true);
+  const [account, setAccount] = React.useState(true);
+  const [logout, setLogout] = React.useState(true);
 
-const UserDashboardHeader = () => {
-  // const dispatch = UseAppDispatch();
   const navigate = useNavigate();
+  // const dispatch = UseAppDispatch();
 
   return (
     <div>
-      {/* <MobileWrapper> */}
       <Container>
         <Wrapper>
-          <LogoNav>
-            <Logo>
-              <h1>Continental</h1>
-            </Logo>
-            <Navigation>
-              <Nav to="/user">
-                <RxDashboard style={{ fontSize: "20px" }} /> Dashboard
-              </Nav>
-              <Nav to="/user/makerequest">
-                <RiBillLine style={{ fontSize: "20px" }} /> View Bill
-              </Nav>
-              <Nav to="/payment">
-                <BsWallet2 style={{ fontSize: "20px" }} />
-                Make Payment
-              </Nav>
-              <Nav to="/profile">
-                <BsPerson style={{ fontSize: "20px" }} />
-                Profile
-              </Nav>
-            </Navigation>
-          </LogoNav>
+          <Logo>Dumpsters</Logo>
 
-          <LogOut
+          <Bars>
+            <div
+              onClick={() => {
+                setHome(false);
+
+                setWallet(true);
+                setNotify(true);
+                setSupport(true);
+                setAccount(true);
+                setLogout(true);
+                navigate("/user");
+              }}
+            >
+              <Navbars
+                pic={<HiHome />}
+                routeName="Home"
+                cl={home ? "#f1f1f1" : "white"}
+                bd={home ? "" : "4px solid white"}
+                hov={home ? " #03B903F" : ""}
+              />
+            </div>
+
+            <div
+              onClick={() => {
+                setHome(true);
+
+                setWallet(false);
+                setNotify(true);
+                setSupport(true);
+                setAccount(true);
+                setLogout(true);
+                navigate("makepayment");
+              }}
+            >
+              <Navbars
+                pic={<FaWallet />}
+                routeName="Make Payment"
+                cl={wallet ? "#f1f1f1" : "white"}
+                bd={wallet ? "" : "4px solid white"}
+                hov={wallet ? " #03B903" : ""}
+              />
+            </div>
+            <div
+              onClick={() => {
+                setHome(true);
+
+                setWallet(true);
+                setNotify(false);
+                setSupport(true);
+                setAccount(true);
+                setLogout(true);
+                navigate("makerequest");
+              }}
+            >
+              <Navbars
+                pic={<GiCardPickup />}
+                routeName="Make Request"
+                cl={notify ? "#f1f1f1" : "white"}
+                bd={notify ? "" : "4px solid white"}
+                hov={notify ? " #03B903" : ""}
+              />
+            </div>
+            <div
+              onClick={() => {
+                setHome(true);
+
+                setWallet(true);
+                setNotify(true);
+                setSupport(false);
+                setAccount(true);
+                setLogout(true);
+                navigate("feedback");
+              }}
+            >
+              <Navbars
+                pic={<AiFillMessage />}
+                routeName="Support"
+                cl={support ? "#f1f1f1" : "white"}
+                bd={support ? "" : "4px solid white"}
+                hov={support ? " #03B903" : ""}
+              />
+            </div>
+            <div
+              onClick={() => {
+                setHome(true);
+
+                setWallet(true);
+                setNotify(true);
+                setSupport(true);
+                setAccount(false);
+                setLogout(true);
+                navigate("profile");
+              }}
+            >
+              <Navbars
+                pic={<BsPersonFill />}
+                routeName="Profile"
+                cl={account ? "#f1f1f1" : "white"}
+                bd={account ? "" : "4px solid white"}
+                hov={account ? " #03B903" : ""}
+              />
+            </div>
+          </Bars>
+          <div
             onClick={() => {
-              // dispatch(logOut());
+              setHome(true);
+
+              setWallet(true);
+              setNotify(true);
+              setSupport(true);
+              setAccount(true);
+              setLogout(false);
+              // dispatch(LogOut());
               navigate("/");
             }}
           >
-            <BiLogOut style={{ fontSize: "20px" }} />
-            logout
-          </LogOut>
+            <Navbars
+              pic={<CiLogout />}
+              routeName="Log Out"
+              cl={logout ? "#f1f1f1" : "white"}
+              bd={logout ? "" : "4px solid white"}
+              hov={logout ? " #03B903" : ""}
+            />
+          </div>
         </Wrapper>
-        <MobileWrapper></MobileWrapper>
       </Container>
-      {/* </MobileWrapper> */}
     </div>
   );
 };
 
-export default UserDashboardHeader;
-
-const LogoNav = styled.div``;
-
-const LogOut = styled.a`
-  /* padding: 10px 20px; */
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  gap: 13px;
-  color: #fff;
-  font-weight: 300;
-
-  :hover {
-    cursor: pointer;
-  }
-`;
-
-const Nav = styled(NavLink)`
-  margin-bottom: 20px;
-  width: 100%;
-  height: 5vh;
-  text-decoration: none;
-  color: #fff;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  font-weight: 300;
-  transition: all ease;
-
-  :hover {
-    border-right: 3px solid #ff4500;
-  }
-`;
-
-const Navigation = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  border-bottom: 1px solid #ffffff1c;
-`;
-
-const Logo = styled.div`
-  color: #fff;
-
-  h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-`;
+export default SideNav;
 
 const Wrapper = styled.div`
+  width: 100%;
   height: 90%;
-  width: 80%;
   display: flex;
   justify-content: space-between;
+  align-items: right;
   flex-direction: column;
-`;
-
-const MobileWrapper = styled.div`
-  display: block;
-
-  @media screen and (max-width: 800px) {
-    display: block;
-    width: 100vw;
-    height: 10vh;
-    background-color: #03001c;
-    position: absolute;
-    overflow: hidden;
-    bottom: 0;
-    z-index: 9990px;
-  }
 `;
 
 const Container = styled.div`
   width: 270px;
   height: 100vh;
-
-  background: rgb(226, 24, 24);
-  background: linear-gradient(
-    159deg,
-     #03b903,#038f03
-  );
+  background-color: #009700;
+  padding-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   position: fixed;
   overflow: hidden;
 
   @media screen and (max-width: 800px) {
     display: none;
+  } ;
+`;
+const Logo = styled.div`
+  color: white;
+  font-weight: 700;
+  padding-left: 30px;
+  @media screen and (min-width: 801px) and (max-width: 1051px) {
+    display: none;
   }
+`;
+const Bars = styled.div`
+  width: 100%;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  @media screen and (min-width: 801px) and (max-width: 1051px) {
+    gap: 25px;
+  }
+  margin: 0;
+  padding: 0;
 `;

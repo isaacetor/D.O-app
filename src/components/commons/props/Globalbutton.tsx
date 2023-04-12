@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { GlobalButtonProp } from "../../types";
+import { GlobalButtonProp } from "../../../types";
 
 const Globalbutton: React.FC<GlobalButtonProp> = ({
   bg,

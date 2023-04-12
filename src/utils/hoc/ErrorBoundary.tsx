@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { BiErrorCircle } from "react-icons/bi";
-import Globalbutton from "../../components/commons/Globalbutton";
+import Globalbutton from "../../components/commons/props/Globalbutton";
 
 const ErrorBoundary = () => {
   const navigate = useNavigate();
