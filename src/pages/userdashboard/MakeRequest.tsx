@@ -45,6 +45,7 @@ const WasteBill = () => {
                 <MdModeEditOutline />
               </Hold>
             </InputHold>
+
             <InputHold>
               <span>Password</span>
               <Hold>
