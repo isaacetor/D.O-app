@@ -35,3 +35,9 @@ export type aBout = {
   heading: string;
   par: string;
 };
+
+export type userHeader = {
+  title: string;
+  button: string;
+  amount: string;
+};

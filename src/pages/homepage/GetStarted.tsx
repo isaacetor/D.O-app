@@ -125,6 +125,6 @@ const Cards = styled.div`
   gap: 20px;
   margin-top: 20px;
   @media screen and (min-width: 1200px) {
-    width: calc(75% - 40px);
+    width: calc(70% - 40px);
   }
 `;

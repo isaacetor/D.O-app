@@ -8,6 +8,7 @@ import two from "../../assets/two.svg";
 import { NavLink } from "react-router-dom";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { UserDashboardHeader } from "../../components";
 const BusinessHome = () => {
   const [show, setShow] = useState(false);
   // const user = useAppSelector((state) => state.bizClient);
@@ -15,45 +16,11 @@ const BusinessHome = () => {
 
   return (
     <Container>
-      <Head>
-        <InHead>
-          <Message>
-            Welcome,
-            {/* <span> {user?.name}</span> */}
-            <span> Judith</span>
-          </Message>
-          <SeeBalance>
-            <BalanceDetails>
-              <Viewer>
-                <div style={{ marginBottom: "5px" }}>Available balance</div>
-                <div
-                  onClick={() => {
-                    setShow(!show);
-                  }}
-                >
-                  {show ? (
-                    <AiFillEye style={{ marginTop: "5px", fontSize: "30px" }} />
-                  ) : (
-                    <AiFillEyeInvisible
-                      style={{ marginTop: "5px", fontSize: "30px" }}
-                    />
-                  )}
-                </div>
-              </Viewer>
-              {show ? (
-                <Info>
-                  {/* ₦{user?.Balance}.00</Info> */}
-                  ₦2800.00
-                </Info>
-              ) : (
-                <Info>*******</Info>
-              )}
-            </BalanceDetails>
-            <WithdrawButton>Make Request</WithdrawButton>
-          </SeeBalance>
-        </InHead>
-      </Head>
-
+      <UserDashboardHeader
+        title={"Welcome"}
+        amount="N2000"
+        button="make request"
+      />
       <Body>
         <InBody>
           <QuickActions>

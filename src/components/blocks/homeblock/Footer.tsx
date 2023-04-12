@@ -47,7 +47,7 @@ export default Footer;
 const Copyright = styled.div`
   width: 100%;
   height: 7vh;
-  border-top: 2px solid #fff;
+  border-top: 2px solid #ffffff;
   background-color: #f9f9fb;
   display: flex;
   align-items: center;
