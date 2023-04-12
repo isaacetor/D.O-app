@@ -41,7 +41,17 @@ const UserRegister = () => {
             </InputHold>
             <InputHold>
               <span>Select Station</span>
-              <input type="text" required />
+              <select id="standard-select">
+                <option value="Option 1">Option 1</option>
+                <option value="Option 2">Option 2</option>
+                <option value="Option 3">Option 3</option>
+                <option value="Option 4">Option 4</option>
+                <option value="Option 5">Option 5</option>
+                <option value="Option length">
+                  Option that has too long of a value to fit
+                </option>
+              </select>
+              {/* <input type="text" required /> */}
             </InputHold>
             <InputHold>
               <span>Password</span>
@@ -165,6 +175,32 @@ const InputHold = styled.div`
     }
     @media screen and (max-width: 748px) {
       width: 90%;
+    }
+  }
+
+  select {
+    width: 72%;
+    height: 60px;
+    padding: 10px;
+    font-size: 17px;
+    color: #000000d5;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    outline: 0;
+
+    :focus {
+      border: 1px solid #03b903;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: 74%;
+    }
+    @media screen and (max-width: 748px) {
+      width: 95%;
+    }
+
+    option {
+      font-size: 18px;
     }
   }
 `;
