@@ -1,8 +1,48 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import * as yup from "yup";
+import Swal from "sweetalert2";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { NavLink, useNavigate } from "react-router-dom";
+// import { UseAppDispatch } from "../Global/Store";
+import { useMutation } from "@tanstack/react-query";
+import { createUser } from "../../../utils";
 
 const UserRegister = () => {
+  const navigate = useNavigate();
+
+  const userSchema = yup
+    .object({
+      name: yup.string().required("please enter a name"),
+      phoneNumber: yup.number().required("please your phone number"),
+      address: yup.string().required("please enter an email"),
+      station: yup.string().required("please enter an email"),
+      password: yup.string().required("please enter a password"),
+      confirmPassword: yup
+        .string()
+        .oneOf([yup.ref("password")], "passwords must match")
+        .required("please confirm your password"),
+    })
+    .required();
+  type formData = yup.InferType<typeof userSchema>;
+
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(userSchema),
+  });
+
+  const { data } = useMutation({
+    mutationKey: ["newUser"],
+    mutationFn: createUser,
+  });
+
+  console.log(`reading data`, data);
+
   return (
     <div>
       <Container>
