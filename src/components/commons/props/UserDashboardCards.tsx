@@ -49,6 +49,7 @@ const CardComponent = styled.div<{ bgcol1: string }>`
   border-radius: 20px;
   gap: 20px;
   width: 90%;
+
   /* padding: 20px; */
   background-color: ${({ bgcol1 }) => bgcol1};
   /* @media screen and (min-width: 670px) {
@@ -76,6 +77,7 @@ const CardButton = styled.button`
 const HText1 = styled.div<{ bigTextCol: string }>`
   font-size: 25px;
   font-weight: bold;
+  margin-top: 20px;
   color: ${({ bigTextCol }) => bigTextCol};
   @media screen and (min-width: 800px) {
     font-size: 29px;

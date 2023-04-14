@@ -78,6 +78,8 @@ const Header = () => {
                   padding="10px 20px"
                   bghovercolor=""
                   hgt="6vh"
+                  bor=""
+                  hovCol=""
                 />
               </NavLink>
             </ButtonHold>
@@ -114,6 +116,8 @@ const Header = () => {
                   padding="10px 20px"
                   bghovercolor=""
                   hgt="6vh"
+                  bor=""
+                  hovCol=""
                 />
               </NavLink>
             </ButtonHold>
