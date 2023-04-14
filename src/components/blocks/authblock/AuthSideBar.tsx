@@ -34,7 +34,7 @@ const AuthSideBar: FC<authPropsData> = ({
               color: "#fff",
             }}
           >
-            <h2>DUMPSTERS</h2>
+            <h2>ecobin</h2>
           </NavLink>
 
           <Title>
@@ -154,6 +154,7 @@ const Wrapper = styled.div`
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 2px;
+    text-transform: uppercase;
   }
 `;
 

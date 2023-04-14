@@ -26,7 +26,7 @@ const SideNav = () => {
     <div>
       <Container>
         <Wrapper>
-          <Logo>Dumpsters</Logo>
+          <Logo>Ecobin</Logo>
 
           <Bars>
             <div
