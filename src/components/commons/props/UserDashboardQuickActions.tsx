@@ -38,7 +38,7 @@ const UserDashboardQuick = () => {
               <p>Monthly Request 3/4</p>
             </QuickImage>
             <QuickComponent>
-              <HText>Sell Gift Cards</HText>
+              <HText>Make a Request with just a click</HText>
 
               <LText style={{ fontSize: "20px" }}>
                 Create and sell Gift Cards for your business
