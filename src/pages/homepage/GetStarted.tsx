@@ -122,9 +122,9 @@ const Cards = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   margin-top: 20px;
   @media screen and (min-width: 1200px) {
-    width: calc(70% - 40px);
+    width: calc(80% - 40px);
   }
 `;
