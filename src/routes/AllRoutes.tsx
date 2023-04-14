@@ -4,6 +4,7 @@ import {
   UserAuthLayout,
   HomeLayout,
   UserDashboardLayout,
+  StationDashboardlayout,
 } from "../components";
 import {
   AgentHome,
@@ -14,6 +15,7 @@ import {
   MakePayment,
   MakeRequest,
   Profile,
+  StationHome,
   UserHome,
   UserLogin,
   UserRegister,
@@ -112,6 +114,19 @@ export const element = createBrowserRouter([
       {
         index: true,
         element: <AgentRegister />,
+        errorElement: <ErrorBoundary />,
+        hasErrorBoundary: true,
+      },
+    ],
+  },
+
+  {
+    path: "/station",
+    element: <StationDashboardlayout />,
+    children: [
+      {
+        index: true,
+        element: <StationHome />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
