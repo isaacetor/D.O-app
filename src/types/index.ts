@@ -17,14 +17,14 @@ export type authPropsData = {
 
 //types for managing global buttons
 export type GlobalButtonProp = {
-  padding: string;
-  bg: string;
-  col: string;
-  text: string;
-  bghovercolor: string;
-  hgt: string;
-  bor: string;
-  hovCol: string;
+  padding?: string;
+  bg?: string;
+  col?: string;
+  text?: string;
+  bghovercolor?: string;
+  hgt?: string;
+  bor?: string;
+  hovCol?: string;
 };
 
 //types for managing user details
@@ -41,7 +41,9 @@ export type aBout = {
 };
 
 export type userHeader = {
-  title: string;
-  button: string;
-  amount: string;
+  title?: string;
+  button?: string;
+  amount?: string;
+  display: string;
+  height: string;
 };

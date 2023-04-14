@@ -5,7 +5,13 @@ import styled from "styled-components";
 
 const UserDashboardLayout = () => {
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        backgroundColor: "#fff",
+      }}
+    >
       <Sidenav />
       <Outlet />
     </div>
