@@ -173,12 +173,6 @@ const Container = styled.div`
   width: 270px;
   height: 100vh;
   background-color: #009700;
-  /* background: rgb(3, 185, 3);
-  background: linear-gradient(
-    180deg,
-    rgba(3, 185, 3, 1) 17%,
-    rgba(0, 151, 0, 1) 76%
-  ); */
   z-index: 10;
   padding-top: 10px;
   display: flex;

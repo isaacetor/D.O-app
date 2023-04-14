@@ -26,7 +26,6 @@ const Hero = () => {
           <Cards>
             <AboutCard
               logo={one}
-              // logo=""
               heading="Create account"
               par="Create an account with your valid details"
             />
@@ -44,7 +43,7 @@ const Hero = () => {
               logo={four}
               heading="Close a request"
               par="After trash pick up, you can close the request to show that your trash has been picked up"
-            />{" "}
+            />
             {/* <Picture2 src={pic} /> */}
           </Cards>
         </Wrapper>

@@ -3,16 +3,22 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import styled from "styled-components";
 import { userHeader } from "../../../types";
 
-const UserDashboardHeader: FC<userHeader> = ({ title, button, amount }) => {
+const UserDashboardHeader: FC<userHeader> = ({
+  title,
+  button,
+  amount,
+  display,
+  height,
+}: any) => {
   const [show, setShow] = useState(false);
   return (
     <div>
-      <Container>
+      <Container height={height}>
         <Head>
           <Message>
             <h1>{title}</h1>
           </Message>
-          <SeeBalance>
+          <SeeBalance display={display}>
             <BalanceDetails>
               <Viewer>
                 <div style={{ marginBottom: "5px" }}>Available balance</div>
@@ -83,10 +89,10 @@ const Message = styled.div`
     /* margin-top: 10px; */
   }
 `;
-const SeeBalance = styled.div`
+const SeeBalance = styled.div<{ display: string }>`
   color: blue;
   width: 100%;
-  display: flex;
+  display: ${({ display }) => display};
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -104,7 +110,6 @@ const Info = styled.div`
 const BalanceDetails = styled.div``;
 const WithdrawButton = styled.button`
   border-radius: 10px;
-
   color: white;
   background-color: #03b903;
   padding: 15px 60px;
@@ -119,14 +124,13 @@ const WithdrawButton = styled.button`
   }
 `;
 
-const Container = styled.div`
+const Container = styled.div<{ height: string }>`
   width: 100%;
-  height: 24vh;
-  background-color: #f9f4ff;
+  height: ${({ height }) => height};
+  background-color: #f4fff4;
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: rgb(130, 130, 130);
   box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
     rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
