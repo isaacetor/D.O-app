@@ -38,7 +38,7 @@ const UserDashboardQuick = () => {
               <p>Monthly Request 3/4</p>
             </QuickImage>
             <QuickComponent>
-              <HText>Sell Gift Cards</HText>
+              <HText>Make a Request with just a click</HText>
 
               <LText style={{ fontSize: "20px" }}>
                 Create and sell Gift Cards for your business
@@ -54,47 +54,6 @@ const UserDashboardQuick = () => {
           </QuickWrap>
         </QuickContain>
       </QuickActions>
-      <Cards>
-        <CardComponent>
-          <CardImage>
-            <img src={spiral} />
-          </CardImage>
-          <div>
-            <HText1>Quick Request</HText1>
-            <LText1 style={{ fontSize: "12px" }}>
-              custom request for events
-            </LText1>
-          </div>
-          <CardButton>Custom Request</CardButton>
-        </CardComponent>
-        <CardComponent2>
-          <CardImage2>
-            <img src={two} />
-          </CardImage2>
-          <div>
-            <HText2>Recycling</HText2>
-            <LText2 style={{ fontSize: "12px" }}>
-              Trade with us and get a credit score
-            </LText2>
-          </div>
-          <CardButton2>Contact Us</CardButton2>
-        </CardComponent2>
-      </Cards>
-      <Pending>
-        <div style={{ marginBottom: "10px", fontWeight: "bold" }}>History</div>
-        <PendingActions>
-          <div style={{ fontSize: "13px", fontWeight: "600" }}>
-            Set transaction pin
-          </div>
-          <PendSign>PENDING</PendSign>
-        </PendingActions>
-        <PendingActions>
-          <div style={{ fontSize: "13px", fontWeight: "600" }}>
-            Add default bank
-          </div>
-          <PendSign>PENDING</PendSign>
-        </PendingActions>
-      </Pending>
     </InBody>
   );
 };
@@ -104,6 +63,7 @@ const InBody = styled.div`
   display: flex;
   flex-direction: column;
   gap: 35px;
+  margin-top: 20px;
 `;
 const QuickActions = styled.div`
   display: flex;

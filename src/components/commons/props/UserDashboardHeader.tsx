@@ -12,54 +12,52 @@ const UserDashboardHeader: FC<userHeader> = ({
 }: any) => {
   const [show, setShow] = useState(false);
   return (
-    <div>
-      <Container height={height}>
-        <Head>
-          <Message>
-            <h1>{title}</h1>
-          </Message>
-          <SeeBalance display={display}>
-            <BalanceDetails>
-              <Viewer>
-                <div style={{ marginBottom: "5px" }}>Available balance</div>
-                <div
-                  onClick={() => {
-                    setShow(!show);
-                  }}
-                >
-                  {show ? (
-                    <AiFillEye
-                      style={{
-                        marginTop: "5px",
-                        fontSize: "30px",
-                        cursor: "pointer",
-                      }}
-                    />
-                  ) : (
-                    <AiFillEyeInvisible
-                      style={{
-                        marginTop: "5px",
-                        fontSize: "30px",
-                        cursor: "pointer",
-                      }}
-                    />
-                  )}
-                </div>
-              </Viewer>
-              {show ? (
-                <Info>
-                  {/* ₦{user?.Balance}.00</Info> */}
-                  {amount}
-                </Info>
-              ) : (
-                <Info>*******</Info>
-              )}
-            </BalanceDetails>
-            <WithdrawButton>{button}</WithdrawButton>
-          </SeeBalance>
-        </Head>
-      </Container>
-    </div>
+    <Container height={height}>
+      <Head>
+        <Message>
+          <h1>{title}</h1>
+        </Message>
+        <SeeBalance display={display}>
+          <BalanceDetails>
+            <Viewer>
+              <div style={{ marginBottom: "5px" }}>Available balance</div>
+              <div
+                onClick={() => {
+                  setShow(!show);
+                }}
+              >
+                {show ? (
+                  <AiFillEye
+                    style={{
+                      marginTop: "5px",
+                      fontSize: "30px",
+                      cursor: "pointer",
+                    }}
+                  />
+                ) : (
+                  <AiFillEyeInvisible
+                    style={{
+                      marginTop: "5px",
+                      fontSize: "30px",
+                      cursor: "pointer",
+                    }}
+                  />
+                )}
+              </div>
+            </Viewer>
+            {show ? (
+              <Info>
+                {/* ₦{user?.Balance}.00</Info> */}
+                {amount}
+              </Info>
+            ) : (
+              <Info>*******</Info>
+            )}
+          </BalanceDetails>
+          <WithdrawButton>{button}</WithdrawButton>
+        </SeeBalance>
+      </Head>
+    </Container>
   );
 };
 
@@ -125,16 +123,27 @@ const WithdrawButton = styled.button`
 `;
 
 const Container = styled.div<{ height: string }>`
-  width: 100%;
+  width: calc(100% - 270px);
   height: ${({ height }) => height};
-  background-color: #f4fff4;
+  background-color: #f9f4ff;
   display: flex;
   justify-content: center;
   align-items: center;
   color: rgb(130, 130, 130);
   box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
     rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
-  position: sticky;
+  position: fixed;
   top: 0px;
+  /* left: 0; */
+  right: 0;
+
   z-index: 5;
+
+  @media screen and (max-width: 1024px) {
+    width: calc(100vw - 70px);
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
 `;

@@ -76,6 +76,10 @@ const Header = () => {
                   bg="#03B903"
                   col="#fff"
                   padding="10px 20px"
+                  bghovercolor=""
+                  hgt="6vh"
+                  bor=""
+                  hovCol=""
                 />
               </NavLink>
             </ButtonHold>
@@ -110,6 +114,10 @@ const Header = () => {
                   bg="#03B903"
                   col="#fff"
                   padding="10px 20px"
+                  bghovercolor=""
+                  hgt="6vh"
+                  bor=""
+                  hovCol=""
                 />
               </NavLink>
             </ButtonHold>
