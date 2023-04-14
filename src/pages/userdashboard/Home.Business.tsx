@@ -10,6 +10,9 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { UserDashboardHeader } from "../../components";
 import { UserDashboardQuick } from "../../components";
+import { UserDashboardCards } from "../../components";
+import { UserDashboardHistory } from "../../components";
+import Globalbutton from "../../components/commons/props/Globalbutton";
 const BusinessHome = () => {
   const [show, setShow] = useState(false);
   // const user = useAppSelector((state) => state.bizClient);
@@ -24,13 +27,70 @@ const BusinessHome = () => {
       />
       <Body>
         <UserDashboardQuick />
+        <Hold>
+          <HoldC>
+            <UserDashboardCards
+              bgcol1=""
+              bigText="Make Request"
+              bigTextCol="#fff"
+              smallText="hhh"
+              smallTextCol="#fff"
+              imgPic=""
+            />
+            <Globalbutton
+              bg=""
+              col="#03b903"
+              padding="150px"
+              text="Make Request"
+              bghovercolor=""
+              hgt="6vh"
+            />
+          </HoldC>
+          <HoldC>
+            <UserDashboardCards
+              bgcol1=""
+              bigText="Custom Request"
+              bigTextCol="#fff"
+              smallText="hhh"
+              smallTextCol="#fff"
+              imgPic=""
+            />
+            <Globalbutton
+              bg=""
+              col="#03b903"
+              padding="150px"
+              text="Custom Request"
+              bghovercolor=""
+              hgt="6vh"
+            />
+          </HoldC>
+        </Hold>
+        <UserDashboardHistory />
       </Body>
     </Container>
   );
 };
 
 export default BusinessHome;
-
+const HoldC = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  background-color: #03b903;
+  width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  gap: 10px;
+  :nth-child(2) {
+    background-color: red;
+  }
+`;
+const Hold = styled.div`
+  display: flex;
+  width: 90%;
+  gap: 20px;
+`;
 const Container = styled.div`
   width: calc(100vw - 270px);
   /* background-color: rebeccapurple; */
@@ -111,6 +171,7 @@ const Body = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 35px;
 `;
 const InBody = styled.div`
   width: 90%;

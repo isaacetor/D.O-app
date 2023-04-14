@@ -21,6 +21,8 @@ export type GlobalButtonProp = {
   bg: string;
   col: string;
   text: string;
+  bghovercolor: string;
+  hgt: string;
 };
 
 //types for managing user details
