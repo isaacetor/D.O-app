@@ -42,8 +42,10 @@ const BusinessHome = () => {
               col="#03b903"
               padding="150px"
               text="Make Request"
-              bghovercolor=""
+              bghovercolor="transparent"
               hgt="6vh"
+              bor="2px solid #fff"
+              hovCol="#fff"
             />
           </HoldC>
           <HoldC>
@@ -57,11 +59,13 @@ const BusinessHome = () => {
             />
             <Globalbutton
               bg=""
-              col="#03b903"
+              col="blue"
               padding="150px"
               text="Custom Request"
-              bghovercolor=""
+              bghovercolor="transparent"
               hgt="6vh"
+              bor="2px solid #fff"
+              hovCol="#fff"
             />
           </HoldC>
         </Hold>
@@ -76,14 +80,13 @@ const HoldC = styled.div`
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
-  /* align-items: center; */
   background-color: #03b903;
   width: 400px;
   padding: 10px;
   border-radius: 10px;
   gap: 10px;
   :nth-child(2) {
-    background-color: red;
+    background-color: blue;
   }
 `;
 const Hold = styled.div`

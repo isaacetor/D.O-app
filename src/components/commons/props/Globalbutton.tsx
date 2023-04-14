@@ -9,6 +9,8 @@ const Globalbutton: React.FC<GlobalButtonProp> = ({
   text,
   bghovercolor,
   hgt,
+  bor,
+  hovCol,
 }) => {
   return (
     <Button
@@ -17,6 +19,8 @@ const Globalbutton: React.FC<GlobalButtonProp> = ({
       padding={padding}
       bghovercolor={bghovercolor}
       hgt={hgt}
+      bor={bor}
+      hovCol={hovCol}
     >
       {text}
     </Button>
@@ -31,6 +35,8 @@ const Button = styled.button<{
   col: string;
   bghovercolor: string;
   hgt: string;
+  bor: string;
+  hovCol: string;
 }>`
   width: ${({ padding }) => padding};
   color: ${(props) => props.col};
@@ -50,5 +56,8 @@ const Button = styled.button<{
   :hover {
     cursor: pointer;
     background-color: ${(props) => props.bghovercolor};
+    border: ${(props) => props.bor};
+    color: ${(props) => props.hovCol};
+    transform: scale(0.98);
   }
 `;
