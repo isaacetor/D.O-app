@@ -11,7 +11,7 @@ const Globalbutton: React.FC<GlobalButtonProp> = ({
   hgt,
   bor,
   hovCol,
-}) => {
+}: any) => {
   return (
     <Button
       bg={bg}

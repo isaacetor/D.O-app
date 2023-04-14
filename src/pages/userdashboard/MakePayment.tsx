@@ -6,9 +6,11 @@ const MakePayment = () => {
     <div>
       <Container>
         <UserDashboardHeader
-          title="Waller"
+          title="Wallet"
           amount="N2000"
           button="Make Request"
+          display="flex"
+          height="24vh"
         />
       </Container>
     </div>

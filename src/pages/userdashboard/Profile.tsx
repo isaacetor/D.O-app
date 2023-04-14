@@ -1,6 +1,7 @@
 import React from "react";
 import { MdModeEditOutline } from "react-icons/md";
 import styled from "styled-components";
+import { GlobalButton } from "../../components";
 
 const Profile = () => {
   return (
@@ -15,45 +16,45 @@ const Profile = () => {
               <InputHold2>
                 <span>Name</span>
                 <Hold>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Judith Ugbo"
-                    style={{ cursor: "not-allowed" }}
-                  />
-                  <MdModeEditOutline />
+                  <span>jusith ugbo</span>
                 </Hold>
               </InputHold2>
               <InputHold2>
+                <span>Email</span>
+                <Hold>
+                  <input type="text" placeholder="your Number" />
+                </Hold>
+              </InputHold2>
+            </InputHold1>
+            <InputHold1>
+              <InputHold2>
                 <span>Phone Number</span>
                 <Hold>
-                  <input type="text" required placeholder="0904775747632" />
-                  <MdModeEditOutline />
+                  <input type="text" placeholder="your Number" />
+                </Hold>
+              </InputHold2>
+              <InputHold2>
+                <span>Address</span>
+                <Hold>
+                  <input type="text" placeholder="your address" />
+                </Hold>
+              </InputHold2>
+            </InputHold1>
+            <InputHold1>
+              <InputHold2>
+                <span>Station</span>
+                <Hold>
+                  <span>jusith ugbo</span>
                 </Hold>
               </InputHold2>
             </InputHold1>
 
-            <InputHold>
-              <span>Address</span>
-              <Hold>
-                <input
-                  type="text"
-                  required
-                  placeholder="3, Asafa Olodi Apapa Lagos"
-                />
-                <MdModeEditOutline />
-              </Hold>
-            </InputHold>
-
-            <InputHold>
-              <span>Password</span>
-              <Hold>
-                <input type="text" required />
-                <MdModeEditOutline />
-              </Hold>
-            </InputHold>
-
-            <Button type="submit"> Create account</Button>
+            <GlobalButton
+              padding="20px 30px"
+              col="#fff"
+              text="Update profile"
+              bg="#03B903"
+            />
           </Form>
         </Wrapper>
       </Container>
@@ -76,7 +77,7 @@ const Dp = styled.div`
 `;
 const Hold = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   width: 300px;
   height: 37px;
@@ -86,26 +87,14 @@ const Hold = styled.div`
   border: 2px solid #03b903;
   border-radius: 5px;
   outline: 0;
-  :nth-child(1) {
-    input {
-      ::placeholder {
-        color: red;
-      }
-    }
-  }
-`;
-const Button = styled.button`
-  padding: 20px 30px;
-  background-color: #03b903;
-  border: 0;
-  margin: 0;
-  margin-top: 30px;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 10px;
 
-  :hover {
-    cursor: pointer;
+  input {
+    font-size: 17px;
+
+    ::placeholder {
+      color: #000000da;
+      text-transform: capitalize;
+    }
   }
 `;
 
@@ -166,7 +155,7 @@ const InputHold2 = styled.div`
 const InputHold = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 
   span {
     margin: 0;
@@ -202,7 +191,6 @@ const Form = styled.form``;
 const Wrapper = styled.div`
   width: 85%;
   height: 85%;
-  /* background-color: pink; */
 
   h2 {
     margin: 0;
