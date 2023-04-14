@@ -1,117 +1,104 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import card from "../../assets/card.svg";
-import spiral from "../../assets/robo.svg";
-import two from "../../assets/two.svg";
-// import { useAppSelector } from "../../../Global/Store";
-import { NavLink } from "react-router-dom";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { UserDashboardHeader } from "../../components";
-import { UserDashboardQuick } from "../../components";
-const BusinessHome = () => {
-  const [show, setShow] = useState(false);
-  // const user = useAppSelector((state) => state.bizClient);
-  const percentage = 3;
+import spiral from "../../../assets/robo.svg";
+import two from "../../../assets/two.svg";
 
+import { NavLink } from "react-router-dom";
+
+const UserDashboardQuick = () => {
+  const percentage = 3;
   return (
-    <Container>
-      <UserDashboardHeader
-        title={"Welcome"}
-        amount="N2000"
-        button="make request"
-      />
-      <Body>
-        <UserDashboardQuick />
-      </Body>
-    </Container>
+    <InBody>
+      <QuickActions>
+        <h1>Quick Actions</h1>
+        <QuickContain>
+          <QuickWrap>
+            <QuickImage>
+              <CircularProgressbar
+                value={percentage}
+                maxValue={4}
+                text={`${percentage}`}
+                styles={{
+                  path: {
+                    // Path color
+                    stroke: `#2f7a2f`,
+                    strokeLinecap: "round",
+                    width: "10px",
+                  },
+                  text: {
+                    // Text color
+                    fill: "#5b3b3b",
+                    // Text size
+                    fontSize: "16px",
+                  },
+                }}
+              />
+              <p>Monthly Request 3/4</p>
+            </QuickImage>
+            <QuickComponent>
+              <HText>Sell Gift Cards</HText>
+
+              <LText style={{ fontSize: "20px" }}>
+                Create and sell Gift Cards for your business
+              </LText>
+
+              <NavLink
+                to="/dashboard/giftcard"
+                style={{ textDecoration: "none" }}
+              >
+                <Button>Make Request</Button>
+              </NavLink>
+            </QuickComponent>
+          </QuickWrap>
+        </QuickContain>
+      </QuickActions>
+      <Cards>
+        <CardComponent>
+          <CardImage>
+            <img src={spiral} />
+          </CardImage>
+          <div>
+            <HText1>Quick Request</HText1>
+            <LText1 style={{ fontSize: "12px" }}>
+              custom request for events
+            </LText1>
+          </div>
+          <CardButton>Custom Request</CardButton>
+        </CardComponent>
+        <CardComponent2>
+          <CardImage2>
+            <img src={two} />
+          </CardImage2>
+          <div>
+            <HText2>Recycling</HText2>
+            <LText2 style={{ fontSize: "12px" }}>
+              Trade with us and get a credit score
+            </LText2>
+          </div>
+          <CardButton2>Contact Us</CardButton2>
+        </CardComponent2>
+      </Cards>
+      <Pending>
+        <div style={{ marginBottom: "10px", fontWeight: "bold" }}>History</div>
+        <PendingActions>
+          <div style={{ fontSize: "13px", fontWeight: "600" }}>
+            Set transaction pin
+          </div>
+          <PendSign>PENDING</PendSign>
+        </PendingActions>
+        <PendingActions>
+          <div style={{ fontSize: "13px", fontWeight: "600" }}>
+            Add default bank
+          </div>
+          <PendSign>PENDING</PendSign>
+        </PendingActions>
+      </Pending>
+    </InBody>
   );
 };
-
-export default BusinessHome;
-
-const Container = styled.div`
-  width: calc(100vw - 270px);
-  /* background-color: rebeccapurple; */
-`;
-const Head = styled.div`
-  width: 83%;
-  max-height: 200px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #f1f1f1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  margin-left: -12px;
-  z-index: 1;
-`;
-const InHead = styled.div`
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-  @media screen and (max-width: 799px) {
-    gap: 15px;
-  }
-`;
-const Message = styled.div`
-  font-size: 18px;
-  span {
-    font-weight: 600;
-  }
-
-  @media screen and (max-width: 799px) {
-    /* margin-top: 10px; */
-  }
-`;
-const SeeBalance = styled.div`
-  color: blue;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-`;
-const Viewer = styled.div`
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  font-size: 17px;
-`;
-const Info = styled.div`
-  font-size: 20px;
-`;
-const BalanceDetails = styled.div``;
-const WithdrawButton = styled.button`
-  border-radius: 10px;
-  width: 250px;
-  color: white;
-  background-color: #03b903;
-  padding: 15px 60px;
-  border: none;
-  outline: none;
-  font-size: 17px;
-  margin-top: 30px;
-  transition: all 350ms;
-  :hover {
-    cursor: pointer;
-    background-color: #01a001;
-  }
-`;
-const Body = styled.div`
-  width: 100%;
-  color: #3d3d3d;
-  margin-top: 170px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+export default UserDashboardQuick;
 const InBody = styled.div`
   width: 90%;
   display: flex;
