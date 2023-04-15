@@ -63,7 +63,7 @@ const InBody = styled.div`
   display: flex;
   flex-direction: column;
   gap: 35px;
-  margin-top: 20px;
+  margin-top: 30px;
 `;
 const QuickActions = styled.div`
   display: flex;

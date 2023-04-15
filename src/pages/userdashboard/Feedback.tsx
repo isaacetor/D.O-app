@@ -18,4 +18,8 @@ export default Feedback;
 
 const Container = styled.div`
   width: calc(100% - 270px);
+
+  @media screen and (max-width: 1024px) {
+    width: calc(100% - 70px);
+  }
 `;
