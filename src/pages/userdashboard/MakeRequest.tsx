@@ -21,6 +21,4 @@ const Body = styled.div`
   color: #fff;
 `;
 
-const Container = styled.div`
-  /* width: calc(100vw - 270px); */
-`;
+const Container = styled.div``;

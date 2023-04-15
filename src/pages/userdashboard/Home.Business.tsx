@@ -73,7 +73,6 @@ export default BusinessHome;
 const HoldC = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   background-color: #03b903;
   width: 400px;
   padding: 30px;
@@ -99,8 +98,6 @@ const Hold = styled.div`
 `;
 const Container = styled.div`
   width: calc(100vw - 270px);
-  /* width: 100%; */
-  /* background-color: rebeccapurple; */
 
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
@@ -110,10 +107,11 @@ const Body = styled.div`
   width: 100%;
   color: #3d3d3d;
   margin-top: 200px;
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 35px;
 
   @media screen and (max-width: 1024px) {
