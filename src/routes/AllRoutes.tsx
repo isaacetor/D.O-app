@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import {
-  AgentAuthLayout,
+  DirectorDashboardLayout,
   UserAuthLayout,
   HomeLayout,
   UserDashboardLayout,
@@ -107,12 +107,12 @@ export const element = createBrowserRouter([
 
   //agent Authentication routes
   {
-    path: "/agent/login",
-    element: <AgentAuthLayout />,
+    path: "/director",
+    element: <DirectorDashboardLayout />,
     children: [
       {
         index: true,
-        element: <AgentLogin />,
+        element: <AgentHome />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
@@ -120,7 +120,7 @@ export const element = createBrowserRouter([
   },
   {
     path: "/agent/register",
-    element: <AgentAuthLayout />,
+    element: <DirectorDashboardLayout />,
     children: [
       {
         index: true,
