@@ -1,8 +1,12 @@
+import { yupResolver } from "@hookform/resolvers/yup";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const AgentRegister = () => {
+  const navigate = useNavigate();
+
+  const agentSchema = yupResolver;
   return (
     <div>
       <Container>
@@ -57,14 +61,6 @@ const AgentRegister = () => {
                 type="password"
                 required
                 placeholder="please enter a strong password"
-              />
-            </InputHold>
-            <InputHold>
-              <span>Confirm password</span>
-              <input
-                type="password"
-                required
-                placeholder="please confirm your password"
               />
             </InputHold>
 

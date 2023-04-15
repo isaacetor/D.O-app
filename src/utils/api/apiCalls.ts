@@ -1,5 +1,5 @@
 import axios from "axios";
-import { userData } from "../../types";
+import { agentData, userData } from "../../types";
 
 const createUser = async (data: userData) => {
   return await axios
@@ -11,5 +11,14 @@ const createUser = async (data: userData) => {
 };
 
 const AllUsers = async () => {};
+
+const createAgent = async (data: agentData) => {
+  return await axios
+    .post("/register-agents", data)
+    .then((res) => res.data)
+    .catch((err) => {
+      return err;
+    });
+};
 
 export { createUser, AllUsers };
