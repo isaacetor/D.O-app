@@ -42,7 +42,7 @@ const Button = styled.button<{
   color: ${(props) => props.col};
   background-color: ${(props) => props.bg};
   height: ${(props) => props.hgt};
-  font-size: 14px;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
