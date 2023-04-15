@@ -71,18 +71,17 @@ const BusinessHome = () => {
 
 export default BusinessHome;
 const HoldC = styled.div`
-  padding: 20px;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   background-color: #03b903;
   width: 400px;
-  padding: 10px;
+  padding: 30px;
   border-radius: 10px;
-  gap: 10px;
+  gap: 30px;
 
   :nth-child(2) {
-    background-color: blue;
+    background-color: #3c37ff;
   }
 
   @media screen and (max-width: 1024px) {

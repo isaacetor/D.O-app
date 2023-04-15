@@ -63,7 +63,7 @@ const InBody = styled.div`
   display: flex;
   flex-direction: column;
   gap: 35px;
-  margin-top: 20px;
+  margin-top: 30px;
 `;
 const QuickActions = styled.div`
   display: flex;
@@ -78,13 +78,20 @@ const QuickActions = styled.div`
 `;
 const QuickContain = styled.div`
   width: 100%;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background: rgb(3, 185, 3);
+  background: linear-gradient(
+    180deg,
+    rgba(3, 185, 3, 1) 38%,
+    rgba(60, 55, 255, 1) 76%
+  );
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 `;
 const QuickWrap = styled.div`
   width: 100%;
