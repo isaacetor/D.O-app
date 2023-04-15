@@ -59,12 +59,12 @@ const StationSideNav = () => {
                 setSupport(true);
                 setAccount(true);
                 setLogout(true);
-                navigate("makepayment");
+                navigate("mallam");
               }}
             >
               <Navbars
                 pic={<FaWallet />}
-                routeName="Make Payment"
+                routeName="Register Mallam"
                 cl={wallet ? "#f1f1f1" : "white"}
                 bd={wallet ? "" : "4px solid white"}
                 hov={wallet ? " #03B903" : ""}
@@ -79,12 +79,12 @@ const StationSideNav = () => {
                 setSupport(true);
                 setAccount(true);
                 setLogout(true);
-                navigate("makerequest");
+                navigate("notify");
               }}
             >
               <Navbars
                 pic={<GiCardPickup />}
-                routeName="Make Request"
+                routeName="Notification"
                 cl={notify ? "#f1f1f1" : "white"}
                 bd={notify ? "" : "4px solid white"}
                 hov={notify ? " #03B903" : ""}
@@ -99,12 +99,12 @@ const StationSideNav = () => {
                 setSupport(false);
                 setAccount(true);
                 setLogout(true);
-                navigate("feedback");
+                navigate("assign");
               }}
             >
               <Navbars
                 pic={<AiFillMessage />}
-                routeName="Support"
+                routeName="Assign Mallam"
                 cl={support ? "#f1f1f1" : "white"}
                 bd={support ? "" : "4px solid white"}
                 hov={support ? " #03B903" : ""}

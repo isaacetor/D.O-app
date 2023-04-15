@@ -21,6 +21,9 @@ import {
   UserRegister,
 } from "../pages";
 import { ErrorBoundary, NotFound } from "../utils";
+import Registermallam from "../pages/stationdashboard/Registermallam";
+import Notification from "../pages/stationdashboard/Notification";
+import AssignMallam from "../pages/stationdashboard/AssignMallam";
 
 export const element = createBrowserRouter([
   {
@@ -127,6 +130,24 @@ export const element = createBrowserRouter([
       {
         index: true,
         element: <StationHome />,
+        errorElement: <ErrorBoundary />,
+        hasErrorBoundary: true,
+      },
+      {
+        path: "/station/mallam",
+        element: <Registermallam />,
+        errorElement: <ErrorBoundary />,
+        hasErrorBoundary: true,
+      },
+      {
+        path: "/station/Notify",
+        element: <Notification />,
+        errorElement: <ErrorBoundary />,
+        hasErrorBoundary: true,
+      },
+      {
+        path: "/station/assign",
+        element: <AssignMallam />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
