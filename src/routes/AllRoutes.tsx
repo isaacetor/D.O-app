@@ -24,8 +24,10 @@ import { ErrorBoundary, NotFound } from "../utils";
 import Registermallam from "../pages/stationdashboard/Registermallam";
 import Notification from "../pages/stationdashboard/Notification";
 import AssignMallam from "../pages/stationdashboard/AssignMallam";
+import Verification from "../components/commons/props/Verification";
 
 export const element = createBrowserRouter([
+  // landing page routes
   {
     path: "/",
     element: <HomeLayout />,
@@ -38,6 +40,8 @@ export const element = createBrowserRouter([
       },
     ],
   },
+
+  //userDashboard routes
   {
     path: "/user",
     element: <UserDashboardLayout />,
@@ -74,6 +78,8 @@ export const element = createBrowserRouter([
       },
     ],
   },
+
+  //user Authentication routes
   {
     path: "/user/register",
     element: <UserAuthLayout />,
@@ -98,6 +104,8 @@ export const element = createBrowserRouter([
       },
     ],
   },
+
+  //agent Authentication routes
   {
     path: "/agent/login",
     element: <AgentAuthLayout />,
@@ -123,6 +131,7 @@ export const element = createBrowserRouter([
     ],
   },
 
+  //station  routes
   {
     path: "/station",
     element: <StationDashboardlayout />,
@@ -152,6 +161,12 @@ export const element = createBrowserRouter([
         hasErrorBoundary: true,
       },
     ],
+  },
+
+  //OTP Routes
+  {
+    path: "/Verification",
+    element: <Verification />,
   },
 
   {
