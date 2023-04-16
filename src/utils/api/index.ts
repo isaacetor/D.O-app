@@ -1,2 +1,2 @@
 export * from "./apiCalls";
-export * from "./axios";
+export { default as instance } from "./axios";
