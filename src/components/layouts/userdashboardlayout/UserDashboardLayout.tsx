@@ -28,4 +28,7 @@ const Container = styled.div`
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
   }
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;

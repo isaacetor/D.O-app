@@ -8,9 +8,9 @@ const Globalbutton: React.FC<GlobalButtonProp> = ({
   padding,
   text,
   bghovercolor,
-  hgt,
   bor,
   hovCol,
+  width,
 }: any) => {
   return (
     <Button
@@ -18,9 +18,9 @@ const Globalbutton: React.FC<GlobalButtonProp> = ({
       col={col}
       padding={padding}
       bghovercolor={bghovercolor}
-      hgt={hgt}
       bor={bor}
       hovCol={hovCol}
+      width={width}
     >
       {text}
     </Button>
@@ -34,23 +34,19 @@ const Button = styled.button<{
   bg: string;
   col: string;
   bghovercolor: string;
-  hgt: string;
   bor: string;
   hovCol: string;
+  width: string;
 }>`
-  width: ${({ padding }) => padding};
+  padding: ${({ padding }) => padding};
+  width: ${({ width }) => width};
   color: ${(props) => props.col};
   background-color: ${(props) => props.bg};
-  height: ${(props) => props.hgt};
   font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 0;
   border-radius: 5px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
+  font-weight: 500;
+  text-transform: capitalize;
   transition: all 0.2s ease;
 
   :hover {
