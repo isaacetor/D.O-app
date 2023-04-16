@@ -7,10 +7,22 @@ import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
 // import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
-import { createUser } from "../../../utils";
+import { createUser, getAll } from "../../../utils";
+
+import { useQuery } from "@tanstack/react-query";
 
 const UserRegister = () => {
   const navigate = useNavigate();
+
+  //get all stations
+  const { data } = useQuery({
+    queryKey: ["stations"],
+    queryFn: getAll("all-stations"),
+  });
+
+  console.log(`reading data`, data);
+
+  //create user
 
   const userSchema = yup
     .object({
@@ -52,7 +64,7 @@ const UserRegister = () => {
     // },
   });
 
-  console.log(posting);
+  // console.log(`this is `, posting);
 
   const Submit = handleSubmit(async (data: any) => {
     // console.log(data);
@@ -67,7 +79,7 @@ const UserRegister = () => {
     <div>
       <Container>
         <Wrapper>
-          <h4>Ecobin</h4>
+          <h4>ecoBin</h4>
           <h2>Register</h2>
           <p>
             Have an account?
@@ -289,7 +301,8 @@ const Wrapper = styled.div`
     @media screen and (max-width: 748px) {
       display: block;
       margin: 0;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      margin-top: 20px;
       color: #03b903;
       letter-spacing: 2px;
       font-weight: 500;
@@ -299,7 +312,8 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   width: calc(100vw - 500px);
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
