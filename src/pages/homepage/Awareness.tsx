@@ -7,18 +7,17 @@ const Awareness = () => {
     <Container>
       <Wrapper>
         <Left>
-          <h2>About GreenWaste</h2>
+          <h2>About ecoBin</h2>
           <h1>
             Years of diligent research and unwavering dedication to
             environmental consciousness
           </h1>
           <p>
-            GreenWaste, a is a waste management company dedicated to reducing
-            waste, promoting recycling, and proper waste disposal. Our team of
-            experts provides innovative and eco-friendly solutions for
-            businesses and communities. Join us in our mission to create a
-            cleaner and healthier environment for current and future
-            generations. 🌍♻️
+            ecoBin, a is a waste management company dedicated to reducing waste,
+            promoting recycling, and proper waste disposal. Our team of experts
+            provides innovative and eco-friendly solutions for businesses and
+            communities. Join us in our mission to create a cleaner and
+            healthier environment for current and future generations. 🌍♻️
           </p>
         </Left>
         <Right>{/* <img src={about} alt="" /> */}</Right>

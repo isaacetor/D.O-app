@@ -34,7 +34,7 @@ const AuthSideBar: FC<authPropsData> = ({
               color: "#fff",
             }}
           >
-            <h2>ecobin</h2>
+            <h2>ecoBin</h2>
           </NavLink>
 
           <Title>
@@ -59,13 +59,13 @@ const AuthSideBar: FC<authPropsData> = ({
                 <Top>
                   <p>
                     Truly Remarkable! i am really satisfied with the proficiency
-                    of this people. This is absolutely Wonderful. of this
-                    people. This is absolutely Wonderful.
+                    of this people. This is absolutely truly Wonderful. one
+                    company i would recommend ♻
                   </p>
                 </Top>
                 <Bottom>
-                  <h2> Mrs. Esther Ogbu</h2>
-                  <p>CEO, BugaPay</p>
+                  <h2> Miss. Esther Ogbu</h2>
+                  <p>CEO, EasyHr</p>
                 </Bottom>
               </Testimonies>
               <Testimonies CardColor={CardColor}>
@@ -117,9 +117,7 @@ const Testimonies = styled.div<{ CardColor: string }>`
   display: flex;
   align-self: center;
   justify-content: center;
-  /* flex-direction: column; */
   border-radius: 20px;
-  /* overflow: hidden; */
 `;
 
 const Title = styled.div`
@@ -154,7 +152,6 @@ const Wrapper = styled.div`
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 2px;
-    text-transform: uppercase;
   }
 `;
 

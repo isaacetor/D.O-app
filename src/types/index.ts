@@ -25,11 +25,16 @@ export type GlobalButtonProp = {
   hgt?: string;
   bor?: string;
   hovCol?: string;
+  width: string;
 };
 
 //types for managing user details
 export type userData = {
   name: string;
+  email: string;
+  phoneNumber: number;
+  address: string;
+  password: string;
 };
 
 //types for the about section in the landing page
@@ -46,4 +51,5 @@ export type userHeader = {
   amount?: string;
   display: string;
   height: string;
+  btnDisplay?: string;
 };

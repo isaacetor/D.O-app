@@ -8,7 +8,6 @@ import {
 } from "../components";
 import {
   AgentHome,
-  AgentLogin,
   AgentRegister,
   Feedback,
   Landing,
@@ -43,7 +42,7 @@ export const element = createBrowserRouter([
 
   //userDashboard routes
   {
-    path: "/user",
+    path: "/user/home",
     element: <UserDashboardLayout />,
     children: [
       {
@@ -107,7 +106,7 @@ export const element = createBrowserRouter([
 
   //agent Authentication routes
   {
-    path: "/director",
+    path: "/director/home",
     element: <DirectorDashboardLayout />,
     children: [
       {
@@ -119,7 +118,7 @@ export const element = createBrowserRouter([
     ],
   },
   {
-    path: "/agent/register",
+    path: "/director/register",
     element: <DirectorDashboardLayout />,
     children: [
       {

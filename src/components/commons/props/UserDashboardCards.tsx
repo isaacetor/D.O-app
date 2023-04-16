@@ -26,7 +26,7 @@ const UserDashboardCards: React.FC<iCard> = ({
       <CardImage src={imgPic} />
       <Hold>
         <HText1 bigTextCol={bigTextCol}>{bigText}</HText1>
-        <LText1 style={{ fontSize: "12px" }} smallTextCol={smallTextCol}>
+        <LText1 style={{ fontSize: "15px" }} smallTextCol={smallTextCol}>
           {smallText}
         </LText1>
       </Hold>
@@ -38,7 +38,6 @@ const Hold = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* background-color: green; */
 `;
 
 const CardComponent = styled.div<{ bgcol1: string }>`
@@ -48,13 +47,8 @@ const CardComponent = styled.div<{ bgcol1: string }>`
   justify-content: center;
   border-radius: 20px;
   gap: 20px;
-  width: 90%;
-
-  /* padding: 20px; */
+  width: 100%;
   background-color: ${({ bgcol1 }) => bgcol1};
-  /* @media screen and (min-width: 670px) {
-    width: calc(45% - 20px);
-  } */
 `;
 const CardButton = styled.button`
   max-width: 200px;
@@ -76,15 +70,19 @@ const CardButton = styled.button`
 `;
 const HText1 = styled.div<{ bigTextCol: string }>`
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 20px;
+  text-transform: capitalize;
+
   color: ${({ bigTextCol }) => bigTextCol};
+
   @media screen and (min-width: 800px) {
     font-size: 29px;
   }
 `;
 const LText1 = styled.div<{ smallTextCol: string }>`
   font-size: 12px;
+  margin-top: 10px;
   color: ${({ smallTextCol }) => smallTextCol};
 
   @media screen and (min-width: 800px) {

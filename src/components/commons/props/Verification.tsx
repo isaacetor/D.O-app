@@ -24,6 +24,7 @@ const Verification = () => {
             hgt="6vh"
             bor=""
             hovCol=""
+            width="200px"
           />
         </Lower>
       </Wrapper>

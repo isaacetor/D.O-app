@@ -9,6 +9,7 @@ const UserDashboardHeader: FC<userHeader> = ({
   amount,
   display,
   height,
+  btnDisplay,
 }: any) => {
   const [show, setShow] = useState(false);
   return (
@@ -54,7 +55,7 @@ const UserDashboardHeader: FC<userHeader> = ({
               <Info>*******</Info>
             )}
           </BalanceDetails>
-          <WithdrawButton>{button}</WithdrawButton>
+          <WithdrawButton btnDisplay={btnDisplay}>{button}</WithdrawButton>
         </SeeBalance>
       </Head>
     </Container>
@@ -106,7 +107,7 @@ const Info = styled.div`
   font-size: 25px;
 `;
 const BalanceDetails = styled.div``;
-const WithdrawButton = styled.button`
+const WithdrawButton = styled.button<{ btnDisplay: string }>`
   border-radius: 10px;
   color: white;
   background-color: #03b903;
@@ -116,6 +117,7 @@ const WithdrawButton = styled.button`
   font-size: 17px;
   margin-top: 30px;
   transition: all 350ms;
+  display: ${({ btnDisplay }) => btnDisplay};
   :hover {
     cursor: pointer;
     background-color: #01a001;
@@ -134,16 +136,14 @@ const Container = styled.div<{ height: string }>`
     rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
   position: fixed;
   top: 0px;
-  /* left: 0; */
   right: 0;
-
   z-index: 5;
 
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 800px) {
     width: 100%;
   }
 `;

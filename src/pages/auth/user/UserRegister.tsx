@@ -15,14 +15,10 @@ const UserRegister = () => {
   const userSchema = yup
     .object({
       name: yup.string().required("please enter a name"),
-      phoneNumber: yup.number().required("please your phone number"),
-      address: yup.string().required("please enter an email"),
-      station: yup.string().required("please enter an email"),
+      email: yup.string().email().required("please enter an email"),
+      address: yup.string().required("please enter your address"),
+      station: yup.string().required("please select a station"),
       password: yup.string().required("please enter a password"),
-      confirmPassword: yup
-        .string()
-        .oneOf([yup.ref("password")], "passwords must match")
-        .required("please confirm your password"),
     })
     .required();
   type formData = yup.InferType<typeof userSchema>;
@@ -36,18 +32,42 @@ const UserRegister = () => {
     resolver: yupResolver(userSchema),
   });
 
-  const { data } = useMutation({
+  const posting = useMutation({
     mutationKey: ["newUser"],
     mutationFn: createUser,
+
+    // onSuccess: (myData: any) => {
+    //   console.log("user", myData);
+    //   //   dispatch(login(myData.data));
+    //   Swal.fire({
+    //     title: "Registration succesful",
+    //     html: "redirecting you to login",
+    //     timer: 2000,
+    //     timerProgressBar: true,
+
+    //     willClose: () => {
+    //       navigate("/user/login");
+    //     },
+    //   });
+    // },
   });
 
-  console.log(`reading data`, data);
+  console.log(posting);
+
+  const Submit = handleSubmit(async (data: any) => {
+    // console.log(data);
+    posting.mutate(data);
+
+    // reset()
+  });
+
+  // console.log(`reading data`, data);
 
   return (
     <div>
       <Container>
         <Wrapper>
-          <h4>Greenwaste</h4>
+          <h4>Ecobin</h4>
           <h2>Register</h2>
           <p>
             Have an account?
@@ -63,39 +83,37 @@ const UserRegister = () => {
             </NavLink>
           </p>
 
-          <Form>
+          <Form onSubmit={Submit}>
             <InputHold1>
               <InputHold2>
                 <span>Name</span>
-                <input type="text" required />
+                <input {...register("name")} type="text" required />
               </InputHold2>
               <InputHold2>
-                <span>Phone Number</span>
-                <input type="number" required />
+                <span>email</span>
+                <input {...register("email")} type="text" required />
               </InputHold2>
             </InputHold1>
 
             <InputHold>
               <span>Address</span>
-              <input type="text" required />
+              <input {...register("address")} type="text" required />
             </InputHold>
             <InputHold>
               <span>Select Station</span>
-              <select id="standard-select">
-                <option value="Option 1">Option 1</option>
+              <select {...register("station")}>
+                <option value="">Select a station</option>
+                {/* <option value="Option 1">Option 1</option> */}
                 <option value="Option 2">Option 2</option>
                 <option value="Option 3">Option 3</option>
                 <option value="Option 4">Option 4</option>
                 <option value="Option 5">Option 5</option>
-                <option value="Option length">
-                  Option that has too long of a value to fit
-                </option>
               </select>
-              {/* <input type="text" required /> */}
+              {errors.station && <div>{errors.station.message}</div>}
             </InputHold>
             <InputHold>
               <span>Password</span>
-              <input type="password" required />
+              <input {...register("password")} type="password" required />
             </InputHold>
 
             <Button type="submit"> Create account</Button>

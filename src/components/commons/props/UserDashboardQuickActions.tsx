@@ -48,12 +48,13 @@ const UserDashboardQuick = () => {
                 <GlobalButton
                   bg=""
                   col="#03b903"
-                  padding="160px"
+                  padding="18px 30px"
                   text="Make Request"
                   bghovercolor="transparent"
                   hgt="6vh"
-                  bor="2px solid #fff"
+                  bor="1px solid #fff"
                   hovCol="#fff"
+                  width="200px"
                 />
               </NavLink>
             </QuickComponent>

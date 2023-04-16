@@ -6,7 +6,7 @@ import { FaWallet } from "react-icons/fa";
 import { AiFillMessage } from "react-icons/ai";
 import { CiLogout } from "react-icons/ci";
 import { BsPersonFill } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 // import { UseAppDispatch } from "../../../Global/Store";
 // import { logout as LogOut } from "../../../Global/ReduxState";
 import { Navbars } from "../../commons";
@@ -26,7 +26,9 @@ const SideNav = () => {
     <div>
       <Container>
         <Wrapper>
-          <Logo>Ecobin</Logo>
+          <NavLink to="/" style={{ textDecoration: "none" }}>
+            <Logo>ecoBin</Logo>
+          </NavLink>
 
           <Bars>
             <div
@@ -38,7 +40,7 @@ const SideNav = () => {
                 setSupport(true);
                 setAccount(true);
                 setLogout(true);
-                navigate("/user");
+                navigate("/user/home");
               }}
             >
               <Navbars
@@ -193,7 +195,8 @@ const Container = styled.div`
 `;
 const Logo = styled.div`
   color: white;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   padding-left: 30px;
   @media screen and (min-width: 801px) and (max-width: 1051px) {
     display: none;
