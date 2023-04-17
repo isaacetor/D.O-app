@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import spiral from "../../../assets/robo.svg";
-import two from "../../../assets/two.svg";
 
 import { NavLink } from "react-router-dom";
+import { GlobalButton } from ".";
 
 const UserDashboardQuick = () => {
   const percentage = 3;
@@ -22,16 +21,14 @@ const UserDashboardQuick = () => {
                 text={`${percentage}`}
                 styles={{
                   path: {
-                    // Path color
-                    stroke: `#2f7a2f`,
+                    stroke: `#000000`,
                     strokeLinecap: "round",
                     width: "10px",
                   },
                   text: {
-                    // Text color
-                    fill: "#5b3b3b",
-                    // Text size
-                    fontSize: "16px",
+                    fill: "#fff",
+
+                    fontSize: "20px",
                   },
                 }}
               />
@@ -41,14 +38,24 @@ const UserDashboardQuick = () => {
               <HText>Make a Request with just a click</HText>
 
               <LText style={{ fontSize: "20px" }}>
-                Create and sell Gift Cards for your business
+                Is your waste full? request for trash pick up now!
               </LText>
 
               <NavLink
                 to="/dashboard/giftcard"
                 style={{ textDecoration: "none" }}
               >
-                <Button>Make Request</Button>
+                <GlobalButton
+                  bg=""
+                  col="#03b903"
+                  padding="18px 30px"
+                  text="Make Request"
+                  bghovercolor="transparent"
+                  hgt="6vh"
+                  bor="1px solid #fff"
+                  hovCol="#fff"
+                  width="200px"
+                />
               </NavLink>
             </QuickComponent>
           </QuickWrap>
@@ -59,11 +66,11 @@ const UserDashboardQuick = () => {
 };
 export default UserDashboardQuick;
 const InBody = styled.div`
-  width: 90%;
+  width: 85%;
   display: flex;
   flex-direction: column;
-  gap: 35px;
-  margin-top: 30px;
+  /* gap: 35px; */
+  margin-top: 70px;
 `;
 const QuickActions = styled.div`
   display: flex;
@@ -78,30 +85,27 @@ const QuickActions = styled.div`
 `;
 const QuickContain = styled.div`
   width: 100%;
-  /* background-color: #fff; */
   background: rgb(3, 185, 3);
   background: linear-gradient(
-    180deg,
-    rgba(3, 185, 3, 1) 38%,
-    rgba(60, 55, 255, 1) 76%
+    163deg,
+    rgba(3, 185, 3, 1) 30%,
+    rgba(0, 0, 0, 1) 100%
   );
+
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
-  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 `;
 const QuickWrap = styled.div`
   width: 100%;
-  /* height: 95%; */
+
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  /* align-items: center; */
+
   justify-content: space-around;
-  /* background-color: yellow; */
+
   padding: 50px 0;
 `;
 const QuickComponent = styled.div`
@@ -116,7 +120,7 @@ const QuickComponent = styled.div`
   }
   @media screen and (max-width: 799px) {
     width: 60%;
-    /* background-color: #2c4a72; */
+
     position: relative;
     top: 50px;
     left: 30px;
@@ -128,33 +132,19 @@ const QuickImage = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* position: relative; */
   bottom: -6px;
-  /* left: 30px; */
-  /* @media screen and (min-width: 800px) {
-    width: 50%;
-  } */
-`;
-const Button = styled.button`
-  max-width: 200px;
-  border-radius: 5px;
-  color: white;
-  background-color: #03b903;
-  border: none;
-  outline: none;
-  font-weight: bold;
-  font-size: 17px;
-  padding: 10px 20px;
-  transition: all 350ms;
-  :hover {
-    cursor: pointer;
-    /* background-color: #913cf9; */
+
+  p {
+    color: #fff;
+    font-size: 16px;
   }
 `;
 const HText = styled.div`
-  font-size: 28px;
-  color: blue;
-  font-weight: 600;
+  font-size: 2.7rem;
+  line-height: 3rem;
+  width: 83%;
+  color: #fff;
+  font-weight: 700;
 
   @media screen and (min-width: 800px) {
     /* font-size: 3.5rem; */
@@ -166,7 +156,7 @@ const HText = styled.div`
 `;
 const LText = styled.div`
   font-size: 12px;
-  color: black;
+  color: #fdfdfddd;
   @media screen and (min-width: 800px) {
     font-size: 22px;
   }

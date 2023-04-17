@@ -26,9 +26,9 @@ const ErrorBoundary = () => {
             col="#fff"
             text="Back to Homepage"
             bghovercolor=""
-            hgt=""
             bor=""
             hovCol=""
+            width="100px"
           />
         </Button>
       </Wrapper>

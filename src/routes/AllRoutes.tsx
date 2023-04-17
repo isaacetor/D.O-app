@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import {
-  AgentAuthLayout,
+  DirectorDashboardLayout,
   UserAuthLayout,
   HomeLayout,
   UserDashboardLayout,
@@ -8,7 +8,6 @@ import {
 } from "../components";
 import {
   AgentHome,
-  AgentLogin,
   AgentRegister,
   Feedback,
   Landing,
@@ -25,6 +24,7 @@ import Registermallam from "../pages/stationdashboard/Registermallam";
 import Notification from "../pages/stationdashboard/Notification";
 import AssignMallam from "../pages/stationdashboard/AssignMallam";
 import Verification from "../components/commons/props/Verification";
+import DirectorAuth from "../components/layouts/directorAurhLayout/DirectorAuth";
 
 export const element = createBrowserRouter([
   // landing page routes
@@ -43,7 +43,7 @@ export const element = createBrowserRouter([
 
   //userDashboard routes
   {
-    path: "/user",
+    path: "/user/home",
     element: <UserDashboardLayout />,
     children: [
       {
@@ -105,22 +105,22 @@ export const element = createBrowserRouter([
     ],
   },
 
-  //agent Authentication routes
+  //director Authentication routes
   {
-    path: "/agent/login",
-    element: <AgentAuthLayout />,
+    path: "/director/home",
+    element: <DirectorDashboardLayout />,
     children: [
       {
         index: true,
-        element: <AgentLogin />,
+        element: <AgentHome />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
     ],
   },
   {
-    path: "/agent/register",
-    element: <AgentAuthLayout />,
+    path: "/director/register",
+    element: <DirectorAuth />,
     children: [
       {
         index: true,

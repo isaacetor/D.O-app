@@ -7,22 +7,32 @@ import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
 // import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
-import { createUser } from "../../../utils";
+// import { createUser, getAll } from "../../../utils";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const UserRegister = () => {
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
+
+  // get all stations
+  const { data } = useQuery({
+    queryKey: ["stationId"],
+    // queryFn: getAll("all-stations"),
+  });
+
+  console.log(`reading data`, data);
+  //
+
+  //create user
 
   const userSchema = yup
     .object({
       name: yup.string().required("please enter a name"),
-      phoneNumber: yup.number().required("please your phone number"),
-      address: yup.string().required("please enter an email"),
-      station: yup.string().required("please enter an email"),
+      email: yup.string().email().required("please enter an email"),
+      address: yup.string().required("please enter your address"),
+      station: yup.string().required("please select a station"),
       password: yup.string().required("please enter a password"),
-      confirmPassword: yup
-        .string()
-        .oneOf([yup.ref("password")], "passwords must match")
-        .required("please confirm your password"),
     })
     .required();
   type formData = yup.InferType<typeof userSchema>;
@@ -36,18 +46,42 @@ const UserRegister = () => {
     resolver: yupResolver(userSchema),
   });
 
-  const { data } = useMutation({
+  const posting = useMutation({
     mutationKey: ["newUser"],
-    mutationFn: createUser,
+    // mutationFn: createUser,
+
+    // onSuccess: (myData: any) => {
+    //   console.log("user", myData);
+    //   //   dispatch(login(myData.data));
+    //   Swal.fire({
+    //     title: "Registration succesful",
+    //     html: "redirecting you to login",
+    //     timer: 2000,
+    //     timerProgressBar: true,
+
+    //     willClose: () => {
+    //       navigate("/user/login");
+    //     },
+    //   });
+    // },
   });
 
-  console.log(`reading data`, data);
+  // console.log(`this is `, posting);
+
+  // const Submit = handleSubmit(async (data: any) => {
+  //   // console.log(data);
+  //   posting.mutate(data);
+
+  //   // reset()
+  // });
+
+  // console.log(`reading data`, data);
 
   return (
     <div>
       <Container>
         <Wrapper>
-          <h4>Greenwaste</h4>
+          <h4>ecoBin</h4>
           <h2>Register</h2>
           <p>
             Have an account?
@@ -63,39 +97,42 @@ const UserRegister = () => {
             </NavLink>
           </p>
 
-          <Form>
+          <Form
+          // onSubmit={Submit}
+          >
             <InputHold1>
               <InputHold2>
                 <span>Name</span>
-                <input type="text" required />
+                <input {...register("name")} type="text" required />
               </InputHold2>
               <InputHold2>
-                <span>Phone Number</span>
-                <input type="number" required />
+                <span>email</span>
+                <input {...register("email")} type="text" required />
               </InputHold2>
             </InputHold1>
 
             <InputHold>
               <span>Address</span>
-              <input type="text" required />
+              <input {...register("address")} type="text" required />
             </InputHold>
             <InputHold>
               <span>Select Station</span>
-              <select id="standard-select">
-                <option value="Option 1">Option 1</option>
-                <option value="Option 2">Option 2</option>
+              <select {...register("station")}>
+                {/* {data?.map((props: any) => (
+                  <option value="Option 2">Option 2</option>
+                ))} */}
+
+                {/* <option value="Option 1">Option 1</option> */}
+                {/* <option value="Option 2">Option 2</option>
                 <option value="Option 3">Option 3</option>
                 <option value="Option 4">Option 4</option>
-                <option value="Option 5">Option 5</option>
-                <option value="Option length">
-                  Option that has too long of a value to fit
-                </option>
+                <option value="Option 5">Option 5</option> */}
               </select>
-              {/* <input type="text" required /> */}
+              {errors.station && <div>{errors.station.message}</div>}
             </InputHold>
             <InputHold>
               <span>Password</span>
-              <input type="password" required />
+              <input {...register("password")} type="password" required />
             </InputHold>
 
             <Button type="submit"> Create account</Button>
@@ -271,7 +308,8 @@ const Wrapper = styled.div`
     @media screen and (max-width: 748px) {
       display: block;
       margin: 0;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      margin-top: 20px;
       color: #03b903;
       letter-spacing: 2px;
       font-weight: 500;
@@ -281,7 +319,8 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   width: calc(100vw - 500px);
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

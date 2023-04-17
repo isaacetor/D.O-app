@@ -15,51 +15,51 @@ const BusinessHome = () => {
       <UserDashboardHeader
         title={"Welcome"}
         amount="N2000"
-        button="make request"
+        button="Top-up balance"
         display="flex"
         height="24vh"
       />
       <Body>
         <UserDashboardQuick />
         <Hold>
-          <HoldC>
+          <HoldC bg="#3C37FF">
             <UserDashboardCards
               bgcol1=""
-              bigText="Make Request"
+              bigText="Top Up Balance"
               bigTextCol="#fff"
-              smallText="hhh"
+              smallText="Credit your ecoBin wallet to keep making trash pick-up request"
               smallTextCol="#fff"
               imgPic=""
             />
             <Globalbutton
               bg=""
-              col="#03b903"
-              padding="150px"
-              text="Make Request"
+              col="#3C37FF"
+              padding="18px 30px"
+              text="Top Up"
               bghovercolor="transparent"
-              hgt="6vh"
-              bor="2px solid #fff"
+              bor="1px solid #fff"
               hovCol="#fff"
+              width="200px"
             />
           </HoldC>
-          <HoldC>
+          <HoldC bg="#039B03">
             <UserDashboardCards
               bgcol1=""
-              bigText="Custom Request"
+              bigText="Make a Custom Request"
               bigTextCol="#fff"
-              smallText="hhh"
+              smallText="Are u having a party or event? ecoBin staff will be there for your trash needs!"
               smallTextCol="#fff"
               imgPic=""
             />
             <Globalbutton
               bg=""
-              col="blue"
-              padding="150px"
-              text="Custom Request"
+              col="#03B903"
+              padding="18px 30px"
+              text="send us an hello!"
               bghovercolor="transparent"
-              hgt="6vh"
-              bor="2px solid #fff"
+              bor="1px solid #fff"
               hovCol="#fff"
+              width="210px"
             />
           </HoldC>
         </Hold>
@@ -70,19 +70,14 @@ const BusinessHome = () => {
 };
 
 export default BusinessHome;
-const HoldC = styled.div`
+const HoldC = styled.div<{ bg: string }>`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  background-color: #03b903;
+  background-color: ${({ bg }) => bg};
   width: 400px;
   padding: 30px;
   border-radius: 10px;
   gap: 30px;
-
-  :nth-child(2) {
-    background-color: #3c37ff;
-  }
 
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
@@ -99,8 +94,6 @@ const Hold = styled.div`
 `;
 const Container = styled.div`
   width: calc(100vw - 270px);
-  /* width: 100%; */
-  /* background-color: rebeccapurple; */
 
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
@@ -110,10 +103,11 @@ const Body = styled.div`
   width: 100%;
   color: #3d3d3d;
   margin-top: 200px;
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 35px;
 
   @media screen and (max-width: 1024px) {

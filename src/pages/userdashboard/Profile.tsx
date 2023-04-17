@@ -8,7 +8,6 @@ const Profile = () => {
     <div>
       <Container>
         <Wrapper>
-          <h4>Greenwaste</h4>
           <h2>Account Setting</h2>
           <Dp>JD</Dp>
           <Form>
@@ -50,10 +49,11 @@ const Profile = () => {
             </InputHold1>
 
             <GlobalButton
-              padding="20px 30px"
+              bg="#03b903"
               col="#fff"
-              text="Update profile"
-              bg="#03B903"
+              padding="18px 30px"
+              text="update profile"
+              width="200px"
             />
           </Form>
         </Wrapper>
@@ -101,6 +101,7 @@ const Hold = styled.div`
 const InputHold1 = styled.div`
   width: 700px;
   display: flex;
+
   gap: 30px;
   margin-bottom: 10px;
   span {
@@ -121,10 +122,10 @@ const InputHold1 = styled.div`
   }
 
   @media screen and (max-width: 1024px) {
-    display: block;
     width: 74%;
   }
-  @media screen and (max-width: 748px) {
+
+  @media screen and (max-width: 722px) {
     display: block;
     width: 100%;
   }
@@ -152,45 +153,13 @@ const InputHold2 = styled.div`
     }
   }
 `;
-const InputHold = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 30px;
 
-  span {
-    margin: 0;
-    margin-bottom: 10px;
-    font-weight: 500;
-  }
-
-  input {
-    width: 70%;
-    height: 35px;
-    padding: 10px;
-    font-size: 17px;
-    color: #000000d5;
-    border: 0;
-    border-radius: 5px;
-    outline: 0;
-
-    :focus {
-      border: 1px solid #03b903;
-    }
-
-    @media screen and (max-width: 1024px) {
-      width: 74%;
-    }
-    @media screen and (max-width: 748px) {
-      width: 90%;
-    }
-  }
+const Form = styled.form`
+  margin-bottom: 20px;
 `;
 
-const Form = styled.form``;
-
 const Wrapper = styled.div`
-  width: 85%;
-  height: 85%;
+  width: 90%;
 
   h2 {
     margin: 0;
@@ -204,32 +173,18 @@ const Wrapper = styled.div`
     font-size: 15px;
     margin-bottom: 35px;
   }
-
-  h4 {
-    display: none;
-
-    @media screen and (max-width: 748px) {
-      display: block;
-      margin: 0;
-      margin-bottom: 20px;
-      color: #03b903;
-      letter-spacing: 2px;
-      font-weight: 500;
-    }
-  }
 `;
 
 const Container = styled.div`
-  width: calc(100vw - 250px);
-  height: 100vh;
+  width: calc(100vw - 270px);
+
+  min-height: 100vh;
+  max-height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   background-color: #fefefe;
 
-  @media screen and (max-width: 1024px) {
-    width: calc(100vw - 400px);
-  }
   @media screen and (max-width: 748px) {
     width: 100%;
   }

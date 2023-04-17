@@ -60,7 +60,7 @@ const Header = () => {
         >
           <Wrapper border={show ? "" : "none"}>
             <LogoNav>
-              <Logo onClick={backToTop}>Dumpsters</Logo>
+              <Logo onClick={backToTop}>ecoBin</Logo>
               <Nav>
                 <Navigation onClick={toHero}>Home</Navigation>
                 <Navigation onClick={toAbout}>About</Navigation>
@@ -75,11 +75,11 @@ const Header = () => {
                   text="Create an account"
                   bg="#03B903"
                   col="#fff"
-                  padding="10px 20px"
+                  padding="18px 20px"
                   bghovercolor=""
-                  hgt="6vh"
                   bor=""
                   hovCol=""
+                  width="200px"
                 />
               </NavLink>
             </ButtonHold>
@@ -98,7 +98,7 @@ const Header = () => {
         >
           <Wrapper border={show ? "" : "value"}>
             <LogoNav>
-              <Logo onClick={backToTop}>GreenWaste</Logo>
+              <Logo onClick={backToTop}>ecoBin</Logo>
               <Nav>
                 <Navigation onClick={toHero}>Home</Navigation>
                 <Navigation onClick={toAbout}>About</Navigation>
@@ -113,11 +113,11 @@ const Header = () => {
                   text="Create an account"
                   bg="#03B903"
                   col="#fff"
-                  padding="10px 20px"
+                  padding="18px 20px"
                   bghovercolor=""
-                  hgt="6vh"
                   bor=""
                   hovCol=""
+                  width="200px"
                 />
               </NavLink>
             </ButtonHold>

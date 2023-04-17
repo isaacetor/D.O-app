@@ -15,7 +15,11 @@ const Notfound = () => {
           <img src={notfound} />
         </Image>
         <Button>
-          <Oopsy>Oops. Looks like you're lost</Oopsy>
+          <Oopsy>
+            Oops, we're experiencing some waste-related turbulence. Hang tight,
+            we'll have it sorted out soon for a smoother waste management
+            journey
+          </Oopsy>
           <button onClick={back}>Go Back</button>
         </Button>
       </Wrap>
@@ -84,7 +88,8 @@ const Button = styled.div`
   }
 `;
 const Oopsy = styled.div`
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
   color: #3c37ff;
+  font-weight: 600;
 `;

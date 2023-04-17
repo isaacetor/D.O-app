@@ -6,7 +6,7 @@ const AgentLogin = () => {
   return (
     <Container>
       <Wrapper>
-        <h4>GreenWaste</h4>
+        <h4>ecoBin</h4>
         <h2>Sign in</h2>
         <p>
           Don't have an account?

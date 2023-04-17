@@ -12,31 +12,34 @@ const MakePayment = () => {
         <UserDashboardHeader
           title="Wallet"
           amount="N2000"
-          button="Top-up Wallet"
           display="flex"
           height="24vh"
+          btnDisplay="none"
         />
 
-        <HoldC>
-          <UserDashboardCards
-            bgcol1=""
-            bigText="Make Request"
-            bigTextCol="#fff"
-            smallText="hhh"
-            smallTextCol="#fff"
-            imgPic=""
-          />
-          <GlobalButton
-            bg=""
-            col="#03b903"
-            padding="150px"
-            text="Make Request"
-            bghovercolor="transparent"
-            hgt="6vh"
-            bor="2px solid #fff"
-            hovCol="#fff"
-          />
-        </HoldC>
+        <Body>
+          <HoldC>
+            <UserDashboardCards
+              bgcol1=""
+              bigText="Top Up Balance"
+              bigTextCol="#fff"
+              smallText="hhh"
+              smallTextCol="#fff"
+              imgPic=""
+            />
+            <GlobalButton
+              bg=""
+              col="#03b903"
+              padding="18px 20px"
+              text="Make Payment"
+              bghovercolor="transparent"
+              hgt="6vh"
+              bor="1px solid #fff"
+              hovCol="#fff"
+              width="200px"
+            />
+          </HoldC>
+        </Body>
       </Container>
     </div>
   );
@@ -44,34 +47,35 @@ const MakePayment = () => {
 
 export default MakePayment;
 
-const HoldC = styled.div`
-  /* height: 50vh; */
-
-  display: flex;
-  flex-direction: column;
+const Body = styled.div`
+  width: 95%;
   margin-top: 30vh;
+  display: flex;
+  flex-wrap: wrap;
   margin-left: 30px;
+`;
 
-  background-color: #03b903;
+const HoldC = styled.div`
   width: 400px;
   padding: 30px;
   border-radius: 10px;
   gap: 30px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #03b903;
 
   :nth-child(2) {
     background-color: #3c37ff;
   }
 
-  @media screen and (max-width: 1024px) {
-    width: calc(100vw - 70px);
+  @media screen and (max-width: 425px) {
+    width: 85%;
   }
 `;
 
 const Container = styled.div`
-  /* overflow-x: hidden; */
-  /* height: 100vh; */
-  /* background-color: rebeccapurple; */
-
+  overflow-x: hidden;
   @media screen and (max-width: 800px) {
     width: 100vw;
   }

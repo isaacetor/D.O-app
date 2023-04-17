@@ -23,8 +23,18 @@ const Verification = () => {
           <Text1>OTP Verification</Text1>
           <Text2>We will send you a one-time password to this email</Text2>
           <Text3>Enter Email Address</Text3>
-          <Text4 placeholder="Seraphina2070@gmail.com" />
-          <Button onClick={back}>Get OTP</Button>
+          <Text4>Judith@gmail.com</Text4>
+          <Globalbutton
+            bg=""
+            bghovercolor=""
+            col=""
+            padding="150px"
+            text="hello"
+            hgt="6vh"
+            bor=""
+            hovCol=""
+            width="200px"
+          />
         </Lower>
       </Wrapper>
     </Container>

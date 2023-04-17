@@ -1,25 +1,17 @@
 import React from "react";
-import { AuthSideBar } from "../../blocks";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
+import { DirectorSidenav } from "../../blocks";
 
-const AgentAuthLayout = () => {
+const DirectorDashboardLayout = () => {
   return (
     <Container>
-      <AuthSideBar
-        title="  Welcome agent 
-              to your account."
-        desc="   Manage all user trash pick up request 
-              from your home/anywhere. "
-        backgroundColor="#3c37ff"
-        CardColor="#2520E3"
-      />
+      <DirectorSidenav />
       <Outlet />
     </Container>
   );
 };
-
-export default AgentAuthLayout;
+export default DirectorDashboardLayout;
 
 const Container = styled.div`
   display: flex;
