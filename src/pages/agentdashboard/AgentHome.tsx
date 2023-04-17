@@ -3,7 +3,11 @@ import styled from "styled-components";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { VscSearch } from "react-icons/vsc";
 import { CiBellOn } from "react-icons/ci";
+import { IoMdPerson } from "react-icons/io";
+import { TfiAngleRight } from "react-icons/tfi";
 import p1 from "../../assets/svgs/draw.svg";
+import wave from "../../assets/images/wave.png";
+import wave1 from "../../assets/images/wave2.png";
 const AgentHome = () => {
   return (
     <Container>
@@ -23,6 +27,12 @@ const AgentHome = () => {
                 <BsFillPeopleFill />
               </Ic>
               <p>Reg Staff</p>
+            </Hold>
+            <Hold>
+              <Ic>
+                <BsFillPeopleFill />
+              </Ic>
+              <p>Stations</p>
             </Hold>
             <Holds>
               <Ip>
@@ -62,12 +72,97 @@ const AgentHome = () => {
               </Pip>
             </Detail>
             <Infos>
-              <Users></Users>
-              <Amounts></Amounts>
+              <Users>
+                <Box>
+                  <Box1></Box1>
+                  <Lef>
+                    <p>Number of Users</p>
+                  </Lef>
+                </Box>
+                <Num>
+                  <p>234</p>
+                  <small>users</small>
+                </Num>
+                <Log src={wave} />
+              </Users>
+              <Users>
+                <Box>
+                  <Box1 style={{ backgroundColor: "green" }}></Box1>
+                  <Lef>
+                    <p>Total Amount</p>
+                  </Lef>
+                </Box>
+                <Num>
+                  <p>#4,453,510</p>
+                  <small></small>
+                </Num>
+                <Log src={wave1} style={{ width: "400px", bottom: "80" }} />
+              </Users>
+              {/* <Amounts></Amounts> */}
             </Infos>
           </One>
           <Two>
             <Tit>Recent Request</Tit>
+            <Pro>
+              <Ips>
+                <IoMdPerson />
+              </Ips>
+              <Ad>
+                <Nam>Iya Sodiq</Nam>
+                <Ads>3, Asafa street</Ads>
+              </Ad>
+              <Ij>
+                <TfiAngleRight />
+              </Ij>
+            </Pro>
+            <Pro>
+              <Ips>
+                <IoMdPerson />
+              </Ips>
+              <Ad>
+                <Nam>Iya Sodiq</Nam>
+                <Ads>3, Asafa street</Ads>
+              </Ad>
+              <Ij>
+                <TfiAngleRight />
+              </Ij>
+            </Pro>
+            <Pro>
+              <Ips>
+                <IoMdPerson />
+              </Ips>
+              <Ad>
+                <Nam>Iya Sodiq</Nam>
+                <Ads>3, Asafa street</Ads>
+              </Ad>
+              <Ij>
+                <TfiAngleRight />
+              </Ij>
+            </Pro>
+            <Pro>
+              <Ips>
+                <IoMdPerson />
+              </Ips>
+              <Ad>
+                <Nam>Iya Sodiq</Nam>
+                <Ads>3, Asafa street</Ads>
+              </Ad>
+              <Ij>
+                <TfiAngleRight />
+              </Ij>
+            </Pro>
+            <Pro>
+              <Ips>
+                <IoMdPerson />
+              </Ips>
+              <Ad>
+                <Nam>Iya Sodiq</Nam>
+                <Ads>3, Asafa street</Ads>
+              </Ad>
+              <Ij>
+                <TfiAngleRight />
+              </Ij>
+            </Pro>
           </Two>
         </Sec>
       </Wrap>
@@ -76,12 +171,80 @@ const AgentHome = () => {
 };
 
 export default AgentHome;
+const Box = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: 20px;
+`;
+const Box1 = styled.div`
+  width: 30px;
+  height: 30px;
+  background-color: #2e53da;
+  margin-right: 10px;
+  border-radius: 8px;
+`;
+const Lef = styled.div`
+  p {
+    font-weight: bold;
+  }
+`;
+const Num = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-left: 20px;
+  margin-top: -20px;
+
+  p {
+    font-size: 35px;
+    /* font-weight: bold; */
+  }
+`;
+const Log = styled.img`
+  position: absolute;
+  bottom: 50;
+  right: 0;
+  width: 350px;
+`;
+const Pro = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px;
+  :nth-child(even) {
+    background-color: #d4d5d85e;
+  }
+`;
+const Ij = styled.div``;
+const Ad = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const Ads = styled.div``;
+const Ips = styled.div`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+  font-size: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const Nam = styled.div``;
 const Tit = styled.div`
   width: 100%;
   height: 70px;
   display: flex;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   position: sticky;
   align-items: center;
   padding-left: 10px;
@@ -92,7 +255,7 @@ const Sec = styled.div`
   justify-content: space-around;
   /* background-color: white; */
 
-  /* align-items: center; */
+  align-items: center;
 `;
 const One = styled.div`
   display: flex;
@@ -102,7 +265,7 @@ const One = styled.div`
 `;
 const Two = styled.div`
   width: 350px;
-  height: 600px;
+  height: 570px;
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
@@ -128,19 +291,25 @@ const Pip = styled.div`
 const Infos = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
 `;
 const Users = styled.div`
   width: 400px;
-  height: 260px;
-  background-color: #a77373;
+  height: 200px;
+  background-color: white;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content:left; */
+  align-items: flex-start;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
 `;
 const Amounts = styled.div`
   width: 400px;
-  height: 260px;
+  height: 200px;
   background-color: #1f0404;
   border-radius: 10px;
 `;
@@ -188,13 +357,13 @@ const Container = styled.div`
   width: calc(100vw - 270px);
   min-height: 100vh;
   max-height: 100%;
-  background-color: red;
   /* padding: 10px; */
 `;
 const Wrap = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   /* padding-left: 20px; */
 `;
@@ -221,7 +390,7 @@ const Left = styled.div`
 const Hold1 = styled.div`
   display: flex;
   width: 80px;
-  height: 35px;
+  height: 25px;
   justify-content: space-between;
   align-items: center;
   background-color: white;
@@ -230,13 +399,13 @@ const Hold1 = styled.div`
   border-radius: 10px;
   p {
     width: 100%;
-    color: #2e53da;
-    font-weight: bold;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    /* padding-left: 20px; */
   }
 `;
+
 const Hold = styled.div`
   display: flex;
   background-color: #2e53da;
