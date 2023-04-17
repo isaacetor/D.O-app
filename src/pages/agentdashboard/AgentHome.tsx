@@ -1,5 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+import {BsFillPeopleFill} from "react-icons/bs"
+import {VscSearch} from "react-icons/vsc"
+import {CiBellOn} from "react-icons/ci"
+import {IoMdPerson} from "react-icons/io"
+import {TfiAngleRight} from "react-icons/tfi"
+import {AiTwotoneBank} from "react-icons/ai"
+import AgentMain from "./AgentMain";
+import AgentHeader from "./AgentHeader";
+import Recent from "./AgentRecent";
+const AgentHome = () => {
+  return (
+      <Container>
+        <Wrap>
+         <AgentHeader/>
+          <Sec>
+           <AgentMain/>
+           <Recent/>
+          </Sec>
+        </Wrap>
+      </Container>
+=======
 import { BsFillPeopleFill } from "react-icons/bs";
 import { VscSearch } from "react-icons/vsc";
 import { CiBellOn } from "react-icons/ci";
@@ -167,7 +188,7 @@ const AgentHome = () => {
           </Two>
         </Sec>
       </Wrap>
-    </Container>
+    </Contain>
   );
 };
 
