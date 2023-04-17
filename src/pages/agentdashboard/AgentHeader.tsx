@@ -1,96 +1,51 @@
-import React from "react";
-import styled from "styled-components";
-import {BsFillPeopleFill} from "react-icons/bs"
-import {VscSearch} from "react-icons/vsc"
-import {CiBellOn} from "react-icons/ci"
-import {IoMdPerson} from "react-icons/io"
-import {TfiAngleRight} from "react-icons/tfi"
-import {AiTwotoneBank} from "react-icons/ai"
-import AgentMain from "./AgentMain";
-import AgentHeader from "./AgentHeader";
-import Recent from "./AgentRecent";
-const AgentHome = () => {
-  return (
-      <Container>
-        <Wrap>
-         <AgentHeader/>
-          <Sec>
-           <AgentMain/>
-           <Recent/>
-          </Sec>
-        </Wrap>
-      </Container>
-  );
-};
+import react from "react"
+import { AiTwotoneBank } from "react-icons/ai";
+import { BsFillPeopleFill } from "react-icons/bs";
+import { CiBellOn } from "react-icons/ci";
+import { VscSearch } from "react-icons/vsc";
+import styled from "styled-components"
 
-export default AgentHome;
-const Box=styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-margin-left:20px;
-margin-top:20px;
-`
-const Box1=styled.div`
-  width: 30px;
-  height: 30px;
-  background-color: #2e53da;
-  margin-right:10px;
-  border-radius:8px;
-`
-const Lef=styled.div`
-p{
-  font-weight:bold;
+const AgentHeader=()=>{
+    return(
+        <Main>
+        <Left>
+          <Up>
+            <p>welcome Back,</p>
+          </Up>
+          <Down>
+            <h1>Jaji</h1>
+          </Down>
+        </Left>
+        <Right>
+          <Hold>
+            <Ic>
+              <BsFillPeopleFill/>
+            </Ic>
+            <p>Reg Staff</p>
+          </Hold>
+          <Hold>
+            <Ic>
+              <AiTwotoneBank/>
+            </Ic>
+            <p>Stations</p>
+          </Hold>
+          <Holds>
+            <Ip>
+              <VscSearch/>
+            </Ip>
+            <input/>
+          </Holds>
+          <Noti>
+            <Bi>
+            <CiBellOn/>
+            </Bi>
+            <span>0</span>
+          </Noti>
+        </Right>
+        </Main>
+    )
 }
-`
-const Num=styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-margin:0;
-margin-left:20px;
-margin-top:-20px;
-
-p{
-  font-size: 35px;
-  /* font-weight: bold; */
-}
-`
-const Log=styled.img`
-position: absolute;
-bottom: 50;
-right: 0;
-width: 350px;
-`
-const Pro=styled.div`
-display: flex;
-justify-content: space-around;
-align-items: center;
-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-padding: 10px;
-:nth-child(even){
-  background-color:#d4d5d85e;
-}
-`
-const Ij=styled.div``
-const Ad=styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-`
-const Ads=styled.div``
-const Ips=styled.div`
-width: 50px;
-height: 50px;
-border-radius: 50%;
-background-color: gray;
-color: white;
-font-weight: bold;
-font-size: 27px;
-display: flex;
-justify-content: center;
-align-items: center;
-`
+export default AgentHeader;
 const Nam=styled.div``
 const Tit=styled.div`
   width: 100%;

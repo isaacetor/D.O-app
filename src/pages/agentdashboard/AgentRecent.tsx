@@ -1,29 +1,76 @@
-import React from "react";
-import styled from "styled-components";
-import {BsFillPeopleFill} from "react-icons/bs"
-import {VscSearch} from "react-icons/vsc"
-import {CiBellOn} from "react-icons/ci"
-import {IoMdPerson} from "react-icons/io"
-import {TfiAngleRight} from "react-icons/tfi"
-import {AiTwotoneBank} from "react-icons/ai"
-import AgentMain from "./AgentMain";
-import AgentHeader from "./AgentHeader";
-import Recent from "./AgentRecent";
-const AgentHome = () => {
-  return (
-      <Container>
-        <Wrap>
-         <AgentHeader/>
-          <Sec>
-           <AgentMain/>
-           <Recent/>
-          </Sec>
-        </Wrap>
-      </Container>
-  );
-};
+import react from "react"
+import { IoMdPerson } from "react-icons/io";
+import { TfiAngleRight } from "react-icons/tfi";
+import styled from "styled-components"
 
-export default AgentHome;
+const Recent=()=>{
+    return(
+        <Two>
+        <Tit>Recent Request</Tit>
+        <Pro>
+          <Ips>
+            <IoMdPerson/>
+          </Ips>
+          <Ad>
+            <Nam>Iya Sodiq</Nam>
+            <Ads>3, Asafa street</Ads>
+          </Ad>
+          <Ij>
+            <TfiAngleRight/>
+          </Ij>
+        </Pro>
+        <Pro>
+          <Ips>
+            <IoMdPerson/>
+          </Ips>
+          <Ad>
+            <Nam>Iya Sodiq</Nam>
+            <Ads>3, Asafa street</Ads>
+          </Ad>
+          <Ij>
+            <TfiAngleRight/>
+          </Ij>
+        </Pro>
+        <Pro>
+          <Ips>
+            <IoMdPerson/>
+          </Ips>
+          <Ad>
+            <Nam>Iya Sodiq</Nam>
+            <Ads>3, Asafa street</Ads>
+          </Ad>
+          <Ij>
+            <TfiAngleRight/>
+          </Ij>
+        </Pro>
+        <Pro>
+          <Ips>
+            <IoMdPerson/>
+          </Ips>
+          <Ad>
+            <Nam>Iya Sodiq</Nam>
+            <Ads>3, Asafa street</Ads>
+          </Ad>
+          <Ij>
+            <TfiAngleRight/>
+          </Ij>
+        </Pro>
+        <Pro>
+          <Ips>
+            <IoMdPerson/>
+          </Ips>
+          <Ad>
+            <Nam>Iya Sodiq</Nam>
+            <Ads>3, Asafa street</Ads>
+          </Ad>
+          <Ij>
+            <TfiAngleRight/>
+          </Ij>
+        </Pro>
+      </Two>
+    )
+}
+export default Recent;
 const Box=styled.div`
 display: flex;
 justify-content: center;

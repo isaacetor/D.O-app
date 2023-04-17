@@ -1,29 +1,55 @@
-import React from "react";
-import styled from "styled-components";
-import {BsFillPeopleFill} from "react-icons/bs"
-import {VscSearch} from "react-icons/vsc"
-import {CiBellOn} from "react-icons/ci"
-import {IoMdPerson} from "react-icons/io"
-import {TfiAngleRight} from "react-icons/tfi"
-import {AiTwotoneBank} from "react-icons/ai"
-import AgentMain from "./AgentMain";
-import AgentHeader from "./AgentHeader";
-import Recent from "./AgentRecent";
-const AgentHome = () => {
-  return (
-      <Container>
-        <Wrap>
-         <AgentHeader/>
-          <Sec>
-           <AgentMain/>
-           <Recent/>
-          </Sec>
-        </Wrap>
-      </Container>
-  );
-};
+import React from "react"
+import styled from "styled-components"
+import p1 from "../../assets/svgs/draw.svg"
+import wave from "../../assets/images/wave.png"
+import wave1 from "../../assets/images/wave2.png"
 
-export default AgentHome;
+const AgentMain=()=>{
+    return(
+        <One>
+        <Detail>
+         <Pop> 
+          <h3>Wants some extra <br/>$cash?</h3>
+          <p>so what you have to do is to<br/>just copy the url and paste it here<br/>cause this is rubbish</p>
+          <Hold1><p>Send</p></Hold1>
+          </Pop>
+          <Pip>
+            <img src={p1} alt="" />
+          </Pip>
+        </Detail>
+        <Infos>
+          <Users>
+            <Box>
+              <Box1></Box1>
+              <Lef>
+                <p>Number of Users</p>
+              </Lef>
+            </Box>
+            <Num>
+              <p>234</p>
+              <small>users</small>
+            </Num>
+            <Log src={wave}/>
+          </Users>
+          <Users>
+            <Box>
+              <Box1 style={{backgroundColor:"green"}}></Box1>
+              <Lef>
+                <p>Total Amount</p>
+              </Lef>
+            </Box>
+            <Num>
+              <p>#4,453,510</p>
+              <small></small>
+            </Num>
+            <Log src={wave1} style={{width:"400px",bottom:"80"}}/>
+          </Users>
+          {/* <Amounts></Amounts> */}
+        </Infos>
+      </One>
+    )
+}
+export default AgentMain;
 const Box=styled.div`
 display: flex;
 justify-content: center;
