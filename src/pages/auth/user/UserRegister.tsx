@@ -8,19 +8,21 @@ import { NavLink, useNavigate } from "react-router-dom";
 // import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
 import { createUser, getAll } from "../../../utils";
-
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const UserRegister = () => {
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
 
-  //get all stations
+  // get all stations
   const { data } = useQuery({
-    queryKey: ["stations"],
+    queryKey: ["stationId"],
     queryFn: getAll("all-stations"),
   });
 
   console.log(`reading data`, data);
+  //
 
   //create user
 
@@ -66,12 +68,12 @@ const UserRegister = () => {
 
   // console.log(`this is `, posting);
 
-  const Submit = handleSubmit(async (data: any) => {
-    // console.log(data);
-    posting.mutate(data);
+  // const Submit = handleSubmit(async (data: any) => {
+  //   // console.log(data);
+  //   posting.mutate(data);
 
-    // reset()
-  });
+  //   // reset()
+  // });
 
   // console.log(`reading data`, data);
 
@@ -95,7 +97,9 @@ const UserRegister = () => {
             </NavLink>
           </p>
 
-          <Form onSubmit={Submit}>
+          <Form
+          // onSubmit={Submit}
+          >
             <InputHold1>
               <InputHold2>
                 <span>Name</span>
@@ -114,12 +118,15 @@ const UserRegister = () => {
             <InputHold>
               <span>Select Station</span>
               <select {...register("station")}>
-                <option value="">Select a station</option>
+                {data?.map((props: any) => (
+                  <option value="Option 2">Option 2</option>
+                ))}
+
                 {/* <option value="Option 1">Option 1</option> */}
-                <option value="Option 2">Option 2</option>
+                {/* <option value="Option 2">Option 2</option>
                 <option value="Option 3">Option 3</option>
                 <option value="Option 4">Option 4</option>
-                <option value="Option 5">Option 5</option>
+                <option value="Option 5">Option 5</option> */}
               </select>
               {errors.station && <div>{errors.station.message}</div>}
             </InputHold>
