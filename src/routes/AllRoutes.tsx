@@ -24,6 +24,7 @@ import Registermallam from "../pages/stationdashboard/Registermallam";
 import Notification from "../pages/stationdashboard/Notification";
 import AssignMallam from "../pages/stationdashboard/AssignMallam";
 import Verification from "../components/commons/props/Verification";
+import DirectorAuth from "../components/layouts/directorAurhLayout/DirectorAuth";
 
 export const element = createBrowserRouter([
   // landing page routes
@@ -104,7 +105,7 @@ export const element = createBrowserRouter([
     ],
   },
 
-  //agent Authentication routes
+  //director Authentication routes
   {
     path: "/director/home",
     element: <DirectorDashboardLayout />,
@@ -119,7 +120,7 @@ export const element = createBrowserRouter([
   },
   {
     path: "/director/register",
-    element: <DirectorDashboardLayout />,
+    element: <DirectorAuth />,
     children: [
       {
         index: true,

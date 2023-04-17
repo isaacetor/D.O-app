@@ -15,29 +15,13 @@ const UserRegister = () => {
   const navigate = useNavigate();
   const apiUrl = process.env.REACT_APP_API_URL;
 
-  //get all stations
-  // const stationData = useQuery({
-  //   queryKey: ["stationId"],
-  //   queryFn: getAll("all-stations"),
-  // });
+  // get all stations
+  const { data } = useQuery({
+    queryKey: ["stationId"],
+    queryFn: getAll("all-stations"),
+  });
 
-  // const allStations = async () => {
-  //   return await axios
-  //     .get(`${apiUrl}/stations/all-stations/`)
-  //     .then((res) => console.log("this is res", res.data))
-  //     .catch((err) => console.log(err));
-  // };
-
-  const allStations = async () => {
-    try {
-      const response = await axios.get(`${apiUrl}/stations/all-stations/`);
-      console.log("this is res", response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  // console.log(`reading data`, stationData.data);
+  console.log(`reading data`, data);
   //
 
   //create user
@@ -134,12 +118,15 @@ const UserRegister = () => {
             <InputHold>
               <span>Select Station</span>
               <select {...register("station")}>
-                <option value="">Select a station</option>
+                {data?.map((props: any) => (
+                  <option value="Option 2">Option 2</option>
+                ))}
+
                 {/* <option value="Option 1">Option 1</option> */}
-                <option value="Option 2">Option 2</option>
+                {/* <option value="Option 2">Option 2</option>
                 <option value="Option 3">Option 3</option>
                 <option value="Option 4">Option 4</option>
-                <option value="Option 5">Option 5</option>
+                <option value="Option 5">Option 5</option> */}
               </select>
               {errors.station && <div>{errors.station.message}</div>}
             </InputHold>
