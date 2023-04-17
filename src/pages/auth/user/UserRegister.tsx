@@ -7,31 +7,25 @@ import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
 // import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
-import { createUser, getAll } from "../../../utils";
+import { allStations, createUser } from "../../../utils";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 
 const UserRegister = () => {
   const navigate = useNavigate();
-  const apiUrl = process.env.REACT_APP_API_URL;
 
   // get all stations
   const { data } = useQuery({
     queryKey: ["stationId"],
-    queryFn: getAll("all-stations"),
+    queryFn: allStations,
   });
 
-  console.log(`reading data`, data);
-  //
-
   //create user
-
   const userSchema = yup
     .object({
       name: yup.string().required("please enter a name"),
       email: yup.string().email().required("please enter an email"),
       address: yup.string().required("please enter your address"),
-      station: yup.string().required("please select a station"),
+      stationName: yup.string().required("please select a station"),
       password: yup.string().required("please enter a password"),
     })
     .required();
@@ -66,16 +60,13 @@ const UserRegister = () => {
     // },
   });
 
-  // console.log(`this is `, posting);
+  // console.log(`this is `, posting.data);
 
-  // const Submit = handleSubmit(async (data: any) => {
-  //   // console.log(data);
-  //   posting.mutate(data);
-
-  //   // reset()
-  // });
-
-  // console.log(`reading data`, data);
+  const Submit = handleSubmit(async (data: any) => {
+    posting.mutate(data);
+    console.log(data);
+    // reset()
+  });
 
   return (
     <div>
@@ -97,9 +88,7 @@ const UserRegister = () => {
             </NavLink>
           </p>
 
-          <Form
-          // onSubmit={Submit}
-          >
+          <Form onSubmit={Submit}>
             <InputHold1>
               <InputHold2>
                 <span>Name</span>
@@ -117,18 +106,14 @@ const UserRegister = () => {
             </InputHold>
             <InputHold>
               <span>Select Station</span>
-              <select {...register("station")}>
-                {data?.map((props: any) => (
-                  <option value="Option 2">Option 2</option>
+              <select {...register("stationName")}>
+                {data?.data?.map((props: any) => (
+                  <option value={props?.station} key={props?._id}>
+                    {props?.station}
+                  </option>
                 ))}
-
-                {/* <option value="Option 1">Option 1</option> */}
-                {/* <option value="Option 2">Option 2</option>
-                <option value="Option 3">Option 3</option>
-                <option value="Option 4">Option 4</option>
-                <option value="Option 5">Option 5</option> */}
               </select>
-              {errors.station && <div>{errors.station.message}</div>}
+              {errors.stationName && <div>{errors.stationName.message}</div>}
             </InputHold>
             <InputHold>
               <span>Password</span>
