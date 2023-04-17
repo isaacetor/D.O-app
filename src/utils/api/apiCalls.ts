@@ -14,7 +14,9 @@ const createUser = async (data: userData) => {
 
 const AllUsers = async () => {};
 const getAll = async (path: any) => {
-  return await axios.get(`stations/${path}/`).then((res) => res.data);
+  return await axios.get(`stations/${path}/`).then((res) => {
+    console.log(`this is response`, res.data);
+  });
 };
 
 export { createUser, AllUsers, getAll };

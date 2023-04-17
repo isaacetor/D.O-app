@@ -8,19 +8,37 @@ import { NavLink, useNavigate } from "react-router-dom";
 // import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
 import { createUser, getAll } from "../../../utils";
-
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const UserRegister = () => {
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   //get all stations
-  const { data } = useQuery({
-    queryKey: ["stations"],
-    queryFn: getAll("all-stations"),
-  });
+  // const stationData = useQuery({
+  //   queryKey: ["stationId"],
+  //   queryFn: getAll("all-stations"),
+  // });
 
-  console.log(`reading data`, data);
+  // const allStations = async () => {
+  //   return await axios
+  //     .get(`${apiUrl}/stations/all-stations/`)
+  //     .then((res) => console.log("this is res", res.data))
+  //     .catch((err) => console.log(err));
+  // };
+
+  const allStations = async () => {
+    try {
+      const response = await axios.get(`${apiUrl}/stations/all-stations/`);
+      console.log("this is res", response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // console.log(`reading data`, stationData.data);
+  //
 
   //create user
 
@@ -66,12 +84,12 @@ const UserRegister = () => {
 
   // console.log(`this is `, posting);
 
-  const Submit = handleSubmit(async (data: any) => {
-    // console.log(data);
-    posting.mutate(data);
+  // const Submit = handleSubmit(async (data: any) => {
+  //   // console.log(data);
+  //   posting.mutate(data);
 
-    // reset()
-  });
+  //   // reset()
+  // });
 
   // console.log(`reading data`, data);
 
@@ -95,7 +113,9 @@ const UserRegister = () => {
             </NavLink>
           </p>
 
-          <Form onSubmit={Submit}>
+          <Form
+          // onSubmit={Submit}
+          >
             <InputHold1>
               <InputHold2>
                 <span>Name</span>
