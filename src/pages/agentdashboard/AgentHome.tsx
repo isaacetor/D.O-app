@@ -5,6 +5,7 @@ import {VscSearch} from "react-icons/vsc"
 import {CiBellOn} from "react-icons/ci"
 import {IoMdPerson} from "react-icons/io"
 import {TfiAngleRight} from "react-icons/tfi"
+import {AiTwotoneBank} from "react-icons/ai"
 import p1 from "../../assets/svgs/draw.svg"
 import wave from "../../assets/images/wave.png"
 import wave1 from "../../assets/images/wave2.png"
@@ -30,7 +31,7 @@ const AgentHome = () => {
             </Hold>
             <Hold>
               <Ic>
-                <BsFillPeopleFill/>
+                <AiTwotoneBank/>
               </Ic>
               <p>Stations</p>
             </Hold>
