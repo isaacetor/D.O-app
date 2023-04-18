@@ -6,9 +6,9 @@ import {CiBellOn} from "react-icons/ci"
 import {IoMdPerson} from "react-icons/io"
 import {TfiAngleRight} from "react-icons/tfi"
 import {AiTwotoneBank} from "react-icons/ai"
-import AgentMain from "./AgentMain";
-import AgentHeader from "./AgentHeader";
-import Recent from "./AgentRecent";
+import AgentMain from "./DirectorMain";
+import AgentHeader from "./DirectorHeader";
+import Recent from "./DirectorRecent";
 const AgentHome = () => {
   return (
       <Container>

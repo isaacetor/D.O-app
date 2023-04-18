@@ -45,7 +45,7 @@ const SideNav = () => {
                 routeName="Home"
                 cl={home ? "#f1f1f1" : "white"}
                 bd={home ? "" : "4px solid white"}
-                hov={home ? " #03B903F" : ""}
+                hov={home ? " #5f83e48f" : ""}
               />
             </div>
 
@@ -63,10 +63,10 @@ const SideNav = () => {
             >
               <Navbars
                 pic={<FaWallet />}
-                routeName="Make Payment"
+                routeName="Stations"
                 cl={wallet ? "#f1f1f1" : "white"}
                 bd={wallet ? "" : "4px solid white"}
-                hov={wallet ? " #03B903" : ""}
+                hov={wallet ? " #5f83e48f" : ""}
               />
             </div>
             <div
@@ -86,7 +86,7 @@ const SideNav = () => {
                 routeName="Make Request"
                 cl={notify ? "#f1f1f1" : "white"}
                 bd={notify ? "" : "4px solid white"}
-                hov={notify ? " #03B903" : ""}
+                hov={notify ? " #5f83e48f" : ""}
               />
             </div>
             <div
@@ -106,7 +106,7 @@ const SideNav = () => {
                 routeName="Support"
                 cl={support ? "#f1f1f1" : "white"}
                 bd={support ? "" : "4px solid white"}
-                hov={support ? " #03B903" : ""}
+                hov={support ? "#5f83e48f" : ""}
               />
             </div>
             <div
@@ -126,7 +126,7 @@ const SideNav = () => {
                 routeName="Profile"
                 cl={account ? "#f1f1f1" : "white"}
                 bd={account ? "" : "4px solid white"}
-                hov={account ? " #03B903" : ""}
+                hov={account ? "#5f83e48f" : ""}
               />
             </div>
           </Bars>
@@ -148,7 +148,7 @@ const SideNav = () => {
               routeName="Log Out"
               cl={logout ? "#f1f1f1" : "white"}
               bd={logout ? "" : "4px solid white"}
-              hov={logout ? " #03B903" : ""}
+              hov={logout ? "#5f83e48f" : ""}
             />
           </div>
         </Wrapper>
