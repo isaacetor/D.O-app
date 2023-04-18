@@ -1,21 +1,24 @@
 import React from "react";
-// import { Sidenav } from "../../blocks";
-import SideNav from "../../blocks/director/Sidenav";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
+import { DirectorSidenav } from "../../blocks";
 
 const DirectorDashboardLayout = () => {
   return (
-    <div>
-      <SideNav />
-      <Cont>
+    <Container>
+      <DirectorSidenav />
       <Outlet />
-      </Cont>
-    </div>
+    </Container>
   );
 };
 export default DirectorDashboardLayout;
-const Cont=styled.div`
+
+const Container = styled.div`
   display: flex;
-  justify-content: flex-end;
-`
+  justify-content: space-between;
+  background-color: #fefefe;
+
+  @media screen and (max-width: 748px) {
+    display: block;
+  }
+`;
