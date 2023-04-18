@@ -77,10 +77,11 @@ const Pro = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  border-bottom: 1px solid lightgray;
   padding: 10px;
   :nth-child(even) {
-    background-color: #d4d5d85e;
+    /* background-color: #d4d5d85e; */
   }
 `;
 const Ij = styled.div``;
@@ -116,9 +117,9 @@ const Tit = styled.div`
 
 const Two = styled.div`
   width: 350px;
-  height: 570px;
+  /* height: 570px; */
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px 2.6px;
 `;

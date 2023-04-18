@@ -23,6 +23,7 @@ const Sec = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-around;
+  margin-top: 23vh;
 `;
 const Wrap = styled.div`
   width: 100%;
