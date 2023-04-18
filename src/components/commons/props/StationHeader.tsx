@@ -1,28 +1,22 @@
-import react from "react";
-import { AiTwotoneBank } from "react-icons/ai";
-import { BsFillPeopleFill } from "react-icons/bs";
-import { CiBellOn } from "react-icons/ci";
-import { VscSearch } from "react-icons/vsc";
+import React from "react";
 import styled from "styled-components";
+import { BsFillPeopleFill } from "react-icons/bs";
+import { VscSearch } from "react-icons/vsc";
+import { CiBellOn } from "react-icons/ci";
+import { AiTwotoneBank } from "react-icons/ai";
 
-const AgentHeader = () => {
+const StationHeader = () => {
   return (
     <Main>
       <Left>
         <Up>
-          <p>welcome Back,</p>
+          <p>Welcome,</p>
         </Up>
         <Down>
-          <h1>Jaji</h1>
+          <h1>Pako Station</h1>
         </Down>
       </Left>
       <Right>
-        <Hold>
-          <Ic>
-            <BsFillPeopleFill />
-          </Ic>
-          <p>Reg Staff</p>
-        </Hold>
         <Hold>
           <Ic>
             <AiTwotoneBank />
@@ -45,38 +39,8 @@ const AgentHeader = () => {
     </Main>
   );
 };
-export default AgentHeader;
 
-const Bi = styled.div`
-  font-size: 20px;
-  width: 35px;
-  height: 35px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  border-radius: 50%;
-  background-color: #928f8f;
-  color: white;
-`;
-const Noti = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 10px;
-  span {
-    width: 25px;
-    height: 25px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    border-radius: 45%;
-    background-color: #2e53da;
-    color: white;
-    margin-top: -20px;
-    margin-left: -15px;
-  }
-`;
-
+export default StationHeader;
 const Right = styled.div`
   display: flex;
   width: 60%;
@@ -90,6 +54,8 @@ const Main = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  background-color: #eaeaea;
+  /* position: fixed; */
 `;
 const Left = styled.div`
   display: flex;
@@ -97,10 +63,38 @@ const Left = styled.div`
   margin-left: 10px;
   /* background-colo:red; */
 `;
-
+const Bi = styled.div`
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #03b903;
+`;
+const Noti = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  span {
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 45%;
+    background-color: #03b903;
+    color: white;
+    margin-top: -20px;
+    margin-left: -15px;
+  }
+`;
 const Hold = styled.div`
   display: flex;
-  background-color: #2e53da;
+  background-color: #03b903;
   padding: 8px 12px;
   height: 35px;
   justify-content: space-between;
@@ -109,6 +103,7 @@ const Hold = styled.div`
   border-radius: 10px;
   p {
     color: white;
+    margin-left: 10px;
   }
 `;
 const Holds = styled.div`
@@ -118,12 +113,17 @@ const Holds = styled.div`
   width: 400px;
   height: 40px;
   border-radius: 6px;
+  background-color: #fff;
   /* border: 1px black solid; */
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   input {
     border: none;
     outline: 0;
     width: 90%;
+    height: 100%;
+    border-radius: 6px;
+    padding-left: 5px;
+    background-color: transparent;
   }
 `;
 const Ic = styled.div`
@@ -132,8 +132,16 @@ const Ic = styled.div`
 const Ip = styled.div`
   font-size: 16px;
   padding-left: 10px;
+  margin-top: 5px;
 `;
-const Up = styled.div``;
+const Up = styled.div`
+  p {
+    margin: 0;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+`;
 const Down = styled.div`
   /* margin-top: -15px; */
   p {

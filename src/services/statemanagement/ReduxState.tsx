@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const ReduxState = createSlice({
-  name: "DirtyOnline",
+  name: "ecoBin",
   initialState,
   reducers: {
     Userlogin: (state, { payload }: PayloadAction<userData>) => {

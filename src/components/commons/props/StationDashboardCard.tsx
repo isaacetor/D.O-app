@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import p1 from "../../assets/svgs/draw.svg";
-import wave from "../../assets/images/wave.png";
-import wave1 from "../../assets/images/wave2.png";
+import wave from "../../../assets/images/wave.png";
+import wave1 from "../../../assets/images/wave.png";
+import p1 from "../../../assets/images/dash1.png";
 
-const AgentMain = () => {
+const StationDashboardCard = () => {
   return (
     <One>
       <Detail>
         <Pop>
           <h3>
             Wants some extra <br />
-            $cash?
+            cash?
           </h3>
           <p>
             so what you have to do is to
@@ -60,7 +60,9 @@ const AgentMain = () => {
     </One>
   );
 };
-export default AgentMain;
+
+export default StationDashboardCard;
+
 const Box = styled.div`
   display: flex;
   justify-content: center;
@@ -71,7 +73,8 @@ const Box = styled.div`
 const Box1 = styled.div`
   width: 30px;
   height: 30px;
-  background-color: #2e53da;
+  /* background-color: #2e53da; */
+  background-color: #03b903;
   margin-right: 10px;
   border-radius: 8px;
 `;
@@ -145,7 +148,12 @@ const Users = styled.div`
 `;
 
 const Detail = styled.div`
-  background-color: #14329e;
+  background-color: #03b903;
+  background: linear-gradient(
+    163deg,
+    rgba(3, 185, 3, 1) 30%,
+    rgba(0, 0, 0, 1) 100%
+  );
   width: 800px;
   border-radius: 10px;
   display: flex;
@@ -173,36 +181,5 @@ const Hold1 = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-`;
-const Hold = styled.div`
-  display: flex;
-  background-color: #2e53da;
-  padding: 8px 12px;
-  height: 35px;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 20px;
-  border-radius: 10px;
-  p {
-    color: white;
-  }
-`;
-
-const Ic = styled.div`
-  color: white;
-`;
-const Ip = styled.div`
-  font-size: 16px;
-  padding-left: 10px;
-`;
-const Up = styled.div``;
-const Down = styled.div`
-  /* margin-top: -15px; */
-  p {
-    margin: 0;
-  }
-  h1 {
-    margin: 0;
   }
 `;

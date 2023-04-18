@@ -1,22 +1,38 @@
 import axios from "./axios";
-import { userData } from "../../types";
+import { agentData, userData } from "../../types";
 
-const createUser = async (data: userData) => {
+const URL = "https://dirty-online.onrender.com";
+
+export const createUser = async ({
+  name,
+  email,
+  phoneNumber,
+  address,
+  password,
+  stationName,
+}: any) => {
   return await axios
-    .post("/users/registeruser", data)
-    .then((res) => {
-      // console.log("this is res", res.data);
+    .post(`${URL}/api/users/registeruser`, {
+      name,
+      email,
+      phoneNumber,
+      address,
+      password,
+      stationName,
     })
-    .catch((err) => {
-      return err;
+    .then((res) => {
+      return res.data;
     });
 };
 
 const AllUsers = async () => {};
-const getAll = async (path: any) => {
-  return await axios.get(`stations/${path}/`).then((res) => {
-    console.log("from api", res.data);
-  });
+
+const allStations = async () => {
+  return await axios
+    .get(`${URL}/api/stations/all-stations`)
+    .then((res) => res.data);
 };
 
-export { createUser, AllUsers, getAll };
+
+export { AllUsers, allStations };
+
