@@ -10,19 +10,13 @@ const StationHeader = () => {
     <Main>
       <Left>
         <Up>
-          <p>welcome Back,</p>
+          <p>Welcome,</p>
         </Up>
         <Down>
-          <h1>Boss</h1>
+          <h1>Pako Station</h1>
         </Down>
       </Left>
       <Right>
-        <Hold>
-          <Ic>
-            <BsFillPeopleFill />
-          </Ic>
-          <p>Reg Staff</p>
-        </Hold>
         <Hold>
           <Ic>
             <AiTwotoneBank />
@@ -60,6 +54,8 @@ const Main = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  background-color: #eaeaea;
+  /* position: fixed; */
 `;
 const Left = styled.div`
   display: flex;
@@ -75,8 +71,8 @@ const Bi = styled.div`
   align-items: center;
   display: flex;
   border-radius: 50%;
-  background-color: #928f8f;
-  color: white;
+  background-color: #fff;
+  color: #03b903;
 `;
 const Noti = styled.div`
   display: flex;
@@ -90,7 +86,7 @@ const Noti = styled.div`
     align-items: center;
     display: flex;
     border-radius: 45%;
-    background-color: #2e53da;
+    background-color: #03b903;
     color: white;
     margin-top: -20px;
     margin-left: -15px;
@@ -98,7 +94,7 @@ const Noti = styled.div`
 `;
 const Hold = styled.div`
   display: flex;
-  background-color: #2e53da;
+  background-color: #03b903;
   padding: 8px 12px;
   height: 35px;
   justify-content: space-between;
@@ -107,6 +103,7 @@ const Hold = styled.div`
   border-radius: 10px;
   p {
     color: white;
+    margin-left: 10px;
   }
 `;
 const Holds = styled.div`
@@ -116,12 +113,17 @@ const Holds = styled.div`
   width: 400px;
   height: 40px;
   border-radius: 6px;
+  background-color: #fff;
   /* border: 1px black solid; */
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   input {
     border: none;
     outline: 0;
     width: 90%;
+    height: 100%;
+    border-radius: 6px;
+    padding-left: 5px;
+    background-color: transparent;
   }
 `;
 const Ic = styled.div`
@@ -130,8 +132,16 @@ const Ic = styled.div`
 const Ip = styled.div`
   font-size: 16px;
   padding-left: 10px;
+  margin-top: 5px;
 `;
-const Up = styled.div``;
+const Up = styled.div`
+  p {
+    margin: 0;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+`;
 const Down = styled.div`
   /* margin-top: -15px; */
   p {
