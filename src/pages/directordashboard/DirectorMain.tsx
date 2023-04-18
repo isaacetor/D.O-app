@@ -102,6 +102,8 @@ const Log = styled.img`
 
 const One = styled.div`
   display: flex;
+  /* width:400px; */
+  /* background-color: red; */
   flex-direction: column;
   justify-content: center;
   align-items: center;

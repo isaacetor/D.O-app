@@ -25,9 +25,9 @@ const AgentHome = () => {
 export default AgentHome;
 
 const Sec = styled.div`
-  display: flex;
   width: 100%;
-  justify-content: center;
+  display: flex;
+  justify-content: space-around;
 `;
 const Wrap = styled.div`
   width: 100%;
@@ -39,4 +39,5 @@ const Wrap = styled.div`
 const Container = styled.div`
   width: calc(100% - 270px);
   height: 100vh;
+  /* background-color: red; */
 `;
