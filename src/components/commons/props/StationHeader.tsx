@@ -55,6 +55,7 @@ const Main = styled.div`
   align-items: center;
   margin-bottom: 20px;
   background-color: #eaeaea;
+  /* position: fixed; */
 `;
 const Left = styled.div`
   display: flex;

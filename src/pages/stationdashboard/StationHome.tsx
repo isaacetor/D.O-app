@@ -1,15 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import StationHeader from "../../components/commons/props/StationHeader";
-
-import p1 from "../../assets/svgs/draw.svg";
+import StationDashboardCard from "../../components/commons/props/StationDashboardCard";
+import StationDashboardRequest from "../../components/commons/props/StationDashboardRequest";
 
 const StationHome = () => {
   return (
     <Container>
       <Wrap>
         <StationHeader />
-        <Sec></Sec>
+        <Sec>
+          <StationDashboardCard />
+          <StationDashboardRequest />
+        </Sec>
       </Wrap>
     </Container>
   );
@@ -19,7 +22,7 @@ export default StationHome;
 const Sec = styled.div`
   display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;
 `;
 const Wrap = styled.div`
   width: 100%;
