@@ -6,6 +6,7 @@ import "react-circular-progressbar/dist/styles.css";
 import { NavLink } from "react-router-dom";
 import { GlobalButton } from ".";
 import { useAppSelector } from "../../../services/statemanagement/Store";
+import Swal from "sweetalert2";
 
 const UserDashboardQuick = () => {
   const user = useAppSelector((state) => state.userDetails);
@@ -34,7 +35,7 @@ const UserDashboardQuick = () => {
                   },
                 }}
               />
-              <p>Monthly Request 3/4</p>
+              <p>Monthly Request {`${percentage}`}/4</p>
             </QuickImage>
             <QuickComponent>
               <HText>Make a Request with just a click</HText>
@@ -43,22 +44,33 @@ const UserDashboardQuick = () => {
                 Is your waste full? request for trash pick up now!
               </LText>
 
-              <NavLink
-                to="/dashboard/giftcard"
-                style={{ textDecoration: "none" }}
-              >
-                <GlobalButton
-                  bg=""
-                  col="#03b903"
-                  padding="18px 30px"
-                  text="Make Request"
-                  bghovercolor="transparent"
-                  hgt="6vh"
-                  bor="1px solid #fff"
-                  hovCol="#fff"
-                  width="200px"
-                />
-              </NavLink>
+              <GlobalButton
+                bg=""
+                col="#03b903"
+                padding="18px 30px"
+                text="Make Request"
+                bghovercolor="transparent"
+                hgt="6vh"
+                bor="1px solid #fff"
+                hovCol="#fff"
+                width="200px"
+                onClick={async () => {
+                  await Swal.fire({
+                    title: "Do you want to save the changes?",
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: "Save",
+                    denyButtonText: `Don't save`,
+                  }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                      Swal.fire("Saved!", "", "success");
+                    } else if (result.isDenied) {
+                      Swal.fire("Changes are not saved", "", "info");
+                    }
+                  });
+                }}
+              />
             </QuickComponent>
           </QuickWrap>
         </QuickContain>

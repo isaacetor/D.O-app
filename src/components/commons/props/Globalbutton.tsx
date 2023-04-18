@@ -11,6 +11,7 @@ const Globalbutton: React.FC<GlobalButtonProp> = ({
   bor,
   hovCol,
   width,
+  onClick,
 }: any) => {
   return (
     <Button
@@ -21,6 +22,7 @@ const Globalbutton: React.FC<GlobalButtonProp> = ({
       bor={bor}
       hovCol={hovCol}
       width={width}
+      // onClick={}
     >
       {text}
     </Button>
