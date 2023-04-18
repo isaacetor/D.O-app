@@ -26,6 +26,8 @@ export type GlobalButtonProp = {
   bor?: string;
   hovCol?: string;
   width: string;
+  //come back and make this compulsory
+  onClick?: () => Promise<void>;
 };
 
 //types for managing user details

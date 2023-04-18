@@ -8,6 +8,7 @@ import { UserDashboardCards } from "../../components";
 import { UserDashboardHistory } from "../../components";
 import Globalbutton from "../../components/commons/props/Globalbutton";
 import { useAppSelector } from "../../services/statemanagement/Store";
+import Swal from "sweetalert2";
 const BusinessHome = () => {
   const user = useAppSelector((state) => state.userDetails);
 
