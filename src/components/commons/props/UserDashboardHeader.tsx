@@ -75,7 +75,7 @@ const Head = styled.div`
 `;
 
 const Message = styled.div`
-  font-size: 18px;
+  font-size: 13px;
   display: flex;
 
   h1 {

@@ -17,7 +17,6 @@ const UserRegister = () => {
   // get all stations
   const { data } = useQuery({
     queryKey: ["stationId"],
-
     queryFn: allStations,
   });
 
@@ -62,7 +61,6 @@ const UserRegister = () => {
 
   const Submit = handleSubmit(async (data: any) => {
     posting.mutate(data);
-    // console.log(data);
     // reset()
   });
 

@@ -4,13 +4,13 @@ import styled from "styled-components";
 
 import TransactionHistory from "./TransactionHistory";
 import UserNotification from "./UserNotification";
-// import { UseAppSelector } from "../../Global/Store";
 import { useQuery } from "@tanstack/react-query";
 // import { getOneClient } from "../../Api/Endpoints";
 import BusinessHome from "./Home.Business";
+import { useAppSelector } from "../../services/statemanagement/Store";
 
 const UserDashboardHome = () => {
-  // const user = UseAppSelector((state) => state.Client);
+  // const user = useAppSelector((state) => state.userDetails);
 
   // console.log(user);
 

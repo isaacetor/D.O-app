@@ -36,6 +36,7 @@ export type userData = {
   stationName: string;
   address: string;
   password: string;
+  numberOfRequests: number;
 };
 
 //types for manageing our agent information

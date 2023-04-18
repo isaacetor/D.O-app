@@ -5,16 +5,18 @@ import Swal from "sweetalert2";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
-// import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
-import { createUser } from "../../../utils";
+import { UseAppDispatch } from "../../../services/statemanagement/Store";
+import { userLogin } from "../../../services/statemanagement/ReduxState";
+import { Loading, loginUser } from "../../../utils";
 
 const UserLogin = () => {
   const navigate = useNavigate();
+  const dispatch = UseAppDispatch();
 
   const userSchema = yup
     .object({
-      phoneNumber: yup.number().required("please your phone number"),
+      email: yup.string().required("please enter an email"),
       password: yup.string().required("please enter a password"),
     })
     .required();
@@ -29,18 +31,49 @@ const UserLogin = () => {
     resolver: yupResolver(userSchema),
   });
 
-  const { data } = useMutation({
-    mutationKey: ["newUser"],
-    mutationFn: createUser,
+  const posting = useMutation({
+    mutationKey: ["login"],
+    mutationFn: loginUser,
+
+    onSuccess: (myData: any) => {
+      dispatch(userLogin(myData.data));
+
+      Swal.fire({
+        icon: "success",
+        title: "Login succesful",
+        html: "Taking you to your dashboard",
+        timer: 2000,
+
+        didOpen: () => {
+          Swal.showLoading();
+        },
+
+        willClose: () => {
+          navigate("/user/home");
+        },
+      });
+    },
+    onError: (error: any) => {
+      // handle error here
+      Swal.fire({
+        title: "login failed",
+        text: "email or password incorrect",
+        icon: "error",
+      });
+    },
   });
 
-  console.log(`reading data`, data);
+  const Submit = handleSubmit(async (data) => {
+    posting.mutate(data);
+    // reset()
+  });
 
   return (
     <div>
       <Container>
+        {posting.isLoading ? <Loading /> : null}
         <Wrapper>
-          <h4>dumpsters</h4>
+          <h4>ecoBIN</h4>
           <h2>Sign in</h2>
           <p>
             Don't have an account?
@@ -56,14 +89,14 @@ const UserLogin = () => {
             </NavLink>
           </p>
 
-          <Form>
+          <Form onSubmit={Submit}>
             <InputHold>
-              <span>Phone Number</span>
-              <input type="number" required />
+              <span>Email</span>
+              <input {...register("email")} type="email" required />
             </InputHold>
             <InputHold>
               <span>Password</span>
-              <input type="password" required />
+              <input {...register("password")} type="password" required />
             </InputHold>
 
             <Button type="submit"> Sign in</Button>

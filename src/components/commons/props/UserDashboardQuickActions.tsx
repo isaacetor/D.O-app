@@ -5,9 +5,11 @@ import "react-circular-progressbar/dist/styles.css";
 
 import { NavLink } from "react-router-dom";
 import { GlobalButton } from ".";
+import { useAppSelector } from "../../../services/statemanagement/Store";
 
 const UserDashboardQuick = () => {
-  const percentage = 3;
+  const user = useAppSelector((state) => state.userDetails);
+  const percentage = user?.numberOfRequests;
   return (
     <InBody>
       <QuickActions>
@@ -16,7 +18,7 @@ const UserDashboardQuick = () => {
           <QuickWrap>
             <QuickImage>
               <CircularProgressbar
-                value={percentage}
+                value={percentage!}
                 maxValue={4}
                 text={`${percentage}`}
                 styles={{
