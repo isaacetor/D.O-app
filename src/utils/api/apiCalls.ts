@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import axios from "axios";
-import { agentData, userData } from "../../types";
-=======
 import axios from "./axios";
-import { userData } from "../../types";
->>>>>>> eccfcf627cb1180c31c330940c0affe97b97f797
+import { agentData, userData } from "../../types";
 
 const createUser = async (data: userData) => {
   return await axios
@@ -24,7 +19,6 @@ const getAll = async (path: any) => {
   });
 };
 
-<<<<<<< HEAD
 const createAgent = async (data: agentData) => {
   return await axios
     .post("/register-agents", data)
@@ -34,7 +28,4 @@ const createAgent = async (data: agentData) => {
     });
 };
 
-export { createUser, AllUsers };
-=======
-export { createUser, AllUsers, getAll };
->>>>>>> eccfcf627cb1180c31c330940c0affe97b97f797
+export { createUser, AllUsers, getAll, createAgent };
