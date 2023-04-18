@@ -24,6 +24,7 @@ const UserAuthLayout = () => {
 export default UserAuthLayout;
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   background-color: #fefefe;

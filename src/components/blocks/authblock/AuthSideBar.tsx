@@ -162,6 +162,7 @@ const Container = styled.div<{ backgroundColor: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   @media screen and (max-width: 1024px) {
     width: 400px;

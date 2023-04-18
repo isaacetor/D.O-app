@@ -33,6 +33,7 @@ export type userData = {
   name: string;
   email: string;
   phoneNumber: number;
+  stationName: string;
   address: string;
   password: string;
 };

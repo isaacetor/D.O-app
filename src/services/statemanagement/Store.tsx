@@ -15,7 +15,7 @@ import {
 } from "redux-persist";
 
 const persistConfig = {
-  key: "dirtyOnline",
+  key: "ecoBin",
   version: 1,
   storage,
 };

@@ -7,6 +7,13 @@ import { RouterProvider } from "react-router-dom";
 import { element } from "./routes/AllRoutes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Provider } from "react-redux/es/exports";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+import { Store } from "./services/statemanagement/Store";
+
+const queryQlient = new QueryClient();
+let persitstore = persistStore(Store);
 
 const client = new QueryClient();
 
@@ -15,10 +22,16 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
     <QueryClientProvider client={client}>
-      <RouterProvider router={element} />
-      <ReactQueryDevtools />
+      <Provider store={Store}>
+        <PersistGate persistor={persitstore}>
+          <QueryClientProvider client={queryQlient}>
+            {/* <App /> */}
+            <RouterProvider router={element} />
+            <ReactQueryDevtools />
+          </QueryClientProvider>
+        </PersistGate>
+      </Provider>
     </QueryClientProvider>
   </React.StrictMode>
 );
