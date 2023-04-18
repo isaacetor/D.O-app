@@ -1,14 +1,14 @@
-import React, { useState } from "react";
 import styled from "styled-components";
-// import { useAppSelector } from "../../../Global/Store";
-import { NavLink } from "react-router-dom";
 import { UserDashboardHeader } from "../../components";
 import { UserDashboardQuick } from "../../components";
 import { UserDashboardCards } from "../../components";
 import { UserDashboardHistory } from "../../components";
 import Globalbutton from "../../components/commons/props/Globalbutton";
 import { useAppSelector } from "../../services/statemanagement/Store";
-import Swal from "sweetalert2";
+import money from "../../assets/images/money.png";
+import request from "../../assets/images/request.png";
+import recycle from "../../assets/images/recycle.png";
+
 const BusinessHome = () => {
   const user = useAppSelector((state) => state.userDetails);
 
@@ -31,7 +31,7 @@ const BusinessHome = () => {
               bigTextCol="#fff"
               smallText="Credit your ecoBin wallet to keep making trash pick-up request"
               smallTextCol="#fff"
-              imgPic=""
+              imgPic={money}
             />
             <Globalbutton
               bg=""
@@ -51,7 +51,27 @@ const BusinessHome = () => {
               bigTextCol="#fff"
               smallText="Are u having a party or event? ecoBin staff will be there for your trash needs!"
               smallTextCol="#fff"
-              imgPic=""
+              imgPic={request}
+            />
+            <Globalbutton
+              bg=""
+              col="#03B903"
+              padding="18px 30px"
+              text="send us an hello!"
+              bghovercolor="transparent"
+              bor="1px solid #fff"
+              hovCol="#fff"
+              width="210px"
+            />
+          </HoldC>
+          <HoldC bg="#039B03">
+            <UserDashboardCards
+              bgcol1=""
+              bigText="Make a Custom Request"
+              bigTextCol="#fff"
+              smallText="Are u having a party or event? ecoBin staff will be there for your trash needs!"
+              smallTextCol="#fff"
+              imgPic={recycle}
             />
             <Globalbutton
               bg=""
@@ -87,8 +107,9 @@ const HoldC = styled.div<{ bg: string }>`
 `;
 const Hold = styled.div`
   display: flex;
+  flex-wrap: wrap;
   width: 95%;
-  gap: 20px;
+  gap: 30px;
 
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
@@ -104,7 +125,7 @@ const Container = styled.div`
 const Body = styled.div`
   width: 100%;
   color: #3d3d3d;
-  margin-top: 200px;
+  margin-top: 180px;
   margin-left: 20px;
   display: flex;
   flex-direction: column;

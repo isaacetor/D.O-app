@@ -27,7 +27,7 @@ const SideNav = () => {
       <Container>
         <Wrapper>
           <NavLink to="/" style={{ textDecoration: "none" }}>
-            <Logo>ecoBin</Logo>
+            <Logo>ecoBIN</Logo>
           </NavLink>
 
           <Bars>
