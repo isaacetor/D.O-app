@@ -1,11 +1,11 @@
-import react from "react";
-import { AiTwotoneBank } from "react-icons/ai";
-import { BsFillPeopleFill } from "react-icons/bs";
-import { CiBellOn } from "react-icons/ci";
-import { VscSearch } from "react-icons/vsc";
+import React from "react";
 import styled from "styled-components";
+import { BsFillPeopleFill } from "react-icons/bs";
+import { VscSearch } from "react-icons/vsc";
+import { CiBellOn } from "react-icons/ci";
+import { AiTwotoneBank } from "react-icons/ai";
 
-const AgentHeader = () => {
+const StationHeader = () => {
   return (
     <Main>
       <Left>
@@ -13,7 +13,7 @@ const AgentHeader = () => {
           <p>welcome Back,</p>
         </Up>
         <Down>
-          <h1>Jaji</h1>
+          <h1>Boss</h1>
         </Down>
       </Left>
       <Right>
@@ -45,8 +45,28 @@ const AgentHeader = () => {
     </Main>
   );
 };
-export default AgentHeader;
 
+export default StationHeader;
+const Right = styled.div`
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+  align-items: center;
+  /* margin-right: 20px; */
+`;
+const Main = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+`;
+const Left = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  /* background-colo:red; */
+`;
 const Bi = styled.div`
   font-size: 20px;
   width: 35px;
@@ -76,28 +96,6 @@ const Noti = styled.div`
     margin-left: -15px;
   }
 `;
-
-const Right = styled.div`
-  display: flex;
-  width: 60%;
-  justify-content: space-around;
-  align-items: center;
-  /* margin-right: 20px; */
-`;
-const Main = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-`;
-const Left = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-  /* background-colo:red; */
-`;
-
 const Hold = styled.div`
   display: flex;
   background-color: #2e53da;

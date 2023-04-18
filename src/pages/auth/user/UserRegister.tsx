@@ -7,7 +7,6 @@ import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
 // import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
-import { allStations, createUser } from "../../../utils";
 import { useQuery } from "@tanstack/react-query";
 
 const UserRegister = () => {
@@ -16,7 +15,9 @@ const UserRegister = () => {
   // get all stations
   const { data } = useQuery({
     queryKey: ["stationId"],
+
     queryFn: allStations,
+
   });
 
   //create user
@@ -42,7 +43,7 @@ const UserRegister = () => {
 
   const posting = useMutation({
     mutationKey: ["newUser"],
-    mutationFn: createUser,
+    // mutationFn: createUser,
 
     // onSuccess: (myData: any) => {
     //   console.log("user", myData);
@@ -106,12 +107,14 @@ const UserRegister = () => {
             </InputHold>
             <InputHold>
               <span>Select Station</span>
+
               <select {...register("stationName")}>
                 {data?.data?.map((props: any) => (
                   <option value={props?.station} key={props?._id}>
                     {props?.station}
                   </option>
                 ))}
+
               </select>
               {errors.stationName && <div>{errors.stationName.message}</div>}
             </InputHold>
