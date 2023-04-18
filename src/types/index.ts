@@ -38,6 +38,16 @@ export type userData = {
   password: string;
 };
 
+//types for manageing our agent information
+
+export type agentData = {
+  name: string;
+  email: string;
+  password: string;
+  address: string;
+  ConfirmPassword: string;
+};
+
 //types for the about section in the landing page
 
 export type aBout = {

@@ -1,5 +1,5 @@
 import axios from "./axios";
-import { userData } from "../../types";
+import { agentData, userData } from "../../types";
 
 const URL = "https://dirty-online.onrender.com";
 
@@ -33,4 +33,6 @@ const allStations = async () => {
     .then((res) => res.data);
 };
 
+
 export { AllUsers, allStations };
+

@@ -17,6 +17,7 @@ const UserRegister = () => {
   // get all stations
   const { data } = useQuery({
     queryKey: ["stationId"],
+
     queryFn: allStations,
   });
 
@@ -61,7 +62,7 @@ const UserRegister = () => {
 
   const Submit = handleSubmit(async (data: any) => {
     posting.mutate(data);
-    console.log(data);
+    // console.log(data);
     // reset()
   });
 
@@ -104,6 +105,7 @@ const UserRegister = () => {
             </InputHold>
             <InputHold>
               <span>Select Station</span>
+
               <select {...register("stationName")}>
                 {data?.data?.map((props: any) => (
                   <option value={props?.station} key={props?._id}>
