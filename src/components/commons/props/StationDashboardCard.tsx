@@ -9,20 +9,12 @@ const StationDashboardCard = () => {
     <One>
       <Detail>
         <Pop>
-          <h3>
-            Wants some extra <br />
-            cash?
-          </h3>
+          <h2>Streamlining operations for maximum Productivity.</h2>
           <p>
-            so what you have to do is to
-            <br />
-            just copy the url and paste it here
-            <br />
-            cause this is rubbish
+            Maximize productivity: track all today's requests with our intuitive
+            system
           </p>
-          <Hold1>
-            <p>Send</p>
-          </Hold1>
+          <Hold1>View Request</Hold1>
         </Pop>
         <Pip>
           <img src={p1} alt="" />
@@ -113,13 +105,16 @@ const One = styled.div`
 const Pop = styled.div`
   display: flex;
   flex-direction: column;
-  h3 {
+  h2 {
     color: white;
     font-size: 30px;
+    margin: 0;
+    margin-top: 20px;
+    /* line-height: 35px; */
   }
   p {
     color: white;
-    font-size: 14px;
+    font-size: 16px;
   }
 `;
 const Pip = styled.div`
@@ -164,22 +159,19 @@ const Detail = styled.div`
   /* gap: 10px; */
 `;
 
-const Hold1 = styled.div`
+const Hold1 = styled.button`
   display: flex;
-  width: 80px;
-  height: 25px;
-  justify-content: space-between;
+  width: 150px;
+  height: 50px;
+  justify-content: center;
   align-items: center;
   background-color: white;
-  padding: 8px 12px;
-  /* margin-right: 20px; */
+  font-size: 16px;
+  border: none;
   border-radius: 10px;
-  p {
-    width: 100%;
-    color: #2e53da;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  color: #03b903;
+  font-weight: 600;
+
+  :hover {
   }
 `;

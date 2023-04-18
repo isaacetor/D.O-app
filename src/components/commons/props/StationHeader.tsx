@@ -8,39 +8,48 @@ import { AiTwotoneBank } from "react-icons/ai";
 const StationHeader = () => {
   return (
     <Main>
-      <Left>
-        <Up>
-          <p>Welcome,</p>
-        </Up>
-        <Down>
-          <h1>Pako Station</h1>
-        </Down>
-      </Left>
-      <Right>
-        <Hold>
-          <Ic>
-            <AiTwotoneBank />
-          </Ic>
-          <p>Stations</p>
-        </Hold>
-        <Holds>
-          <Ip>
-            <VscSearch />
-          </Ip>
-          <input />
-        </Holds>
-        <Noti>
-          <Bi>
-            <CiBellOn />
-          </Bi>
-          <span>0</span>
-        </Noti>
-      </Right>
+      <Wrapper>
+        <Left>
+          <Up>
+            <p>Welcome,</p>
+          </Up>
+          <Down>
+            <h1>Pako Station</h1>
+          </Down>
+        </Left>
+        <Right>
+          <Hold>
+            <Ic>
+              <AiTwotoneBank />
+            </Ic>
+            <p>Stations</p>
+          </Hold>
+          <Holds>
+            <Ip>
+              <VscSearch />
+            </Ip>
+            <input />
+          </Holds>
+          <Noti>
+            <Bi>
+              <CiBellOn />
+            </Bi>
+            <span>0</span>
+          </Noti>
+        </Right>
+      </Wrapper>
     </Main>
   );
 };
 
 export default StationHeader;
+
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+`;
 const Right = styled.div`
   display: flex;
   width: 60%;
@@ -49,13 +58,16 @@ const Right = styled.div`
   /* margin-right: 20px; */
 `;
 const Main = styled.div`
-  width: 100%;
+  width: calc(100% - 250px);
+  height: 17vh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  /* align-items: center; */
   margin-bottom: 20px;
   background-color: #eaeaea;
-  /* position: fixed; */
+  position: fixed;
+  top: 0;
+  z-index: 9999;
 `;
 const Left = styled.div`
   display: flex;
@@ -139,7 +151,7 @@ const Up = styled.div`
     margin: 0;
     font-size: 18px;
     margin-top: 20px;
-    font-weight: bold;
+    font-weight: 500;
   }
 `;
 const Down = styled.div`
