@@ -8,6 +8,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 // import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
 import { useQuery } from "@tanstack/react-query";
+import { allStations } from "../../../utils";
 
 const UserRegister = () => {
   const navigate = useNavigate();
@@ -17,7 +18,6 @@ const UserRegister = () => {
     queryKey: ["stationId"],
 
     queryFn: allStations,
-
   });
 
   //create user
@@ -114,7 +114,6 @@ const UserRegister = () => {
                     {props?.station}
                   </option>
                 ))}
-
               </select>
               {errors.stationName && <div>{errors.stationName.message}</div>}
             </InputHold>
