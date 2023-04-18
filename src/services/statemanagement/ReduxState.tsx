@@ -11,7 +11,7 @@ const ReduxState = createSlice({
   name: "ecoBin",
   initialState,
   reducers: {
-    Userlogin: (state, { payload }: PayloadAction<userData>) => {
+    userLogin: (state, { payload }: PayloadAction<userData>) => {
       state.userDetails = payload;
     },
 
@@ -21,8 +21,8 @@ const ReduxState = createSlice({
   },
 });
 
-export const dummy_user: any = { name: "Andrea", role: "admin" };
+// export const dummy_user: any = { name: "Andrea", role: "admin" };
 
-export const { logout, Userlogin } = ReduxState.actions;
+export const { logout, userLogin } = ReduxState.actions;
 
 export default ReduxState.reducer;

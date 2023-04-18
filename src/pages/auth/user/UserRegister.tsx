@@ -5,10 +5,11 @@ import Swal from "sweetalert2";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
-// import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
+import { Loading, allStations, createUser } from "../../../utils";
 import { useQuery } from "@tanstack/react-query";
-import { allStations } from "../../../utils";
+import { UseAppDispatch } from "../../../services/statemanagement/Store";
+import { userLogin } from "../../../services/statemanagement/ReduxState";
 
 const UserRegister = () => {
   const navigate = useNavigate();
@@ -16,7 +17,6 @@ const UserRegister = () => {
   // get all stations
   const { data } = useQuery({
     queryKey: ["stationId"],
-
     queryFn: allStations,
   });
 
@@ -43,35 +43,31 @@ const UserRegister = () => {
 
   const posting = useMutation({
     mutationKey: ["newUser"],
-    // mutationFn: createUser,
+    mutationFn: createUser,
 
-    // onSuccess: (myData: any) => {
-    //   console.log("user", myData);
-    //   //   dispatch(login(myData.data));
-    //   Swal.fire({
-    //     title: "Registration succesful",
-    //     html: "redirecting you to login",
-    //     timer: 2000,
-    //     timerProgressBar: true,
+    onSuccess: (myData: any) => {
+      Swal.fire({
+        title: "Registration succesfull",
+        html: "Redirecting you to login",
+        timer: 2000,
+        timerProgressBar: true,
 
-    //     willClose: () => {
-    //       navigate("/user/login");
-    //     },
-    //   });
-    // },
+        willClose: () => {
+          navigate("/user/login");
+        },
+      });
+    },
   });
-
-  // console.log(`this is `, posting.data);
 
   const Submit = handleSubmit(async (data: any) => {
     posting.mutate(data);
-    console.log(data);
     // reset()
   });
 
   return (
     <div>
       <Container>
+        {posting.isLoading ? <Loading /> : null}
         <Wrapper>
           <h4>ecoBin</h4>
           <h2>Register</h2>
@@ -312,6 +308,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #fefefe;
+  position: relative;
 
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 400px);

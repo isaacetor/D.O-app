@@ -26,6 +26,7 @@ export default UserAuthLayout;
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  position: relative;
   background-color: #fefefe;
   overflow: hidden;
 

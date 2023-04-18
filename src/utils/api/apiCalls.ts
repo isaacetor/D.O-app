@@ -25,6 +25,14 @@ export const createUser = async ({
     });
 };
 
+const loginUser = async ({ email, password }: any) => {
+  return await axios
+    .post(`${URL}/api/users/loginuser`, { email, password })
+    .then((res) => {
+      return res.data;
+    });
+};
+
 const AllUsers = async () => {};
 
 const allStations = async () => {
@@ -33,6 +41,4 @@ const allStations = async () => {
     .then((res) => res.data);
 };
 
-
-export { AllUsers, allStations };
-
+export { AllUsers, allStations, loginUser };

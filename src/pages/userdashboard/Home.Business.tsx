@@ -7,13 +7,14 @@ import { UserDashboardQuick } from "../../components";
 import { UserDashboardCards } from "../../components";
 import { UserDashboardHistory } from "../../components";
 import Globalbutton from "../../components/commons/props/Globalbutton";
+import { useAppSelector } from "../../services/statemanagement/Store";
 const BusinessHome = () => {
-  // const user = useAppSelector((state) => state.bizClient);
+  const user = useAppSelector((state) => state.userDetails);
 
   return (
     <Container>
       <UserDashboardHeader
-        title={"Welcome"}
+        title={`welcome, ${user?.name}`}
         amount="N2000"
         button="Top-up balance"
         display="flex"
