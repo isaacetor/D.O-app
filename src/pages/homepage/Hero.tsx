@@ -12,13 +12,13 @@ const Hero = () => {
           <Left>
             <TextHold>
               <Title>
-                Reduce Waste, promote recycling, and dispose properly for a
-                greener future!
+                dispose Waste properly & promote recycling, for a greener
+                future!
               </Title>
               <p>
-                Ready to be an eco-champion? Let's team up to reduce waste,
-                promote recycling, and proper waste disposal. Small actions can
-                make a big impact on our planet! ♻️🌍
+                Ready to be an eco-champion? Let's team up to ensure proper
+                waste disposal and promote recycling within our communities.
+                Small actions can make a big impact on our planet! ♻️🌍
               </p>
               <NavLink to="/user/register" style={{ textDecoration: "none" }}>
                 <button>
@@ -45,7 +45,7 @@ const TextHold = styled.div`
   p {
     margin-top: 30px;
     width: 90%;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 139.6%;
     margin-bottom: 4rem;
 
@@ -97,7 +97,7 @@ const Title = styled.h1`
   font-weight: 700;
   margin: 0;
   margin-top: 30px;
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   line-height: 4rem;
   color: #333333;
   text-transform: capitalize;

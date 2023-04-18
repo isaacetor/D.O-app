@@ -76,7 +76,7 @@ const Left = styled.div`
   h2 {
     color: #3c37ff;
     font-weight: 500;
-    font-size: 2.1rem;
+    font-size: 2rem;
     margin: 0;
     margin-bottom: 2rem;
 
@@ -89,11 +89,11 @@ const Left = styled.div`
   }
 
   h1 {
-    font-size: 2.8rem;
+    font-size: 2.7rem;
     width: 95%;
     margin: 0;
     margin-bottom: 1rem;
-    line-height: 3.5rem;
+    line-height: 3.2rem;
     font-weight: 700;
 
     @media screen and (max-width: 768px) {
@@ -136,7 +136,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   width: 100%;
   color: #00002d;
-  margin-top: 110px;
+  margin-top: 90px;
   margin-bottom: 20px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
