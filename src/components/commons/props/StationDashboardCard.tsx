@@ -65,7 +65,7 @@ const Box = styled.div`
 const Box1 = styled.div`
   width: 30px;
   height: 30px;
-  /* background-color: #2e53da; */
+  /* background-color: f3f4f5" */
   background-color: #03b903;
   margin-right: 10px;
   border-radius: 8px;

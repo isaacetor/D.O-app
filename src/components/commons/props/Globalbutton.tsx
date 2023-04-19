@@ -43,7 +43,7 @@ const Button = styled.button<{
   padding: ${({ padding }) => padding};
   width: ${({ width }) => width};
   color: ${(props) => props.col};
-  background-color: ${(props) => props.bg};
+  background-color: ${({ bg }) => bg};
   font-size: 16px;
   border: 0;
   border-radius: 5px;
