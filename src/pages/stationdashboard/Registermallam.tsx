@@ -15,8 +15,8 @@ const Registermallam = () => {
         <Info>
           <Infos>
             <Hold>
-              <HoldText>Name of station</HoldText>
-              <input type="text" placeholder="Stations" />
+              <HoldText>Name of Carrier</HoldText>
+              <input type="text" placeholder="Full name" />
             </Hold>
             <Hold>
               <HoldText>Phone Number</HoldText>
@@ -110,14 +110,18 @@ const Hold = styled.div`
     padding-left: 8px;
     border-radius: 5px;
     margin-top: 2px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     border: none;
   }
 `;
 const HoldText = styled.div`
-  border-bottom: 3px solid black;
-  width: 130px;
+  border-bottom: 3px solid #03b903;
+  width: 150px;
   margin-bottom: 10px;
+  font-size: 18px;
+  color: #a5a5a5;
 `;
 const ButHold = styled.div`
   /* button {
