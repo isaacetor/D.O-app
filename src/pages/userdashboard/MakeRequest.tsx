@@ -3,6 +3,7 @@ import {
   GlobalButton,
   UserDashboardCards,
   UserDashboardHeader,
+  UserTables,
 } from "../../components";
 import styled from "styled-components";
 
@@ -55,7 +56,9 @@ const MakeRequest = () => {
           </HoldC>
         </First>
         <Second>
-          <TransactionHistory>ALL Request History</TransactionHistory>
+          <TransactionHistory>
+            <UserTables />
+          </TransactionHistory>
         </Second>
       </Body>
     </Container>
