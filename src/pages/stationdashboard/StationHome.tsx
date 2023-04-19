@@ -8,7 +8,7 @@ const StationHome = () => {
   return (
     <Container>
       <Wrap>
-        <StationHeader />
+        <StationHeader bg="#eaeaea" />
         <Sec>
           <StationDashboardCard />
           <StationDashboardRequest />
