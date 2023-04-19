@@ -16,7 +16,7 @@ const BusinessHome = () => {
     <Container>
       <UserDashboardHeader
         title={`welcome, ${user?.name}`}
-        amount="N2000"
+        amount="₦ 2000"
         button="Top-up balance"
         display="flex"
         height="24vh"

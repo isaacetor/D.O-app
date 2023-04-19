@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { HiHome, HiBell } from "react-icons/hi";
+import { HiHome } from "react-icons/hi";
 import { GiCardPickup } from "react-icons/gi";
 import { FaWallet } from "react-icons/fa";
 import { AiFillMessage } from "react-icons/ai";
 import { CiLogout } from "react-icons/ci";
 import { BsPersonFill } from "react-icons/bs";
 import { NavLink, useNavigate } from "react-router-dom";
-// import { UseAppDispatch } from "../../../Global/Store";
-// import { logout as LogOut } from "../../../Global/ReduxState";
 import { Navbars } from "../../commons";
+import { UseAppDispatch } from "../../../services/statemanagement/Store";
+import { logout as Logout } from "../../../services/statemanagement/ReduxState";
 
 const SideNav = () => {
   const [home, setHome] = React.useState(true);
@@ -20,7 +20,7 @@ const SideNav = () => {
   const [logout, setLogout] = React.useState(true);
 
   const navigate = useNavigate();
-  // const dispatch = UseAppDispatch();
+  const dispatch = UseAppDispatch();
 
   return (
     <div>
@@ -34,7 +34,6 @@ const SideNav = () => {
             <div
               onClick={() => {
                 setHome(false);
-
                 setWallet(true);
                 setNotify(true);
                 setSupport(true);
@@ -136,13 +135,12 @@ const SideNav = () => {
           <div
             onClick={() => {
               setHome(true);
-
               setWallet(true);
               setNotify(true);
               setSupport(true);
               setAccount(true);
               setLogout(false);
-              // dispatch(LogOut());
+              dispatch(Logout());
               navigate("/");
             }}
           >

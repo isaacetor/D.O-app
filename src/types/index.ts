@@ -36,6 +36,8 @@ export type userData = {
   email: string;
   phoneNumber: number;
   stationName: string;
+  station: [{}];
+  role: string;
   address: string;
   password: string;
   numberOfRequests: number;

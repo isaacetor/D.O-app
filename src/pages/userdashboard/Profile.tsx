@@ -2,26 +2,32 @@ import React from "react";
 import { MdModeEditOutline } from "react-icons/md";
 import styled from "styled-components";
 import { GlobalButton } from "../../components";
+import { useAppSelector } from "../../services/statemanagement/Store";
 
 const Profile = () => {
+  const user = useAppSelector((state) => state.userDetails);
+  let initials: string | undefined = user?.name
+    .split(" ")
+    .map((word) => word.charAt(0))
+    .join("");
   return (
     <div>
       <Container>
         <Wrapper>
           <h2>Account Setting</h2>
-          <Dp>JD</Dp>
+          <Dp>{initials}</Dp>
           <Form>
             <InputHold1>
               <InputHold2>
                 <span>Name</span>
                 <Hold>
-                  <span>jusith ugbo</span>
+                  <span>{user?.name}</span>
                 </Hold>
               </InputHold2>
               <InputHold2>
                 <span>Email</span>
                 <Hold>
-                  <input type="text" placeholder="your Number" />
+                  <input type="text" placeholder={user?.email} />
                 </Hold>
               </InputHold2>
             </InputHold1>
@@ -29,13 +35,20 @@ const Profile = () => {
               <InputHold2>
                 <span>Phone Number</span>
                 <Hold>
-                  <input type="text" placeholder="your Number" />
+                  <input
+                    type="number"
+                    placeholder={`${
+                      user?.phoneNumber === undefined
+                        ? "please enter your phone number"
+                        : `${user?.phoneNumber}`
+                    }`}
+                  />
                 </Hold>
               </InputHold2>
               <InputHold2>
                 <span>Address</span>
                 <Hold>
-                  <input type="text" placeholder="your address" />
+                  <input type="text" placeholder={user?.address} />
                 </Hold>
               </InputHold2>
             </InputHold1>
@@ -43,7 +56,7 @@ const Profile = () => {
               <InputHold2>
                 <span>Station</span>
                 <Hold>
-                  <span>jusith ugbo</span>
+                  <span>{user?.stationName}</span>
                 </Hold>
               </InputHold2>
             </InputHold1>
@@ -74,6 +87,8 @@ const Dp = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 500;
 `;
 const Hold = styled.div`
   display: flex;
@@ -93,7 +108,6 @@ const Hold = styled.div`
 
     ::placeholder {
       color: #000000da;
-      text-transform: capitalize;
     }
   }
 `;

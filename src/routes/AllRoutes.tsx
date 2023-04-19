@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, useNavigate } from "react-router-dom";
 import {
   DirectorDashboardLayout,
   UserAuthLayout,
@@ -25,6 +25,24 @@ import Notification from "../pages/stationdashboard/Notification";
 import AssignMallam from "../pages/stationdashboard/AssignMallam";
 import Verification from "../components/commons/props/Verification";
 import DirectorAuth from "../components/layouts/directorAurhLayout/DirectorAuth";
+import { useAppSelector } from "../services/statemanagement/Store";
+import { useEffect } from "react";
+import { PrivateRoute } from "./privateroute";
+
+const PrivateRouteConfig = () => {
+  const navigate = useNavigate();
+  const user = useAppSelector((state) => state.userDetails);
+
+  useEffect(() => {
+    if (user?.name && user?.role === "User") {
+      navigate("/user/home", { replace: true });
+    } else if (user?.name && user?.role === "director") {
+      navigate("/director/home", { replace: true });
+    } else if (user?.name && user?.role === "station") {
+      navigate("/station", { replace: true });
+    }
+  }, []);
+};
 
 export const element = createBrowserRouter([
   // landing page routes
@@ -44,7 +62,11 @@ export const element = createBrowserRouter([
   //userDashboard routes
   {
     path: "/user/home",
-    element: <UserDashboardLayout />,
+    element: (
+      <PrivateRoute>
+        <UserDashboardLayout />
+      </PrivateRoute>
+    ),
     children: [
       {
         index: true,
