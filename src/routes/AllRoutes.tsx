@@ -19,6 +19,7 @@ import {
   UserLogin,
   UserRegister,
 } from "../pages";
+import Stations from "../pages/directordashboard/DirectorStation";
 import { ErrorBoundary, NotFound } from "../utils";
 import Registermallam from "../pages/stationdashboard/Registermallam";
 import Notification from "../pages/stationdashboard/Notification";
@@ -116,8 +117,16 @@ export const element = createBrowserRouter([
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
+      {
+        path: "/director/home/stations",
+        index:true,
+        element: <Stations />,
+        errorElement: <ErrorBoundary />,
+        hasErrorBoundary: true,
+      },
     ],
   },
+ 
   {
     path: "/director/register",
     element: <DirectorAuth />,
