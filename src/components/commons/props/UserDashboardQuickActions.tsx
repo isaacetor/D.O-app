@@ -4,10 +4,29 @@ import "react-circular-progressbar/dist/styles.css";
 import { GlobalButton } from ".";
 import { useAppSelector } from "../../../services/statemanagement/Store";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const UserDashboardQuick = () => {
+  const navigate = useNavigate();
   const user = useAppSelector((state) => state.userDetails);
   const percentage = user?.numberOfRequests;
+
+  const URL = "https://dirty-online.onrender.com";
+
+  // console.log(`this is the user id`, user?._id);
+  // console.log(`this is the station id`, user?.station._id);
+
+  const makeRequest = async () => {
+    return await axios
+      .patch(`${URL}/api/users/make-request/${user?._id}/${user?.station._id}`)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <InBody>
@@ -54,15 +73,17 @@ const UserDashboardQuick = () => {
                 width="200px"
                 onClick={async () => {
                   await Swal.fire({
-                    title: "Do you want to save the changes?",
-                    showDenyButton: true,
+                    title: "Please Confirm Request?",
                     showCancelButton: true,
-                    confirmButtonText: "Save",
-                    denyButtonText: `Don't save`,
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "confirm",
+                    confirmButtonColor: "#009700",
                   }).then((result) => {
                     /* Read more about isConfirmed, isDenied below */
                     if (result.isConfirmed) {
-                      Swal.fire("Saved!", "", "success");
+                      makeRequest();
+
+                      Swal.fire("Request sent!", "", "success");
                     } else if (result.isDenied) {
                       Swal.fire("Changes are not saved", "", "info");
                     }
