@@ -69,8 +69,6 @@ export default MakeRequest;
 
 const TransactionHistory = styled.div`
   width: 95%;
-  height: 60vh;
-  background-color: red;
 `;
 
 const Second = styled.div`
