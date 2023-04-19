@@ -36,11 +36,12 @@ export type userData = {
   email: string;
   phoneNumber: number;
   stationName: string;
-  station: [{}];
+  station: string | any;
   role: string;
   address: string;
   password: string;
   numberOfRequests: number;
+  _id: string;
 };
 
 //types for manageing our agent information

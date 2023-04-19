@@ -22,7 +22,7 @@ const Globalbutton: React.FC<GlobalButtonProp> = ({
       bor={bor}
       hovCol={hovCol}
       width={width}
-      // onClick={}
+      onClick={onClick}
     >
       {text}
     </Button>
