@@ -64,7 +64,7 @@ const StationSideNav = () => {
             >
               <Navbars
                 pic={<FaWallet />}
-                routeName="Register Mallam"
+                routeName="Register Carrier"
                 cl={wallet ? "#f1f1f1" : "white"}
                 bd={wallet ? "" : "4px solid white"}
                 hov={wallet ? " #03B903" : ""}
@@ -84,7 +84,7 @@ const StationSideNav = () => {
             >
               <Navbars
                 pic={<GiCardPickup />}
-                routeName="Notification"
+                routeName="Asssign Carrier"
                 cl={notify ? "#f1f1f1" : "white"}
                 bd={notify ? "" : "4px solid white"}
                 hov={notify ? " #03B903" : ""}
@@ -104,7 +104,7 @@ const StationSideNav = () => {
             >
               <Navbars
                 pic={<AiFillMessage />}
-                routeName="Assign Mallam"
+                routeName="View Request"
                 cl={support ? "#f1f1f1" : "white"}
                 bd={support ? "" : "4px solid white"}
                 hov={support ? " #03B903" : ""}
