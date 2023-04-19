@@ -1,7 +1,20 @@
-import react from "react"
+import react,{useState} from "react"
 import styled from "styled-components"
+import {VscSearch} from "react-icons/vsc"
+import {MdOutlineAlignVerticalBottom} from "react-icons/md"
 
 const Stations=()=>{
+    const[show,setShow] = useState(true)
+    const[show1,setShow1] = useState(false)
+
+    const tog=()=>{
+        setShow(true)
+        setShow1(false)
+    }
+    const tog1=()=>{
+        setShow(false)
+        setShow1(true)
+    }
     return(
         <Cont>
             <Wrap>
@@ -9,14 +22,25 @@ const Stations=()=>{
                     <h1>Stations</h1>
                 </MainHead>
                 <Main>
-                    <Details>
-                        <p>Create Stations</p>
+                  {show ? (<Det>
+                    <Details onClick={tog}>
+                        <p style={{color: "blue",fontSize: "20px",borderBottom: "3px blue solid",paddingBottom: "15px"}}>Create Stations</p>
                     </Details>
-                    <Details>
-                        <span>All Stations</span>
+                    <Details onClick={tog1}>
+                        <span style={{color: "black",fontSize: "20px",paddingBottom: "15px"}}>All Stations</span>
                     </Details>
+                  </Det>) : (
+                    <Det>
+                          <Details onClick={tog}>
+                        <p style={{color: "black",fontSize: "20px",paddingBottom: "15px"}}>Create Stations</p>
+                    </Details>
+                    <Details onClick={tog1}>
+                        <span style={{color: "blue",fontSize: "20px",borderBottom: "3px blue solid",paddingBottom: "15px"}}>All Stations</span>
+                    </Details>
+                    </Det>
+                  )}
                 </Main>
-                <Info>
+                {show ? (                <Info>
                    <Infos>
                    <Hold>
                         <small>Name of station</small>
@@ -34,18 +58,171 @@ const Stations=()=>{
                    <ButHold>
                       <button>Create</button>
                    </ButHold>
-                </Info>
+                </Info>) : (
+                    null
+                )}
+                {show1 ? (<Col>
+                <ColHead>
+                  <ColHold>
+                   <p>Search</p>
+                   <Holds>
+                    <Ic>
+                        <VscSearch/>
+                    </Ic>
+                    <input type="text" placeholder="Search" />
+                   </Holds>
+                  </ColHold>
+                  <ColHold>
+                   <p>Filter the list</p>
+                   <Holds>
+                    <Ic>
+                        <MdOutlineAlignVerticalBottom/>
+                    </Ic>
+                    <input type="text" placeholder="Enter Email" />
+                   </Holds>
+                  </ColHold>
+                  <ColHold>
+                   <p>Filter the Month</p>
+                   <Holds>
+                    <Ic></Ic>
+                    <Buts>
+                      <input type="month" />
+                    </Buts>
+                   </Holds>
+                  </ColHold>
+                  <ColHold>
+                   <p>Filter the Year</p>
+                   <Holds>
+                    <Ic></Ic>
+                    <Buts>
+                      <input type="year" />
+                    </Buts>
+                   </Holds>
+                  </ColHold>
+                </ColHead>
+                <DetailHold>
+                    <DetailHead>
+                        <DetInfo>
+                            S/N
+                        </DetInfo>
+                        <DetInfo>
+                            Data and Time
+                        </DetInfo>
+                        <DetInfo>
+                            Name of Station
+                        </DetInfo>
+                        <DetInfo>
+                           Total Request
+                        </DetInfo>
+                        <DetInfo>
+                            Request Pending
+                        </DetInfo>
+                    </DetailHead>
+                     <User>
+                        <Num>1</Num>
+                        <Dat>{new Date().toLocaleDateString()}</Dat>
+                        <Station>Wema</Station>
+                        <Req>273</Req>
+                        <ReqSta>21</ReqSta>
+                        <span></span>
+                     </User>
+                     <User>
+                        <Num>1</Num>
+                        <Dat>{new Date().toLocaleDateString()}</Dat>
+                        <Station>Wema</Station>
+                        <Req>273</Req>
+                        <ReqSta>21</ReqSta>
+                        <span>hello</span>
+
+                     </User>
+                </DetailHold>
+                </Col>) : null}
             </Wrap>
         </Cont>
     )
 }
-export default Stations
+export default Stations;
+const User=styled.div`
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 10px;
+:nth-child(even){
+    background-color: #888585be;
+}
+`
+const Num=styled.div``
+const Dat=styled.div``
+const Station=styled.div``
+const Req=styled.div``
+const ReqSta=styled.div``
+const DetailHold=styled.div`
+width: 96%;
+display: flex;
+flex-direction: column;
+/* overflow: hidden; */
+`
+const DetailHead=styled.div`
+width:100%;
+display:flex;
+justify-content: space-between;
+align-items:center;
+padding: 20px 10px;
+background-color: #123455;
+border-radius: 7px;
+margin-top: 30px;
+`
+const DetInfo=styled.div`
+color: white;
+` 
+const ColHead=styled.div`
+display: flex;
+width: 96%;
+justify-content: center;
+align-items: center;
+`
+const ColHold=styled.div`
+width:80%;
+display: flex;
+flex-direction: column;
+`
+const Holds=styled.div`
+display: flex;
+height:30px;
+width: 180px;
+/* justify-content: space-between; */
+align-items: center;
+background-color:#c9cccc73;
+padding: 10px;
+border-radius: 8px;
+input{
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    margin-left: 10px;
+    padding: 6px;
+    ::placeholder{
+        color: black;
+    }
+}
+`
+const Ic=styled.div``
+const Buts=styled.div``
+const Col=styled.div`
+width: 100%;
+display: flex;
+flex-direction: column;
+/* justify-content: center; */
+align-items: center;
+`
 const Cont=styled.div`
 width: calc(100% - 270px);
 height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
+background-color:whitesmoke;
 `
 const Wrap=styled.div`
 width: 100%;
@@ -59,24 +236,19 @@ align-items: center; */
 const MainHead=styled.div`
 margin-bottom: 50px;
 `
+const Det=styled.div`
+display: flex;
+width: 100%;
+justify-content: space-between;
+align-items: center;
+/* margin-bottom: 20px; */
+`
 const Main=styled.div`
 display: flex;
-width: 50%;
+width: 30%;
 justify-content: space-between;
+align-items: center;
 margin-bottom: 20px;
-p{
-    color: blue;
-    font-size: 20px;
-    border-bottom: 3px blue solid;
-    padding-bottom: 15px;
-}
-span{
-    color: black;
-    font-size: 20px;
-    // border-bottom: 3px blue solid;
-    padding-bottom: 15px;
-}
-
 `
 const Details=styled.div``
 const Info=styled.div`
@@ -96,16 +268,18 @@ margin-right: 50px;
 margin-bottom: 30px;
 input{
     width: 500px;
-    height: 45px;
-    outline-color: lightgreen;
+    height: 50px;
+    outline-color: blue;
     padding-left: 8px;
     border-radius:5px;
     margin-top: 2px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(0, 0, 0.8, 0.15) 2.95px 1.95px 2.6px;
    border: none;
 }
 `
 const ButHold=styled.div`
+margin-top: 50px;
+
 button{
     padding: 15px 20px;
     color: white;
@@ -113,5 +287,11 @@ button{
     border-radius: 3px;
     border: none;
     font-size:20px;
+    transition: all 350ms;
+cursor: pointer;
+
+    :hover{
+        scale: 1.1;
+    }
 }
 `
