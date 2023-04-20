@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, useNavigate } from "react-router-dom";
 import {
   DirectorDashboardLayout,
@@ -35,11 +36,11 @@ const PrivateRouteConfig = () => {
   const user = useAppSelector((state) => state.userDetails);
 
   useEffect(() => {
-    if (user?.name && user?.role === "User") {
+    if (user?.name !== "" && user?.role === "User") {
       navigate("/user/home", { replace: true });
-    } else if (user?.name && user?.role === "director") {
+    } else if (user?.name !== "" && user?.role === "director") {
       navigate("/director/home", { replace: true });
-    } else if (user?.name && user?.role === "station") {
+    } else if (user?.name !== "" && user?.role === "station") {
       navigate("/station", { replace: true });
     }
   }, []);
@@ -141,14 +142,14 @@ export const element = createBrowserRouter([
       },
       {
         path: "/director/home/stations",
-        index:true,
+        index: true,
         element: <Stations />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
     ],
   },
- 
+
   {
     path: "/director/register",
     element: <DirectorAuth />,

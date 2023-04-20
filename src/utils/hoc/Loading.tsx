@@ -13,14 +13,14 @@ const Loading = () => {
 export default Loading;
 
 const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: #000000ac;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  z-index: 20;
+  right: 0;
 
   img {
     height: 70px;
