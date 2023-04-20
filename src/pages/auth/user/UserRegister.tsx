@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import * as yup from "yup";
 import Swal from "sweetalert2";
@@ -8,8 +7,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { Loading, allStations, createUser } from "../../../utils";
 import { useQuery } from "@tanstack/react-query";
-import { UseAppDispatch } from "../../../services/statemanagement/Store";
-import { userLogin } from "../../../services/statemanagement/ReduxState";
 
 const UserRegister = () => {
   const navigate = useNavigate();
@@ -144,7 +141,6 @@ const Button = styled.button`
 `;
 
 const InputHold1 = styled.div`
-  width: 700px;
   display: flex;
   gap: 30px;
   margin-bottom: 10px;
@@ -186,7 +182,7 @@ const InputHold2 = styled.div`
   }
 
   input {
-    width: 300px;
+    width: 250px;
     height: 37px;
     padding: 10px;
     font-size: 17px;
@@ -270,7 +266,6 @@ const Form = styled.form``;
 const Wrapper = styled.div`
   width: 85%;
   height: 85%;
-  /* background-color: pink; */
 
   h2 {
     margin: 0;
