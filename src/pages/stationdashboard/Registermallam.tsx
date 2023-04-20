@@ -6,10 +6,10 @@ const Registermallam = () => {
   return (
     <Cont>
       <Wrap>
-        <MainHead>Stations</MainHead>
+        <MainHead>Pako Station</MainHead>
         <Main>
           <Details>
-            <p>Create Carriers</p>
+            <p>Register Carriers</p>
           </Details>
         </Main>
         <Info>
@@ -34,12 +34,13 @@ const Registermallam = () => {
               padding="15px"
               text="Register"
               bghovercolor="transparent"
-              bor="1px solid #fff"
-              hovCol="#fff"
+              bor="1px solid #03b903"
+              hovCol="#03b903"
               width="200px"
             />
           </ButHold>
         </Info>
+        {/* <LastCard>hello</LastCard> */}
       </Wrap>
     </Cont>
   );
@@ -47,6 +48,11 @@ const Registermallam = () => {
 
 export default Registermallam;
 
+const LastCard = styled.div`
+  width: 300px;
+  height: 200px;
+  background-color: red;
+`;
 const Cont = styled.div`
   width: calc(100% - 250px);
   height: 100vh;
@@ -59,7 +65,7 @@ const Wrap = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 50px;
   /* justify-content: center;
 align-items: center; */
 `;
@@ -114,6 +120,11 @@ const Hold = styled.div`
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     border: none;
+
+    ::placeholder {
+      color: lightgray;
+      font-size: 16px;
+    }
   }
 `;
 const HoldText = styled.div`

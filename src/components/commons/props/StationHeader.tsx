@@ -4,10 +4,15 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { VscSearch } from "react-icons/vsc";
 import { CiBellOn } from "react-icons/ci";
 import { AiTwotoneBank } from "react-icons/ai";
+import { BiGame } from "react-icons/bi";
 
-const StationHeader = () => {
+interface stationHeader {
+  bg: string;
+}
+
+const StationHeader: React.FC<stationHeader> = ({ bg }) => {
   return (
-    <Main>
+    <Main bg={bg}>
       <Wrapper>
         <Left>
           <Up>
@@ -57,14 +62,15 @@ const Right = styled.div`
   align-items: center;
   /* margin-right: 20px; */
 `;
-const Main = styled.div`
+const Main = styled.div<{ bg: string }>`
   width: calc(100% - 250px);
   height: 17vh;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   /* align-items: center; */
   margin-bottom: 20px;
-  background-color: #eaeaea;
+
+  background-color: ${({ bg }) => bg};
   position: fixed;
   top: 0;
   z-index: 9999;

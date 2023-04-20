@@ -30,7 +30,7 @@ const StationDashboardCard = () => {
           </Box>
           <Num>
             <p>234</p>
-            <small>users</small>
+            <span>users</span>
           </Num>
           <Log src={wave} />
         </Users>
@@ -85,7 +85,11 @@ const Num = styled.div`
 
   p {
     font-size: 35px;
-    /* font-weight: bold; */
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  h5 {
+    margin: 0;
   }
 `;
 const Log = styled.img`
