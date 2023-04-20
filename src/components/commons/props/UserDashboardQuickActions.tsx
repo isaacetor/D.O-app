@@ -6,27 +6,33 @@ import { useAppSelector } from "../../../services/statemanagement/Store";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import React from "react";
 
 const UserDashboardQuick = () => {
   const navigate = useNavigate();
   const user = useAppSelector((state) => state.userDetails);
+  // console.log(`this is user dashboard`, user);
+
   const percentage = user?.numberOfRequests;
+  const [requestNumber, setRequestNumber] = React.useState<number>();
+  // console.log(`this is percentage`, percentage);
 
   const URL = "https://dirty-online.onrender.com";
-
-  // console.log(`this is the user id`, user?._id);
-  // console.log(`this is the station id`, user?.station._id);
 
   const makeRequest = async () => {
     return await axios
       .patch(`${URL}/api/users/make-request/${user?._id}/${user?.station._id}`)
-      .then((res) => {
-        return res.data;
+      .then((res: any) => {
+        // return res.data;
+        // return setRequestNumber(res);
+        console.log(res.data.RequestData.numberOfRequests);
+        // ll
       })
       .catch((err) => {
         console.log(err);
       });
   };
+  // console.log(`this is usestate`, requestNumber);
 
   return (
     <InBody>
