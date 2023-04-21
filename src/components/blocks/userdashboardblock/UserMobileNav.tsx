@@ -90,6 +90,8 @@ const Container = styled.div`
   height: 100%;
   border-radius: 20px;
   margin: auto;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 `;
 const Contents = styled.div`
   height: 100%;
@@ -106,10 +108,19 @@ const Pair = styled.div`
 `;
 const Pairs = styled.div`
   display: flex;
-  gap: 20px;
-  /* @media screen and (min-width: ) {
-    
-  } */
+  gap: 30px;
+  @media screen and (min-width: 420px) {
+    gap: 50px;
+    font-size: 13px;
+  }
+  @media screen and (min-width: 550px) {
+    gap: 70px;
+    font-size: 13px;
+  }
+  @media screen and (min-width: 610px) {
+    gap: 110px;
+    font-size: 13px;
+  }
   font-size: 10px;
 `;
 const Single = styled.div`
