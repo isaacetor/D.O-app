@@ -1,10 +1,6 @@
 import React from "react";
 import UserDashboardSidebar from "./UserDashboardSidebar";
 import styled from "styled-components";
-
-import TransactionHistory from "./TransactionHistory";
-import UserNotification from "./UserNotification";
-import { useQuery } from "@tanstack/react-query";
 import BusinessHome from "./Home.Business";
 
 const UserDashboardHome = () => {
