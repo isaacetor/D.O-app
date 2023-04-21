@@ -9,11 +9,11 @@ const Profile = () => {
 
   const stat = user?.station;
 
-  console.log(`this is user`, stat);
+  // console.log(`this is user`, stat);
 
   const stats = user?.station._id;
 
-  console.log(`this is station`, stats);
+  // console.log(`this is station`, stats);
 
   let initials: string | undefined = user?.name
     .split(" ")

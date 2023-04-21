@@ -1,50 +1,41 @@
 import React from "react";
 import styled from "styled-components";
+import StationHeader from "../../components/commons/props/StationHeader";
+import { StationTable } from "../../components";
 const AssignMallam = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>
-          <Div>Hello</Div>
-          <Div>Hello</Div>
-          <Div>Hello</Div>
-          <Div>Hello</Div>
-          <Div>Hello</Div>
-          <Div>Hello</Div>
-        </Title>
-        <Status1>
-          <Div>23 Jan, 2023.</Div>
-          <Div>x42356</Div>
-          <Div>10.00pm</Div>
-          <Div>Open</Div>
-          <Div>11.00pm</Div>
-        </Status1>
+        <StationHeader
+          bg="#a08f8f3f"
+          title="Welcome, Pako Station"
+          subtitle="Register Carrier"
+        />
+        <Boby>
+          <StationTable />
+        </Boby>
       </Wrapper>
     </Container>
   );
 };
 
 export default AssignMallam;
-const Div = styled.div``;
-const Status1 = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
-  padding-top: 10px;
 
-  border-top: 1px solid grey;
-`;
-const Title = styled.div`
+const Boby = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+  display: flex;
 `;
-const Container = styled.div`
-  width: calc(100% - 250px);
+
+const Wrapper = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
-const Wrapper = styled.div`
-  width: 100%;
+
+const Container = styled.div`
+  width: calc(100% - 250px);
+  display: flex;
+  height: 100vh;
 `;

@@ -44,7 +44,8 @@ const UserRegister = () => {
 
     onSuccess: (myData: any) => {
       Swal.fire({
-        title: "Registration succesfull",
+        // title: "Registration succesfull",
+        title: `${console.log(myData)}`,
         html: "Redirecting you to login",
         timer: 2000,
         timerProgressBar: true,
@@ -182,7 +183,7 @@ const InputHold2 = styled.div`
   }
 
   input {
-    width: 250px;
+    width: 298px;
     height: 37px;
     padding: 10px;
     font-size: 17px;
