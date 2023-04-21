@@ -142,7 +142,6 @@ export default BusinessHome;
 
 const Top = styled.div`
   width: 95%;
-  background-color: blue;
 
   @media screen and (max-width: 1024px) {
     width: calc(100% - 20px);
@@ -166,7 +165,6 @@ const Hold = styled.div`
   flex-wrap: wrap;
   width: 95%;
   gap: 30px;
-  background: yellow;
 
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
