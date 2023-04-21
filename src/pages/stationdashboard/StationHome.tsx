@@ -35,5 +35,9 @@ const Wrap = styled.div`
 const Container = styled.div`
   width: calc(100% - 250px);
   height: 100vh;
-  /* background-color: red; */
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    background-color: red;
+  }
 `;

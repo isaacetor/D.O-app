@@ -7,7 +7,7 @@ const Notification = () => {
     <Container>
       <StationHeader
         bg="#a08f8f3f"
-        subtitle="Assign Carrier"
+        subtitle="View Request"
         title="Welcome, Pako Station"
       />
     </Container>

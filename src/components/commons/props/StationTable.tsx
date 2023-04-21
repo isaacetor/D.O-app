@@ -60,12 +60,17 @@ export default StationTable;
 const Container = styled.div`
   width: 100%;
   font-size: 10px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   @media screen and (min-width: 600px) {
     font-size: 15px;
   }
 `;
 const Titles = styled.div`
-  width: 100%;
+  width: 95%;
   display: grid;
   grid-template-columns: 4fr 3fr 3fr 2fr 3fr;
   grid-column-gap: 40px;
@@ -76,17 +81,19 @@ const Titles = styled.div`
   border-top: 1px solid #dfdede;
 `;
 const Subjects = styled.div`
-  width: 100%;
+  width: 95%;
   display: grid;
   font-weight: 600;
   grid-template-columns: 4fr 3fr 3fr 2fr 3fr;
-  border-top: 1px solid #f3f3f3;
+  /* border-top: 1px solid #f3f3f3; */
+  /* border-top: 1px solid red; */
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   padding-top: 10px;
   padding-bottom: 10px;
   color: #5c5b5b;
 `;
 const Status = styled.button<{ bc: string; cl: string }>`
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   /* background-color: #ff2f2f8f;
   color: #87d80e; */
@@ -96,8 +103,10 @@ const Status = styled.button<{ bc: string; cl: string }>`
   outline: none;
   padding: 6px;
   border-radius: 3px;
-  max-width: 60%;
-  min-width: 50%;
+  max-width: 50%;
+  min-width: 40%;
+  /* width: 100px;
+  height: 30px; */
   /* @media screen and (min-width: 600px) {
     max-width: 40%;
   } */

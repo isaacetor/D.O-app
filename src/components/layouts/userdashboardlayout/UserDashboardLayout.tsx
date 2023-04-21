@@ -1,7 +1,12 @@
 import React from "react";
-import { Sidenav, UserMobileNav } from "../../blocks";
+import { MobileNav, Sidenav } from "../../blocks";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
+import { HiHome } from "react-icons/hi";
+import { IoIosWallet } from "react-icons/io";
+import { GiCardPickup } from "react-icons/gi";
+import { BiSupport } from "react-icons/bi";
+import { RxPerson } from "react-icons/rx";
 
 const UserDashboardLayout = () => {
   return (
@@ -15,7 +20,22 @@ const UserDashboardLayout = () => {
       <Container>
         <Outlet />
         <AtMobile>
-          <UserMobileNav />
+          <MobileNav
+            firstIcon={<HiHome />}
+            firstText="Home"
+            firstLink="/user/home"
+            secondIcon={<IoIosWallet />}
+            secondText="Payment"
+            secondLink="makepayment"
+            thirdIcon={<GiCardPickup />}
+            thirdLink="makerequest"
+            fourthIcon={<BiSupport />}
+            fourthText="Support"
+            fourthLink="feedback"
+            fifthIcon={<RxPerson />}
+            fifthText="Profile"
+            fifthLink="profile"
+          />
         </AtMobile>
       </Container>
     </div>

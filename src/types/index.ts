@@ -76,3 +76,20 @@ export type stationHeader = {
   title: string;
   subtitle: string;
 };
+
+export type mobileNav = {
+  firstIcon: any;
+  firstText: string;
+  firstLink: string;
+  secondIcon: any;
+  secondText: string;
+  secondLink: string;
+  thirdIcon: any;
+  thirdLink: string;
+  fourthIcon: any;
+  fourthText: string;
+  fourthLink: string;
+  fifthIcon: any;
+  fifthText: string;
+  fifthLink: string;
+};

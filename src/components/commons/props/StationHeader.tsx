@@ -51,6 +51,10 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-left: 5px;
+
+  @media screen and (max-width: 500px) {
+    width: 90%;
+  }
 `;
 const Right = styled.div`
   display: flex;
@@ -69,6 +73,11 @@ const Main = styled.div<{ bg: string }>`
   position: fixed;
   top: 0;
   z-index: 9999;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    height: fit-content;
+  }
 `;
 const Left = styled.div`
   display: flex;
@@ -152,6 +161,10 @@ const Up = styled.div`
     font-size: 18px;
     margin-top: 20px;
     font-weight: 500;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 16px;
   }
 `;
 const Down = styled.div`
