@@ -5,21 +5,18 @@ import { VscSearch } from "react-icons/vsc";
 import { CiBellOn } from "react-icons/ci";
 import { AiTwotoneBank } from "react-icons/ai";
 import { BiGame } from "react-icons/bi";
+import { stationHeader } from "../../../types";
 
-interface stationHeader {
-  bg: string;
-}
-
-const StationHeader: React.FC<stationHeader> = ({ bg }) => {
+const StationHeader: React.FC<stationHeader> = ({ bg, subtitle, title }) => {
   return (
     <Main bg={bg}>
       <Wrapper>
         <Left>
           <Up>
-            <p>Welcome,</p>
+            <p>{title}</p>
           </Up>
           <Down>
-            <h1>Pako Station</h1>
+            <h1>{subtitle}</h1>
           </Down>
         </Left>
         <Right>
@@ -60,14 +57,12 @@ const Right = styled.div`
   width: 60%;
   justify-content: space-around;
   align-items: center;
-  /* margin-right: 20px; */
 `;
 const Main = styled.div<{ bg: string }>`
   width: calc(100% - 250px);
   height: 17vh;
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
+
   margin-bottom: 20px;
 
   background-color: ${({ bg }) => bg};
@@ -79,7 +74,6 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 10px;
-  /* background-colo:red; */
 `;
 const Bi = styled.div`
   font-size: 20px;

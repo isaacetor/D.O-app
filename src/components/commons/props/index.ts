@@ -6,3 +6,4 @@ export { default as UserDashboardQuick } from "./UserDashboardQuickActions";
 export { default as UserDashboardCards } from "./UserDashboardCards";
 export { default as UserDashboardHistory } from "./UserDashboardHistory";
 export { default as UserRequestTable } from "./UserRequestTable";
+export { default as StationTable } from "./StationTable";
