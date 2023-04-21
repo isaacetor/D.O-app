@@ -132,6 +132,7 @@ const Infos = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
+  /* background-color: red; */
 `;
 const Users = styled.div`
   width: 400px;
