@@ -10,13 +10,12 @@ const UserDashboardLayout = () => {
         display: "flex",
         justifyContent: "space-between",
         backgroundColor: "#fff",
-      }}
-    >
+      }}>
       <Sidenav />
       <Container>
         <Outlet />
         <AtMobile>
-<UserMobileNav/>
+          <UserMobileNav />
         </AtMobile>
       </Container>
     </div>
@@ -35,4 +34,12 @@ const Container = styled.div`
   }
 `;
 
-const AtMobile = styled.div``
+const AtMobile = styled.div`
+  width: 100vw;
+  height: 105px;
+  position: fixed;
+  bottom: 0;
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+`;
