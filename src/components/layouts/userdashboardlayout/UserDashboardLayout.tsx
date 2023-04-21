@@ -36,7 +36,7 @@ const Container = styled.div`
 
 const AtMobile = styled.div`
   width: 100vw;
-  height: 105px;
+  height: 70px;
   position: fixed;
   bottom: 0;
   @media screen and (min-width: 800px) {
