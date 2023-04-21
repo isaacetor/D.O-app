@@ -89,7 +89,7 @@ const Titles = styled.div`
   display: grid;
   grid-template-columns: 4fr 3fr 3fr 2fr 3fr;
   grid-column-gap: 40px;
-  color: #d4d4d4;
+  color: #a1a0a0;
   font-weight: 600;
   margin-bottom: 10px;
   padding-top: 25px;
@@ -104,7 +104,7 @@ const Subjects = styled.div`
   border-top: 1px solid #f3f3f3;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #919191;
+  color: #5c5b5b;
 `;
 const Status = styled.button<{ bc: string; cl: string }>`
   font-size: 10px;
@@ -117,6 +117,8 @@ const Status = styled.button<{ bc: string; cl: string }>`
   outline: none;
   padding: 6px;
   border-radius: 3px;
+  max-width: 60%;
+  min-width: 50%;
   /* @media screen and (min-width: 600px) {
     max-width: 40%;
   } */
