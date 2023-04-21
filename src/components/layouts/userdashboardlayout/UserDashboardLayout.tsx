@@ -50,7 +50,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  background-color: #f7f7f7bc;
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
   }

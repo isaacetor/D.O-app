@@ -99,7 +99,7 @@ const InBody = styled.div`
   width: 93%;
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 20px;
 `;
 const QuickActions = styled.div`
   display: flex;
@@ -124,9 +124,12 @@ const QuickContain = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
-  @media screen and (max-width: 1024px) {
-    /* width: 100vw; */
+  @media screen and (max-width: 800px) {
+    /* width: 100%; */
+    background: #80004f;
+    padding: 50px 0;
   }
 `;
 const QuickWrap = styled.div`
@@ -135,7 +138,14 @@ const QuickWrap = styled.div`
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 77px 0;
+
+  padding: 55px 0;
+
+  /* @media screen and (max-width: 800px) {
+
+    background: #80004f;
+    padding: 50px 0;
+  } */
 `;
 const QuickComponent = styled.div`
   color: white;
