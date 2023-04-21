@@ -75,6 +75,7 @@ const BusinessHome = () => {
                   input: "text",
                   inputAttributes: {
                     autocapitalize: "true",
+                    placeholder: "please enter location address here",
                   },
                   showCancelButton: true,
                   cancelButtonColor: "#d33",
@@ -84,7 +85,7 @@ const BusinessHome = () => {
                   preConfirm: (message) => {
                     return axios
                       .patch(
-                        `https://dirty-online.onrender.com/${user?._id}/${user?.station._id}`
+                        `https://dirty-online.onrender.com/make-special-request/${user?._id}/${user?.station._id}`
                       )
                       .then((response) => {
                         if (response.status !== 200) {
