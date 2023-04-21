@@ -8,19 +8,36 @@ import { CiLogout } from "react-icons/ci";
 import { BsPersonFill } from "react-icons/bs";
 
 const UserMobileNav = () => {
+  const [home, setHome] = React.useState(false);
+  const [pay, setPay] = React.useState(false);
+  const [support, setSupport] = React.useState(false);
+  const [profile, setProfile] = React.useState(false);
   return (
     <Container>
-      <GreyTop />
       <Contents>
         <WrapContents>
           <Pairs>
-            <Nav>
+            <Nav
+              onClick={() => {
+                setHome(true);
+                setPay(false);
+                setSupport(false);
+                setProfile(false);
+              }}
+              cl={home ? "#009700" : "grey"}>
               <Icon>
                 <HiHome />
               </Icon>
               <Text>Home</Text>
             </Nav>
-            <Nav>
+            <Nav
+              onClick={() => {
+                setPay(true);
+                setHome(false);
+                setSupport(false);
+                setProfile(false);
+              }}
+              cl={pay ? "#009700" : "grey"}>
               <Icon>
                 <FaWallet />
               </Icon>
@@ -33,13 +50,27 @@ const UserMobileNav = () => {
             </Single>
           </Pair>
           <Pairs>
-            <Nav>
+            <Nav
+              onClick={() => {
+                setSupport(true);
+                setHome(false);
+                setPay(false);
+                setProfile(false);
+              }}
+              cl={support ? "#009700 " : "grey"}>
               <Icon>
                 <AiFillMessage />
               </Icon>
               <Text>Support</Text>
             </Nav>
-            <Nav>
+            <Nav
+              onClick={() => {
+                setProfile(true);
+                setPay(false);
+                setHome(false);
+                setSupport(false);
+              }}
+              cl={profile ? "#009700" : "grey"}>
               <Icon>
                 <BsPersonFill />
               </Icon>
@@ -55,37 +86,31 @@ const UserMobileNav = () => {
 export default UserMobileNav;
 
 const Container = styled.div`
-  width: 90%;
-  height: 90%;
-  color: #009700;
+  width: 100%;
+  height: 100%;
   border-radius: 20px;
   margin: auto;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-`;
-const GreyTop = styled.div`
-  height: 30%;
-  background-color: #eeeeee;
-  border-top: 1px solid #e7e7e7;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
 `;
 const Contents = styled.div`
-  height: 70%;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  /* border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px; */
 `;
 const Pair = styled.div`
   height: 100%;
 `;
 const Pairs = styled.div`
   display: flex;
-  gap: 50px;
-  font-size: 12px;
+  gap: 20px;
+  /* @media screen and (min-width: ) {
+    
+  } */
+  font-size: 10px;
 `;
 const Single = styled.div`
   display: flex;
@@ -95,10 +120,10 @@ const Single = styled.div`
   padding: 10px;
   background-color: #009700;
   color: white;
-  height: 25px;
-  width: 25px;
-  font-size: 17px;
-  margin-top: -14px;
+  height: 35px;
+  width: 35px;
+  font-size: 30px;
+  margin-top: -25px;
   border: 3px solid white;
 `;
 const WrapContents = styled.div`
@@ -108,17 +133,19 @@ const WrapContents = styled.div`
   align-items: center;
   justify-content: space-evenly;
 `;
-const Nav = styled.div`
+const Nav = styled.div<{ cl: string }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1px;
+  color: ${(props) => props.cl};
 `;
 const Icon = styled.div`
-  font-size: 21px;
+  font-size: 25px;
+  display: flex;
+  align-items: flex-end;
 `;
 const Text = styled.div`
   font-weight: 500;
-  color: grey;
 `;
