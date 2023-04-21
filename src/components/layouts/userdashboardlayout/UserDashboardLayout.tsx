@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidenav, UserMobileNav } from "../../blocks";
+import { Sidenav } from "../../blocks";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
@@ -14,9 +14,7 @@ const UserDashboardLayout = () => {
       <Sidenav />
       <Container>
         <Outlet />
-        <AtMobile>
-          <UserMobileNav />
-        </AtMobile>
+        <AtMobile></AtMobile>
       </Container>
     </div>
   );
