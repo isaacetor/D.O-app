@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { HiHome } from "react-icons/hi";
-import { GiCardPickup } from "react-icons/gi";
-import { FaWallet } from "react-icons/fa";
-import { AiFillMessage } from "react-icons/ai";
-import { CiLogout } from "react-icons/ci";
-import { BsPersonFill } from "react-icons/bs";
+// import { HiHome } from "react-icons/hi";
+// import { GiCardPickup } from "react-icons/gi";
+// import { FaWallet } from "react-icons/fa";
+// import { AiFillMessage } from "react-icons/ai";
+// import { CiLogout } from "react-icons/ci";
+// import { BsPersonFill } from "react-icons/bs";
 import { mobileNav } from "../../../types";
+import { NavLink } from "react-router-dom";
 
 const MobileNav: React.FC<mobileNav> = ({
   firstIcon,
@@ -34,6 +35,7 @@ const MobileNav: React.FC<mobileNav> = ({
         <WrapContents>
           <Pairs>
             <Nav
+              to={firstLink}
               onClick={() => {
                 setHome(true);
                 setPay(false);
@@ -41,12 +43,11 @@ const MobileNav: React.FC<mobileNav> = ({
                 setProfile(false);
               }}
               cl={home ? "#009700" : "grey"}>
-              <Icon>
-                <HiHome />
-              </Icon>
-              <Text>Home</Text>
+              <Icon>{firstIcon}</Icon>
+              <Text>{firstText}</Text>
             </Nav>
             <Nav
+              to={secondLink}
               onClick={() => {
                 setPay(true);
                 setHome(false);
@@ -54,19 +55,16 @@ const MobileNav: React.FC<mobileNav> = ({
                 setProfile(false);
               }}
               cl={pay ? "#009700" : "grey"}>
-              <Icon>
-                <FaWallet />
-              </Icon>
-              <Text>Payment</Text>
+              <Icon>{secondIcon}</Icon>
+              <Text>{secondText}</Text>
             </Nav>
           </Pairs>
-          <Pair>
-            <Single>
-              <GiCardPickup />
-            </Single>
+          <Pair to={thirdLink}>
+            <Single>{thirdIcon}</Single>
           </Pair>
           <Pairs>
             <Nav
+              to={fourthLink}
               onClick={() => {
                 setSupport(true);
                 setHome(false);
@@ -74,12 +72,11 @@ const MobileNav: React.FC<mobileNav> = ({
                 setProfile(false);
               }}
               cl={support ? "#009700 " : "grey"}>
-              <Icon>
-                <AiFillMessage />
-              </Icon>
-              <Text>Support</Text>
+              <Icon>{fourthIcon}</Icon>
+              <Text>{fourthText}</Text>
             </Nav>
             <Nav
+              to={fifthLink}
               onClick={() => {
                 setProfile(true);
                 setPay(false);
@@ -87,10 +84,8 @@ const MobileNav: React.FC<mobileNav> = ({
                 setSupport(false);
               }}
               cl={profile ? "#009700" : "grey"}>
-              <Icon>
-                <BsPersonFill />
-              </Icon>
-              <Text>Profile</Text>
+              <Icon>{fifthIcon}</Icon>
+              <Text>{fifthText}</Text>
             </Nav>
           </Pairs>
         </WrapContents>
@@ -119,7 +114,8 @@ const Contents = styled.div`
   /* border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px; */
 `;
-const Pair = styled.div`
+const Pair = styled(NavLink)`
+  text-decoration: none;
   height: 100%;
 `;
 const Pairs = styled.div`
@@ -160,7 +156,8 @@ const WrapContents = styled.div`
   align-items: center;
   justify-content: space-evenly;
 `;
-const Nav = styled.div<{ cl: string }>`
+const Nav = styled(NavLink)<{ cl: string }>`
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
