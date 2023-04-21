@@ -9,3 +9,4 @@ export { default as stationHeader } from "./StationHeader";
 export { default as StationDashboardRequest } from "./StationDashboardRequest";
 export { default as StationDashboardCard } from "./StationDashboardCard";
 export { default as StationTable } from "./StationTable";
+export { default as UserRequestTable } from "./UserRequestTable"
