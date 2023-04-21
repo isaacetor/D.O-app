@@ -1,11 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import { HiHome } from "react-icons/hi";
-// import { GiCardPickup } from "react-icons/gi";
-// import { FaWallet } from "react-icons/fa";
-// import { AiFillMessage } from "react-icons/ai";
-// import { CiLogout } from "react-icons/ci";
-// import { BsPersonFill } from "react-icons/bs";
 import { mobileNav } from "../../../types";
 import { NavLink } from "react-router-dom";
 
