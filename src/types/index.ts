@@ -70,3 +70,9 @@ export type userHeader = {
   height: string;
   btnDisplay?: string;
 };
+
+export type stationHeader = {
+  bg: string;
+  title: string;
+  subtitle: string;
+};
