@@ -4,35 +4,27 @@ import "react-circular-progressbar/dist/styles.css";
 import { GlobalButton } from ".";
 import { useAppSelector } from "../../../services/statemanagement/Store";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import React from "react";
+import { useMutation } from "@tanstack/react-query";
+import { makeRequest } from "../../../utils";
 
 const UserDashboardQuick = () => {
-  const navigate = useNavigate();
   const user = useAppSelector((state) => state.userDetails);
-  // console.log(`this is user dashboard`, user);
-
   const percentage = user?.numberOfRequests;
-  const [requestNumber, setRequestNumber] = React.useState<number>();
-  // console.log(`this is percentage`, percentage);
+  // const [requestNumber, setRequestNumber] = React.useState<number>();
 
-  const URL = "https://dirty-online.onrender.com";
+  const posting = useMutation({
+    mutationKey: ["make request"],
+    mutationFn: makeRequest,
+  });
 
-  const makeRequest = async () => {
-    return await axios
-      .patch(`${URL}/api/users/make-request/${user?._id}/${user?.station._id}`)
-      .then((res: any) => {
-        // return res.data;
-        // return setRequestNumber(res);
-        console.log(res.data.RequestData.numberOfRequests);
-        // ll
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  // to execute the mutation, you can call the posting function with an object that has user and station properties:
+
+  const handleButtonClick = () => {
+    const params = { user: `${user?._id}`, station: `${user?.station._id}` };
+    posting.mutate(params);
   };
-  // console.log(`this is usestate`, requestNumber);
+
+  console.log(`this is request data`, makeRequest);
 
   return (
     <InBody>
@@ -85,9 +77,8 @@ const UserDashboardQuick = () => {
                     confirmButtonText: "confirm",
                     confirmButtonColor: "#009700",
                   }).then((result) => {
-                    /* Read more about isConfirmed, isDenied below */
                     if (result.isConfirmed) {
-                      makeRequest();
+                      handleButtonClick();
 
                       Swal.fire("Request sent!", "", "success");
                     } else if (result.isDenied) {
