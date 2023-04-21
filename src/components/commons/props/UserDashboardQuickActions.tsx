@@ -4,10 +4,35 @@ import "react-circular-progressbar/dist/styles.css";
 import { GlobalButton } from ".";
 import { useAppSelector } from "../../../services/statemanagement/Store";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import React from "react";
 
 const UserDashboardQuick = () => {
+  const navigate = useNavigate();
   const user = useAppSelector((state) => state.userDetails);
+  // console.log(`this is user dashboard`, user);
+
   const percentage = user?.numberOfRequests;
+  const [requestNumber, setRequestNumber] = React.useState<number>();
+  // console.log(`this is percentage`, percentage);
+
+  const URL = "https://dirty-online.onrender.com";
+
+  const makeRequest = async () => {
+    return await axios
+      .patch(`${URL}/api/users/make-request/${user?._id}/${user?.station._id}`)
+      .then((res: any) => {
+        // return res.data;
+        // return setRequestNumber(res);
+        console.log(res.data.RequestData.numberOfRequests);
+        // ll
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  // console.log(`this is usestate`, requestNumber);
 
   return (
     <InBody>
@@ -54,15 +79,17 @@ const UserDashboardQuick = () => {
                 width="200px"
                 onClick={async () => {
                   await Swal.fire({
-                    title: "Do you want to save the changes?",
-                    showDenyButton: true,
+                    title: "Please Confirm Request?",
                     showCancelButton: true,
-                    confirmButtonText: "Save",
-                    denyButtonText: `Don't save`,
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "confirm",
+                    confirmButtonColor: "#009700",
                   }).then((result) => {
                     /* Read more about isConfirmed, isDenied below */
                     if (result.isConfirmed) {
-                      Swal.fire("Saved!", "", "success");
+                      makeRequest();
+
+                      Swal.fire("Request sent!", "", "success");
                     } else if (result.isDenied) {
                       Swal.fire("Changes are not saved", "", "info");
                     }

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import * as yup from "yup";
 import Swal from "sweetalert2";
@@ -195,6 +194,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #fefefe;
+  position: relative;
 
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 400px);

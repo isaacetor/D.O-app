@@ -5,22 +5,9 @@ import styled from "styled-components";
 import TransactionHistory from "./TransactionHistory";
 import UserNotification from "./UserNotification";
 import { useQuery } from "@tanstack/react-query";
-// import { getOneClient } from "../../Api/Endpoints";
 import BusinessHome from "./Home.Business";
-import { useAppSelector } from "../../services/statemanagement/Store";
 
 const UserDashboardHome = () => {
-  // const user = useAppSelector((state) => state.userDetails);
-
-  // console.log(user);
-
-  const fetchUser = useQuery({
-    queryKey: ["Clients"],
-    // queryFn: () => getOneClient(user?._id),
-  });
-
-  console.log(fetchUser);
-
   return (
     <div>
       <Container>
