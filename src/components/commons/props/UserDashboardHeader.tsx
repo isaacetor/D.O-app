@@ -25,7 +25,8 @@ const UserDashboardHeader: FC<userHeader> = ({
               <Eye
                 onClick={() => {
                   setShow(!show);
-                }}>
+                }}
+              >
                 {show ? (
                   <AiFillEye
                     style={{
@@ -83,6 +84,10 @@ const Message = styled.div`
     margin: 0;
     color: #333333;
     font-weight: 500;
+    @media screen and (max-width: 800px) {
+      font-size: 17px;
+      margin-top: 10px;
+    }
   }
 
   @media screen and (max-width: 799px) {

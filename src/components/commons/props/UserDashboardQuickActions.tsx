@@ -82,7 +82,7 @@ const UserDashboardQuick = () => {
 
                       Swal.fire("Request sent!", "", "success");
                     } else if (result.isDenied) {
-                      Swal.fire("Changes are not saved", "", "info");
+                      Swal.fire("Error sending request", "", "info");
                     }
                   });
                 }}
@@ -113,7 +113,7 @@ const QuickActions = styled.div`
   }
 `;
 const QuickContain = styled.div`
-  width: 100%;
+  /* width: 100vw; */
   background: rgb(3, 185, 3);
   background: linear-gradient(
     163deg,
@@ -124,6 +124,10 @@ const QuickContain = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 1024px) {
+    /* width: 100vw; */
+  }
 `;
 const QuickWrap = styled.div`
   width: 100%;
@@ -156,7 +160,7 @@ const QuickImage = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  bottom: -6px;
+  /* bottom: -6px; */
 
   p {
     color: #fff;

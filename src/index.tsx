@@ -26,9 +26,8 @@ root.render(
       <Provider store={Store}>
         <PersistGate persistor={persitstore}>
           <QueryClientProvider client={queryQlient}>
-            {/* <App /> */}
             <RouterProvider router={element} />
-            {/* <ReactQueryDevtools /> */}
+            <ReactQueryDevtools />
           </QueryClientProvider>
         </PersistGate>
       </Provider>

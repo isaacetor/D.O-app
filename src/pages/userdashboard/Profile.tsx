@@ -9,12 +9,6 @@ const Profile = () => {
 
   const stat = user?.station;
 
-  // console.log(`this is user`, stat);
-
-  const stats = user?.station._id;
-
-  // console.log(`this is station`, stats);
-
   let initials: string | undefined = user?.name
     .split(" ")
     .map((word) => word.charAt(0))
@@ -189,6 +183,10 @@ const Wrapper = styled.div`
     margin-bottom: 30px;
     font-weight: 600;
     font-size: 2rem;
+
+    @media screen and (max-width: 748px) {
+      font-size: 1.5rem;
+    }
   }
 
   p {
@@ -210,5 +208,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 748px) {
     width: 100%;
+    margin-bottom: 70px;
+    margin-top: 20px;
   }
 `;
