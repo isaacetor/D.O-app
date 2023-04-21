@@ -24,7 +24,7 @@ const UserDashboardQuick = () => {
     posting.mutate(params);
   };
 
-  console.log(`this is request data`, makeRequest);
+  // console.log(`this is request data`, makeRequest);
 
   return (
     <InBody>

@@ -28,7 +28,7 @@ root.render(
           <QueryClientProvider client={queryQlient}>
             {/* <App /> */}
             <RouterProvider router={element} />
-            <ReactQueryDevtools />
+            {/* <ReactQueryDevtools /> */}
           </QueryClientProvider>
         </PersistGate>
       </Provider>

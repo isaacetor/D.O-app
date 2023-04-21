@@ -8,6 +8,8 @@ import { useAppSelector } from "../../services/statemanagement/Store";
 import money from "../../assets/images/money.png";
 import request from "../../assets/images/request.png";
 import recycle from "../../assets/images/recycle.png";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const BusinessHome = () => {
   const user = useAppSelector((state) => state.userDetails);
@@ -62,14 +64,53 @@ const BusinessHome = () => {
               bor="1px solid #fff"
               hovCol="#fff"
               width="210px"
+              onClick={async () => {
+                Swal.fire({
+                  title: "send us a message",
+                  input: "text",
+                  inputAttributes: {
+                    autocapitalize: "true",
+                  },
+                  showCancelButton: true,
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Make Custom Request",
+                  confirmButtonColor: "#009700",
+                  showLoaderOnConfirm: true,
+                  preConfirm: (message) => {
+                    return axios
+                      .patch(
+                        `https://dirty-online.onrender.com/${user?._id}/${user?.station._id}`
+                      )
+                      .then((response) => {
+                        if (response.status !== 200) {
+                          throw new Error(response.statusText);
+                        }
+                        console.log(response.data);
+                      })
+                      .catch((error) => {
+                        Swal.showValidationMessage(
+                          `error sending request: ${error}`
+                        );
+                      });
+                  },
+                  allowOutsideClick: () => !Swal.isLoading(),
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    Swal.fire({
+                      // title: `${result.value.login}'s avatar`,
+                      // imageUrl: result.value.avatar_url,
+                    });
+                  }
+                });
+              }}
             />
           </HoldC>
           <HoldC bg="#039B03">
             <UserDashboardCards
               bgcol1=""
-              bigText="Make a Custom Request"
+              bigText="Pay with Recyclables"
               bigTextCol="#fff"
-              smallText="Are u having a party or event? ecoBin staff will be there for your trash needs!"
+              smallText="Don't have cash to pay for your waste bills? not to worry, you can pay with recyclable items"
               smallTextCol="#fff"
               imgPic={recycle}
             />
@@ -77,7 +118,7 @@ const BusinessHome = () => {
               bg=""
               col="#03B903"
               padding="18px 30px"
-              text="send us an hello!"
+              text="make enquiries!"
               bghovercolor="transparent"
               bor="1px solid #fff"
               hovCol="#fff"
