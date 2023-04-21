@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { MdOutlineCancel } from "react-icons/md";
 
-const UserTables = () => {
+const UserRequestTable = () => {
   const data = [
     {
       date: "23 Jan,2022",
@@ -75,13 +75,13 @@ const UserTables = () => {
   );
 };
 
-export default UserTables;
+export default UserRequestTable;
 
 const Container = styled.div`
   width: 100%;
   font-size: 10px;
   @media screen and (min-width: 600px) {
-    font-size: 17px;
+    font-size: 15px;
   }
 `;
 const Titles = styled.div`
@@ -100,14 +100,13 @@ const Subjects = styled.div`
   display: grid;
   font-weight: 600;
   grid-template-columns: 4fr 3fr 3fr 2fr 3fr;
-
   border-top: 1px solid #f3f3f3;
   padding-top: 10px;
   padding-bottom: 10px;
   color: #5c5b5b;
 `;
 const Status = styled.button<{ bc: string; cl: string }>`
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   /* background-color: #ff2f2f8f;
   color: #87d80e; */

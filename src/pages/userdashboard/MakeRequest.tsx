@@ -3,7 +3,7 @@ import {
   GlobalButton,
   UserDashboardCards,
   UserDashboardHeader,
-  UserTables,
+  UserRequestTable,
 } from "../../components";
 import styled from "styled-components";
 
@@ -57,7 +57,7 @@ const MakeRequest = () => {
         </First>
         <Second>
           <TransactionHistory>
-            <UserTables />
+            <UserRequestTable />
           </TransactionHistory>
         </Second>
       </Body>
