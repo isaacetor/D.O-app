@@ -5,3 +5,4 @@ export { default as UserDashboardHeader } from "./UserDashboardHeader";
 export { default as UserDashboardQuick } from "./UserDashboardQuickActions";
 export { default as UserDashboardCards } from "./UserDashboardCards";
 export { default as UserDashboardHistory } from "./UserDashboardHistory";
+export { default as UserRequestTable } from "./UserRequestTable";

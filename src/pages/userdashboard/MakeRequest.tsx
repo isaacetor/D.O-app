@@ -3,6 +3,7 @@ import {
   GlobalButton,
   UserDashboardCards,
   UserDashboardHeader,
+  UserRequestTable,
 } from "../../components";
 import styled from "styled-components";
 
@@ -55,7 +56,9 @@ const MakeRequest = () => {
           </HoldC>
         </First>
         <Second>
-          <TransactionHistory>ALL Request History</TransactionHistory>
+          <TransactionHistory>
+            <UserRequestTable />
+          </TransactionHistory>
         </Second>
       </Body>
     </Container>
@@ -66,8 +69,6 @@ export default MakeRequest;
 
 const TransactionHistory = styled.div`
   width: 95%;
-  height: 60vh;
-  background-color: red;
 `;
 
 const Second = styled.div`
