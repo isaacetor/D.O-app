@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import styled from "styled-components";
 import { userHeader } from "../../../types";
@@ -155,7 +155,7 @@ const Container = styled.div<{ height: string }>`
   right: 0;
   z-index: 5;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1050px) {
     width: calc(100vw - 70px);
   }
 
