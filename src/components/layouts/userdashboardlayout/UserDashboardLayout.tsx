@@ -15,8 +15,7 @@ const UserDashboardLayout = () => {
         display: "flex",
         justifyContent: "space-between",
         backgroundColor: "#fff",
-      }}
-    >
+      }}>
       <Sidenav />
       <Container>
         <Outlet />
@@ -46,6 +45,8 @@ const UserDashboardLayout = () => {
 export default UserDashboardLayout;
 
 const Container = styled.div`
+  width: calc(100vw - 270px);
+  margin-left: 270px;
   /* width: calc(100vw - 270px); */
   display: flex;
   justify-content: center;
