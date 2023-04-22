@@ -67,6 +67,18 @@ const StationDashboardRequest = () => {
           <TfiAngleRight />
         </Ij>
       </Pro>
+      <Pro>
+        <Ips>
+          <IoMdPerson />
+        </Ips>
+        <Ad>
+          <Nam>Iya Sodiq</Nam>
+          <Ads>3, Asafa street</Ads>
+        </Ad>
+        <Ij>
+          <TfiAngleRight />
+        </Ij>
+      </Pro>
     </Two>
   );
 };
@@ -79,7 +91,7 @@ const Pro = styled.div`
   align-items: center;
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   border-bottom: 1px solid lightgray;
-  padding: 10px;
+  padding: 9px;
   :nth-child(even) {
     /* background-color: #d4d5d85e; */
   }
@@ -117,7 +129,7 @@ const Tit = styled.div`
 
 const Two = styled.div`
   width: 350px;
-  /* height: 570px; */
+  height: fit-content;
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
