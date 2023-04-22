@@ -141,7 +141,7 @@ export const element = createBrowserRouter([
         hasErrorBoundary: true,
       },
       {
-        path: "/director/home/stations",
+        path: "stations",
         index: true,
         element: <Stations />,
         errorElement: <ErrorBoundary />,
