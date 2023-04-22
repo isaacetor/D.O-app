@@ -2,6 +2,8 @@ import React from "react";
 import { UserDashboardHeader } from "../../components";
 import styled from "styled-components";
 import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
+import { BiPhoneCall } from "react-icons/bi";
+import { TiLocationOutline } from "react-icons/ti";
 
 const Feedback = () => {
   return (
@@ -16,11 +18,34 @@ const Feedback = () => {
           <TextPart>
             <TextPartWrap>
               <ChatUs>
-                <Icon></Icon>
+                <Icon>
+                  <HiOutlineChatBubbleLeftRight />
+                </Icon>
                 <Content>
-                  <h4></h4>
-                  <p></p>
-                  <h5></h5>
+                  <h4>Chat to us</h4>
+                  <p>Our friendly team is here to help</p>
+                  <h5>ecobin@gmail.com</h5>
+                </Content>
+              </ChatUs>
+              <ChatUs>
+                <Icon>
+                  <TiLocationOutline />
+                </Icon>
+                <Content>
+                  <h4>Visit us</h4>
+                  <p>Come say hello at our Office HQ</p>
+                  <h5>31 Haruna Estate,</h5>
+                  <h5>Divine Estate, Ajegunle</h5>
+                </Content>
+              </ChatUs>
+              <ChatUs>
+                <Icon>
+                  <BiPhoneCall />
+                </Icon>
+                <Content>
+                  <h4>Call us</h4>
+                  <p>Mon-Fri from 10am t0 7pm</p>
+                  <h5>+234 906 1180 473</h5>
                 </Content>
               </ChatUs>
             </TextPartWrap>
@@ -83,6 +108,20 @@ const MessagePartWrap = styled.div`
   height: 90%;
   background-color: brown;
 `;
-const ChatUs = styled.div``;
-const Content = styled.div``;
-const Icon = styled.div``;
+const ChatUs = styled.div`
+  background-color: yellow;
+  width: 320px;
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  justify-content: space-between;
+`;
+const Content = styled.div`
+  width: 250px;
+  padding: 10px 0px 10px 0px;
+  background-color: red;
+`;
+const Icon = styled.div`
+  width: 50px;
+  height: 50px;
+  background-color: red;
+`;
