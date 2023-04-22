@@ -46,6 +46,7 @@ const CardImageHold = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 const Hold = styled.div`
   display: flex;
