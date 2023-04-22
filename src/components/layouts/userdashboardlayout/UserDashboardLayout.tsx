@@ -24,6 +24,7 @@ export default UserDashboardLayout;
 
 const Container = styled.div`
   width: calc(100vw - 270px);
+  margin-left: 270px;
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
   }
