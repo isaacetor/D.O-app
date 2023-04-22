@@ -148,8 +148,7 @@ const Container = styled.div<{ height: string }>`
   position: fixed;
   top: 0px;
   right: 0;
-  z-index: 5;
-
+  /* z-index: 1; */
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
   }

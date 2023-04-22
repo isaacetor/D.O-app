@@ -4,7 +4,6 @@ import {
   UserDashboardCards,
   UserDashboardHeader,
   UserRequestTable,
-
 } from "../../components";
 import styled from "styled-components";
 
@@ -91,7 +90,9 @@ const HoldC = styled.div<{ bg: string }>`
   padding: 25px;
   border-radius: 10px;
   gap: 30px;
-
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
   }

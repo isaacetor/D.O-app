@@ -133,6 +133,7 @@ const BusinessHome = () => {
 };
 
 export default BusinessHome;
+
 const HoldC = styled.div<{ bg: string }>`
   display: flex;
   flex-direction: column;
@@ -173,7 +174,6 @@ const Body = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   gap: 35px;
-
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
   }
