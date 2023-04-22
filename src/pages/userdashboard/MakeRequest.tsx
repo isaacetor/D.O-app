@@ -18,7 +18,7 @@ const MakeRequest = () => {
               bgcol1=""
               bigText="Request for trash pickup"
               bigTextCol="#fff"
-              smallText="is your trash full? request for it to picked up and dispose now!"
+              smallText="is your trash full? request for it to be picked up and dispose now!"
               smallTextCol="#fff"
               imgPic=""
             />

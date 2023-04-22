@@ -261,7 +261,7 @@ const Big = styled.div`
   }
 `;
 const Small = styled.div`
-  font-size: 8px;
+  font-size: 10px;
   @media screen and (min-width: 450px) {
     font-size: 10px;
   }
