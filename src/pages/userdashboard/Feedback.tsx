@@ -51,7 +51,25 @@ const Feedback = () => {
             </TextPartWrap>
           </TextPart>
           <MessagePart>
-            <MessagePartWrap></MessagePartWrap>
+            <MessagePartWrap>
+              <h2>
+                Hi there! Our team is dedicated to ensuring your waste is
+                properly managed and disposed of in an environmentally friendly
+                manner.
+              </h2>
+              <p>
+                Please don't hesitate to contact us if you have any questions or
+                feedback.
+              </p>
+              <Form>
+                <Input type="text" placeholder="Your name" />
+                <Input type="email" placeholder="Your email" />
+                <Div>
+                  <Label>Type your message here dear sylvia</Label>
+                  <TextArea></TextArea>
+                </Div>
+              </Form>
+            </MessagePartWrap>
           </MessagePart>
         </SupportWrap>
       </Box>
@@ -68,7 +86,7 @@ const Container = styled.div`
   }
 `;
 const Box = styled.div`
-  background-color: blue;
+  /* background-color: blue; */
   height: calc(100vh - 18vh);
   margin-top: 18vh;
 `;
@@ -93,7 +111,7 @@ const TextPart = styled.div`
 const TextPartWrap = styled.div`
   width: 90%;
   height: 90%;
-  background-color: brown;
+  /* background-color: brown; */
 `;
 const MessagePart = styled.div`
   width: 55%;
@@ -102,14 +120,17 @@ const MessagePart = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
 `;
 const MessagePartWrap = styled.div`
   width: 90%;
   height: 90%;
   background-color: brown;
+  h2 {
+    margin: 0;
+  }
 `;
 const ChatUs = styled.div`
-  background-color: yellow;
   width: 320px;
   padding: 10px 0px 10px 0px;
   display: flex;
@@ -117,11 +138,30 @@ const ChatUs = styled.div`
 `;
 const Content = styled.div`
   width: 250px;
-  padding: 10px 0px 10px 0px;
-  background-color: red;
+  /* background-color: red; */
+  h4 {
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+  h5 {
+    margin: 0;
+  }
 `;
 const Icon = styled.div`
-  width: 50px;
-  height: 50px;
-  background-color: red;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
 `;
+const Form = styled.form``;
+const Input = styled.input``;
+const Div = styled.div``;
+const Label = styled.label``;
+const TextArea = styled.textarea``;
