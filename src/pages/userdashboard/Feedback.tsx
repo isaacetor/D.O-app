@@ -68,6 +68,7 @@ const Feedback = () => {
                   <Label>Type your message here dear sylvia</Label>
                   <TextArea></TextArea>
                 </Div>
+                <Button>Send us a message!</Button>
               </Form>
             </MessagePartWrap>
           </MessagePart>
@@ -116,16 +117,16 @@ const TextPartWrap = styled.div`
 const MessagePart = styled.div`
   width: 55%;
   height: 100%;
-  background-color: #3c37ff;
+  background-color: #009700;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
   border-radius: 10px;
 `;
 const MessagePartWrap = styled.div`
   width: 90%;
   height: 90%;
-  background-color: brown;
   h2 {
     margin: 0;
   }
@@ -161,7 +162,45 @@ const Icon = styled.div`
   border-radius: 10px;
 `;
 const Form = styled.form``;
-const Input = styled.input``;
-const Div = styled.div``;
+const Input = styled.input`
+  width: 400px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+  color: white;
+
+  border-bottom: 1px solid white;
+  ::placeholder {
+    color: white;
+  }
+`;
+const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+`;
 const Label = styled.label``;
-const TextArea = styled.textarea``;
+const TextArea = styled.textarea`
+  width: 400px;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+  color: white;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  resize: none;
+`;
+const Button = styled.div`
+  width: 410px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: white;
+  color: #009700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+`;
