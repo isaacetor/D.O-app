@@ -53,9 +53,8 @@ const Feedback = () => {
           <MessagePart>
             <MessagePartWrap>
               <h2>
-                Hi there! Our team is dedicated to ensuring your waste is
-                properly managed and disposed of in an environmentally friendly
-                manner.
+                Our team is dedicated to ensuring your waste is properly managed
+                and disposed of in an environmentally friendly manner.
               </h2>
               <p>
                 Please don't hesitate to contact us if you have any questions or
