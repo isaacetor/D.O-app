@@ -107,6 +107,10 @@ const TextPart = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 const TextPartWrap = styled.div`
   width: 90%;
@@ -122,6 +126,9 @@ const MessagePart = styled.div`
   justify-content: center;
   color: white;
   border-radius: 10px;
+  @media screen and (max-width: 500px) {
+    background-color: white;
+  }
 `;
 const MessagePartWrap = styled.div`
   width: 90%;
@@ -135,6 +142,10 @@ const ChatUs = styled.div`
   padding: 10px 0px 10px 0px;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 500px) {
+    width: 300px;
+  }
 `;
 const Content = styled.div`
   width: 250px;
@@ -173,6 +184,10 @@ const Input = styled.input`
   border-bottom: 1px solid white;
   ::placeholder {
     color: white;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 300px;
   }
 `;
 const Div = styled.div`
