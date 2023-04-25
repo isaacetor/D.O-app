@@ -198,7 +198,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   width: calc(100vw - 270px);
-
+  margin-bottom: 70px;
   min-height: 100vh;
   max-height: 100%;
   display: flex;

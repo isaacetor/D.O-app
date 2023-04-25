@@ -85,11 +85,12 @@ export type mobileNav = {
   secondText: string;
   secondLink: string;
   thirdIcon: any;
-  thirdLink: string;
+  thirdLink?: any;
   fourthIcon: any;
   fourthText: string;
   fourthLink: string;
   fifthIcon: any;
   fifthText: string;
   fifthLink: string;
+  colours: string;
 };

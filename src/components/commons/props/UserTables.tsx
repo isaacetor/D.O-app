@@ -116,8 +116,7 @@ const Status = styled.button<{ bc: string; cl: string }>`
   outline: none;
   padding: 6px;
   border-radius: 3px;
-  max-width: 60%;
-  min-width: 50%;
+  width: 85%;
   /* @media screen and (min-width: 600px) {
     max-width: 40%;
   } */

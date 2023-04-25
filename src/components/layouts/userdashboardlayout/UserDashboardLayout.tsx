@@ -17,6 +17,29 @@ const UserDashboardLayout = () => {
         backgroundColor: "#fff",
       }}>
       <Sidenav />
+<<<<<<< HEAD
+      <Container>
+        <Outlet />
+        <AtMobile>
+          <MobileNav
+            firstIcon={<HiHome />}
+            firstText="Home"
+            firstLink="/user/home"
+            secondIcon={<IoIosWallet />}
+            secondText="Payment"
+            secondLink="makepayment"
+            thirdIcon={<GiCardPickup />}
+            fourthIcon={<BiSupport />}
+            fourthText="Support"
+            fourthLink="feedback"
+            fifthIcon={<RxPerson />}
+            fifthText="Profile"
+            fifthLink="profile"
+            colours="#009700"
+          />
+        </AtMobile>
+      </Container>
+=======
 
       {/* <Container> */}
       <Outlet />
@@ -39,6 +62,7 @@ const UserDashboardLayout = () => {
         />
       </AtMobile>
       {/* </Container> */}
+>>>>>>> aca58518d4d9d930f64ba35146630e8b3ed71785
     </div>
   );
 };
