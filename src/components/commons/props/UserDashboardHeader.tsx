@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import styled from "styled-components";
 import { userHeader } from "../../../types";
@@ -25,7 +25,8 @@ const UserDashboardHeader: FC<userHeader> = ({
               <Eye
                 onClick={() => {
                   setShow(!show);
-                }}>
+                }}
+              >
                 {show ? (
                   <AiFillEye
                     style={{
@@ -83,6 +84,10 @@ const Message = styled.div`
     margin: 0;
     color: #333333;
     font-weight: 500;
+    @media screen and (max-width: 800px) {
+      font-size: 17px;
+      margin-top: 10px;
+    }
   }
 
   @media screen and (max-width: 799px) {
@@ -148,8 +153,14 @@ const Container = styled.div<{ height: string }>`
   position: fixed;
   top: 0px;
   right: 0;
+<<<<<<< HEAD
   /* z-index: 1; */
   @media screen and (max-width: 1024px) {
+=======
+  z-index: 5;
+
+  @media screen and (max-width: 1050px) {
+>>>>>>> aca58518d4d9d930f64ba35146630e8b3ed71785
     width: calc(100vw - 70px);
   }
 

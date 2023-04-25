@@ -24,6 +24,7 @@ const Sec = styled.div`
   width: 100%;
   justify-content: space-around;
   margin-top: 23vh;
+  flex-wrap: wrap;
 `;
 const Wrap = styled.div`
   width: 100%;
@@ -34,6 +35,11 @@ const Wrap = styled.div`
 `;
 const Container = styled.div`
   width: calc(100% - 250px);
-  height: 100vh;
-  /* background-color: red; */
+  height: 100%;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+
+    /* background-color: red; */
+  }
 `;

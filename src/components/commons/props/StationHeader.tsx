@@ -16,16 +16,10 @@ const StationHeader: React.FC<stationHeader> = ({ bg, subtitle, title }) => {
             <p>{title}</p>
           </Up>
           <Down>
-            <h1>{subtitle}</h1>
+            <H1>{subtitle}</H1>
           </Down>
         </Left>
         <Right>
-          <Hold>
-            <Ic>
-              <AiTwotoneBank />
-            </Ic>
-            <p>Stations</p>
-          </Hold>
           <Holds>
             <Ip>
               <VscSearch />
@@ -51,12 +45,23 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-left: 5px;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `;
 const Right = styled.div`
   display: flex;
   width: 60%;
   justify-content: space-around;
   align-items: center;
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 `;
 const Main = styled.div<{ bg: string }>`
   width: calc(100% - 250px);
@@ -69,6 +74,15 @@ const Main = styled.div<{ bg: string }>`
   position: fixed;
   top: 0;
   z-index: 9999;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    height: fit-content;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    height: fit-content;
+  }
 `;
 const Left = styled.div`
   display: flex;
@@ -152,6 +166,9 @@ const Up = styled.div`
     font-size: 18px;
     margin-top: 20px;
     font-weight: 500;
+    @media screen and (max-width: 500px) {
+      font-size: 16px;
+    }
   }
 `;
 const Down = styled.div`
@@ -162,4 +179,8 @@ const Down = styled.div`
   h1 {
     margin: 0;
   }
+`;
+const H1 = styled.div`
+  font-size: 25px;
+  font-weight: bold;
 `;

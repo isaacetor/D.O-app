@@ -23,8 +23,12 @@ const BusinessHome = () => {
         display="flex"
         height="24vh"
       />
+
       <Body>
-        <UserDashboardQuick />
+        <Top>
+          <UserDashboardQuick />
+        </Top>
+
         <Hold>
           <HoldC bg="#3C37FF">
             <UserDashboardCards
@@ -66,10 +70,12 @@ const BusinessHome = () => {
               width="210px"
               onClick={async () => {
                 Swal.fire({
-                  title: "send us a message",
+                  title: "Send Us A Message",
+                  text: "used up your request or having a party? let's help you with your trash needs",
                   input: "text",
                   inputAttributes: {
                     autocapitalize: "true",
+                    placeholder: "please enter location address here",
                   },
                   showCancelButton: true,
                   cancelButtonColor: "#d33",
@@ -79,7 +85,7 @@ const BusinessHome = () => {
                   preConfirm: (message) => {
                     return axios
                       .patch(
-                        `https://dirty-online.onrender.com/${user?._id}/${user?.station._id}`
+                        `https://dirty-online.onrender.com/make-special-request/${user?._id}/${user?.station._id}`
                       )
                       .then((response) => {
                         if (response.status !== 200) {
@@ -134,6 +140,16 @@ const BusinessHome = () => {
 
 export default BusinessHome;
 
+<<<<<<< HEAD
+=======
+const Top = styled.div`
+  width: 95%;
+
+  @media screen and (max-width: 1024px) {
+    width: calc(100% - 20px);
+  }
+`;
+>>>>>>> aca58518d4d9d930f64ba35146630e8b3ed71785
 const HoldC = styled.div<{ bg: string }>`
   display: flex;
   flex-direction: column;
@@ -170,11 +186,14 @@ const Body = styled.div`
   margin-top: 180px;
   margin-left: 20px;
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  flex-direction: column;
   gap: 35px;
   @media screen and (max-width: 1024px) {
-    width: calc(100vw - 70px);
+    width: calc(100% - 30px);
+    margin-left: 0px;
+    align-items: center;
+    justify-content: center;
   }
 `;
