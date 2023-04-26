@@ -49,8 +49,6 @@ const allStations = async () => {
     .then((res) => res.data);
 };
 
-export { AllUsers, allStations,loginUser,loginDirector};
-
 // const makeRequest = async ({ user, station }: any) => {
 //   try {
 //     const res = await axios.patch(
@@ -87,5 +85,4 @@ const makeRequest = async ({ user, station }: any) => {
       console.log(err);
     });
 };
-export { AllUsers, allStations, loginUser, makeRequest };
-
+export { AllUsers, allStations, loginUser, makeRequest, loginDirector };
