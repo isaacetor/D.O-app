@@ -124,7 +124,7 @@ const BusinessHome = () => {
               bg=""
               col="#03B903"
               padding="18px 30px"
-              text="make enquiries!"
+              text="Learn More"
               bghovercolor="transparent"
               bor="1px solid #fff"
               hovCol="#fff"
@@ -140,8 +140,6 @@ const BusinessHome = () => {
 
 export default BusinessHome;
 
-<<<<<<< HEAD
-=======
 const Top = styled.div`
   width: 95%;
 
@@ -149,7 +147,6 @@ const Top = styled.div`
     width: calc(100% - 20px);
   }
 `;
->>>>>>> aca58518d4d9d930f64ba35146630e8b3ed71785
 const HoldC = styled.div<{ bg: string }>`
   display: flex;
   flex-direction: column;
