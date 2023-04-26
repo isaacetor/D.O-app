@@ -117,24 +117,51 @@ const Stations=()=>{
                         <DetInfo>
                             Request Pending
                         </DetInfo>
+                        <DetInfo>
+                            Status
+                        </DetInfo>
                     </DetailHead>
                      <User>
                         <Num>1</Num>
-                        <Dat>{new Date().toLocaleDateString()}</Dat>
-                        <Station>Wema</Station>
-                        <Req>273</Req>
+                        <Dat style={{marginLeft:"-50px"}}>{new Date().toLocaleDateString()}</Dat>
+                        <Station style={{marginLeft:"-50px"}}>Wema</Station>
+                        <Req style={{marginLeft:"-30px"}}>10</Req>
                         <ReqSta>21</ReqSta>
-                        <span></span>
+                        <span ></span>
                      </User>
                      <User>
-                        <Num>1</Num>
-                        <Dat>{new Date().toLocaleDateString()}</Dat>
-                        <Station>Wema</Station>
-                        <Req>273</Req>
-                        <ReqSta>21</ReqSta>
-                        <span>hello</span>
-
+                        <Num>2</Num>
+                        <Dat style={{marginLeft:"-50px"}}>{new Date().toLocaleDateString()}</Dat>
+                        <Station style={{marginLeft:"-50px"}}>Chidi</Station>
+                        <Req style={{marginLeft:"-30px"}}>1000</Req>
+                        <ReqSta>0</ReqSta>
+                        <span ></span>
                      </User>
+                     <User>
+                        <Num>3</Num>
+                        <Dat style={{marginLeft:"-50px"}}>{new Date().toLocaleDateString()}</Dat>
+                        <Station style={{marginLeft:"-50px"}}>Haruna</Station>
+                        <Req style={{marginLeft:"-30px"}}>273</Req>
+                        <ReqSta>28</ReqSta>
+                        <span ></span>
+                     </User>
+                     <User>
+                        <Num>4</Num>
+                        <Dat style={{marginLeft:"-50px"}}>{new Date().toLocaleDateString()}</Dat>
+                        <Station style={{marginLeft:"-50px"}}>Muyibi</Station>
+                        <Req style={{marginLeft:"-30px"}}>273</Req>
+                        <ReqSta>0</ReqSta>
+                        <span ></span>
+                     </User>
+                     <User>
+                        <Num>5</Num>
+                        <Dat style={{marginLeft:"-50px"}}>{new Date().toLocaleDateString()}</Dat>
+                        <Station style={{marginLeft:"-50px"}}>Asafa</Station>
+                        <Req style={{marginLeft:"-30px"}}>273</Req>
+                        <ReqSta>13</ReqSta>
+                        <span ></span>
+                     </User>
+
                 </DetailHold>
                 </Col>) : null}
             </Wrap>
@@ -147,9 +174,25 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 10px 10px;
+padding: 15px 10px;
+background-color: #e7e2e27f;
+
 :nth-child(even){
     background-color: #888585be;
+    span{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    box-shadow: 0 0 10px red,0 0 40px red,0 0 80px red;
+}
+}
+span{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #41e641;
+    box-shadow: 0 0 10px #41e641,0 0 40px #41e641,0 0 80px #41e641;
 }
 `
 const Num=styled.div``

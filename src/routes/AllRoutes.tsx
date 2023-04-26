@@ -9,6 +9,7 @@ import {
 import {
   AgentHome,
   AgentRegister,
+  AgentLogin,
   Feedback,
   Landing,
   MakePayment,
@@ -156,6 +157,13 @@ export const element = createBrowserRouter([
       {
         index: true,
         element: <AgentRegister />,
+        errorElement: <ErrorBoundary />,
+        hasErrorBoundary: true,
+      },
+      {
+        path:"/director/register/login",
+        index: true,
+        element: <AgentLogin />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },

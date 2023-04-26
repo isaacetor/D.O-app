@@ -25,6 +25,13 @@ export const createUser = async ({
     });
 };
 
+const loginDirector = async ({ email, name }: any) => {
+  return await axios
+    .post(`${URL}/api/director/login-director`, { email, name })
+    .then((res) => {
+      return res.data;
+    });
+};
 const loginUser = async ({ email, password }: any) => {
   return await axios
     .post(`${URL}/api/users/loginuser`, { email, password })
@@ -41,4 +48,4 @@ const allStations = async () => {
     .then((res) => res.data);
 };
 
-export { AllUsers, allStations, loginUser };
+export { AllUsers, allStations,loginUser,loginDirector};

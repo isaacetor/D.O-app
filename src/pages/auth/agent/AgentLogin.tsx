@@ -1,10 +1,78 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import * as yup from "yup";
+import Swal from "sweetalert2";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import { UseAppDispatch } from "../../../services/statemanagement/Store";
+import { directorLogin } from "../../../services/statemanagement/ReduxState";
+import { Loading, loginDirector } from "../../../utils";
+
+// import { loginDirector } from "../../../utils";
 
 const AgentLogin = () => {
+  const navigate = useNavigate();
+  const dispatch = UseAppDispatch();
+
+  const userSchema = yup
+  .object({
+    email: yup.string().required("please enter an email"),
+    name: yup.string().required("please enter a name"),
+  })
+  .required();
+type formData = yup.InferType<typeof userSchema>;
+
+const {
+  handleSubmit,
+  formState: { errors },
+  reset,
+  register,
+} = useForm<formData>({
+  resolver: yupResolver(userSchema),
+});
+
+const posting = useMutation({
+  mutationKey: ["login"],
+  mutationFn: loginDirector,
+
+  onSuccess: (myData: any) => {
+    dispatch(directorLogin(myData.data));
+
+    Swal.fire({
+      icon: "success",
+      title: "Login succesful",
+      html: "Taking you to your dashboard",
+      timer: 2000,
+
+      didOpen: () => {
+        Swal.showLoading();
+      },
+
+      willClose: () => {
+        navigate("/director/home");
+      },
+    });
+  },
+  onError: (error: any) => {
+    // handle error here
+    Swal.fire({
+      title: "login failed",
+      text: "email or name incorrect",
+      icon: "error",
+    });
+  },
+});
+
+const Submit = handleSubmit(async (data) => {
+  posting.mutate(data);
+  // reset()
+});
   return (
     <Container>
+        {posting.isLoading ? <Loading /> : null}
       <Wrapper>
         <h4>ecoBin</h4>
         <h2>Sign in</h2>
@@ -22,21 +90,23 @@ const AgentLogin = () => {
           </NavLink>
         </p>
 
-        <Form>
+        <Form onSubmit={Submit}>
           <InputHold>
             <span>Email</span>
             <input
               type="email"
               required
               placeholder="please enter your email"
+              {...register("email")}
             />
           </InputHold>
           <InputHold>
-            <span>Password</span>
+            <span>Name</span>
             <input
               type="password"
               required
-              placeholder="please enter password"
+              placeholder="please enter name"
+              {...register("name")} 
             />
           </InputHold>
 
