@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import styled from "styled-components";
 import { userHeader } from "../../../types";
@@ -22,7 +22,7 @@ const UserDashboardHeader: FC<userHeader> = ({
           <BalanceDetails>
             <Viewer>
               <div style={{ marginBottom: "5px" }}>Available balance</div>
-              <div
+              <Eye
                 onClick={() => {
                   setShow(!show);
                 }}
@@ -30,21 +30,21 @@ const UserDashboardHeader: FC<userHeader> = ({
                 {show ? (
                   <AiFillEye
                     style={{
-                      marginTop: "5px",
-                      fontSize: "30px",
+                      marginTop: "3px",
+                      // fontSize: "30px",
                       cursor: "pointer",
                     }}
                   />
                 ) : (
                   <AiFillEyeInvisible
                     style={{
-                      marginTop: "5px",
-                      fontSize: "30px",
+                      marginTop: "3px",
+                      // fontSize: "30px",
                       cursor: "pointer",
                     }}
                   />
                 )}
-              </div>
+              </Eye>
             </Viewer>
             {show ? (
               <Info>
@@ -77,11 +77,17 @@ const Head = styled.div`
 const Message = styled.div`
   font-size: 13px;
   display: flex;
-
+  @media screen and (max-width: 800px) {
+    font-size: 10px;
+  }
   h1 {
     margin: 0;
     color: #333333;
     font-weight: 500;
+    @media screen and (max-width: 800px) {
+      font-size: 17px;
+      margin-top: 10px;
+    }
   }
 
   @media screen and (max-width: 799px) {
@@ -101,6 +107,10 @@ const Viewer = styled.div`
   gap: 30px;
   align-items: center;
   font-size: 18px;
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+    gap: 20px;
+  }
   margin-top: 10px;
 `;
 const Info = styled.div`
@@ -118,6 +128,9 @@ const WithdrawButton = styled.button<{ btnDisplay: string }>`
   margin-top: 30px;
   transition: all 350ms;
   display: ${({ btnDisplay }) => btnDisplay};
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
   :hover {
     cursor: pointer;
     background-color: #01a001;
@@ -127,6 +140,9 @@ const WithdrawButton = styled.button<{ btnDisplay: string }>`
 const Container = styled.div<{ height: string }>`
   width: calc(100% - 270px);
   height: ${({ height }) => height};
+  @media screen and (max-width: 800px) {
+    height: 100px;
+  }
   background-color: #f9f4ff;
   display: flex;
   justify-content: center;
@@ -137,13 +153,24 @@ const Container = styled.div<{ height: string }>`
   position: fixed;
   top: 0px;
   right: 0;
+<<<<<<< HEAD
+  /* z-index: 1; */
+  @media screen and (max-width: 1024px) {
+=======
   z-index: 5;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1050px) {
+>>>>>>> aca58518d4d9d930f64ba35146630e8b3ed71785
     width: calc(100vw - 70px);
   }
 
   @media screen and (max-width: 800px) {
     width: 100%;
+  }
+`;
+const Eye = styled.div`
+  font-size: 30px;
+  @media screen and (max-width: 800px) {
+    font-size: 17px;
   }
 `;

@@ -1,5 +1,6 @@
+import { updateUser } from "../../services/statemanagement/ReduxState";
+
 import axios from "./axios";
-import { agentData, userData } from "../../types";
 
 const URL = "https://dirty-online.onrender.com";
 
@@ -49,3 +50,42 @@ const allStations = async () => {
 };
 
 export { AllUsers, allStations,loginUser,loginDirector};
+
+// const makeRequest = async ({ user, station }: any) => {
+//   try {
+//     const res = await axios.patch(
+//       `${URL}/api/users/make-request/${user}/${station}`
+//     );
+//     // const newNumberOfRequests = res.data.RequestData.numberOfRequests;
+//     // const usser = useAppSelector((state) => state.userDetails);
+//     // const updatedUser: any = {
+//     //   ...usser,
+//     //   numberOfRequests: newNumberOfRequests,
+//     // };
+//     // dispatch an action to update the user state in Redux
+//     // dispatch(updateUser(updatedUser));
+//     return res.data;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+const makeRequest = async ({ user, station }: any) => {
+  return await axios
+    .patch(`${URL}/api/users/make-request/${user}/${station}`)
+    .then((res: any) => {
+      const newNumberOfRequests = res.data.RequestData.numberOfRequests;
+      const updatedUser = {
+        ...user,
+        numberOfRequests: newNumberOfRequests,
+      };
+      // dispatch an action to update the user state in Redux
+      // dispatch(updateUser(updatedUser));
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+export { AllUsers, allStations, loginUser, makeRequest };
+

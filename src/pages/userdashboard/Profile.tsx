@@ -6,6 +6,9 @@ import { useAppSelector } from "../../services/statemanagement/Store";
 
 const Profile = () => {
   const user = useAppSelector((state) => state.userDetails);
+
+  const stat = user?.station;
+
   let initials: string | undefined = user?.name
     .split(" ")
     .map((word) => word.charAt(0))
@@ -56,7 +59,7 @@ const Profile = () => {
               <InputHold2>
                 <span>Station</span>
                 <Hold>
-                  <span>{user?.stationName}</span>
+                  <span>{stat ? stat?.station : ""}</span>
                 </Hold>
               </InputHold2>
             </InputHold1>
@@ -180,6 +183,10 @@ const Wrapper = styled.div`
     margin-bottom: 30px;
     font-weight: 600;
     font-size: 2rem;
+
+    @media screen and (max-width: 748px) {
+      font-size: 1.5rem;
+    }
   }
 
   p {
@@ -191,7 +198,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   width: calc(100vw - 270px);
-
+  margin-bottom: 70px;
   min-height: 100vh;
   max-height: 100%;
   display: flex;
@@ -201,5 +208,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 748px) {
     width: 100%;
+    margin-bottom: 70px;
+    margin-top: 20px;
   }
 `;

@@ -8,6 +8,8 @@ import { useAppSelector } from "../../services/statemanagement/Store";
 import money from "../../assets/images/money.png";
 import request from "../../assets/images/request.png";
 import recycle from "../../assets/images/recycle.png";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const BusinessHome = () => {
   const user = useAppSelector((state) => state.userDetails);
@@ -21,8 +23,12 @@ const BusinessHome = () => {
         display="flex"
         height="24vh"
       />
+
       <Body>
-        <UserDashboardQuick />
+        <Top>
+          <UserDashboardQuick />
+        </Top>
+
         <Hold>
           <HoldC bg="#3C37FF">
             <UserDashboardCards
@@ -62,14 +68,55 @@ const BusinessHome = () => {
               bor="1px solid #fff"
               hovCol="#fff"
               width="210px"
+              onClick={async () => {
+                Swal.fire({
+                  title: "Send Us A Message",
+                  text: "used up your request or having a party? let's help you with your trash needs",
+                  input: "text",
+                  inputAttributes: {
+                    autocapitalize: "true",
+                    placeholder: "please enter location address here",
+                  },
+                  showCancelButton: true,
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Make Custom Request",
+                  confirmButtonColor: "#009700",
+                  showLoaderOnConfirm: true,
+                  preConfirm: (message) => {
+                    return axios
+                      .patch(
+                        `https://dirty-online.onrender.com/make-special-request/${user?._id}/${user?.station._id}`
+                      )
+                      .then((response) => {
+                        if (response.status !== 200) {
+                          throw new Error(response.statusText);
+                        }
+                        console.log(response.data);
+                      })
+                      .catch((error) => {
+                        Swal.showValidationMessage(
+                          `error sending request: ${error}`
+                        );
+                      });
+                  },
+                  allowOutsideClick: () => !Swal.isLoading(),
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    Swal.fire({
+                      // title: `${result.value.login}'s avatar`,
+                      // imageUrl: result.value.avatar_url,
+                    });
+                  }
+                });
+              }}
             />
           </HoldC>
           <HoldC bg="#039B03">
             <UserDashboardCards
               bgcol1=""
-              bigText="Make a Custom Request"
+              bigText="Pay with Recyclables"
               bigTextCol="#fff"
-              smallText="Are u having a party or event? ecoBin staff will be there for your trash needs!"
+              smallText="Don't have cash to pay for your waste bills? not to worry, you can pay with recyclable items"
               smallTextCol="#fff"
               imgPic={recycle}
             />
@@ -77,7 +124,7 @@ const BusinessHome = () => {
               bg=""
               col="#03B903"
               padding="18px 30px"
-              text="send us an hello!"
+              text="make enquiries!"
               bghovercolor="transparent"
               bor="1px solid #fff"
               hovCol="#fff"
@@ -92,6 +139,17 @@ const BusinessHome = () => {
 };
 
 export default BusinessHome;
+
+<<<<<<< HEAD
+=======
+const Top = styled.div`
+  width: 95%;
+
+  @media screen and (max-width: 1024px) {
+    width: calc(100% - 20px);
+  }
+`;
+>>>>>>> aca58518d4d9d930f64ba35146630e8b3ed71785
 const HoldC = styled.div<{ bg: string }>`
   display: flex;
   flex-direction: column;
@@ -128,12 +186,14 @@ const Body = styled.div`
   margin-top: 180px;
   margin-left: 20px;
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  flex-direction: column;
   gap: 35px;
-
   @media screen and (max-width: 1024px) {
-    width: calc(100vw - 70px);
+    width: calc(100% - 30px);
+    margin-left: 0px;
+    align-items: center;
+    justify-content: center;
   }
 `;

@@ -4,7 +4,10 @@ import {
   GlobalButton,
   UserDashboardCards,
   UserDashboardHeader,
+  UserRequestTable,
 } from "../../components";
+import money from "../../assets/images/money.png";
+
 const MakePayment = () => {
   return (
     <div>
@@ -18,27 +21,33 @@ const MakePayment = () => {
         />
 
         <Body>
-          <HoldC>
-            <UserDashboardCards
-              bgcol1=""
-              bigText="Top Up Balance"
-              bigTextCol="#fff"
-              smallText="hhh"
-              smallTextCol="#fff"
-              imgPic=""
-            />
-            <GlobalButton
-              bg=""
-              col="#03b903"
-              padding="18px 20px"
-              text="Make Payment"
-              bghovercolor="transparent"
-              hgt="6vh"
-              bor="1px solid #fff"
-              hovCol="#fff"
-              width="200px"
-            />
-          </HoldC>
+          <First>
+            <HoldC bg="#3c37ff">
+              <UserDashboardCards
+                bgcol1=""
+                bigText="top up Balance"
+                bigTextCol="#fff"
+                smallText="Pay for your waste disposal!"
+                smallTextCol="#fff"
+                imgPic={money}
+              />
+              <GlobalButton
+                bg=""
+                col="#3c37ff"
+                padding="18px 30px"
+                text="Pay now!"
+                bghovercolor="transparent"
+                bor="1px solid #fff"
+                hovCol="#fff"
+                width="210px"
+              />
+            </HoldC>
+          </First>
+          <Second>
+            <TransactionHistory>
+              <UserRequestTable />
+            </TransactionHistory>
+          </Second>
         </Body>
       </Container>
     </div>
@@ -47,36 +56,72 @@ const MakePayment = () => {
 
 export default MakePayment;
 
-const Body = styled.div`
-  width: 95%;
-  margin-top: 30vh;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 30px;
+const TransactionHistory = styled.div`
+  width: 93%;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  margin-left: 45px;
+
+  @media screen and (max-width: 800px) {
+    margin-bottom: 120px;
+  }
 `;
 
-const HoldC = styled.div`
-  width: 400px;
-  padding: 30px;
-  border-radius: 10px;
-  gap: 30px;
+const HoldC = styled.div<{ bg: string }>`
   display: flex;
   flex-direction: column;
+  background-color: ${({ bg }) => bg};
+  width: 385px;
+  padding: 25px;
+  border-radius: 10px;
+  gap: 30px;
 
-  background-color: #03b903;
-
-  :nth-child(2) {
-    background-color: #3c37ff;
+  @media screen and (max-width: 1198px) {
+    width: 350px;
   }
+  @media screen and (max-width: 800px) {
+    width: 80%;
+  }
+`;
 
-  @media screen and (max-width: 425px) {
-    width: 85%;
+const Second = styled.div`
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const First = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 45px;
+  gap: 30px;
+  padding-top: 30px;
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 800px) {
+    padding-left: 0px;
+    justify-content: center;
+  }
+`;
+
+const Body = styled.div`
+  width: 100%;
+  margin-top: 23vh;
+
+  @media screen and (max-width: 800px) {
+    margin-top: 12vh;
   }
 `;
 
 const Container = styled.div`
-  overflow-x: hidden;
+  width: calc(100vw - 270px);
+  background-color: #f7f7f764;
+
+  @media screen and (max-width: 1050px) {
+    width: calc(100% - 70px);
+  }
   @media screen and (max-width: 800px) {
-    width: 100vw;
+    width: 100%;
   }
 `;

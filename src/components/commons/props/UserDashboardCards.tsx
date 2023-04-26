@@ -46,6 +46,7 @@ const CardImageHold = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 const Hold = styled.div`
   display: flex;
@@ -78,7 +79,6 @@ const LText1 = styled.div<{ smallTextCol: string }>`
   font-size: 12px;
   margin-top: 10px;
   color: ${({ smallTextCol }) => smallTextCol};
-
   @media screen and (min-width: 800px) {
     font-size: 22px;
   }

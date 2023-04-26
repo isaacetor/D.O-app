@@ -18,7 +18,6 @@ const SideNav = () => {
   const [support, setSupport] = React.useState(true);
   const [account, setAccount] = React.useState(true);
   const [logout, setLogout] = React.useState(true);
-
   const navigate = useNavigate();
   const dispatch = UseAppDispatch();
 
@@ -182,7 +181,7 @@ const Container = styled.div`
   position: fixed;
   overflow: hidden;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1050px) {
     display: flex;
     width: 70px;
   }

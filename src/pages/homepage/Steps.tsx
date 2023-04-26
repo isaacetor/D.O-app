@@ -2,6 +2,7 @@ import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import ecobin from "../../assets/images/ecobin_dash.png";
 
 const Steps = () => {
   return (
@@ -31,7 +32,7 @@ const Steps = () => {
             </Focus>
           </Top>
           <Bottom>
-            {/* <img src={ewaste} alt="continental app mockup" /> */}
+            <img src={ecobin} alt="continental app mockup" />
           </Bottom>
         </Wrapper>
       </Container>

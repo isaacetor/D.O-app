@@ -4,26 +4,22 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { VscSearch } from "react-icons/vsc";
 import { CiBellOn } from "react-icons/ci";
 import { AiTwotoneBank } from "react-icons/ai";
+import { BiGame } from "react-icons/bi";
+import { stationHeader } from "../../../types";
 
-const StationHeader = () => {
+const StationHeader: React.FC<stationHeader> = ({ bg, subtitle, title }) => {
   return (
-    <Main>
+    <Main bg={bg}>
       <Wrapper>
         <Left>
           <Up>
-            <p>Welcome,</p>
+            <p>{title}</p>
           </Up>
           <Down>
-            <h1>Pako Station</h1>
+            <H1>{subtitle}</H1>
           </Down>
         </Left>
         <Right>
-          <Hold>
-            <Ic>
-              <AiTwotoneBank />
-            </Ic>
-            <p>Stations</p>
-          </Hold>
           <Holds>
             <Ip>
               <VscSearch />
@@ -49,31 +45,49 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-left: 5px;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `;
 const Right = styled.div`
   display: flex;
   width: 60%;
   justify-content: space-around;
   align-items: center;
-  /* margin-right: 20px; */
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 `;
-const Main = styled.div`
+const Main = styled.div<{ bg: string }>`
   width: calc(100% - 250px);
   height: 17vh;
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
+
   margin-bottom: 20px;
-  background-color: #eaeaea;
+
+  background-color: ${({ bg }) => bg};
   position: fixed;
   top: 0;
   z-index: 9999;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    height: fit-content;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    height: fit-content;
+  }
 `;
 const Left = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 10px;
-  /* background-colo:red; */
 `;
 const Bi = styled.div`
   font-size: 20px;
@@ -152,6 +166,9 @@ const Up = styled.div`
     font-size: 18px;
     margin-top: 20px;
     font-weight: 500;
+    @media screen and (max-width: 500px) {
+      font-size: 16px;
+    }
   }
 `;
 const Down = styled.div`
@@ -162,4 +179,8 @@ const Down = styled.div`
   h1 {
     margin: 0;
   }
+`;
+const H1 = styled.div`
+  font-size: 25px;
+  font-weight: bold;
 `;
