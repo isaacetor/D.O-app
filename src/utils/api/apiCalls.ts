@@ -26,6 +26,13 @@ export const createUser = async ({
     });
 };
 
+const loginDirector = async ({ email, name }: any) => {
+  return await axios
+    .post(`${URL}/api/director/login-director`, { email, name })
+    .then((res) => {
+      return res.data;
+    });
+};
 const loginUser = async ({ email, password }: any) => {
   return await axios
     .post(`${URL}/api/users/loginuser`, { email, password })
@@ -41,6 +48,8 @@ const allStations = async () => {
     .get(`${URL}/api/stations/all-stations`)
     .then((res) => res.data);
 };
+
+export { AllUsers, allStations,loginUser,loginDirector};
 
 // const makeRequest = async ({ user, station }: any) => {
 //   try {
@@ -79,3 +88,4 @@ const makeRequest = async ({ user, station }: any) => {
     });
 };
 export { AllUsers, allStations, loginUser, makeRequest };
+

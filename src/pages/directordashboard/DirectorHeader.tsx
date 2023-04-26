@@ -4,8 +4,12 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { CiBellOn } from "react-icons/ci";
 import { VscSearch } from "react-icons/vsc";
 import styled from "styled-components";
+// import { useAppSelector } from "../../../services/statemanagement/Store";
+import { useAppSelector } from "../../services/statemanagement/Store";
 
 const AgentHeader = () => {
+  const user = useAppSelector((state) => state.directorDetails);
+  // const percentage = user?.numberOfRequests;
   return (
     <Main>
       <Left>
@@ -13,7 +17,7 @@ const AgentHeader = () => {
           <p>welcome Back,</p>
         </Up>
         <Down>
-          <h1>Jaji</h1>
+          <h1>{user?.name}</h1>
         </Down>
       </Left>
       <Right>
