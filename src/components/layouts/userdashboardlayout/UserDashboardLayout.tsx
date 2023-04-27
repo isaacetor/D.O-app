@@ -53,6 +53,10 @@ const Body = styled.div`
     margin-left: 70px;
     width: 100%;
   }
+  @media screen and (max-width: 800px) {
+    margin-left: 0px;
+    width: 100%;
+  }
 `;
 
 const Container = styled.div`

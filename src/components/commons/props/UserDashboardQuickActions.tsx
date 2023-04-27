@@ -138,7 +138,6 @@ const QuickContain = styled.div`
 
   @media screen and (max-width: 800px) {
     /* width: 100%; */
-    background: #80004f;
     padding: 50px 0;
   }
 `;
@@ -150,12 +149,6 @@ const QuickWrap = styled.div`
   justify-content: space-around;
 
   padding: 55px 0;
-
-  /* @media screen and (max-width: 800px) {
-
-    background: #80004f;
-    padding: 50px 0;
-  } */
 `;
 const QuickComponent = styled.div`
   color: white;
@@ -193,10 +186,6 @@ const HText = styled.div`
   width: 83%;
   color: #fff;
   font-weight: 700;
-
-  @media screen and (min-width: 800px) {
-    /* font-size: 3.5rem; */
-  }
 
   @media screen and (max-width: 799px) {
     font-size: 30px;
