@@ -2,51 +2,32 @@ import styled from "styled-components";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { GlobalButton } from ".";
-import { useAppSelector } from "../../../services/statemanagement/Store";
+import {
+  UseAppDispatch,
+  useAppSelector,
+} from "../../../services/statemanagement/Store";
 import Swal from "sweetalert2";
-import { useMutation } from "@tanstack/react-query";
-import { makeRequest } from "../../../utils";
+import axios from "axios";
+import { upDateRequest } from "../../../services/statemanagement/ReduxState";
 
 const UserDashboardQuick = () => {
+  const dispatch = UseAppDispatch();
   const requestNum = useAppSelector((state) => state.requestNumber);
-  // const percentage = user?.numberOfRequests;
+  const user = useAppSelector((state) => state.userDetails);
   const percentage = requestNum;
 
-  const posting = useMutation({
-    mutationKey: ["make request"],
-    mutationFn: makeRequest,
+  const URL = "https://dirty-online.onrender.com";
 
-    onSuccess: (myData: any) => {
-      Swal.fire({
-        title: "Please Confirm Request?",
-        showCancelButton: true,
-        cancelButtonColor: "#d33",
-        confirmButtonText: "confirm",
-        confirmButtonColor: "#009700",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          console.log("this is request data", myData);
-
-          // handleButtonClick();
-
-          Swal.fire("Request sent!", "", "success");
-        } else if (result.isDenied) {
-          Swal.fire("Error sending request", "", "info");
-        }
+  const makeRequest = async () => {
+    return await axios
+      .patch(`${URL}/api/users/make-request/${user?._id}/${user?.station._id}`)
+      .then((res) => {
+        //  return res.data;
+        dispatch(upDateRequest(res.data.RequestData.numberOfRequests));
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    },
-    onError: (error: any) => {
-      console.log("this is error", error);
-
-      // handle error here
-    },
-  });
-
-  // to execute the mutation, you can call the posting function with an object that has user and station properties:
-
-  const handleButtonClick = () => {
-    posting.mutate();
-    // dispatch()
   };
 
   return (
@@ -82,38 +63,40 @@ const UserDashboardQuick = () => {
                 Is your waste full? request for trash pick up now!
               </LText>
 
-              <GlobalButton
-                bg=""
-                col="#03b903"
-                padding="18px 30px"
-                text="Make Request"
-                bghovercolor="transparent"
-                hgt="6vh"
-                bor="1px solid #fff"
-                hovCol="#fff"
-                width="200px"
-                // onClick={async () => {
-
-                // await Swal.fire({
-                //   title: "Please Confirm Request?",
-                //   showCancelButton: true,
-                //   cancelButtonColor: "#d33",
-                //   confirmButtonText: "confirm",
-                //   confirmButtonColor: "#009700",
-                // }).then((result) => {
-                //   if (result.isConfirmed) {
-                //     console.log(result);
-                //     handleButtonClick();
-                //     Swal.fire("Request sent!", "", "success");
-                //   } else if (result.isDenied) {
-                //     Swal.fire("Error sending request", "", "info");
-                //   }
-                // });
-                // }}
-                onClick={async () => {
-                  handleButtonClick();
-                }}
-              />
+              {parseInt(percentage!) === 0 ? (
+                <p style={{ color: "red" }}>
+                  You have exhausted your request for the month <br /> Make a
+                  custom request instead?
+                </p>
+              ) : (
+                <GlobalButton
+                  bg=""
+                  col="#03b903"
+                  padding="18px 30px"
+                  text="Make Request"
+                  bghovercolor="transparent"
+                  hgt="6vh"
+                  bor="1px solid #fff"
+                  hovCol="#fff"
+                  width="200px"
+                  onClick={async () => {
+                    await Swal.fire({
+                      title: "Please Confirm Request?",
+                      showCancelButton: true,
+                      cancelButtonColor: "#d33",
+                      confirmButtonText: "confirm",
+                      confirmButtonColor: "#009700",
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                        makeRequest();
+                        Swal.fire("Request sent!", "", "success");
+                      } else if (result.isDenied) {
+                        Swal.fire("Error sending request", "", "info");
+                      }
+                    });
+                  }}
+                />
+              )}
             </QuickComponent>
           </QuickWrap>
         </QuickContain>
