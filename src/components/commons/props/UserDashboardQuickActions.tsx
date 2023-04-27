@@ -8,23 +8,46 @@ import { useMutation } from "@tanstack/react-query";
 import { makeRequest } from "../../../utils";
 
 const UserDashboardQuick = () => {
-  const user = useAppSelector((state) => state.userDetails);
-  const percentage = user?.numberOfRequests;
-  // const [requestNumber, setRequestNumber] = React.useState<number>();
+  const requestNum = useAppSelector((state) => state.requestNumber);
+  // const percentage = user?.numberOfRequests;
+  const percentage = requestNum;
 
   const posting = useMutation({
     mutationKey: ["make request"],
     mutationFn: makeRequest,
+
+    onSuccess: (myData: any) => {
+      Swal.fire({
+        title: "Please Confirm Request?",
+        showCancelButton: true,
+        cancelButtonColor: "#d33",
+        confirmButtonText: "confirm",
+        confirmButtonColor: "#009700",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          console.log("this is request data", myData);
+
+          // handleButtonClick();
+
+          Swal.fire("Request sent!", "", "success");
+        } else if (result.isDenied) {
+          Swal.fire("Error sending request", "", "info");
+        }
+      });
+    },
+    onError: (error: any) => {
+      console.log("this is error", error);
+
+      // handle error here
+    },
   });
 
   // to execute the mutation, you can call the posting function with an object that has user and station properties:
 
   const handleButtonClick = () => {
-    const params = { user: `${user?._id}`, station: `${user?.station._id}` };
-    posting.mutate(params);
+    posting.mutate();
+    // dispatch()
   };
-
-  // console.log(`this is request data`, makeRequest);
 
   return (
     <InBody>
@@ -34,7 +57,7 @@ const UserDashboardQuick = () => {
           <QuickWrap>
             <QuickImage>
               <CircularProgressbar
-                value={percentage!}
+                value={parseInt(percentage!)}
                 maxValue={4}
                 text={`${percentage}`}
                 styles={{
@@ -69,22 +92,26 @@ const UserDashboardQuick = () => {
                 bor="1px solid #fff"
                 hovCol="#fff"
                 width="200px"
-                onClick={async () => {
-                  await Swal.fire({
-                    title: "Please Confirm Request?",
-                    showCancelButton: true,
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "confirm",
-                    confirmButtonColor: "#009700",
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                      handleButtonClick();
+                // onClick={async () => {
 
-                      Swal.fire("Request sent!", "", "success");
-                    } else if (result.isDenied) {
-                      Swal.fire("Error sending request", "", "info");
-                    }
-                  });
+                // await Swal.fire({
+                //   title: "Please Confirm Request?",
+                //   showCancelButton: true,
+                //   cancelButtonColor: "#d33",
+                //   confirmButtonText: "confirm",
+                //   confirmButtonColor: "#009700",
+                // }).then((result) => {
+                //   if (result.isConfirmed) {
+                //     console.log(result);
+                //     handleButtonClick();
+                //     Swal.fire("Request sent!", "", "success");
+                //   } else if (result.isDenied) {
+                //     Swal.fire("Error sending request", "", "info");
+                //   }
+                // });
+                // }}
+                onClick={async () => {
+                  handleButtonClick();
                 }}
               />
             </QuickComponent>
