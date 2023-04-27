@@ -181,7 +181,7 @@ const Container = styled.div`
   position: fixed;
   overflow: hidden;
 
-  @media screen and (max-width: 1050px) {
+  @media screen and (max-width: 1051px) {
     display: flex;
     width: 70px;
   }

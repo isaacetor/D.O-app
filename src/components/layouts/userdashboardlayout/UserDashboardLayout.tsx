@@ -10,17 +10,19 @@ import { RxPerson } from "react-icons/rx";
 
 const UserDashboardLayout = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        backgroundColor: "#fff",
-      }}
-    >
+    // <div
+    //   style={{
+    //     display: "flex",
+    //     justifyContent: "space-between",
+    //     backgroundColor: "#fff",
+    //   }}
+    // >
+    <Container>
       <Sidenav />
 
-      {/* <Container> */}
-      <Outlet />
+      <Body>
+        <Outlet />
+      </Body>
       <AtMobile>
         <MobileNav
           firstIcon={<HiHome />}
@@ -39,25 +41,29 @@ const UserDashboardLayout = () => {
           fifthLink="profile"
         />
       </AtMobile>
-      {/* </Container> */}
-    </div>
+    </Container>
+    // </div>
   );
 };
 
 export default UserDashboardLayout;
 
-const Container = styled.div`
-  width: calc(100vw - 270px);
-  margin-left: 270px;
-  /* width: calc(100vw - 270px); */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  background-color: #f7f7f764;
-  /* @media screen and (max-width: 1024px) {
-    width: calc(100vw - 70px);
+const Body = styled.div`
+  @media screen and (max-width: 1051px) {
+    margin-left: 70px;
+    width: 100%;
   }
-  @media screen and (max-width: 800px) {
+`;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1051px) {
+    /* width: calc(100vw - 70px); */
+    justify-content: flex-start;
+  }
+  /* @media screen and (max-width: 800px) {
     width: 100%;
   } */
 `;
