@@ -6,7 +6,10 @@ import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { UseAppDispatch } from "../../../services/statemanagement/Store";
-import { userLogin } from "../../../services/statemanagement/ReduxState";
+import {
+  userLogin,
+  upDateRequest,
+} from "../../../services/statemanagement/ReduxState";
 import { Loading, loginUser } from "../../../utils";
 
 const UserLogin = () => {
@@ -24,7 +27,6 @@ const UserLogin = () => {
   const {
     handleSubmit,
     formState: { errors },
-    reset,
     register,
   } = useForm<formData>({
     resolver: yupResolver(userSchema),
@@ -36,12 +38,13 @@ const UserLogin = () => {
 
     onSuccess: (myData: any) => {
       dispatch(userLogin(myData.data));
+      dispatch(upDateRequest(myData.data.numberOfRequests));
 
       Swal.fire({
         icon: "success",
         title: "Login succesful",
         html: "Taking you to your dashboard",
-        timer: 2000,
+        timer: 1200,
 
         didOpen: () => {
           Swal.showLoading();
@@ -53,6 +56,8 @@ const UserLogin = () => {
       });
     },
     onError: (error: any) => {
+      console.log("this is error", error);
+
       // handle error here
       Swal.fire({
         title: "login failed",

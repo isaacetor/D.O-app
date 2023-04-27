@@ -1,5 +1,3 @@
-import { updateUser } from "../../services/statemanagement/ReduxState";
-
 import axios from "./axios";
 
 const URL = "https://dirty-online.onrender.com";
@@ -72,17 +70,12 @@ const makeRequest = async ({ user, station }: any) => {
   return await axios
     .patch(`${URL}/api/users/make-request/${user}/${station}`)
     .then((res: any) => {
-      const newNumberOfRequests = res.data.RequestData.numberOfRequests;
-      const updatedUser = {
-        ...user,
-        numberOfRequests: newNumberOfRequests,
-      };
-      // dispatch an action to update the user state in Redux
-      // dispatch(updateUser(updatedUser));
-      return res.data;
+      console.log(res.data);
+
+      // return res.data;
     })
     .catch((err) => {
-      console.log(err);
+      return err;
     });
 };
 export { AllUsers, allStations, loginUser, makeRequest, loginDirector };
