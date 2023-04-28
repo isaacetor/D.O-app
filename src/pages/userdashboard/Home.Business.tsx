@@ -23,7 +23,6 @@ const BusinessHome = () => {
         display="flex"
         height="24vh"
       />
-
       <Body>
         <Top>
           <UserDashboardQuick />
