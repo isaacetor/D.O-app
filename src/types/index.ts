@@ -42,7 +42,7 @@ export type userData = {
   address: string;
   password: string;
   numberOfRequests: number;
-  _id: string;
+
 };
 
 //types for manageing our agent information
