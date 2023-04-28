@@ -85,7 +85,7 @@ const BusinessHome = () => {
                   preConfirm: (message) => {
                     return axios
                       .patch(
-                        `https://dirty-online.onrender.com/make-special-request/${user?._id}/${user?.station._id}`
+                        `https://dirty-online.onrender.com/make-special-request/${user?._id}`
                       )
                       .then((response) => {
                         if (response.status !== 200) {
@@ -139,7 +139,6 @@ const BusinessHome = () => {
 };
 
 export default BusinessHome;
-
 const Top = styled.div`
   width: 95%;
 

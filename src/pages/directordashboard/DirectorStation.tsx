@@ -2,8 +2,95 @@ import react,{useState} from "react"
 import styled from "styled-components"
 import {VscSearch} from "react-icons/vsc"
 import {MdOutlineAlignVerticalBottom} from "react-icons/md"
-
+import * as yup from "yup";
+import Swal from "sweetalert2";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import { UseAppDispatch,useAppSelector } from "../../services/statemanagement/Store";
+import { createStations } from "../../services/statemanagement/ReduxState";
+import { Loading, createDirectorStations } from "../../utils";
+import axios from "axios";
 const Stations=()=>{
+    const user = useAppSelector((state) => state.directorDetails);
+    const navigate = useNavigate();
+    const dispatch = UseAppDispatch();
+  
+    const userSchema = yup
+    .object({
+      email: yup.string().required("please enter an email"),
+      address: yup.string().required("please enter a name"),
+      password: yup.string().required("please enter a name"),
+      station: yup.string().required("please enter a name"),
+      phoneNumber: yup.string().required("please enter a name"),
+    })
+    .required();
+  type formData = yup.InferType<typeof userSchema>;
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(userSchema),
+  });
+  
+//   const posting = useMutation({
+//     mutationKey: ["login"],
+//     mutationFn: createDirectorStations,
+  
+//     onSuccess: (myData: any) => {
+//       dispatch(createStations(myData.data));
+  
+//       Swal.fire({
+//         icon: "success",
+//         title: "Login succesful",
+//         html: "Taking you to your dashboard",
+//         timer: 2000,
+  
+//         didOpen: () => {
+//           Swal.showLoading();
+//         },
+  
+//         willClose: () => {
+//         //   navigate("/director/home");
+//         },
+//       });
+//     },
+//     onError: (error: any) => {
+//       // handle error here
+//       Swal.fire({
+//         title: "login failed",
+//         text: "email or name incorrect",
+//         icon: "error",
+//       });
+//     },
+//   });
+  
+  const Submit = handleSubmit(async (data) => {
+    // posting.mutate(data);
+    console.log("hezze",user)
+    await axios
+    .post(`https://dirty-online.onrender.com/api/director/new-station/${user?._id}`, data)
+    .then((res) => {
+        console.log(res)
+        Swal.fire({
+            title: "succeful",
+            icon: "success",
+        });
+    })
+    .catch((err) => {
+        Swal.fire({
+            title: "an error occured",
+            icon: "error",
+            text: `${err.response?.data?.message}`,
+        });
+        console.log(err.response);
+    });
+    // reset()
+  });
+
     const[show,setShow] = useState(true)
     const[show1,setShow1] = useState(false)
 
@@ -40,23 +127,31 @@ const Stations=()=>{
                     </Det>
                   )}
                 </Main>
-                {show ? (                <Info>
+                {show ? (                <Info onSubmit={Submit}>
                    <Infos>
                    <Hold>
                         <small>Name of station</small>
-                        <input type="text" placeholder="Stations" />
+                        <input type="text" placeholder="Stations"   {...register("station")}/>
                     </Hold>
                     <Hold>
                         <small>Phone Number</small>
-                        <input type="text" placeholder="Phone-Number" />
+                        <input type="text" placeholder="Phone-Number" {...register("phoneNumber")}/>
                     </Hold>
                     <Hold>
                         <small>Address</small>
-                        <input type="text" placeholder="Address" />
+                        <input type="text" placeholder="Address" {...register("address")}/>
+                    </Hold>
+                    <Hold>
+                        <small>Email</small>
+                        <input type="text" placeholder="Email" {...register("email")}/>
+                    </Hold>
+                    <Hold>
+                        <small>Password</small>
+                        <input type="text" placeholder="Password" {...register("password")}/>
                     </Hold>
                    </Infos>
                    <ButHold>
-                      <button>Create</button>
+                      Create
                    </ButHold>
                 </Info>) : (
                     null
@@ -294,7 +389,7 @@ align-items: center;
 margin-bottom: 20px;
 `
 const Details=styled.div``
-const Info=styled.div`
+const Info=styled.form`
 display: flex;
 flex-wrap: wrap;
 flex-direction: column;
@@ -320,10 +415,8 @@ input{
    border: none;
 }
 `
-const ButHold=styled.div`
+const ButHold=styled.button`
 margin-top: 50px;
-
-button{
     padding: 15px 20px;
     color: white;
     background-color: blue;
@@ -336,5 +429,5 @@ cursor: pointer;
     :hover{
         scale: 1.1;
     }
-}
+
 `
