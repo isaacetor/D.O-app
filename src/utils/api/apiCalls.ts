@@ -68,7 +68,6 @@ const allStations = async () => {
 };
 
 
-export { AllUsers, allStations,loginUser,loginDirector};
 
 // const makeRequest = async ({ user, station }: any) => {
 //   try {

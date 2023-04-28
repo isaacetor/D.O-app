@@ -20,7 +20,7 @@ const UserDashboardQuick = () => {
 
   const makeRequest = async () => {
     return await axios
-      .patch(`${URL}/api/users/make-request/${user?._id}/${user?.station._id}`)
+      .patch(`${URL}/api/users/make-request/${user?._id}/${user?.station?._id}`)
       .then((res) => {
         //  return res.data;
         dispatch(upDateRequest(res.data.RequestData.numberOfRequests));

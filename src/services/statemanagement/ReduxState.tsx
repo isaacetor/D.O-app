@@ -40,10 +40,10 @@ const ReduxState = createSlice({
 
 // export const dummy_user: any = { name: "Andrea", role: "admin" };
 
-export const { logout, userLogin,directorLogin,createStations } = ReduxState.actions;
+export const { logout, userLogin,directorLogin,createStations,upDateRequest } = ReduxState.actions;
 
-export const { logout, userLogin, upDateRequest, directorLogin } =
-  ReduxState.actions;
+// export const { logout, userLogin, upDateRequest, directorLogin } =
+//   ReduxState.actions;
 
 
 export default ReduxState.reducer;
