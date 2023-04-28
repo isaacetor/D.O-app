@@ -2,6 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { mobileNav } from "../../../types";
 import { NavLink, useNavigate } from "react-router-dom";
+import { CircularProgressbar } from "react-circular-progressbar";
+import {
+  UseAppDispatch,
+  useAppSelector,
+} from "../../../services/statemanagement/Store";
+import axios from "axios";
+import { upDateRequest } from "../../../services/statemanagement/ReduxState";
 
 const MobileNav: React.FC<mobileNav> = ({
   firstIcon,
@@ -26,6 +33,27 @@ const MobileNav: React.FC<mobileNav> = ({
   const [support, setSupport] = React.useState(false);
   const [profile, setProfile] = React.useState(false);
   const [toggle, setToggle] = React.useState(false);
+  //quickness
+
+  const dispatch = UseAppDispatch();
+  const requestNum = useAppSelector((state) => state.requestNumber);
+  const user = useAppSelector((state) => state.userDetails);
+  const percentage = requestNum;
+
+  const URL = "https://dirty-online.onrender.com";
+
+  const makeRequest = async () => {
+    return await axios
+      .patch(`${URL}/api/users/make-request/${user?._id}/${user?.station._id}`)
+      .then((res) => {
+        //  return res.data;
+        dispatch(upDateRequest(res.data.RequestData.numberOfRequests));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <Container>
       <Contents>
@@ -38,9 +66,9 @@ const MobileNav: React.FC<mobileNav> = ({
                 setPay(false);
                 setSupport(false);
                 setProfile(false);
+                setToggle(false);
               }}
-              cl={`${home ? colours : "grey"}`}
-            >
+              cl={`${home ? colours : "grey"}`}>
               <Icon>{firstIcon}</Icon>
               <Text>{firstText}</Text>
             </Nav>
@@ -51,9 +79,9 @@ const MobileNav: React.FC<mobileNav> = ({
                 setHome(false);
                 setSupport(false);
                 setProfile(false);
+                setToggle(false);
               }}
-              cl={`${pay ? colours : "grey"}`}
-            >
+              cl={`${pay ? colours : "grey"}`}>
               <Icon>{secondIcon}</Icon>
               <Text>{secondText}</Text>
             </Nav>
@@ -62,8 +90,7 @@ const MobileNav: React.FC<mobileNav> = ({
             <Pair
               onClick={() => {
                 setToggle(!toggle);
-              }}
-            >
+              }}>
               {toggle ? (
                 <Single cl={`${colours}`}>x</Single>
               ) : (
@@ -79,9 +106,9 @@ const MobileNav: React.FC<mobileNav> = ({
                 setHome(false);
                 setPay(false);
                 setProfile(false);
+                setToggle(false);
               }}
-              cl={`${support ? colours : "grey"}`}
-            >
+              cl={`${support ? colours : "grey"}`}>
               <Icon>{fourthIcon}</Icon>
               <Text>{fourthText}</Text>
             </Nav>
@@ -92,9 +119,9 @@ const MobileNav: React.FC<mobileNav> = ({
                 setPay(false);
                 setHome(false);
                 setSupport(false);
+                setToggle(false);
               }}
-              cl={`${profile ? colours : "grey"}`}
-            >
+              cl={`${profile ? colours : "grey"}`}>
               <Icon>{fifthIcon}</Icon>
               <Text>{fifthText}</Text>
             </Nav>
@@ -103,24 +130,44 @@ const MobileNav: React.FC<mobileNav> = ({
       </Contents>
       <PopUp dp={toggle ? "flex" : "none"}>
         <Wrap>
-          <First>
+          <First onClick={makeRequest}>
             <div style={{ marginLeft: "20px" }}>
-              <Big>Request for special trash pickup</Big>
-              <Small>{"( order for trash pickup at special events )"}</Small>
+              <Big>Make request for your home</Big>
+              <Small>{`( four requests per month )`}</Small>
+            </div>
+            <div style={{ justifySelf: "flex-end", marginRight: "20px" }}>
+              <CircularProgressbar
+                value={parseInt(percentage!)}
+                maxValue={4}
+                text={`${percentage}`}
+                styles={{
+                  root: {
+                    height: "35px",
+                    width: "35px",
+                  },
+                  path: {
+                    stroke: `#009700`,
+                    strokeLinecap: "round",
+                  },
+                  text: {
+                    fill: "#291212",
+                    fontSize: "38px",
+                  },
+                }}
+              />
             </div>
           </First>
           <Middle>
             <div style={{ marginLeft: "20px" }}>
-              <Big>Make request for your home</Big>
-              <Small>{`( four requests per month )`}</Small>
+              <Big>Request for special trash pickup</Big>
+              <Small>{"( order for trash pickup at special events )"}</Small>
             </div>
           </Middle>
           <Third
             onClick={() => {
               navigate("makerequest");
               setToggle(false);
-            }}
-          >
+            }}>
             <div style={{ marginLeft: "20px" }}>
               <Big>History</Big>
               <Small>{"( view all your requests so far )"}</Small>
@@ -186,7 +233,7 @@ const Single = styled.div<{ cl: string }>`
   height: 35px;
   width: 35px;
   font-size: 30px;
-  margin-top: -25px;
+  margin-top: -55px;
   border: 3px solid white;
 `;
 const WrapContents = styled.div`
@@ -236,6 +283,7 @@ const Wrap = styled.div`
 const First = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-weight: 400;
   transition: all 350ms;
   cursor: pointer;

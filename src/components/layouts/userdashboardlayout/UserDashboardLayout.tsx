@@ -19,26 +19,26 @@ const UserDashboardLayout = () => {
     // >
     <Container>
       <Sidenav />
-        <Outlet />
-        <AtMobile>
-          <MobileNav
-            firstIcon={<HiHome />}
-            firstText="Home"
-            firstLink="/user/home"
-            secondIcon={<IoIosWallet />}
-            secondText="Payment"
-            secondLink="makepayment"
-            thirdIcon={<GiCardPickup />}
-            fourthIcon={<BiSupport />}
-            fourthText="Support"
-            fourthLink="feedback"
-            fifthIcon={<RxPerson />}
-            fifthText="Profile"
-            fifthLink="profile"
-            colours="#009700"
-          />
-        </AtMobile>
-      </Container>
+      <Outlet />
+      <AtMobile>
+        <MobileNav
+          firstIcon={<HiHome />}
+          firstText="Home"
+          firstLink="/user/home"
+          secondIcon={<IoIosWallet />}
+          secondText="Payment"
+          secondLink="makepayment"
+          thirdIcon={<GiCardPickup />}
+          fourthIcon={<BiSupport />}
+          fourthText="Support"
+          fourthLink="feedback"
+          fifthIcon={<RxPerson />}
+          fifthText="Profile"
+          fifthLink="profile"
+          colours="#009700"
+        />
+      </AtMobile>
+    </Container>
     // </div>
   );
 };
