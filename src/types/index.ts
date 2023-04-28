@@ -54,7 +54,7 @@ export type agentInfo = {
   phoneNumber: string;
 };
 export type agentData = {
-  _id:any;
+  _id:string;
   phoneNumber: string;
   name: string;
   email: string;

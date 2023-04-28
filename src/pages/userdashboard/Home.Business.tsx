@@ -85,7 +85,7 @@ const BusinessHome = () => {
                   preConfirm: (message) => {
                     return axios
                       .patch(
-                        `https://dirty-online.onrender.com/make-special-request/${user?._id}/${user?.station._id}`
+                        `https://dirty-online.onrender.com/make-special-request/${user?._id}`
                       )
                       .then((response) => {
                         if (response.status !== 200) {
@@ -140,8 +140,7 @@ const BusinessHome = () => {
 
 export default BusinessHome;
 
-<<<<<<< HEAD
-=======
+
 const Top = styled.div`
   width: 95%;
 
@@ -149,7 +148,6 @@ const Top = styled.div`
     width: calc(100% - 20px);
   }
 `;
->>>>>>> aca58518d4d9d930f64ba35146630e8b3ed71785
 const HoldC = styled.div<{ bg: string }>`
   display: flex;
   flex-direction: column;
