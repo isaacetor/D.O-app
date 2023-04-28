@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 // import hero from "../../Assets/hero.webp";
-import money from "../../Assets/money.webp";
-import hundred from "../../Assets/100.webp";
 import { NavLink } from "react-router-dom";
 import { AboutCard } from "../../components";
 
@@ -10,6 +8,7 @@ import one from "../../assets/svgs/one.svg";
 import two from "../../assets/svgs/two.svg";
 import three from "../../assets/svgs/three.svg";
 import four from "../../assets/svgs/four.svg";
+import pic from "../../assets/images/tour.png";
 
 const Hero = () => {
   return (
@@ -20,7 +19,7 @@ const Hero = () => {
             <div>
               <H>Joining us is very easy!</H>
               <P>Get Started in few easy steps</P>
-              {/* <Picture src={pic} /> */}
+              <Picture src={pic} />
             </div>
           </Head>
           <Cards>
