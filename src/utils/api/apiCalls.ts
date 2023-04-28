@@ -1,5 +1,5 @@
 import axios from "./axios";
-import { agentData, userData } from "../../types";
+import { agentData, userData,agentInfo } from "../../types";
 
 const URL = "https://dirty-online.onrender.com";
 
@@ -19,6 +19,25 @@ export const createUser = async ({
       address,
       password,
       stationName,
+    })
+    .then((res) => {
+      return res.data;
+    });
+};
+export const createDirectorStations = async ({
+  email,
+  phoneNumber,
+  address,
+  password,
+  station,
+}: agentData,id:any) => {
+  return await axios
+    .post(`${URL}/api/director/new-station/${id}`, {
+      email,
+      phoneNumber,
+      address,
+      password,
+      station,
     })
     .then((res) => {
       return res.data;

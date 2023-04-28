@@ -32,11 +32,12 @@ export type GlobalButtonProp = {
 
 //types for managing user details
 export type userData = {
+  _id:string;
   name: string;
   email: string;
   phoneNumber: number;
-  stationName: string;
-  station: [{}];
+  station: string;
+  // station: [{}];
   role: string;
   address: string;
   password: string;
@@ -45,11 +46,20 @@ export type userData = {
 
 //types for manageing our agent information
 
+export type agentInfo = {
+  email: string;
+  password: string;
+  address: string;
+  phoneNumber: string;
+};
 export type agentData = {
+  _id:any;
+  phoneNumber: string;
   name: string;
   email: string;
   password: string;
   address: string;
+  station: string;
   ConfirmPassword: string;
 };
 
