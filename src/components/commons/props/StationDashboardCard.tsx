@@ -9,11 +9,8 @@ const StationDashboardCard = () => {
     <One>
       <Detail>
         <Pop>
-          <h2>Streamlining operations for maximum Productivity.</h2>
-          <p>
-            Maximize productivity: track all today's requests with our intuitive
-            system
-          </p>
+          <h2>Maximum Productivity.</h2>
+          <p>track all today's requests with our intuitive system</p>
           <Hold1>View Request</Hold1>
         </Pop>
         <Pip>
@@ -24,26 +21,22 @@ const StationDashboardCard = () => {
         <Users>
           <Box>
             <Box1></Box1>
-            <Lef>
-              <p>Number of Users</p>
-            </Lef>
+            <Lef>Number of Users</Lef>
           </Box>
           <Num>
-            <p>234</p>
-            <small>users</small>
+            <Ptext>234</Ptext>
+            <Span>users</Span>
           </Num>
           <Log src={wave} />
         </Users>
         <Users>
           <Box>
             <Box1 style={{ backgroundColor: "green" }}></Box1>
-            <Lef>
-              <p>Total Amount</p>
-            </Lef>
+            <Lef>Total Amount</Lef>
           </Box>
           <Num>
-            <p>#4,453,510</p>
-            <small></small>
+            <Ptext>#4,453,510</Ptext>
+            <Span></Span>
           </Num>
           <Log src={wave1} style={{ width: "400px", bottom: "80" }} />
         </Users>
@@ -71,10 +64,11 @@ const Box1 = styled.div`
   border-radius: 8px;
 `;
 const Lef = styled.div`
-  p {
-    font-weight: bold;
-  }
+  font-weight: bold;
 `;
+const Ptext = styled.div``;
+const Span = styled.div``;
+
 const Num = styled.div`
   display: flex;
   justify-content: center;
@@ -85,7 +79,15 @@ const Num = styled.div`
 
   p {
     font-size: 35px;
-    /* font-weight: bold; */
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  h5 {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 20px;
   }
 `;
 const Log = styled.img`
@@ -97,12 +99,19 @@ const Log = styled.img`
 
 const One = styled.div`
   display: flex;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const Pop = styled.div`
+  /* width: 50%; */
   display: flex;
   flex-direction: column;
   h2 {
@@ -111,15 +120,34 @@ const Pop = styled.div`
     margin: 0;
     margin-top: 20px;
     /* line-height: 35px; */
+
+    @media screen and (max-width: 800px) {
+      font-size: 16px;
+    }
+    @media screen and (max-width: 500px) {
+      font-size: 13px;
+    }
   }
   p {
     color: white;
     font-size: 16px;
+
+    @media screen and (max-width: 800px) {
+      font-size: 11px;
+    }
+    @media screen and (max-width: 500px) {
+      font-size: 10px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
   }
 `;
 const Pip = styled.div`
+  /* width: 50%; */
   img {
-    width: 300px;
+    width: 100%;
   }
 `;
 const Infos = styled.div`
@@ -128,6 +156,14 @@ const Infos = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
+  /* background-color: red; */
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 800px) {
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 const Users = styled.div`
   width: 400px;
@@ -136,10 +172,16 @@ const Users = styled.div`
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  /* justify-content:left; */
   align-items: flex-start;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: relative;
+
+  @media screen and (max-width: 800px) {
+    width: 500px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 350px;
+  }
 `;
 
 const Detail = styled.div`
@@ -157,6 +199,16 @@ const Detail = styled.div`
   padding: 15px;
   margin-bottom: 20px;
   /* gap: 10px; */
+
+  @media screen and (max-width: 800px) {
+    width: 450px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 370px;
+  }
+  @media screen and (max-width: 350px) {
+    width: 300px;
+  }
 `;
 
 const Hold1 = styled.button`
@@ -173,5 +225,19 @@ const Hold1 = styled.button`
   font-weight: 600;
 
   :hover {
+    background-color: transparent;
+    border: 1px solid #fff;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 80px;
+    font-size: 11px;
   }
 `;

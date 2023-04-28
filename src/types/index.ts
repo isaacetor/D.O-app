@@ -42,6 +42,7 @@ export type userData = {
   address: string;
   password: string;
   numberOfRequests: number;
+  _id: string;
 };
 
 //types for manageing our agent information
@@ -78,4 +79,28 @@ export type userHeader = {
   display: string;
   height: string;
   btnDisplay?: string;
+};
+
+export type stationHeader = {
+  bg: string;
+  title: string;
+  subtitle: string;
+};
+
+export type mobileNav = {
+  firstIcon: any;
+  firstText: string;
+  firstLink: string;
+  secondIcon: any;
+  secondText: string;
+  secondLink: string;
+  thirdIcon: any;
+  thirdLink?: any;
+  fourthIcon: any;
+  fourthText: string;
+  fourthLink: string;
+  fifthIcon: any;
+  fifthText: string;
+  fifthLink: string;
+  colours: string;
 };

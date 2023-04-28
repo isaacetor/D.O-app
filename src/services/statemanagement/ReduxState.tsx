@@ -27,6 +27,9 @@ const ReduxState = createSlice({
     logout: (state) => {
       state.userDetails = null;
     },
+    updateUser(state, { payload }: PayloadAction<userData>) {
+      state.userDetails = payload;
+    },
   },
 });
 

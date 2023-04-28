@@ -1,19 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { FiArrowUpRight } from "react-icons/fi";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import { animateScroll as scroll, Link } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 import { GlobalButton } from "../../commons";
 
 const Header = () => {
   const [show, setShow] = React.useState(false);
   const [toTopshow, settoTopShow] = React.useState(false);
   const [isActive, setIsActive] = React.useState(null);
-
-  const handleSetActive = (to: any) => {
-    setIsActive(to);
-  };
 
   const changeHeaderColor = () => {
     if (window.scrollY >= 250) {
@@ -60,7 +55,7 @@ const Header = () => {
         >
           <Wrapper border={show ? "" : "none"}>
             <LogoNav>
-              <Logo onClick={backToTop}>ecoBin</Logo>
+              <Logo onClick={backToTop}>ecoBIN</Logo>
               <Nav>
                 <Navigation onClick={toHero}>Home</Navigation>
                 <Navigation onClick={toAbout}>About</Navigation>
@@ -75,7 +70,7 @@ const Header = () => {
                   text="Create an account"
                   bg="#03B903"
                   col="#fff"
-                  padding="18px 20px"
+                  padding="15px 15px"
                   bghovercolor=""
                   bor=""
                   hovCol=""
@@ -98,7 +93,7 @@ const Header = () => {
         >
           <Wrapper border={show ? "" : "value"}>
             <LogoNav>
-              <Logo onClick={backToTop}>ecoBin</Logo>
+              <Logo onClick={backToTop}>ecoBIN</Logo>
               <Nav>
                 <Navigation onClick={toHero}>Home</Navigation>
                 <Navigation onClick={toAbout}>About</Navigation>
@@ -113,7 +108,7 @@ const Header = () => {
                   text="Create an account"
                   bg="#03B903"
                   col="#fff"
-                  padding="18px 20px"
+                  padding="15px 15px"
                   bghovercolor=""
                   bor=""
                   hovCol=""
