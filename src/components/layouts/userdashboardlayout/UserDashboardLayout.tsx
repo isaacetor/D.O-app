@@ -10,13 +10,6 @@ import { RxPerson } from "react-icons/rx";
 
 const UserDashboardLayout = () => {
   return (
-    // <div
-    //   style={{
-    //     display: "flex",
-    //     justifyContent: "space-between",
-    //     backgroundColor: "#fff",
-    //   }}
-    // >
     <Container>
       <Sidenav />
 
@@ -42,7 +35,6 @@ const UserDashboardLayout = () => {
         />
       </AtMobile>
     </Container>
-    // </div>
   );
 };
 
