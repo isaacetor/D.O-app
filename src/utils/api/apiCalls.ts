@@ -67,4 +67,38 @@ const allStations = async () => {
     .then((res) => res.data);
 };
 
-export { AllUsers, allStations,loginUser,loginDirector};
+
+
+// const makeRequest = async ({ user, station }: any) => {
+//   try {
+//     const res = await axios.patch(
+//       `${URL}/api/users/make-request/${user}/${station}`
+//     );
+//     // const newNumberOfRequests = res.data.RequestData.numberOfRequests;
+//     // const usser = useAppSelector((state) => state.userDetails);
+//     // const updatedUser: any = {
+//     //   ...usser,
+//     //   numberOfRequests: newNumberOfRequests,
+//     // };
+//     // dispatch an action to update the user state in Redux
+//     // dispatch(updateUser(updatedUser));
+//     return res.data;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+const makeRequest = async ({ user, station }: any) => {
+  return await axios
+    .patch(`${URL}/api/users/make-request/${user}/${station}`)
+    .then((res: any) => {
+      console.log(res.data);
+
+      // return res.data;
+    })
+    .catch((err) => {
+      return err;
+    });
+};
+export { AllUsers, allStations, loginUser, makeRequest, loginDirector };
+

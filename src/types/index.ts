@@ -36,8 +36,7 @@ export type userData = {
   name: string;
   email: string;
   phoneNumber: number;
-  station: string;
-  // station: [{}];
+  station: string | any;
   role: string;
   address: string;
   password: string;
@@ -102,5 +101,5 @@ export type mobileNav = {
   fifthIcon: any;
   fifthText: string;
   fifthLink: string;
-  colours: string;
+  colours?: string;
 };

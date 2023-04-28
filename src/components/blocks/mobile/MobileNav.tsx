@@ -39,7 +39,8 @@ const MobileNav: React.FC<mobileNav> = ({
                 setSupport(false);
                 setProfile(false);
               }}
-              cl={home ? colours : "grey"}>
+              cl={`${home ? colours : "grey"}`}
+            >
               <Icon>{firstIcon}</Icon>
               <Text>{firstText}</Text>
             </Nav>
@@ -51,7 +52,8 @@ const MobileNav: React.FC<mobileNav> = ({
                 setSupport(false);
                 setProfile(false);
               }}
-              cl={pay ? colours : "grey"}>
+              cl={`${pay ? colours : "grey"}`}
+            >
               <Icon>{secondIcon}</Icon>
               <Text>{secondText}</Text>
             </Nav>
@@ -60,11 +62,12 @@ const MobileNav: React.FC<mobileNav> = ({
             <Pair
               onClick={() => {
                 setToggle(!toggle);
-              }}>
+              }}
+            >
               {toggle ? (
-                <Single cl={colours}>x</Single>
+                <Single cl={`${colours}`}>x</Single>
               ) : (
-                <Single cl={colours}>{thirdIcon}</Single>
+                <Single cl={`${colours}`}>{thirdIcon}</Single>
               )}
             </Pair>
           </NavLink>
@@ -77,7 +80,8 @@ const MobileNav: React.FC<mobileNav> = ({
                 setPay(false);
                 setProfile(false);
               }}
-              cl={support ? colours : "grey"}>
+              cl={`${support ? colours : "grey"}`}
+            >
               <Icon>{fourthIcon}</Icon>
               <Text>{fourthText}</Text>
             </Nav>
@@ -89,7 +93,8 @@ const MobileNav: React.FC<mobileNav> = ({
                 setHome(false);
                 setSupport(false);
               }}
-              cl={profile ? colours : "grey"}>
+              cl={`${profile ? colours : "grey"}`}
+            >
               <Icon>{fifthIcon}</Icon>
               <Text>{fifthText}</Text>
             </Nav>
@@ -114,7 +119,8 @@ const MobileNav: React.FC<mobileNav> = ({
             onClick={() => {
               navigate("makerequest");
               setToggle(false);
-            }}>
+            }}
+          >
             <div style={{ marginLeft: "20px" }}>
               <Big>History</Big>
               <Small>{"( view all your requests so far )"}</Small>
