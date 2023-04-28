@@ -12,10 +12,7 @@ const UserDashboardLayout = () => {
   return (
     <Container>
       <Sidenav />
-
-      <Body>
-        <Outlet />
-      </Body>
+      <Outlet />
       <AtMobile>
         <MobileNav
           firstIcon={<HiHome />}
@@ -25,13 +22,13 @@ const UserDashboardLayout = () => {
           secondText="Payment"
           secondLink="makepayment"
           thirdIcon={<GiCardPickup />}
-          thirdLink="makerequest"
           fourthIcon={<BiSupport />}
           fourthText="Support"
           fourthLink="feedback"
           fifthIcon={<RxPerson />}
           fifthText="Profile"
           fifthLink="profile"
+          colours="#009700"
         />
       </AtMobile>
     </Container>

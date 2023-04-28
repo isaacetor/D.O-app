@@ -59,7 +59,7 @@ const Profile = () => {
               <InputHold2>
                 <span>Station</span>
                 <Hold>
-                  <span>{stat ? stat?.station : ""}</span>
+                  <span>{user?.station}</span>
                 </Hold>
               </InputHold2>
             </InputHold1>
