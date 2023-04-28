@@ -17,7 +17,6 @@ const UserDashboardLayout = () => {
         backgroundColor: "#fff",
       }}>
       <Sidenav />
-<<<<<<< HEAD
       <Container>
         <Outlet />
         <AtMobile>
@@ -39,13 +38,13 @@ const UserDashboardLayout = () => {
           />
         </AtMobile>
       </Container>
-=======
 
       {/* <Container> */}
       <Outlet />
       <AtMobile>
         <MobileNav
           firstIcon={<HiHome />}
+          colours="blue"
           firstText="Home"
           firstLink="/user/home"
           secondIcon={<IoIosWallet />}
@@ -62,7 +61,6 @@ const UserDashboardLayout = () => {
         />
       </AtMobile>
       {/* </Container> */}
->>>>>>> aca58518d4d9d930f64ba35146630e8b3ed71785
     </div>
   );
 };
