@@ -124,7 +124,7 @@ const BusinessHome = () => {
               bg=""
               col="#03B903"
               padding="18px 30px"
-              text="make enquiries!"
+              text="Learn More"
               bghovercolor="transparent"
               bor="1px solid #fff"
               hovCol="#fff"
@@ -139,12 +139,10 @@ const BusinessHome = () => {
 };
 
 export default BusinessHome;
-
-
 const Top = styled.div`
   width: 95%;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1050px) {
     width: calc(100% - 20px);
   }
 `;
@@ -188,10 +186,18 @@ const Body = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   gap: 35px;
-  @media screen and (max-width: 1024px) {
-    width: calc(100% - 30px);
+
+  @media screen and (max-width: 1050px) {
+    /* width: calc(100% - 70px); */
+    width: 100%;
     margin-left: 0px;
     align-items: center;
     justify-content: center;
   }
+  /* @media screen and (max-width: 1024px) {
+    width: calc(100% - 30px);
+    margin-left: 0px;
+    align-items: center;
+    justify-content: center;
+  } */
 `;

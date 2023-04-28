@@ -6,7 +6,11 @@ import { agentInfo } from "../../types";
 const initialState = {
   userDetails: {} as userData | null,
   directorDetails: {} as agentData | null,
+
   directorInfo: {} as agentData | null,
+
+  requestNumber: "" as string | null,
+
   //   Admin: {} as BusinessData | null,
 };
 
@@ -27,14 +31,19 @@ const ReduxState = createSlice({
     logout: (state) => {
       state.userDetails = null;
     },
-    updateUser(state, { payload }: PayloadAction<userData>) {
-      state.userDetails = payload;
+    upDateRequest(state, { payload }) {
+      state.requestNumber = payload;
     },
   },
 });
 
+
 // export const dummy_user: any = { name: "Andrea", role: "admin" };
 
 export const { logout, userLogin,directorLogin,createStations } = ReduxState.actions;
+
+export const { logout, userLogin, upDateRequest, directorLogin } =
+  ReduxState.actions;
+
 
 export default ReduxState.reducer;

@@ -2,29 +2,33 @@ import styled from "styled-components";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { GlobalButton } from ".";
-import { useAppSelector } from "../../../services/statemanagement/Store";
+import {
+  UseAppDispatch,
+  useAppSelector,
+} from "../../../services/statemanagement/Store";
 import Swal from "sweetalert2";
-import { useMutation } from "@tanstack/react-query";
-import { makeRequest } from "../../../utils";
+import axios from "axios";
+import { upDateRequest } from "../../../services/statemanagement/ReduxState";
 
 const UserDashboardQuick = () => {
+  const dispatch = UseAppDispatch();
+  const requestNum = useAppSelector((state) => state.requestNumber);
   const user = useAppSelector((state) => state.userDetails);
-  const percentage = user?.numberOfRequests;
-  // const [requestNumber, setRequestNumber] = React.useState<number>();
+  const percentage = requestNum;
 
-  const posting = useMutation({
-    mutationKey: ["make request"],
-    mutationFn: makeRequest,
-  });
+  const URL = "https://dirty-online.onrender.com";
 
-  // to execute the mutation, you can call the posting function with an object that has user and station properties:
-
-  const handleButtonClick = () => {
-    const params = { user: `${user?._id}`, station: `${user?.station._id}` };
-    posting.mutate(params);
+  const makeRequest = async () => {
+    return await axios
+      .patch(`${URL}/api/users/make-request/${user?._id}/${user?.station._id}`)
+      .then((res) => {
+        //  return res.data;
+        dispatch(upDateRequest(res.data.RequestData.numberOfRequests));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
-
-  // console.log(`this is request data`, makeRequest);
 
   return (
     <InBody>
@@ -34,7 +38,7 @@ const UserDashboardQuick = () => {
           <QuickWrap>
             <QuickImage>
               <CircularProgressbar
-                value={percentage!}
+                value={parseInt(percentage!)}
                 maxValue={4}
                 text={`${percentage}`}
                 styles={{
@@ -59,34 +63,40 @@ const UserDashboardQuick = () => {
                 Is your waste full? request for trash pick up now!
               </LText>
 
-              <GlobalButton
-                bg=""
-                col="#03b903"
-                padding="18px 30px"
-                text="Make Request"
-                bghovercolor="transparent"
-                hgt="6vh"
-                bor="1px solid #fff"
-                hovCol="#fff"
-                width="200px"
-                onClick={async () => {
-                  await Swal.fire({
-                    title: "Please Confirm Request?",
-                    showCancelButton: true,
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "confirm",
-                    confirmButtonColor: "#009700",
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                      handleButtonClick();
-
-                      Swal.fire("Request sent!", "", "success");
-                    } else if (result.isDenied) {
-                      Swal.fire("Error sending request", "", "info");
-                    }
-                  });
-                }}
-              />
+              {parseInt(percentage!) === 0 ? (
+                <p style={{ color: "red" }}>
+                  You have exhausted your request for the month <br /> Make a
+                  custom request instead?
+                </p>
+              ) : (
+                <GlobalButton
+                  bg=""
+                  col="#03b903"
+                  padding="18px 30px"
+                  text="Make Request"
+                  bghovercolor="transparent"
+                  hgt="6vh"
+                  bor="1px solid #fff"
+                  hovCol="#fff"
+                  width="200px"
+                  onClick={async () => {
+                    await Swal.fire({
+                      title: "Please Confirm Request?",
+                      showCancelButton: true,
+                      cancelButtonColor: "#d33",
+                      confirmButtonText: "confirm",
+                      confirmButtonColor: "#009700",
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                        makeRequest();
+                        Swal.fire("Request sent!", "", "success");
+                      } else if (result.isDenied) {
+                        Swal.fire("Error sending request", "", "info");
+                      }
+                    });
+                  }}
+                />
+              )}
             </QuickComponent>
           </QuickWrap>
         </QuickContain>
@@ -128,7 +138,6 @@ const QuickContain = styled.div`
 
   @media screen and (max-width: 800px) {
     /* width: 100%; */
-    background: #80004f;
     padding: 50px 0;
   }
 `;
@@ -140,12 +149,6 @@ const QuickWrap = styled.div`
   justify-content: space-around;
 
   padding: 55px 0;
-
-  /* @media screen and (max-width: 800px) {
-
-    background: #80004f;
-    padding: 50px 0;
-  } */
 `;
 const QuickComponent = styled.div`
   color: white;
@@ -183,10 +186,6 @@ const HText = styled.div`
   width: 83%;
   color: #fff;
   font-weight: 700;
-
-  @media screen and (min-width: 800px) {
-    /* font-size: 3.5rem; */
-  }
 
   @media screen and (max-width: 799px) {
     font-size: 30px;

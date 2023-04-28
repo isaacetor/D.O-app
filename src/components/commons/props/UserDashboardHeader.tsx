@@ -140,6 +140,7 @@ const WithdrawButton = styled.button<{ btnDisplay: string }>`
 const Container = styled.div<{ height: string }>`
   width: calc(100% - 270px);
   height: ${({ height }) => height};
+
   @media screen and (max-width: 800px) {
     height: 100px;
   }
@@ -153,14 +154,9 @@ const Container = styled.div<{ height: string }>`
   position: fixed;
   top: 0px;
   right: 0;
-<<<<<<< HEAD
-  /* z-index: 1; */
-  @media screen and (max-width: 1024px) {
-=======
   z-index: 5;
 
-  @media screen and (max-width: 1050px) {
->>>>>>> aca58518d4d9d930f64ba35146630e8b3ed71785
+  @media screen and (max-width: 1051px) {
     width: calc(100vw - 70px);
   }
 

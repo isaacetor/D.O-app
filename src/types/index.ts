@@ -102,5 +102,5 @@ export type mobileNav = {
   fifthIcon: any;
   fifthText: string;
   fifthLink: string;
-  colours: string;
+  colours?: string;
 };
