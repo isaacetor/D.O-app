@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { GlobalButton } from "../../components/commons";
+// import about from "../../assets/images/"
+import about from "../../assets/images/mockUp.png";
 
 const Awareness = () => {
   return (
@@ -20,7 +21,9 @@ const Awareness = () => {
             healthier environment for current and future generations. 🌍♻️
           </p>
         </Left>
-        <Right>{/* <img src={about} alt="" /> */}</Right>
+        <Right>
+          <img src={about} alt="about image" />
+        </Right>
       </Wrapper>
     </Container>
   );
