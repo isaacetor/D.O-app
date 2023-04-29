@@ -22,7 +22,7 @@ const Awareness = () => {
           </p>
         </Left>
         <Right>
-          <img src={about} alt="" />
+          <img src={about} alt="about image" />
         </Right>
       </Wrapper>
     </Container>
