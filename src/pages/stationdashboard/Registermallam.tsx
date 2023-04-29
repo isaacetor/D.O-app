@@ -6,7 +6,7 @@ const Registermallam = () => {
   return (
     <Cont>
       <Wrap>
-        <MainHead>Pako Station</MainHead>
+        <MainHead>Pako station</MainHead>
         <Main>
           <Details>
             <p>Register Carriers</p>
