@@ -27,6 +27,7 @@ const StationDashboardlayout = () => {
             fifthText=""
             fifthLink=""
             thirdLink=""
+            colours=""
           />
         </MobileHold>
       </Container>

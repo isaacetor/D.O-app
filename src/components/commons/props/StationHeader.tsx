@@ -6,8 +6,10 @@ import { CiBellOn } from "react-icons/ci";
 import { AiTwotoneBank } from "react-icons/ai";
 import { BiGame } from "react-icons/bi";
 import { stationHeader } from "../../../types";
+import { useAppSelector } from "../../../services/statemanagement/Store";
 
 const StationHeader: React.FC<stationHeader> = ({ bg, subtitle, title }) => {
+  // const user = useAppSelector((state) => state.dir);
   return (
     <Main bg={bg}>
       <Wrapper>

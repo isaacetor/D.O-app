@@ -1,8 +1,58 @@
 import React from "react";
 import styled from "styled-components";
 import Globalbutton from "../../components/commons/props/Globalbutton";
+import { useAppSelector } from "../../services/statemanagement/Store";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
 const Registermallam = () => {
+  const userSchema = yup
+    .object({
+      name: yup.string().required("please enter a name"),
+      address: yup.string().required("please enter a name"),
+      phoneNumber: yup.string().required("please enter a name"),
+    })
+    .required();
+  type formData = yup.InferType<typeof userSchema>;
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(userSchema),
+  });
+
+  const posting = useMutation({
+    mutationKey: ["create-carrier"],
+    mutationFn: Registermallam,
+
+    onSuccess: (myData: any) => {
+      Swal.fire({
+        icon: "success",
+        title: "Carrier created",
+      });
+    },
+    onError: (error: any) => {
+      console.log("this is error", error);
+
+      // handle error here
+      Swal.fire({
+        title: "creating carrier failed",
+        text: "please try again",
+        icon: "error",
+      });
+    },
+  });
+
+  const Submit = handleSubmit(async (data) => {
+    posting.mutate(data);
+    // reset()
+  });
+
   return (
     <Cont>
       <Wrap>
@@ -48,17 +98,16 @@ const Registermallam = () => {
 
 export default Registermallam;
 
-const LastCard = styled.div`
-  width: 300px;
-  height: 200px;
-  background-color: red;
-`;
 const Cont = styled.div`
   width: calc(100% - 250px);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 const Wrap = styled.div`
   width: 100%;
@@ -66,26 +115,30 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 50px;
-  /* justify-content: center;
-align-items: center; */
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    /* height: 100vh; */
+    margin-left: 20px;
+    /* margin-bottom: 100px; */
+    /* padding: 20px; */
+  }
 `;
+
 const MainHead = styled.div`
   margin-top: 50px;
   font-size: 35px;
   font-weight: 600;
+
+  @media screen and (max-width: 800px) {
+    font-size: 20px;
+  }
 `;
 const Main = styled.div`
   display: flex;
   width: 50%;
   justify-content: space-between;
   margin-bottom: 20px;
-  p {
-    color: #03b903;
-    font-size: 22px;
-    font-weight: bold;
-    border-bottom: 3px #03b903 solid;
-    /* padding-bottom: 5px; */
-  }
+
   span {
     color: black;
     font-size: 20px;
@@ -93,7 +146,21 @@ const Main = styled.div`
     padding-bottom: 15px;
   }
 `;
-const Details = styled.div``;
+const Details = styled.div`
+  p {
+    color: #03b903;
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: 3px #03b903 solid;
+    /* padding-bottom: 5px; */
+    @media screen and (max-width: 800px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 500px) {
+      font-size: 14px;
+    }
+  }
+`;
 const Info = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -124,7 +191,17 @@ const Hold = styled.div`
     ::placeholder {
       color: lightgray;
       font-size: 16px;
+
+      @media screen and (max-width: 7) {
+      }
     }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 400px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 300px;
   }
 `;
 const HoldText = styled.div`
@@ -133,14 +210,16 @@ const HoldText = styled.div`
   margin-bottom: 10px;
   font-size: 18px;
   color: #a5a5a5;
+
+  @media screen and (max-width: 800px) {
+    width: 120px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100px;
+    font-size: 14px;
+  }
 `;
 const ButHold = styled.div`
-  /* button {
-    padding: 15px 20px;
-    color: white;
-    background-color: blue;
-    border-radius: 3px;
-    border: none;
-    font-size: 20px;
-  } */
+  display: flex;
 `;

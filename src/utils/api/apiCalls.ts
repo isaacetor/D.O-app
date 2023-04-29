@@ -1,5 +1,5 @@
 import axios from "./axios";
-import { agentData, userData,agentInfo } from "../../types";
+import { agentData, userData, agentInfo } from "../../types";
 
 const URL = "https://dirty-online.onrender.com";
 
@@ -24,13 +24,10 @@ export const createUser = async ({
       return res.data;
     });
 };
-export const createDirectorStations = async ({
-  email,
-  phoneNumber,
-  address,
-  password,
-  station,
-}: agentData,id:any) => {
+export const createDirectorStations = async (
+  { email, phoneNumber, address, password, station }: agentData,
+  id: any
+) => {
   return await axios
     .post(`${URL}/api/director/new-station/${id}`, {
       email,
@@ -61,13 +58,18 @@ const loginUser = async ({ email, password }: any) => {
 
 const AllUsers = async () => {};
 
-const allStations = async () => {
-  return await axios
-    .get(`${URL}/api/stations/all-stations`)
-    .then((res) => res.data);
+const allStations = async ({ id }: any) => {
+  return await axios.get(`${URL}/api/stations/${id}`).then((res) => res.data);
 };
 
-
+const registerCarrier = async ({ name, phoneNumber, address }: any) => {
+  return await axios
+    .post(`${URL}/registermalam/`, { name, phoneNumber, address })
+    .then((res) => {
+      // return res.data;
+      console.log(res.data);
+    });
+};
 
 // const makeRequest = async ({ user, station }: any) => {
 //   try {
@@ -101,4 +103,3 @@ const makeRequest = async ({ user, station }: any) => {
     });
 };
 export { AllUsers, allStations, loginUser, makeRequest, loginDirector };
-
