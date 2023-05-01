@@ -41,6 +41,15 @@ export const createDirectorStations = async (
     });
 };
 
+export const loginStation = async ({ email, password }: any) => {
+  return await axios
+    .post(`${URL}/api/stations/login-station`, { email, password })
+    .then((res) => {
+      return res.data;
+      // console.log(res.data);
+    });
+};
+
 const loginDirector = async ({ email, name }: any) => {
   return await axios
     .post(`${URL}/api/director/login-director`, { email, name })
@@ -62,14 +71,14 @@ const allStations = async ({ id }: any) => {
   return await axios.get(`${URL}/api/stations/${id}`).then((res) => res.data);
 };
 
-const registerCarrier = async ({ name, phoneNumber, address }: any) => {
-  return await axios
-    .post(`${URL}/registermalam/`, { name, phoneNumber, address })
-    .then((res) => {
-      // return res.data;
-      console.log(res.data);
-    });
-};
+// const registerCarrier = async ({ name, phoneNumber, address }: any) => {
+//   return await axios
+//     .post(`${URL}/registermalam/`, { name, phoneNumber, address })
+//     .then((res) => {
+//       // return res.data;
+//       console.log(res.data);
+//     });
+// };
 
 // const makeRequest = async ({ user, station }: any) => {
 //   try {
