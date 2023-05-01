@@ -170,6 +170,9 @@ background-color: white;
 border-radius: 12px;
 overflow: hidden;
 box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+@media screen and (max-width:425px){
+  width: 90%;
+}
 `
 const Pop=styled.div`
 display: flex;

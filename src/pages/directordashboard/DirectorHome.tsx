@@ -28,6 +28,11 @@ const Sec = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
+  @media screen and (max-width:425px){
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 const Wrap = styled.div`
   width: 100%;
@@ -40,4 +45,7 @@ const Container = styled.div`
   width: calc(100% - 270px);
   height: 100vh;
   /* background-color: red; */
+  @media screen and (max-width:425px){
+    width:100%;
+  }
 `;
