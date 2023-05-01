@@ -21,10 +21,11 @@ const StationHome = () => {
 export default StationHome;
 const Sec = styled.div`
   display: flex;
-  width: 100%;
-  justify-content: space-around;
+  width: 95%;
+  gap: 20px;
+  /* justify-content: space-around; */
   margin-top: 23vh;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 `;
 const Wrap = styled.div`
   width: 100%;

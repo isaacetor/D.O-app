@@ -32,7 +32,7 @@ export type GlobalButtonProp = {
 
 //types for managing user details
 export type userData = {
-  _id:string;
+  _id: string;
   name: string;
   email: string;
   phoneNumber: number;
@@ -41,7 +41,14 @@ export type userData = {
   address: string;
   password: string;
   numberOfRequests: number;
+};
 
+//types for managening our station details
+export type stationData = {
+  _id: string;
+  email: string;
+  password: string;
+  station: string;
 };
 
 //types for manageing our agent information
@@ -53,7 +60,7 @@ export type agentInfo = {
   phoneNumber: string;
 };
 export type agentData = {
-  _id:string;
+  _id: string;
   phoneNumber: string;
   name: string;
   email: string;
