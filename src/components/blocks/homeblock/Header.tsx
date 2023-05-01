@@ -204,7 +204,7 @@ export default Header;
 const MNav = styled.p`
   margin: 0;
   font-size: 14px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-weight: 500;
   transition: all 0.2s ease;
   text-transform: capitalize;
