@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import wave from "../../../assets/images/wave.png";
-import wave1 from "../../../assets/images/wave.png";
+import wave from "../../../assets/picture1.svg";
+import wave1 from "../../../assets/picture1.svg";
 import p1 from "../../../assets/images/dash1.png";
 
 const StationDashboardCard = () => {
@@ -17,92 +17,16 @@ const StationDashboardCard = () => {
           <img src={p1} alt="" />
         </Pip>
       </Detail>
-      <Infos>
-        <Users>
-          <Box>
-            <Box1></Box1>
-            <Lef>Number of Users</Lef>
-          </Box>
-          <Num>
-            <Ptext>234</Ptext>
-            <Span>users</Span>
-          </Num>
-          <Log src={wave} />
-        </Users>
-        <Users>
-          <Box>
-            <Box1 style={{ backgroundColor: "green" }}></Box1>
-            <Lef>Total Amount</Lef>
-          </Box>
-          <Num>
-            <Ptext>#4,453,510</Ptext>
-            <Span></Span>
-          </Num>
-          <Log src={wave1} style={{ width: "400px", bottom: "80" }} />
-        </Users>
-        {/* <Amounts></Amounts> */}
-      </Infos>
     </One>
   );
 };
 
 export default StationDashboardCard;
 
-const Box = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 20px;
-  margin-top: 20px;
-`;
-const Box1 = styled.div`
-  width: 30px;
-  height: 30px;
-  /* background-color: f3f4f5" */
-  background-color: #03b903;
-  margin-right: 10px;
-  border-radius: 8px;
-`;
-const Lef = styled.div`
-  font-weight: bold;
-`;
-const Ptext = styled.div``;
-const Span = styled.div``;
-
-const Num = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  margin-left: 20px;
-  margin-top: -20px;
-
-  p {
-    font-size: 35px;
-    font-weight: bold;
-    margin-right: 5px;
-  }
-  h5 {
-    margin: 0;
-  }
-
-  @media screen and (max-width: 800px) {
-    font-size: 20px;
-  }
-`;
-const Log = styled.img`
-  position: absolute;
-  bottom: 50;
-  right: 0;
-  width: 350px;
-`;
-
 const One = styled.div`
   display: flex;
-
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  /* margin-left: 20px; */
   flex-wrap: wrap;
 
   @media screen and (max-width: 800px) {
@@ -111,7 +35,7 @@ const One = styled.div`
 `;
 
 const Pop = styled.div`
-  /* width: 50%; */
+  width: 50%;
   display: flex;
   flex-direction: column;
   h2 {
@@ -165,24 +89,6 @@ const Infos = styled.div`
     justify-content: center;
   }
 `;
-const Users = styled.div`
-  width: 400px;
-  height: 200px;
-  background-color: white;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  position: relative;
-
-  @media screen and (max-width: 800px) {
-    width: 500px;
-  }
-  @media screen and (max-width: 500px) {
-    width: 350px;
-  }
-`;
 
 const Detail = styled.div`
   background-color: #03b903;
@@ -192,9 +98,10 @@ const Detail = styled.div`
     rgba(0, 0, 0, 1) 100%
   );
   width: 700px;
+  height: fit-content;
   border-radius: 10px;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
   padding: 15px;
   margin-bottom: 20px;
