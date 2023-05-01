@@ -4,11 +4,14 @@ import { NavLink } from "react-router-dom";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { animateScroll as scroll } from "react-scroll";
 import { GlobalButton } from "../../commons";
+import { IoIosMenu } from "react-icons/io";
+import { MdOutlineClose } from "react-icons/md";
 
 const Header = () => {
   const [show, setShow] = React.useState(false);
   const [toTopshow, settoTopShow] = React.useState(false);
   const [isActive, setIsActive] = React.useState(null);
+  const [showNav, setSHowNav] = React.useState(false);
 
   const changeHeaderColor = () => {
     if (window.scrollY >= 250) {
@@ -16,6 +19,9 @@ const Header = () => {
     } else {
       setShow(false);
     }
+  };
+  const showNavMenu = () => {
+    setSHowNav(!showNav);
   };
   const showBacktoTop = () => {
     if (window.scrollY >= 400) {
@@ -78,11 +84,43 @@ const Header = () => {
                 />
               </NavLink>
             </ButtonHold>
+
+            {/* changing mobile menu icons */}
+            {showNav ? (
+              <MenuHold onClick={showNavMenu}>
+                <MdOutlineClose />
+              </MenuHold>
+            ) : (
+              <MenuHold onClick={showNavMenu}>
+                <IoIosMenu />
+              </MenuHold>
+            )}
           </Wrapper>
           {toTopshow ? (
             <BackToTop onClick={backToTop}>
               <AiOutlineArrowUp />
             </BackToTop>
+          ) : null}
+
+          {showNav ? (
+            <MobileMenu>
+              <MNav onClick={toHero}>Home</MNav>
+              <MNav onClick={toAbout}>About</MNav>
+              <MNav onClick={toFeatures}>Features</MNav>
+              <MNav onClick={toSupport}>join us</MNav>
+              <NavLink to="/user/register" style={{ textDecoration: "none" }}>
+                <GlobalButton
+                  text="Create an account"
+                  bg="#03B903"
+                  col="#fff"
+                  padding="10px 10px"
+                  bghovercolor=""
+                  bor=""
+                  hovCol=""
+                  width="170px"
+                />
+              </NavLink>
+            </MobileMenu>
           ) : null}
         </Container>
       ) : (
@@ -117,11 +155,43 @@ const Header = () => {
                 />
               </NavLink>
             </ButtonHold>
+
+            {/* changing mobile menu icons */}
+            {showNav ? (
+              <MenuHold onClick={showNavMenu}>
+                <MdOutlineClose />
+              </MenuHold>
+            ) : (
+              <MenuHold onClick={showNavMenu}>
+                <IoIosMenu />
+              </MenuHold>
+            )}
           </Wrapper>
           {toTopshow ? (
             <BackToTop onClick={backToTop}>
               <AiOutlineArrowUp />
             </BackToTop>
+          ) : null}
+          {/* to show the mobile menu */}
+          {showNav ? (
+            <MobileMenu>
+              <MNav onClick={toHero}>Home</MNav>
+              <MNav onClick={toAbout}>About</MNav>
+              <MNav onClick={toFeatures}>Features</MNav>
+              <MNav onClick={toSupport}>join us</MNav>
+              <NavLink to="/user/register" style={{ textDecoration: "none" }}>
+                <GlobalButton
+                  text="Create an account"
+                  bg="#03B903"
+                  col="#fff"
+                  padding="10px 10px"
+                  bghovercolor=""
+                  bor=""
+                  hovCol=""
+                  width="170px"
+                />
+              </NavLink>
+            </MobileMenu>
           ) : null}
         </Container>
       )}
@@ -131,9 +201,49 @@ const Header = () => {
 
 export default Header;
 
+const MNav = styled.p`
+  margin: 0;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-transform: capitalize;
+
+  :hover {
+    cursor: pointer;
+    color: #03b903;
+  }
+`;
+
+const MobileMenu = styled.div`
+  width: 200px;
+  /* height: 40vh; */
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  position: absolute;
+  right: 20px;
+  top: 70px;
+`;
+
+const MenuHold = styled.div`
+  display: none;
+  font-size: 2.2rem;
+
+  @media screen and (max-width: 450px) {
+    display: flex;
+    align-items: center;
+    color: #03b903;
+    gap: 20px;
+  }
+`;
 const ButtonHold = styled.div`
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 450px) {
+    display: none;
+  }
 `;
 const LogoNav = styled.div`
   display: flex;
@@ -174,29 +284,6 @@ const Navigation = styled.p`
     color: #03b903;
   }
 `;
-//   padding: 10px 20px;
-//   height: 6vh;
-//   font-size: 16px;
-//   background-color: ${({ bg }) => bg};
-//   border: 0;
-//   color: ${({ color }) => color};
-//   border-radius: 5px;
-//   font-weight: 600;
-//   margin-left: 40px;
-//   display: flex;
-//   align-items: center;
-//   gap: 5px;
-//   transition: all 0.2s ease;
-
-//   :hover {
-//     cursor: pointer;
-//     background-color: #03b903;
-//   }
-
-//   @media screen and (max-width: 768px) {
-//     display: none;
-//   }
-// `;
 
 const Nav = styled.div`
   height: 70%;
