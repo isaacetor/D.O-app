@@ -6,6 +6,7 @@ import {
   HomeLayout,
   UserDashboardLayout,
   StationDashboardlayout,
+  StationAuthLayout,
 } from "../components";
 import {
   AgentRegister,
@@ -19,7 +20,7 @@ import {
   UserHome,
   UserLogin,
   UserRegister,
-  // AgentHome,
+  Stationlogin,
 } from "../pages";
 import Stations from "../pages/directordashboard/DirectorStation";
 import AgentHome from "../pages/directordashboard/DirectorHome";
@@ -172,7 +173,21 @@ export const element = createBrowserRouter([
     ],
   },
 
+  {
+    path: "/station/login",
+    element: <StationAuthLayout />,
+    children: [
+      {
+        index: true,
+        element: <Stationlogin />,
+        errorElement: <ErrorBoundary />,
+        hasErrorBoundary: true,
+      },
+    ],
+  },
+
   //station  routes
+
   {
     path: "/station",
     element: <StationDashboardlayout />,

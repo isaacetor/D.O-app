@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import Globalbutton from "../../components/commons/props/Globalbutton";
+
 import { useAppSelector } from "../../services/statemanagement/Store";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import Globalbutton from "../../components/commons/props/Globalbutton";
 
 const Registermallam = () => {
   const userSchema = yup
