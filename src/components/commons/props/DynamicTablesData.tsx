@@ -52,13 +52,16 @@ const Contents = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 3px;
-  border: 1px solid #00d692;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   padding-left: 20px;
-  margin-top: 7px;
-  margin-bottom: 7px;
+  margin-top: 11px;
+  margin-bottom: 11px;
   padding-top: 9px;
   padding-bottom: 9px;
   background-color: white;
+  transition: all 500ms;
+  :active {
+    border: 2px solid #00d692;
+  }
 `;

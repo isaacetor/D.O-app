@@ -54,7 +54,7 @@ const Notification = () => {
 export default Notification;
 const Container = styled.div`
   width: calc(100% - 250px);
-  background-color: #a08f8f1d;
+  background-color: #a08f8f32;
   min-height: 100vh;
 `;
 const Body = styled.div`
