@@ -8,7 +8,6 @@ import {
   StationDashboardlayout,
 } from "../components";
 import {
-  AgentHome,
   AgentRegister,
   AgentLogin,
   Feedback,
@@ -20,8 +19,10 @@ import {
   UserHome,
   UserLogin,
   UserRegister,
+  // AgentHome,
 } from "../pages";
 import Stations from "../pages/directordashboard/DirectorStation";
+import AgentHome from "../pages/directordashboard/DirectorHome";
 import { ErrorBoundary, NotFound } from "../utils";
 import Registermallam from "../pages/stationdashboard/Registermallam";
 import Notification from "../pages/stationdashboard/Notification";
@@ -162,7 +163,7 @@ export const element = createBrowserRouter([
         hasErrorBoundary: true,
       },
       {
-        path:"/director/register/login",
+        path: "/director/register/login",
         index: true,
         element: <AgentLogin />,
         errorElement: <ErrorBoundary />,
