@@ -7,16 +7,27 @@ import Swal from "sweetalert2";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation,useQuery } from "@tanstack/react-query";
 import { UseAppDispatch,useAppSelector } from "../../services/statemanagement/Store";
 import { createStations } from "../../services/statemanagement/ReduxState";
 import { Loading, createDirectorStations } from "../../utils";
+import { allStations } from "../../utils";
 import axios from "axios";
 const Stations=()=>{
+    const[show,setShow] = useState(true)
+    const[show1,setShow1] = useState(false)
+
+    const tog=()=>{
+        setShow(true)
+        setShow1(false)
+    }
+    const tog1=()=>{
+        setShow(false)
+        setShow1(true)
+    }
     const user = useAppSelector((state) => state.directorDetails);
     const navigate = useNavigate();
     const dispatch = UseAppDispatch();
-  
     const userSchema = yup
     .object({
       email: yup.string().required("please enter an email"),
@@ -90,18 +101,14 @@ const Stations=()=>{
     });
     // reset()
   });
+    const Product=useQuery({
+        queryKey:["prod"],
+        queryFn:allStations,
+    })
+    if(Product?.data?.loading) return <h2>Loading...</h2>
+  
 
-    const[show,setShow] = useState(true)
-    const[show1,setShow1] = useState(false)
 
-    const tog=()=>{
-        setShow(true)
-        setShow1(false)
-    }
-    const tog1=()=>{
-        setShow(false)
-        setShow1(true)
-    }
     return(
         <Cont>
             <Wrap>
@@ -216,47 +223,16 @@ const Stations=()=>{
                             Status
                         </DetInfo>
                     </DetailHead>
-                     <User>
-                        <Num>1</Num>
-                        <Dat style={{marginLeft:"-50px"}}>{new Date().toLocaleDateString()}</Dat>
-                        <Station style={{marginLeft:"-50px"}}>Wema</Station>
-                        <Req style={{marginLeft:"-30px"}}>10</Req>
-                        <ReqSta>21</ReqSta>
-                        <span ></span>
-                     </User>
-                     <User>
-                        <Num>2</Num>
-                        <Dat style={{marginLeft:"-50px"}}>{new Date().toLocaleDateString()}</Dat>
-                        <Station style={{marginLeft:"-50px"}}>Chidi</Station>
-                        <Req style={{marginLeft:"-30px"}}>1000</Req>
-                        <ReqSta>0</ReqSta>
-                        <span ></span>
-                     </User>
-                     <User>
-                        <Num>3</Num>
-                        <Dat style={{marginLeft:"-50px"}}>{new Date().toLocaleDateString()}</Dat>
-                        <Station style={{marginLeft:"-50px"}}>Haruna</Station>
-                        <Req style={{marginLeft:"-30px"}}>273</Req>
-                        <ReqSta>28</ReqSta>
-                        <span ></span>
-                     </User>
-                     <User>
-                        <Num>4</Num>
-                        <Dat style={{marginLeft:"-50px"}}>{new Date().toLocaleDateString()}</Dat>
-                        <Station style={{marginLeft:"-50px"}}>Muyibi</Station>
-                        <Req style={{marginLeft:"-30px"}}>273</Req>
-                        <ReqSta>0</ReqSta>
-                        <span ></span>
-                     </User>
-                     <User>
-                        <Num>5</Num>
-                        <Dat style={{marginLeft:"-50px"}}>{new Date().toLocaleDateString()}</Dat>
-                        <Station style={{marginLeft:"-50px"}}>Asafa</Station>
-                        <Req style={{marginLeft:"-30px"}}>273</Req>
-                        <ReqSta>13</ReqSta>
-                        <span ></span>
-                     </User>
-
+                    {Product?.data?.data?.map((props:any)=>(
+                         <User>
+                         <Num>1</Num>
+                         <Dat style={{marginLeft:"-50px"}}>{props?.createdAt}</Dat>
+                         <Station style={{marginLeft:"-50px"}}>{props?.station}</Station>
+                         <Req style={{marginLeft:"-30px"}}>10</Req>
+                         <ReqSta>21</ReqSta>
+                         <span ></span>
+                      </User>
+                    ))}
                 </DetailHold>
                 </Col>) : null}
             </Wrap>
@@ -388,7 +364,9 @@ justify-content: space-between;
 align-items: center;
 margin-bottom: 20px;
 `
-const Details=styled.div``
+const Details=styled.div`
+cursor:pointer;
+`
 const Info=styled.form`
 display: flex;
 flex-wrap: wrap;
@@ -416,7 +394,8 @@ input{
 }
 `
 const ButHold=styled.button`
-margin-top: 50px;
+    width: 100px;
+    margin-top: 50px;
     padding: 15px 20px;
     color: white;
     background-color: blue;

@@ -28,7 +28,7 @@ const AgentMain = () => {
           <img src={p1} alt="" />
         </Pip>
       </Detail>
-      <Infos>
+      <Infos> 
         <Users>
           <Box>
             <Box1></Box1>
@@ -125,6 +125,9 @@ const Pip = styled.div`
   img {
     width: 300px;
   }
+  @media screen and (max-width:425px){
+    display: none;
+  }
 `;
 const Infos = styled.div`
   width: 100%;
@@ -132,6 +135,12 @@ const Infos = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
+  flex-wrap: wrap;
+  @media screen and (max-width:425px){
+    display: flex;
+  justify-content:center;
+  align-items: center; 
+  }
 `;
 const Users = styled.div`
   width: 400px;
@@ -144,6 +153,10 @@ const Users = styled.div`
   align-items: flex-start;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: relative;
+  @media screen and (max-width:425px){
+    margin-bottom: 30px;
+    width:90%;
+  }
 `;
 
 const Detail = styled.div`
@@ -156,6 +169,9 @@ const Detail = styled.div`
   padding: 15px;
   margin-bottom: 20px;
   /* gap: 10px; */
+  @media screen and (max-width:425px){
+    width: 80%;
+  }
 `;
 
 const Hold1 = styled.div`
