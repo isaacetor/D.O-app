@@ -58,6 +58,10 @@ const Right = styled.div`
       width: 90%;
       height: 90%;
     }
+    @media screen and (max-width: 425px) {
+      width: 100%;
+      height: 100%;
+    }
   }
 `;
 
@@ -89,6 +93,12 @@ const Left = styled.div`
       margin-left: 20px;
       margin-bottom: 1.5rem;
     }
+    @media screen and (max-width: 425px) {
+      font-size: 1.2rem;
+      width: 90%;
+      margin-left: 20px;
+      margin-bottom: 1.5rem;
+    }
   }
 
   h1 {
@@ -101,6 +111,13 @@ const Left = styled.div`
 
     @media screen and (max-width: 768px) {
       font-size: 1.8rem;
+      line-height: 2.3rem;
+      width: 90%;
+      margin-left: 20px;
+      margin-bottom: 0.4rem;
+    }
+    @media screen and (max-width: 425px) {
+      font-size: 1.5rem;
       line-height: 2.3rem;
       width: 90%;
       margin-left: 20px;
@@ -145,6 +162,9 @@ const Container = styled.div`
   -webkit-font-smoothing: antialiased;
 
   @media screen and (max-width: 768px) {
-    margin-top: 50px;
+    margin-top: 0px;
+  }
+  @media screen and (max-width: 425px) {
+    margin-top: 30px;
   }
 `;
