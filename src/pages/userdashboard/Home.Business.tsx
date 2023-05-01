@@ -13,6 +13,9 @@ import axios from "axios";
 
 const BusinessHome = () => {
   const user = useAppSelector((state) => state.userDetails);
+  const station = useAppSelector((state) => state.userDetails?.station);
+
+  // console.log("station id", station?._id);
 
   return (
     <Container>
@@ -84,13 +87,14 @@ const BusinessHome = () => {
                   preConfirm: (message) => {
                     return axios
                       .patch(
-                        `https://dirty-online.onrender.com/make-special-request/${user?._id}`
+                        `https://dirty-online.onrender.com/api/users/make-special-request/${user?._id}/${station?._id}`
                       )
                       .then((response) => {
                         if (response.status !== 200) {
                           throw new Error(response.statusText);
                         }
-                        console.log(response.data);
+
+                        return response?.data?.message;
                       })
                       .catch((error) => {
                         Swal.showValidationMessage(
@@ -102,8 +106,7 @@ const BusinessHome = () => {
                 }).then((result) => {
                   if (result.isConfirmed) {
                     Swal.fire({
-                      // title: `${result.value.login}'s avatar`,
-                      // imageUrl: result.value.avatar_url,
+                      title: `${result.value}`,
                     });
                   }
                 });
