@@ -20,14 +20,9 @@ const AgentHeader = () => {
           <h1>{user?.name}</h1>
         </Down>
       </Left>
-      <Right>
-        <Hold>
-          <Ic>
-            <BsFillPeopleFill />
-          </Ic>
-          <p>Reg Staff</p>
-        </Hold>
-        <Hold>
+      <Right> 
+    <Hol>
+    <Hold>
           <Ic>
             <AiTwotoneBank />
           </Ic>
@@ -39,6 +34,7 @@ const AgentHeader = () => {
           </Ip>
           <input />
         </Holds>
+    </Hol>
         <Noti>
           <Bi>
             <CiBellOn />
@@ -88,12 +84,26 @@ const Right = styled.div`
   align-items: center;
   /* margin-right: 20px; */
 `;
+const Hol = styled.div`
+  display: flex;
+  width: 60%;
+ @media screen and (max-width:425px){
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+ }
+`
 const Main = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  @media screen and (max-width:425px){
+  justify-content:space-between;
+  margin-top: -50px;
+    /* background-color:red;  */
+  }
 `;
 const Left = styled.div`
   display: flex;
@@ -114,6 +124,13 @@ const Hold = styled.div`
   p {
     color: white;
   }
+  @media screen and (max-width:425px){
+    padding: 5px 8px;
+    display: none;
+    p{
+      font-size:16px;
+    }
+  }
 `;
 const Holds = styled.div`
   display: flex;
@@ -128,6 +145,14 @@ const Holds = styled.div`
     border: none;
     outline: 0;
     width: 90%;
+  }
+  @media screen and (max-width:425px){
+    width: 240%;
+    margin-top: 150px;
+    margin-left: -150px;
+    input{
+      /* display: none; */
+    }
   }
 `;
 const Ic = styled.div`
@@ -145,5 +170,10 @@ const Down = styled.div`
   }
   h1 {
     margin: 0;
+  }
+  @media screen and (max-width:425px){
+    h1{
+      font-size:15px;
+    }
   }
 `;
