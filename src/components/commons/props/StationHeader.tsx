@@ -9,7 +9,7 @@ import { stationHeader } from "../../../types";
 import { useAppSelector } from "../../../services/statemanagement/Store";
 
 const StationHeader: React.FC<stationHeader> = ({ bg, subtitle, title }) => {
-  // const user = useAppSelector((state) => state.dir);
+  const stationuser = useAppSelector((state) => state.stationdetail);
   return (
     <Main bg={bg}>
       <Wrapper>
@@ -18,7 +18,7 @@ const StationHeader: React.FC<stationHeader> = ({ bg, subtitle, title }) => {
             <p>{title}</p>
           </Up>
           <Down>
-            <H1>{subtitle}</H1>
+            <H1>{stationuser?.station}</H1>
           </Down>
         </Left>
         <Right>

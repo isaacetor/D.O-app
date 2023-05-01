@@ -191,7 +191,7 @@ const Detail = styled.div`
     rgba(3, 185, 3, 1) 30%,
     rgba(0, 0, 0, 1) 100%
   );
-  width: 800px;
+  width: 700px;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
