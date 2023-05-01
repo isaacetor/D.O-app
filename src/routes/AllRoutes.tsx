@@ -51,6 +51,7 @@ const PrivateRouteConfig = () => {
 
 export const element = createBrowserRouter([
   // landing page routes
+  //dd
   {
     path: "/",
     element: <HomeLayout />,

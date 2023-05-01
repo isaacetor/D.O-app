@@ -31,6 +31,7 @@ const Gallery = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1,
+          autoplay: true,
         },
       },
       {
@@ -38,6 +39,7 @@ const Gallery = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          autoplay: true,
         },
       },
     ],
