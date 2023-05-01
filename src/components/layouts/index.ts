@@ -4,3 +4,4 @@ export * from "./userdashboardlayout";
 export * from "./directordashboard";
 export * from "./authlayout";
 export * from "./stationboardlayout";
+export * from "./stationauthlayout";
