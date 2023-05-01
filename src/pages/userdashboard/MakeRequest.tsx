@@ -85,13 +85,6 @@ const HoldC = styled.div<{ bg: string }>`
   padding: 25px;
   border-radius: 10px;
   gap: 30px;
-<<<<<<< HEAD
-  @media screen and (max-width: 800px) {
-    display: none;
-  }
-  @media screen and (max-width: 1024px) {
-    width: calc(100vw - 70px);
-=======
 
   @media screen and (max-width: 1198px) {
     width: 350px;
@@ -119,7 +112,6 @@ const First = styled.div`
   @media screen and (max-width: 800px) {
     padding-left: 0px;
     justify-content: center;
->>>>>>> aca58518d4d9d930f64ba35146630e8b3ed71785
   }
 `;
 
