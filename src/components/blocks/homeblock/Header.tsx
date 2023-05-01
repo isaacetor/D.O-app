@@ -36,14 +36,14 @@ const Header = () => {
     // setIsActive("true");
   };
   const toAbout = (to: any) => {
-    scroll.scrollTo(900);
+    scroll.scrollTo(1300);
     setIsActive(to);
   };
   const toFeatures = () => {
-    scroll.scrollTo(1850);
+    scroll.scrollTo(2100);
   };
   const toSupport = () => {
-    scroll.scrollTo(2950);
+    scroll.scrollTo(3300);
   };
   return (
     <div>
@@ -59,8 +59,8 @@ const Header = () => {
               <Nav>
                 <Navigation onClick={toHero}>Home</Navigation>
                 <Navigation onClick={toAbout}>About</Navigation>
-                <Navigation onClick={toFeatures}>How it works</Navigation>
-                <Navigation onClick={toSupport}>Get started</Navigation>
+                <Navigation onClick={toFeatures}>features</Navigation>
+                <Navigation onClick={toSupport}>Join us</Navigation>
               </Nav>
             </LogoNav>
 
@@ -98,7 +98,8 @@ const Header = () => {
                 <Navigation onClick={toHero}>Home</Navigation>
                 <Navigation onClick={toAbout}>About</Navigation>
                 <Navigation onClick={toFeatures}>Features</Navigation>
-                <Navigation onClick={toSupport}>Customer support</Navigation>
+                <Navigation onClick={toSupport}>join us</Navigation>
+                {/* <Navigation onClick={toSupport}>Customer support</Navigation> */}
               </Nav>
             </LogoNav>
 
