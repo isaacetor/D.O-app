@@ -87,7 +87,7 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  width: calc(100% - 250px);
+  width: 100%;
   background-color: #edebeb;
   height: 100vh;
 `;

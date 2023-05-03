@@ -4,32 +4,38 @@ import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { MobileNav } from "../../blocks";
 import { MdTransferWithinAStation } from "react-icons/md";
+import { HiHome } from "react-icons/hi";
+import { IoIosWallet } from "react-icons/io";
+import { GiCardPickup } from "react-icons/gi";
+import { BiSupport } from "react-icons/bi";
+import { RxPerson } from "react-icons/rx";
 
 const StationDashboardlayout = () => {
   return (
     <div>
       <StationSideNav />
       <Container>
-        <Outlet />
-        <MobileHold>
+        <Out>
+          <Outlet />
+        </Out>
+        <AtMobile>
           <MobileNav
-            fifthIcon={<MdTransferWithinAStation />}
-            firstText="Hom"
-            firstLink=""
-            secondIcon={<MdTransferWithinAStation />}
-            secondText="Payment"
-            secondLink=""
-            thirdIcon={<MdTransferWithinAStation />}
-            fourthIcon={<MdTransferWithinAStation />}
-            fourthText="Support"
-            fourthLink=""
-            firstIcon={<MdTransferWithinAStation />}
-            fifthText=""
-            fifthLink=""
-            thirdLink=""
-            colours=""
+            firstIcon={<HiHome />}
+            firstText="Home"
+            firstLink="station"
+            secondIcon={<IoIosWallet />}
+            secondText="Carrier"
+            secondLink="station/mallam"
+            thirdIcon={<GiCardPickup />}
+            fourthIcon={<BiSupport />}
+            fourthText="Request"
+            fourthLink="station/Notify"
+            fifthIcon={<RxPerson />}
+            fifthText="Assign"
+            fifthLink="station/assign"
+            colours="#009700"
           />
-        </MobileHold>
+        </AtMobile>
       </Container>
     </div>
   );
@@ -48,8 +54,23 @@ const MobileHold = styled.div`
   position: fixed;
   bottom: 0;
   display: none;
-
   @media screen and (max-width: 800px) {
     display: flex;
+  }
+`;
+const Out = styled.div`
+  width: calc(100% - 250px);
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+`;
+const AtMobile = styled.div`
+  width: 100vw;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  @media screen and (min-width: 800px) {
+    display: none;
   }
 `;

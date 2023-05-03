@@ -10,6 +10,7 @@ interface tableProps {
   content4?: string | any;
   content5?: string;
   buttons?: boolean;
+  action?: boolean;
 }
 
 const DynamicTablesData: React.FC<tableProps> = ({
@@ -19,9 +20,15 @@ const DynamicTablesData: React.FC<tableProps> = ({
   content4,
   content5,
   buttons,
+  action,
 }) => {
+  const [Action, SetAction] = React.useState(false);
+  action = Action;
   return (
-    <Container>
+    <Container
+      onClick={() => {
+        SetAction(!Action);
+      }}>
       <Contents>
         <div> {content1} </div>
         <div> {content2} </div>
@@ -47,6 +54,17 @@ export default DynamicTablesData;
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  font-size: 13px;
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 8px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 7px;
+  }
+  color: #414040;
 `;
 const Contents = styled.div`
   width: 100%;

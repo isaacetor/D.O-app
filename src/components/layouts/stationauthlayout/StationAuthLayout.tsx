@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { AuthSideBar } from "../../blocks";
+import { AuthSideBar, MobileNav } from "../../blocks";
 import styled from "styled-components";
 
 const StationAuthLayout = () => {
@@ -29,7 +29,6 @@ const Container = styled.div`
   background-color: #fefefe;
   overflow: hidden;
   position: relative;
-
   @media screen and (max-width: 748px) {
     display: block;
   }

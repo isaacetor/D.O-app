@@ -25,7 +25,7 @@ const Notification = () => {
   return (
     <Container>
       <StationHeader
-        bg="#a08f8f3f"
+        bg="#a3a2a2"
         subtitle="View Request"
         title="Welcome, Pako Station"
       />
@@ -53,14 +53,14 @@ const Notification = () => {
 
 export default Notification;
 const Container = styled.div`
-  width: calc(100% - 250px);
+  width: 100%;
   background-color: #a08f8f32;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 `;
 const Body = styled.div`
   margin-top: 19vh;
   width: 90%;
   margin-top: 18vh;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2%;
+  margin-right: 4%;
 `;

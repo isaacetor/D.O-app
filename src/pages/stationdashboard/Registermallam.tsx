@@ -100,7 +100,7 @@ const Registermallam = () => {
 export default Registermallam;
 
 const Cont = styled.div`
-  width: calc(100% - 250px);
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;

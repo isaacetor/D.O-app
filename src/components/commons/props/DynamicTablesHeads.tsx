@@ -36,6 +36,18 @@ export default DynamicTablesHeads;
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  padding-top: 20px;
+  font-size: 13px;
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 8px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 7px;
+  }
+  color: #414040;
 `;
 const Titles = styled.div`
   width: 100%;
