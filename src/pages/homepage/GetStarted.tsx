@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-// import hero from "../../Assets/hero.webp";
-import { NavLink } from "react-router-dom";
 import { AboutCard } from "../../components";
-
 import one from "../../assets/svgs/one.svg";
 import two from "../../assets/svgs/two.svg";
 import three from "../../assets/svgs/three.svg";
@@ -43,7 +40,6 @@ const Hero = () => {
               heading="Close a request"
               par="After trash pick up, you can close the request to show that your trash has been picked up"
             />
-            {/* <Picture2 src={pic} /> */}
           </Cards>
         </Wrapper>
       </Container>

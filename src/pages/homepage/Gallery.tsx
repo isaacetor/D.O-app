@@ -9,12 +9,14 @@ import pic4 from "../../assets/images/landingPic4.jpg";
 
 const Gallery = () => {
   const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
+    infinite: true,
+    centerPadding: "60px",
+    autoplay: true,
+    autoplaySpeed: 10000,
+    speed: 2500,
+    slidesToShow: 3.2,
+    slidesToScroll: 1,
+
     responsive: [
       {
         breakpoint: 1024,
@@ -31,6 +33,7 @@ const Gallery = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1,
+          autoplay: true,
         },
       },
       {
@@ -38,6 +41,7 @@ const Gallery = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          autoplay: true,
         },
       },
     ],
@@ -70,8 +74,6 @@ export default Gallery;
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  /* display: flex;
-  overflow-x: scroll; */
   overflow: hidden;
 `;
 const One = styled.div`
@@ -102,4 +104,13 @@ const One = styled.div`
 const Container = styled.div`
   width: 100%;
   margin-top: 40px;
+
+  @media screen and (max-width: 375px) {
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+  @media screen and (max-width: 320px) {
+    margin-top: 0px;
+    margin-bottom: 120px;
+  }
 `;

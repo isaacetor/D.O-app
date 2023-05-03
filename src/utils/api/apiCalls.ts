@@ -1,5 +1,5 @@
 import axios from "./axios";
-import { agentData, userData, agentInfo } from "../../types";
+import { agentData } from "../../types";
 
 const URL = "https://dirty-online.onrender.com";
 
@@ -41,6 +41,15 @@ export const createDirectorStations = async (
     });
 };
 
+export const loginStation = async ({ email, password }: any) => {
+  return await axios
+    .post(`${URL}/api/stations/login-station`, { email, password })
+    .then((res) => {
+      return res.data;
+      // console.log(res.data);
+    });
+};
+
 const loginDirector = async ({ email, name }: any) => {
   return await axios
     .post(`${URL}/api/director/login-director`, { email, name })
@@ -58,37 +67,11 @@ const loginUser = async ({ email, password }: any) => {
 
 const AllUsers = async () => {};
 
-const allStations = async ({ id }: any) => {
-  return await axios.get(`${URL}/api/stations/${id}`).then((res) => res.data);
-};
-
-const registerCarrier = async ({ name, phoneNumber, address }: any) => {
+const allStations = async () => {
   return await axios
-    .post(`${URL}/registermalam/`, { name, phoneNumber, address })
-    .then((res) => {
-      // return res.data;
-      console.log(res.data);
-    });
+    .get(`${URL}/api/stations/all-stations`)
+    .then((res) => res.data);
 };
-
-// const makeRequest = async ({ user, station }: any) => {
-//   try {
-//     const res = await axios.patch(
-//       `${URL}/api/users/make-request/${user}/${station}`
-//     );
-//     // const newNumberOfRequests = res.data.RequestData.numberOfRequests;
-//     // const usser = useAppSelector((state) => state.userDetails);
-//     // const updatedUser: any = {
-//     //   ...usser,
-//     //   numberOfRequests: newNumberOfRequests,
-//     // };
-//     // dispatch an action to update the user state in Redux
-//     // dispatch(updateUser(updatedUser));
-//     return res.data;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
 
 const makeRequest = async ({ user, station }: any) => {
   return await axios

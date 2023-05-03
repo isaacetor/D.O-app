@@ -17,6 +17,8 @@ const UserRegister = () => {
     queryFn: allStations,
   });
 
+  // console.log(`this is the stations`, data);
+
   //create user
   const userSchema = yup
     .object({

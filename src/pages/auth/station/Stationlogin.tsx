@@ -3,57 +3,53 @@ import * as yup from "yup";
 import Swal from "sweetalert2";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { UseAppDispatch } from "../../../services/statemanagement/Store";
-import {
-  userLogin,
-  upDateRequest,
-} from "../../../services/statemanagement/ReduxState";
-import { Loading, loginUser } from "../../../utils";
+import { Loading, loginStation } from "../../../utils";
+import { stationLogin } from "../../../services/statemanagement/ReduxState";
 
 const Stationlogin = () => {
   const navigate = useNavigate();
   const dispatch = UseAppDispatch();
 
-  const userSchema = yup
+  const stationSchema = yup
     .object({
       email: yup.string().required("please enter an email"),
       password: yup.string().required("please enter a password"),
     })
     .required();
-  type formData = yup.InferType<typeof userSchema>;
+  type formData = yup.InferType<typeof stationSchema>;
 
   const {
     handleSubmit,
     formState: { errors },
     register,
   } = useForm<formData>({
-    resolver: yupResolver(userSchema),
+    resolver: yupResolver(stationSchema),
   });
 
   const posting = useMutation({
-    mutationKey: ["login"],
-    mutationFn: loginUser,
+    mutationKey: ["Station"],
+    mutationFn: loginStation,
 
-    onSuccess: (myData: any) => {
-      dispatch(userLogin(myData.data));
-      dispatch(upDateRequest(myData.data.numberOfRequests));
+    onSuccess: (myStation: any) => {
+      dispatch(stationLogin(myStation.data));
 
-      //   Swal.fire({
-      //     icon: "success",
-      //     title: "Login succesful",
-      //     html: "Taking you to your dashboard",
-      //     timer: 1200,
+      Swal.fire({
+        icon: "success",
+        title: "Login succesful",
+        html: "Taking you to your dashboard",
+        timer: 1200,
 
-      //     didOpen: () => {
-      //       Swal.showLoading();
-      //     },
+        didOpen: () => {
+          Swal.showLoading();
+        },
 
-      //     willClose: () => {
-      //       navigate("/user/home");
-      //     },
-      //   });
+        willClose: () => {
+          navigate("/station");
+        },
+      });
     },
     onError: (error: any) => {
       console.log("this is error", error);

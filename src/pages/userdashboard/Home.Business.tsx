@@ -15,8 +15,6 @@ const BusinessHome = () => {
   const user = useAppSelector((state) => state.userDetails);
   const station = useAppSelector((state) => state.userDetails?.station);
 
-  // console.log("station id", station?._id);
-
   return (
     <Container>
       <UserDashboardHeader
