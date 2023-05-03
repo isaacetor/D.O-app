@@ -37,4 +37,11 @@ const Button = styled.button<{ cs: string; bc: string; cl: string }>`
   max-width: 78%;
   min-width: 67%;
   border-radius: 3px;
+  font-size: 13px;
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 8px;
+  }
 `;

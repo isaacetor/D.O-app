@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 interface statusProps {
   active: string | boolean;
@@ -6,18 +7,10 @@ interface statusProps {
 
 const BinaryStatus: React.FC<statusProps> = ({ active }) => {
   return (
-    <div>
+    <Contain>
       {active ? (
         <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
-          <div
-            style={{
-              height: "8px",
-              width: "8px",
-              borderRadius: "50%",
-              backgroundColor: "#00d692",
-            }}>
-            {""}
-          </div>
+          <Circle>{""}</Circle>
           <div>On duty</div>
         </div>
       ) : (
@@ -31,8 +24,39 @@ const BinaryStatus: React.FC<statusProps> = ({ active }) => {
           <div>Free</div>
         </div>
       )}
-    </div>
+    </Contain>
   );
 };
 
 export default BinaryStatus;
+
+const Circle = styled.div`
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #00d692;
+  @media screen and (max-width: 600px) {
+    height: 7px;
+    width: 7px;
+  }
+  @media screen and (max-width: 500px) {
+    height: 6px;
+    width: 6px;
+  }
+  @media screen and (max-width: 400px) {
+    height: 5px;
+    width: 5px;
+  }
+`;
+
+const Contain = styled.div`
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 8px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 7px;
+  }
+`;

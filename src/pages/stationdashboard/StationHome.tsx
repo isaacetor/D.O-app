@@ -35,7 +35,7 @@ const Wrap = styled.div`
   flex-direction: column;
 `;
 const Container = styled.div`
-  width: calc(100% - 250px);
+  width: 100%;
   height: 100%;
 
   @media screen and (max-width: 800px) {
