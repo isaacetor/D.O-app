@@ -10,8 +10,14 @@ const StationHome = () => {
       <Wrap>
         <StationHeader bg="#eaeaea" title="Welcome" subtitle="Pako Station" />
         <Sec>
-          <StationDashboardCard />
-          <StationDashboardRequest />
+          <Wrapper>
+            <HoldCard>
+              <StationDashboardCard />
+            </HoldCard>
+            <Holdquest>
+              <StationDashboardRequest />
+            </Holdquest>
+          </Wrapper>
         </Sec>
       </Wrap>
     </Container>
@@ -19,13 +25,44 @@ const StationHome = () => {
 };
 
 export default StationHome;
-const Sec = styled.div`
+
+const Wrapper = styled.div`
+  width: 90%;
   display: flex;
-  /* width: 100%; */
-  /* gap: 20px; */
-  /* justify-content: space-around; */
+  flex-wrap: wrap;
+  gap: 10%;
+  @media screen and (max-width: 1238px) {
+    justify-content: center;
+  }
+`;
+
+const HoldCard = styled.div`
+  width: 600px;
+  @media screen and (max-width: 1300px) {
+    width: 550px;
+  }
+  @media screen and (max-width: 1238px) {
+    width: 100%;
+  }
+`;
+const Holdquest = styled.div`
+  width: 250px;
+  @media screen and (max-width: 1238px) {
+    width: 60%;
+  }
+  @media screen and (max-width: 466px) {
+    width: 100%;
+  }
+`;
+
+const Sec = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: 1238px) {
+    align-items: center;
+  }
   margin-top: 23vh;
-  /* flex-wrap: wrap; */
 `;
 const Wrap = styled.div`
   width: 100%;
@@ -37,10 +74,4 @@ const Wrap = styled.div`
 const Container = styled.div`
   width: 100%;
   height: 100%;
-
-  @media screen and (max-width: 800px) {
-    width: 100%;
-
-    /* background-color: red; */
-  }
 `;

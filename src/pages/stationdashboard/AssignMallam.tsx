@@ -1,93 +1,113 @@
 import React from "react";
 import styled from "styled-components";
 import StationHeader from "../../components/commons/props/StationHeader";
-import { GlobalButton, StationTable } from "../../components";
+import DynamicTablesHeads from "../../components/commons/props/DynamicTablesHeads";
+import DynamicTablesData from "../../components/commons/props/DynamicTablesData";
+import BinaryButton from "../../components/commons/props/BinaryButton";
+
+const dummy = [
+  {
+    name: "mjknojnuinuio",
+    phone: "May 21, 2023",
+    amount: "Mama Emeka",
+    status: "Pending...",
+  },
+  {
+    name: "mjknojnuinuio",
+    phone: "May 21, 2023",
+    amount: "Iya Beji",
+    status: "Hakeem Ziyech",
+  },
+];
+
 const AssignMallam = () => {
   return (
     <Container>
-      <Wrapper>
-        <StationHeader
-          bg="#a08f8f3f"
-          title="Welcome, Pako Station"
-          subtitle="View Request"
+      <StationHeader
+        bg="#a3a2a2"
+        subtitle="View Request"
+        title="Welcome, Pako Station"
+      />
+      <Body>
+        <br />
+        <br />
+        <br />
+        <br />
+        <div
+          style={{
+            fontWeight: "500",
+            color: "grey",
+          }}>
+          Subscription Requests
+        </div>
+        <DynamicTablesHeads
+          title1="ID"
+          title2="Date"
+          title3="User"
+          title4="Assigned"
+          title5="Activity"
         />
-        <Boby>
-          <Bodyheads>
-            <Holder>
-              <BodyNav>All Request</BodyNav>
-            </Holder>
-            <BtnHold>
-              <button>Assign</button>
-            </BtnHold>
-          </Bodyheads>
-          <StationTable />
-        </Boby>
-      </Wrapper>
+        {dummy.map((props) => (
+          <DynamicTablesData
+            content1={props.name}
+            content2={props.phone}
+            content3={props.amount}
+            content4={props.status}
+            content5={
+              props.status === "Pending..." ? (
+                <BinaryButton swap />
+              ) : (
+                <BinaryButton swap={false} />
+              )
+            }
+          />
+        ))}
+        <br />
+        <br />
+        <br />
+        <div
+          style={{
+            fontWeight: "500",
+            color: "grey",
+          }}>
+          Special Requests
+        </div>
+        <DynamicTablesHeads
+          title1="ID"
+          title2="Date"
+          title3="User"
+          title4="Assigned"
+          title5="Activity"
+        />
+        {dummy.map((props) => (
+          <DynamicTablesData
+            content1={props.name}
+            content2={props.phone}
+            content3={props.amount}
+            content4={props.status}
+            content5={
+              props.status === "Pending..." ? (
+                <BinaryButton swap />
+              ) : (
+                <BinaryButton swap={false} />
+              )
+            }
+          />
+        ))}
+      </Body>
     </Container>
   );
 };
 
 export default AssignMallam;
-
-const Holder = styled.div`
-  margin-left: 30px;
-`;
-const BtnHold = styled.div`
-  margin-right: 30px;
-
-  button {
-    width: 100px;
-    height: 40px;
-    font-size: 16px;
-    border-radius: 3px;
-    border: none;
-    background-color: #03b903;
-    color: #fff;
-    transition: all ease-in-out 500ms;
-
-    :hover {
-      transform: scale(0.98);
-      cursor: pointer;
-      background-color: transparent;
-      border: 1px solid #03b903;
-      color: #03b903;
-    }
-  }
-`;
-
-const Bodyheads = styled.div`
-  width: 100%;
-
-  display: flex;
-  /* margin-left: 30px; */
-  margin-bottom: 30px;
-  justify-content: space-between;
-`;
-const BodyNav = styled.div`
-  font-size: 20px;
-  font-weight: 600;
-  border-bottom: 3px solid #03b903;
-  color: #03b903;
-`;
-
-const Boby = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 23vh;
-  /* margin-left: 20px; */
-`;
-
-const Wrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
 const Container = styled.div`
   width: 100%;
-  background-color: #edebeb;
-  height: 100vh;
+  background-color: #a08f8f32;
+  min-height: 100vh;
+`;
+const Body = styled.div`
+  margin-top: 17vh;
+  width: 90%;
+  margin-left: 2%;
+  margin-right: 4%;
 `;

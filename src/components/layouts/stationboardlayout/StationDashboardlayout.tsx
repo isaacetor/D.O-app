@@ -22,17 +22,18 @@ const StationDashboardlayout = () => {
           <MobileNav
             firstIcon={<HiHome />}
             firstText="Home"
-            firstLink="station"
+            firstLink="/station"
             secondIcon={<IoIosWallet />}
             secondText="Carrier"
-            secondLink="station/mallam"
+            secondLink="/station/mallam"
             thirdIcon={<GiCardPickup />}
+            thirdLink="/station/notify"
             fourthIcon={<BiSupport />}
-            fourthText="Request"
-            fourthLink="station/Notify"
+            fourthText="Assign"
+            fourthLink="/station/assign"
             fifthIcon={<RxPerson />}
-            fifthText="Assign"
-            fifthLink="station/assign"
+            fifthText="Profile"
+            fifthLink="/station/profile"
             colours="#009700"
           />
         </AtMobile>
@@ -60,7 +61,6 @@ const MobileHold = styled.div`
 `;
 const Out = styled.div`
   width: calc(100% - 250px);
-
   @media screen and (max-width: 800px) {
     width: 100%;
   }
