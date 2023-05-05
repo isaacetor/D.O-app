@@ -41,7 +41,7 @@ const Notification = () => {
           <DynamicTablesData
             content1={props.name}
             content2={props.phone}
-            content3={`total (${props.amount})`}
+            content3={`.  total (${props.amount})`}
             content4={props.status === "Free" ? "" : "5"}
             buttons
           />
@@ -55,12 +55,11 @@ export default Notification;
 const Container = styled.div`
   width: 100%;
   background-color: #a08f8f32;
-  /* min-height: 100vh; */
+  min-height: 100vh;
 `;
 const Body = styled.div`
-  margin-top: 19vh;
+  margin-top: 17vh;
   width: 90%;
-  margin-top: 18vh;
   margin-left: 2%;
   margin-right: 4%;
 `;

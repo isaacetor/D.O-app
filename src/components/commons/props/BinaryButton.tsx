@@ -9,7 +9,7 @@ const BinaryButton: React.FC<buttonProps> = ({ swap }) => {
   return (
     <div>
       {swap ? (
-        <Button cs="pointer" bc="orange" cl="black">
+        <Button cs="pointer" bc="orange" cl="#292929">
           <div>Assign</div>
         </Button>
       ) : (
@@ -38,10 +38,13 @@ const Button = styled.button<{ cs: string; bc: string; cl: string }>`
   min-width: 67%;
   border-radius: 3px;
   font-size: 13px;
-  @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) {
     font-size: 10px;
   }
   @media screen and (max-width: 500px) {
+    font-size: 8px;
+  } */
+  @media screen and (max-width: 400px) {
     font-size: 8px;
   }
 `;

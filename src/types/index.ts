@@ -101,6 +101,7 @@ export type mobileNav = {
   secondText: string;
   secondLink: string;
   thirdIcon: any;
+  popUp?: boolean;
   thirdLink?: any;
   fourthIcon: any;
   fourthText: string;
@@ -108,5 +109,5 @@ export type mobileNav = {
   fifthIcon: any;
   fifthText: string;
   fifthLink: string;
-  colours?: string;
+  colours: string;
 };

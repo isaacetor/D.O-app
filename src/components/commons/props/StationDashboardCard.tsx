@@ -28,10 +28,12 @@ const One = styled.div`
   width: 100%;
   /* margin-left: 20px; */
   flex-wrap: wrap;
+
 /* 
   @media screen and (max-width: 800px) {
     width: 100%;
   } */
+
 `;
 
 const Pop = styled.div`
@@ -97,7 +99,7 @@ const Detail = styled.div`
     rgba(3, 185, 3, 1) 30%,
     rgba(0, 0, 0, 1) 100%
   );
-  width: 700px;
+  width: 100%;
   height: fit-content;
   border-radius: 10px;
   display: flex;
@@ -106,16 +108,6 @@ const Detail = styled.div`
   padding: 15px;
   margin-bottom: 20px;
   /* gap: 10px; */
-
-  @media screen and (max-width: 800px) {
-    width: 450px;
-  }
-  @media screen and (max-width: 500px) {
-    width: 370px;
-  }
-  @media screen and (max-width: 350px) {
-    width: 300px;
-  }
 `;
 
 const Hold1 = styled.button`
@@ -130,7 +122,6 @@ const Hold1 = styled.button`
   border-radius: 10px;
   color: #03b903;
   font-weight: 600;
-
   :hover {
     background-color: transparent;
     border: 1px solid #fff;

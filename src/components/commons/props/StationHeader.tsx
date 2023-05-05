@@ -69,21 +69,17 @@ const Main = styled.div<{ bg: string }>`
   width: calc(100% - 250px);
   height: 17vh;
   display: flex;
-
   margin-bottom: 20px;
-
   background-color: ${({ bg }) => bg};
   position: fixed;
   top: 0;
-  z-index: 9999;
-
   @media screen and (max-width: 800px) {
     width: 100%;
-    height: fit-content;
+    /* height: fit-content; */
   }
   @media screen and (max-width: 500px) {
     width: 100%;
-    height: fit-content;
+    /* height: fit-content; */
   }
 `;
 const Left = styled.div`
