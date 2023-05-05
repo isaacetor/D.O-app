@@ -91,15 +91,14 @@ const Container = styled.div`
   }
 `;
 const Box = styled.div`
-  height: calc(100vh - 18vh);
+  /* height: calc(100vh - 18vh); */
   margin-top: 18vh;
   display: flex;
   justify-content: center;
 `;
 const SupportWrap = styled.div`
-  background-color: white;
+  background-color: #ec0f0f;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  height: 80vh;
   width: 90%;
   margin-left: 25px;
   border-radius: 5px;
@@ -111,7 +110,7 @@ const SupportWrap = styled.div`
 const TextPart = styled.div`
   width: 40%;
   height: 100%;
-  background-color: white;
+  background-color: #eedf0a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,16 +125,16 @@ const TextPartWrap = styled.div`
 `;
 const MessagePart = styled.div`
   width: 55%;
-  height: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   background-color: #009700;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   border-radius: 10px;
-  @media screen and (max-width: 500px) {
-    background-color: white;
-  }
 `;
 const MessagePartWrap = styled.div`
   width: 90%;
