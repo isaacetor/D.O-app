@@ -29,7 +29,7 @@ const UserDashboardLayout = () => {
           fifthText="Profile"
           fifthLink="profile"
           colours="#009700"
-          popUp
+          // popUp
         />
       </AtMobile>
     </Container>
