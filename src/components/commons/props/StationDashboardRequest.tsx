@@ -92,9 +92,6 @@ const Pro = styled.div`
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   border-bottom: 1px solid lightgray;
   padding: 9px;
-  :nth-child(even) {
-    /* background-color: #d4d5d85e; */
-  }
 `;
 const Ij = styled.div``;
 const Ad = styled.div`
@@ -128,8 +125,8 @@ const Tit = styled.div`
 `;
 
 const Two = styled.div`
-  width: 350px;
-  height: fit-content;
+  width: 100%;
+  /* height: fit-content; */
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
