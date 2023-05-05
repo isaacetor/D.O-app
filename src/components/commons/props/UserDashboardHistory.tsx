@@ -1,4 +1,5 @@
 import React from "react";
+import { IoIosNotifications } from "react-icons/io";
 import styled from "styled-components";
 
 const UserDashboardHistory = () => {
@@ -7,15 +8,17 @@ const UserDashboardHistory = () => {
       <div style={{ marginBottom: "10px", fontWeight: "bold" }}>History</div>
       <PendingActions>
         <div style={{ fontSize: "13px", fontWeight: "600" }}>
-          Set transaction pin
+          See all request
         </div>
-        <PendSign>PENDING</PendSign>
+        {/* <PendSign>PENDING</PendSign> */}
       </PendingActions>
       <PendingActions>
         <div style={{ fontSize: "13px", fontWeight: "600" }}>
-          Add default banks
+          See all Payments
         </div>
-        <PendSign>PENDING</PendSign>
+        {/* <PendSign> */}
+        {/* <IoIosNotifications/> */}
+        {/* </PendSign> */}
       </PendingActions>
     </Pending>
   );
