@@ -29,11 +29,10 @@ const One = styled.div`
   /* margin-left: 20px; */
   flex-wrap: wrap;
 
-/* 
+  /* 
   @media screen and (max-width: 800px) {
     width: 100%;
   } */
-
 `;
 
 const Pop = styled.div`
