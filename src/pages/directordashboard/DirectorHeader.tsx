@@ -173,7 +173,7 @@ const Down = styled.div`
   }
   @media screen and (max-width:425px){
     h1{
-      font-size:15px;
+      font-size:20px;
     }
   }
 `;

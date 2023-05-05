@@ -3,10 +3,12 @@ import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { DirectorSidenav, MobileNav } from "../../blocks";
 import { HiHome } from "react-icons/hi";
-import { IoIosWallet } from "react-icons/io";
+import { CiLogout } from "react-icons/ci";
 import { GiCardPickup } from "react-icons/gi";
 import { BiSupport } from "react-icons/bi";
 import { RxPerson } from "react-icons/rx";
+import { AiTwotoneBank } from "react-icons/ai";
+
 const DirectorDashboardLayout = () => {
   return (
     <Container>
@@ -17,16 +19,16 @@ const DirectorDashboardLayout = () => {
           <MobileNav
             firstIcon={<HiHome />}
             firstText="Home"
-            firstLink="/user/home"
-            secondIcon={<IoIosWallet />}
-            secondText="Payment"
-            secondLink="makepayment"
+            firstLink="/director/home"
+            secondIcon={<AiTwotoneBank />}
+            secondText="Stations"
+            secondLink="/director/home/stations"
             thirdIcon={<GiCardPickup />}
             fourthIcon={<BiSupport />}
-            fourthText="Support"
-            fourthLink="feedback"
-            fifthIcon={<RxPerson />}
-            fifthText="Profile"
+            fourthText="Create Stations"
+            fourthLink="stations"
+            fifthIcon={<CiLogout />}
+            fifthText="Logout"
             fifthLink="profile"
             colours="#170097"
           />

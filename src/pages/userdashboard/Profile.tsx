@@ -7,7 +7,9 @@ import { useAppSelector } from "../../services/statemanagement/Store";
 const Profile = () => {
   const user = useAppSelector((state) => state.userDetails);
 
-  const stat = user?.station;
+  console.log("user", user?.station?.station);
+
+  // const stat = user?.station;
 
   let initials: string | undefined = user?.name
     .split(" ")
@@ -59,7 +61,7 @@ const Profile = () => {
               <InputHold2>
                 <span>Station</span>
                 <Hold>
-                  <span>{user?.station}</span>
+                  <span>{user?.station?.station}</span>
                 </Hold>
               </InputHold2>
             </InputHold1>
