@@ -2,13 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { mobileNav } from "../../../types";
 import { NavLink, useNavigate } from "react-router-dom";
-import { CircularProgressbar } from "react-circular-progressbar";
-import {
-  UseAppDispatch,
-  useAppSelector,
-} from "../../../services/statemanagement/Store";
-import axios from "axios";
-import { upDateRequest } from "../../../services/statemanagement/ReduxState";
+import Popup from "./popup/UserPopup";
 
 const MobileNav: React.FC<mobileNav> = ({
   firstIcon,
@@ -18,6 +12,7 @@ const MobileNav: React.FC<mobileNav> = ({
   secondText,
   secondLink,
   thirdIcon,
+  thirdLink,
   fourthIcon,
   fourthText,
   fourthLink,
@@ -25,156 +20,104 @@ const MobileNav: React.FC<mobileNav> = ({
   fifthText,
   fifthLink,
   colours,
-  thirdLink,
+  popUp,
 }) => {
   const navigate = useNavigate();
-  const [home, setHome] = React.useState(false);
-  const [pay, setPay] = React.useState(false);
-  const [support, setSupport] = React.useState(false);
-  const [profile, setProfile] = React.useState(false);
+  const [first, setFirst] = React.useState(false);
+  const [second, setSecond] = React.useState(false);
+  const [third, setThird] = React.useState(false);
+  const [fourth, setFourth] = React.useState(false);
+  const [fifth, setFifth] = React.useState(false);
   const [toggle, setToggle] = React.useState(false);
-  //quickness
 
-  const dispatch = UseAppDispatch();
-  const requestNum = useAppSelector((state) => state.requestNumber);
-  const user = useAppSelector((state) => state.userDetails);
-  const percentage = requestNum;
-
-  const URL = "https://dirty-online.onrender.com";
-
-  const makeRequest = async () => {
-    return await axios
-      .patch(`${URL}/api/users/make-request/${user?._id}/${user?.station._id}`)
-      .then((res) => {
-        //  return res.data;
-        dispatch(upDateRequest(res.data.RequestData.numberOfRequests));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const toggleFunction = () => {
+    setToggle(!toggle);
+  };
+  const firstFunction = () => {
+    setFirst(true);
+    setSecond(false);
+    setThird(false);
+    setFourth(false);
+    setFifth(false);
+  };
+  const secondFunction = () => {
+    setFirst(false);
+    setSecond(true);
+    setThird(false);
+    setFourth(false);
+    setFifth(false);
+  };
+  const thirdFunction = () => {
+    setFirst(false);
+    setSecond(false);
+    setThird(true);
+    setFourth(false);
+    setFifth(false);
+  };
+  const fourthFunction = () => {
+    setFirst(false);
+    setSecond(false);
+    setThird(false);
+    setFourth(true);
+    setFifth(false);
+  };
+  const fifthFunction = () => {
+    setFirst(false);
+    setSecond(false);
+    setThird(false);
+    setFourth(false);
+    setFifth(true);
   };
 
   return (
     <Container>
-      <Contents>
-        <WrapContents>
-          <Pairs>
-            <Nav
-              to={firstLink}
-              onClick={() => {
-                setHome(true);
-                setPay(false);
-                setSupport(false);
-                setProfile(false);
-                setToggle(false);
-              }}
-              cl={`${home ? colours : "grey"}`}>
-              <Icon>{firstIcon}</Icon>
-              <Text>{firstText}</Text>
-            </Nav>
-            <Nav
-              to={secondLink}
-              onClick={() => {
-                setPay(true);
-                setHome(false);
-                setSupport(false);
-                setProfile(false);
-                setToggle(false);
-              }}
-              cl={`${pay ? colours : "grey"}`}>
-              <Icon>{secondIcon}</Icon>
-              <Text>{secondText}</Text>
-            </Nav>
-          </Pairs>
-          <NavLink style={{ textDecoration: "none" }} to={thirdLink}>
-            <Pair
-              onClick={() => {
-                setToggle(!toggle);
-              }}>
-              {toggle ? (
-                <Single cl={`${colours}`}>x</Single>
-              ) : (
-                <Single cl={`${colours}`}>{thirdIcon}</Single>
-              )}
-            </Pair>
-          </NavLink>
-          <Pairs>
-            <Nav
-              to={fourthLink}
-              onClick={() => {
-                setSupport(true);
-                setHome(false);
-                setPay(false);
-                setProfile(false);
-                setToggle(false);
-              }}
-              cl={`${support ? colours : "grey"}`}>
-              <Icon>{fourthIcon}</Icon>
-              <Text>{fourthText}</Text>
-            </Nav>
-            <Nav
-              to={fifthLink}
-              onClick={() => {
-                setProfile(true);
-                setPay(false);
-                setHome(false);
-                setSupport(false);
-                setToggle(false);
-              }}
-              cl={`${profile ? colours : "grey"}`}>
-              <Icon>{fifthIcon}</Icon>
-              <Text>{fifthText}</Text>
-            </Nav>
-          </Pairs>
-        </WrapContents>
-      </Contents>
-      <PopUp dp={toggle ? "flex" : "none"}>
-        <Wrap>
-          <First onClick={makeRequest}>
-            <div style={{ marginLeft: "20px" }}>
-              <Big>Make request for your home</Big>
-              <Small>{`( four requests per month )`}</Small>
-            </div>
-            <div style={{ justifySelf: "flex-end", marginRight: "20px" }}>
-              <CircularProgressbar
-                value={parseInt(percentage!)}
-                maxValue={4}
-                text={`${percentage}`}
-                styles={{
-                  root: {
-                    height: "35px",
-                    width: "35px",
-                  },
-                  path: {
-                    stroke: `#009700`,
-                    strokeLinecap: "round",
-                  },
-                  text: {
-                    fill: "#291212",
-                    fontSize: "38px",
-                  },
-                }}
-              />
-            </div>
-          </First>
-          <Middle>
-            <div style={{ marginLeft: "20px" }}>
-              <Big>Request for special trash pickup</Big>
-              <Small>{"( order for trash pickup at special events )"}</Small>
-            </div>
-          </Middle>
-          <Third
-            onClick={() => {
-              navigate("makerequest");
-              setToggle(false);
-            }}>
-            <div style={{ marginLeft: "20px" }}>
-              <Big>History</Big>
-              <Small>{"( view all your requests so far )"}</Small>
-            </div>
-          </Third>
-        </Wrap>
-      </PopUp>
+      <Wrapper>
+        <LeftPair>
+          <Item
+            to={firstLink}
+            cl={first ? colours : "silver"}
+            onClick={firstFunction}>
+            <Icon>{firstIcon}</Icon>
+            <Text>{firstText}</Text>
+          </Item>
+          <Item
+            to={secondLink}
+            cl={second ? colours : "silver"}
+            onClick={secondFunction}>
+            <Icon>{secondIcon}</Icon>
+            <Text>{secondText}</Text>
+          </Item>
+        </LeftPair>
+        {popUp ? (
+          <LoneMid2 cl={colours} onClick={toggleFunction}>
+            {toggle ? "x" : thirdIcon}
+          </LoneMid2>
+        ) : (
+          <LoneMid
+            to={thirdLink}
+            cl={third ? colours : "silver"}
+            onClick={thirdFunction}>
+            {thirdIcon}
+          </LoneMid>
+        )}
+        <RightPair>
+          <Item
+            to={fourthLink}
+            cl={fourth ? colours : "silver"}
+            onClick={fourthFunction}>
+            <Icon>{fourthIcon}</Icon>
+            <Text>{fourthText}</Text>
+          </Item>
+          <Item
+            to={fifthLink}
+            cl={fifth ? colours : "silver"}
+            onClick={fifthFunction}>
+            <Icon>{fifthIcon}</Icon>
+            <Text>{fifthText}</Text>
+          </Item>
+        </RightPair>
+      </Wrapper>
+      {toggle ? <Popup /> : null}
     </Container>
   );
 };
@@ -184,154 +127,83 @@ export default MobileNav;
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  border-radius: 20px;
-  margin: auto;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
     rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-`;
-const Contents = styled.div`
-  height: 100%;
-  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: white;
-  /* border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px; */
 `;
-const Pair = styled.div`
-  text-decoration: none;
-  height: 100%;
-  cursor: pointer;
-`;
-const Pairs = styled.div`
-  display: flex;
-  gap: 30px;
-  z-index: 2;
-  @media screen and (min-width: 420px) {
-    gap: 50px;
-    font-size: 13px;
-  }
-  @media screen and (min-width: 550px) {
-    gap: 70px;
-    font-size: 13px;
-  }
-  @media screen and (min-width: 610px) {
-    gap: 110px;
-    font-size: 13px;
-  }
-  font-size: 10px;
-`;
-const Single = styled.div<{ cl: string }>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  padding: 10px;
-  background-color: ${({ cl }) => cl};
-  color: white;
-  height: 35px;
-  width: 35px;
-  font-size: 30px;
-  margin-top: -55px;
-  border: 3px solid white;
-`;
-const WrapContents = styled.div`
+const Wrapper = styled.div`
   width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+const LeftPair = styled.div`
+  width: 38%;
   height: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-evenly;
 `;
-const Nav = styled(NavLink)<{ cl: string }>`
+const Item = styled(NavLink)<{ cl: string }>`
   text-decoration: none;
+  width: 35%;
+  height: 70%;
+  color: ${(props) => props.cl};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1px;
-  color: ${(props) => props.cl};
 `;
 const Icon = styled.div`
-  font-size: 25px;
+  width: 100%;
+  height: 70%;
+  font-size: 23px;
   display: flex;
-  align-items: flex-end;
+  justify-content: center;
 `;
 const Text = styled.div`
-  font-weight: 500;
+  font-size: 15px;
 `;
-
-const PopUp = styled.div<{ dp: string }>`
-  display: ${({ dp }) => dp};
-  width: 100vw;
-  height: 100vh;
-  background-color: #000000ae;
-  position: fixed;
-  bottom: 70px;
-  z-index: -1;
-  transition: all 350ms;
-`;
-const Wrap = styled.div`
-  width: 70%;
-  height: 40%;
-  margin: auto;
+const LoneMid = styled(NavLink)<{ cl: string }>`
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${(props) => props.cl};
+  border: 3px solid white;
   background-color: white;
-  border-radius: 20px;
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  margin-top: -60px;
 `;
-const First = styled.div`
+const LoneMid2 = styled.div<{ cl: string }>`
+  height: 70px;
+  width: 70px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 30px;
   display: flex;
+  justify-content: center;
   align-items: center;
+  color: ${(props) => props.cl};
+  border: 3px solid white;
+  background-color: white;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  margin-top: -60px;
+  z-index: 1;
+`;
+const RightPair = styled.div`
+  width: 38%;
+  height: 100%;
+  display: flex;
   justify-content: space-between;
-  font-weight: 400;
-  transition: all 350ms;
-  cursor: pointer;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  :hover {
-    background-color: #e7e7e750;
-  }
-`;
-const Middle = styled.div`
-  display: flex;
   align-items: center;
-  font-weight: 400;
-  border-top: 1px solid #e6e6e6d5;
-  border-bottom: 1px solid #e6e6e6d5;
-  transition: all 350ms;
-  cursor: pointer;
-  :hover {
-    background-color: #e7e7e750;
-  }
-`;
-const Big = styled.div`
-  font-size: 11px;
-  @media screen and (min-width: 450px) {
-    font-size: 15px;
-  }
-  @media screen and (min-width: 600px) {
-    font-size: 20px;
-  }
-`;
-const Small = styled.div`
-  font-size: 10px;
-  @media screen and (min-width: 450px) {
-    font-size: 10px;
-  }
-  @media screen and (min-width: 600px) {
-    font-size: 13px;
-  }
-`;
-const Third = styled.div`
-  display: flex;
-  align-items: center;
-  font-weight: 400;
-  transition: all 350ms;
-  cursor: pointer;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  :hover {
-    background-color: #e7e7e750;
-  }
 `;

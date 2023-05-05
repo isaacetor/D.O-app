@@ -50,13 +50,14 @@ const Circle = styled.div`
 `;
 
 const Contain = styled.div`
-  @media screen and (max-width: 600px) {
+  font-size: 13px;
+  /* @media screen and (max-width: 600px) {
     font-size: 10px;
   }
   @media screen and (max-width: 500px) {
     font-size: 8px;
-  }
+  } */
   @media screen and (max-width: 400px) {
-    font-size: 7px;
+    font-size: 10px;
   }
 `;
