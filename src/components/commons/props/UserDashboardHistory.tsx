@@ -1,25 +1,34 @@
 import React from "react";
-import { IoIosNotifications } from "react-icons/io";
+import { RiNotificationBadgeFill } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const UserDashboardHistory = () => {
   return (
     <Pending>
       <div style={{ marginBottom: "10px", fontWeight: "bold" }}>History</div>
-      <PendingActions>
-        <div style={{ fontSize: "13px", fontWeight: "600" }}>
-          See all request
-        </div>
-        {/* <PendSign>PENDING</PendSign> */}
-      </PendingActions>
-      <PendingActions>
+      <NavLink to="makerequest" style={{ textDecoration: "none" }}>
+        <PendingActions>
+          <div style={{ fontSize: "13px", fontWeight: "600" }}>
+            See all request
+          </div>
+          <PendSign>
+            <RiNotificationBadgeFill />
+          </PendSign>
+        </PendingActions>
+      </NavLink>
+
+      <NavLink to="makepayment" style={{ textDecoration: "none" }}>
+           <PendingActions>
         <div style={{ fontSize: "13px", fontWeight: "600" }}>
           See all Payments
         </div>
-        {/* <PendSign> */}
-        {/* <IoIosNotifications/> */}
-        {/* </PendSign> */}
+        <PendSign>
+          <RiNotificationBadgeFill />
+        </PendSign>
       </PendingActions>
+          </NavLink>
+   
     </Pending>
   );
 };
@@ -43,8 +52,7 @@ const PendingActions = styled.div`
 const PendSign = styled.div`
   padding: 1px 7px;
   border-radius: 2px;
-  color: white;
+  color: green;
   font-weight: 600;
-  background-color: orange;
   font-size: 14px;
 `;
