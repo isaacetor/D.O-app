@@ -80,25 +80,33 @@ const Feedback = () => {
 export default Feedback;
 
 const Container = styled.div`
-  /* width: calc(100% - 270px); */
-  @media screen and (max-width: 1024px) {
-    width: calc(100% - 70px);
+  width: calc(100vw - 270px);
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    width: calc(100vw - 70px);
   }
 `;
 const Box = styled.div`
-  /* background-color: blue; */
   height: calc(100vh - 18vh);
   margin-top: 18vh;
+  display: flex;
+  justify-content: center;
 `;
 const SupportWrap = styled.div`
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   height: 80vh;
-  width: 85%;
+  width: 90%;
   margin-left: 25px;
   border-radius: 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 `;
 const TextPart = styled.div`
   width: 40%;
@@ -107,7 +115,6 @@ const TextPart = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
   @media screen and (max-width: 500px) {
     display: none;
   }
@@ -119,7 +126,7 @@ const TextPartWrap = styled.div`
 `;
 const MessagePart = styled.div`
   width: 55%;
-  height: 100%;
+  height: 90%;
   background-color: #009700;
   display: flex;
   align-items: center;
