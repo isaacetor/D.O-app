@@ -29,7 +29,7 @@ const UserDashboardLayout = () => {
           fifthText="Profile"
           fifthLink="profile"
           colours="#009700"
-          // popUp
+          popUp
         />
       </AtMobile>
     </Container>
@@ -52,7 +52,6 @@ const Body = styled.div`
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-
   @media screen and (max-width: 1051px) {
     /* width: calc(100vw - 70px); */
     justify-content: flex-start;
