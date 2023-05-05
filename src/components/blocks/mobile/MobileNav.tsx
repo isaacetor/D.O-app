@@ -76,14 +76,16 @@ const MobileNav: React.FC<mobileNav> = ({
           <Item
             to={firstLink}
             cl={first ? colours : "silver"}
-            onClick={firstFunction}>
+            onClick={firstFunction}
+          >
             <Icon>{firstIcon}</Icon>
             <Text>{firstText}</Text>
           </Item>
           <Item
             to={secondLink}
             cl={second ? colours : "silver"}
-            onClick={secondFunction}>
+            onClick={secondFunction}
+          >
             <Icon>{secondIcon}</Icon>
             <Text>{secondText}</Text>
           </Item>
@@ -96,7 +98,8 @@ const MobileNav: React.FC<mobileNav> = ({
           <LoneMid
             to={thirdLink}
             cl={third ? colours : "silver"}
-            onClick={thirdFunction}>
+            onClick={thirdFunction}
+          >
             {thirdIcon}
           </LoneMid>
         )}
@@ -104,14 +107,16 @@ const MobileNav: React.FC<mobileNav> = ({
           <Item
             to={fourthLink}
             cl={fourth ? colours : "silver"}
-            onClick={fourthFunction}>
+            onClick={fourthFunction}
+          >
             <Icon>{fourthIcon}</Icon>
             <Text>{fourthText}</Text>
           </Item>
           <Item
             to={fifthLink}
             cl={fifth ? colours : "silver"}
-            onClick={fifthFunction}>
+            onClick={fifthFunction}
+          >
             <Icon>{fifthIcon}</Icon>
             <Text>{fifthText}</Text>
           </Item>
