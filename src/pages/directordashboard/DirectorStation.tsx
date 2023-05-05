@@ -107,7 +107,7 @@ const Stations=()=>{
     })
     if(Product?.data?.loading) return <h2>Loading...</h2>
   
-
+  const dater = new Date().toDateString()
 
     return(
         <Cont>
@@ -118,18 +118,18 @@ const Stations=()=>{
                 <Main>
                   {show ? (<Det>
                     <Details onClick={tog}>
-                        <p style={{color: "blue",fontSize: "20px",borderBottom: "3px blue solid",paddingBottom: "15px"}}>Create Stations</p>
+                        <p style={{color: "blue",fontSize: "20px",borderBottom: "3px blue solid"}}>Create Stations</p>
                     </Details>
                     <Details onClick={tog1}>
-                        <span style={{color: "black",fontSize: "20px",paddingBottom: "15px"}}>All Stations</span>
+                        <span style={{color: "black",fontSize: "20px"}}>All Stations</span>
                     </Details>
                   </Det>) : (
                     <Det>
                           <Details onClick={tog}>
-                        <p style={{color: "black",fontSize: "20px",paddingBottom: "15px"}}>Create Stations</p>
+                        <p style={{color: "black",fontSize: "20px"}}>Create Stations</p>
                     </Details>
                     <Details onClick={tog1}>
-                        <span style={{color: "blue",fontSize: "20px",borderBottom: "3px blue solid",paddingBottom: "15px"}}>All Stations</span>
+                        <span style={{color: "blue",fontSize: "20px",borderBottom: "3px blue solid"}}>All Stations</span>
                     </Details>
                     </Det>
                   )}
@@ -207,9 +207,9 @@ const Stations=()=>{
                         <DetInfo>
                             S/N
                         </DetInfo>
-                        <DetInfo>
-                            Data and Time
-                        </DetInfo>
+                        {/* <DetInfo>
+                            D/T
+                        </DetInfo> */}
                         <DetInfo>
                             Name of Station
                         </DetInfo>
@@ -223,18 +223,43 @@ const Stations=()=>{
                             Status
                         </DetInfo>
                     </DetailHead>
-                    {Product?.data?.data?.map((props:any)=>(
+                    {/* {Product?.data?.data?.map((props:any)=>( */}
                          <User>
                          <Num>1</Num>
-                         <Dat style={{marginLeft:"-50px"}}>{props?.createdAt}</Dat>
-                         <Station style={{marginLeft:"-50px"}}>{props?.station}</Station>
+                         {/* <Dat style={{marginLeft:"-50px"}}>{dater}</Dat> */}
+                         <Station style={{marginLeft:"-50px"}}>Wema</Station>
                          <Req style={{marginLeft:"-30px"}}>10</Req>
                          <ReqSta>21</ReqSta>
                          <span ></span>
                       </User>
-                    ))}
+                         <User>
+                         <Num>2</Num>
+                         {/* <Dat style={{marginLeft:"-50px"}}>{dater}</Dat> */}
+                         <Station style={{marginLeft:"-50px"}}>Ashafa</Station>
+                         <Req style={{marginLeft:"-30px"}}>10</Req>
+                         <ReqSta>21</ReqSta>
+                         <span ></span>
+                      </User>
+                         <User>
+                         <Num>3</Num>
+                         {/* <Dat style={{marginLeft:"-50px"}}>{dater}</Dat> */}
+                         <Station style={{marginLeft:"-50px"}}>Chidi</Station>
+                         <Req style={{marginLeft:"-30px"}}>10</Req>
+                         <ReqSta>21</ReqSta>
+                         <span ></span>
+                      </User>
+                         <User>
+                         <Num>4</Num>
+                         {/* <Dat style={{marginLeft:"-50px"}}>{dater}</Dat> */}
+                         <Station style={{marginLeft:"-50px"}}>Alakoto</Station>
+                         <Req style={{marginLeft:"-30px"}}>10</Req>
+                         <ReqSta>21</ReqSta>
+                         <span ></span>
+                      </User>
+                    {/* ))} */}
                 </DetailHold>
-                </Col>) : null}
+                </Col>
+                ) : null}
             </Wrap>
         </Cont>
     )
@@ -265,16 +290,41 @@ span{
     background-color: #41e641;
     box-shadow: 0 0 10px #41e641,0 0 40px #41e641,0 0 80px #41e641;
 }
+@media screen and (max-width:425px){
+    width: 95%;
+}
 `
-const Num=styled.div``
+const Num=styled.div`
+@media screen and (max-width:425px){
+    font-size: 12px;
+}
+`
 const Dat=styled.div``
-const Station=styled.div``
-const Req=styled.div``
-const ReqSta=styled.div``
+const Station=styled.div`
+@media screen and (max-width:425px){
+    font-size: 12px;
+}
+`
+const Req=styled.div`
+@media screen and (max-width:425px){
+    font-size: 12px;
+}
+`
+const ReqSta=styled.div`
+@media screen and (max-width:425px){
+    font-size: 12px;
+}
+`
 const DetailHold=styled.div`
 width: 96%;
 display: flex;
 flex-direction: column;
+@media screen and (max-width:425px){
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 200px;
+}
+
 /* overflow: hidden; */
 `
 const DetailHead=styled.div`
@@ -286,20 +336,28 @@ padding: 20px 10px;
 background-color: #123455;
 border-radius: 7px;
 margin-top: 30px;
+@media screen and (max-width:425px){
+    width: 95%;
+}
 `
 const DetInfo=styled.div`
 color: white;
+@media screen and (max-width:425px){
+font-size: 10px;
+}
 ` 
 const ColHead=styled.div`
 display: flex;
 width: 96%;
 justify-content: center;
 align-items: center;
+flex-wrap: wrap;
 `
 const ColHold=styled.div`
 width:80%;
 display: flex;
 flex-direction: column;
+
 `
 const Holds=styled.div`
 display: flex;
@@ -320,6 +378,9 @@ input{
         color: black;
     }
 }
+@media screen and (max-width:425px){
+    width:150px;
+}
 `
 const Ic=styled.div``
 const Buts=styled.div``
@@ -329,6 +390,7 @@ display: flex;
 flex-direction: column;
 /* justify-content: center; */
 align-items: center;
+/* margin-bottom: 1050px; */
 `
 const Cont=styled.div`
 width: calc(100% - 270px);
@@ -336,7 +398,11 @@ height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color:whitesmoke;
+/* background-color:whitesmoke; */
+@media screen and (max-width:425px){
+    width: 100%;
+    margin-bottom: 500px;
+}
 `
 const Wrap=styled.div`
 width: 100%;
@@ -355,6 +421,7 @@ display: flex;
 width: 100%;
 justify-content: space-between;
 align-items: center;
+
 /* margin-bottom: 20px; */
 `
 const Main=styled.div`
@@ -363,14 +430,22 @@ width: 30%;
 justify-content: space-between;
 align-items: center;
 margin-bottom: 20px;
+@media screen and (max-width:425px){
+    width: 80%;
+}
 `
 const Details=styled.div`
 cursor:pointer;
+p,span{
+    padding:10px 0;
+}
+/* padding: 0; */
 `
 const Info=styled.form`
 display: flex;
 flex-wrap: wrap;
 flex-direction: column;
+/* margin-bottom:250px; */
 `
 const Infos=styled.div`
 display: flex;
@@ -391,7 +466,13 @@ input{
     margin-top: 2px;
   box-shadow: rgba(0, 0, 0.8, 0.15) 2.95px 1.95px 2.6px;
    border: none;
+ 
 }
+@media screen and (max-width:425px){
+    input{
+        width: 160%;
+    }
+   }
 `
 const ButHold=styled.button`
     width: 100px;
