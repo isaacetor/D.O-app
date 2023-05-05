@@ -28,10 +28,10 @@ const One = styled.div`
   width: 100%;
   /* margin-left: 20px; */
   flex-wrap: wrap;
-
+/* 
   @media screen and (max-width: 800px) {
     width: 100%;
-  }
+  } */
 `;
 
 const Pop = styled.div`
