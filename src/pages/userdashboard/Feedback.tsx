@@ -52,10 +52,10 @@ const Feedback = () => {
           </TextPart>
           <MessagePart>
             <MessagePartWrap>
-              <h2>
+              <h3>
                 Our team is dedicated to ensuring your waste is properly managed
                 and disposed of in an environmentally friendly manner.
-              </h2>
+              </h3>
               <p>
                 Please don't hesitate to contact us if you have any questions or
                 feedback.
@@ -81,42 +81,53 @@ export default Feedback;
 
 const Container = styled.div`
   width: calc(100vw - 270px);
+  @media screen and (max-width: 1051px) {
+    width: calc(100vw - 70px);
+    margin-left: 70px;
+  }
+  @media screen and (max-width: 800px) {
+    width: 100vw;
+    margin-left: 0px;
+  }
   /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  @media screen and (max-width: 768px) {
-    width: calc(100vw - 70px);
-  }
 `;
 const Box = styled.div`
   /* height: calc(100vh - 18vh); */
-  margin-top: 18vh;
+  width: 100%;
+  margin-top: 23vh;
   display: flex;
   justify-content: center;
 `;
 const SupportWrap = styled.div`
-  background-color: #ec0f0f;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  width: 90%;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  @media screen and (max-width: 800px) {
+    box-shadow: none;
+    justify-content: center;
+  } */
   margin-left: 25px;
   border-radius: 5px;
+  width: 95%;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  gap: 12%;
   flex-wrap: wrap;
 `;
 const TextPart = styled.div`
-  width: 40%;
-  height: 100%;
-  background-color: #eedf0a;
+  width: 22%;
   display: flex;
   align-items: center;
   justify-content: center;
-  @media screen and (max-width: 500px) {
-    display: none;
+  height: fit-content;
+  /* margin-top: 20px; */
+  @media screen and (max-width: 800px) {
+    width: 100%;
   }
+  /* @media screen and (max-width: 500px) {
+    display: none;
+  } */
 `;
 const TextPartWrap = styled.div`
   width: 90%;
@@ -124,11 +135,15 @@ const TextPartWrap = styled.div`
   /* background-color: brown; */
 `;
 const MessagePart = styled.div`
-  width: 55%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  width: 50%;
+  @media screen and (max-width: 800px) {
+    /* width: 90%;
+    margin-bottom: 80px; */
+    display: none;
+  }
+  height: fit-content;
+  /* margin: 20px; */
+  padding: 15px;
   background-color: #009700;
   display: flex;
   align-items: center;
@@ -144,17 +159,17 @@ const MessagePartWrap = styled.div`
   }
 `;
 const ChatUs = styled.div`
-  width: 320px;
+  width: 100%;
   padding: 10px 0px 10px 0px;
   display: flex;
-  justify-content: space-between;
+  gap: 15px;
 
-  @media screen and (max-width: 500px) {
+  /* @media screen and (max-width: 500px) {
     width: 300px;
-  }
+  } */
 `;
 const Content = styled.div`
-  width: 250px;
+  width: 200px;
   /* background-color: red; */
   h4 {
     margin: 0;
@@ -179,7 +194,7 @@ const Icon = styled.div`
 `;
 const Form = styled.form``;
 const Input = styled.input`
-  width: 400px;
+  width: 100%;
   height: 30px;
   background-color: transparent;
   border: none;
@@ -192,9 +207,9 @@ const Input = styled.input`
     color: white;
   }
 
-  @media screen and (max-width: 500px) {
+  /* @media screen and (max-width: 500px) {
     width: 300px;
-  }
+  } */
 `;
 const Div = styled.div`
   display: flex;
@@ -203,7 +218,7 @@ const Div = styled.div`
 `;
 const Label = styled.label``;
 const TextArea = styled.textarea`
-  width: 400px;
+  width: 100%;
   border: none;
   outline: none;
   margin-top: 20px;
@@ -213,7 +228,7 @@ const TextArea = styled.textarea`
   resize: none;
 `;
 const Button = styled.div`
-  width: 410px;
+  width: 100%;
   height: 50px;
   border-radius: 5px;
   background-color: white;
