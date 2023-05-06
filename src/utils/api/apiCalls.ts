@@ -84,8 +84,6 @@ const loginUser = async ({ email, password }: any) => {
     });
 };
 
-const AllUsers = async () => {};
-
 const allStations = async () => {
   return await axios
     .get(`${URL}/api/stations/all-stations`)
@@ -104,4 +102,4 @@ const makeRequest = async ({ user, station }: any) => {
       return err;
     });
 };
-export { AllUsers, allStations, loginUser, makeRequest, loginDirector };
+export { allStations, loginUser, makeRequest, loginDirector };
