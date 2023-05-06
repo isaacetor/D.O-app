@@ -22,8 +22,6 @@ const UserRegister = () => {
   //force all stations to run anytime the page is opened
   useEffect(() => {}, [data]);
 
-  // console.log(`this is the stations`, data);
-
   //create user
   const userSchema = yup
     .object({
@@ -39,7 +37,6 @@ const UserRegister = () => {
   const {
     handleSubmit,
     formState: { errors },
-    reset,
     register,
   } = useForm<formData>({
     resolver: yupResolver(userSchema),
@@ -66,7 +63,6 @@ const UserRegister = () => {
 
   const Submit = handleSubmit(async (data: any) => {
     posting.mutate(data);
-    // reset()
   });
 
   return (
