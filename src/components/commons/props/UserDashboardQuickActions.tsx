@@ -164,6 +164,12 @@ const QuickComponent = styled.div`
     top: 50px;
     left: 30px;
   }
+  @media screen and (max-width: 550px) {
+    width: 100%;
+    position: relative;
+    top: 20px;
+    left: 30px;
+  }
 `;
 const QuickImage = styled.div`
   width: 170px;
@@ -176,13 +182,6 @@ const QuickImage = styled.div`
   p {
     color: #fff;
     font-size: 16px;
-  }
-
-  @media screen and (max-width: 800px) {
-    width: 130px;
-  }
-  @media screen and (max-width: 500px) {
-    width: 100px;
   }
 `;
 const HText = styled.div`
