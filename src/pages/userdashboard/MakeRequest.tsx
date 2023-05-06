@@ -7,8 +7,14 @@ import {
   UserRequestTable,
 } from "../../components";
 import request from "../../assets/images/request.png";
+import { useAppSelector } from "../../services/statemanagement/Store";
+import DynamicTablesHeads from "../../components/commons/props/DynamicTablesHeads";
+import DynamicTablesData from "../../components/commons/props/DynamicTablesData";
 
 const MakeRequest = () => {
+  const user = useAppSelector((state) => state.userDetails);
+  console.log("user", user);
+
   return (
     <Container>
       <UserDashboardHeader height="18vh" title="Make Request" display="none" />
@@ -57,7 +63,22 @@ const MakeRequest = () => {
         </First>
         <Second>
           <TransactionHistory>
-            <UserRequestTable />
+            <DynamicTablesHeads
+              title1="Name"
+              title2="Phone"
+              title3="Requests"
+              title4="Status"
+              title5="Activity"
+            />
+            {[].map((props: any) => (
+              <DynamicTablesData
+                content1={props.name}
+                content2={props.phone}
+                content3=""
+                content4=""
+                buttons
+              />
+            ))}
           </TransactionHistory>
         </Second>
       </Body>

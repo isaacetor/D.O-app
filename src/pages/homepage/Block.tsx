@@ -38,7 +38,7 @@ const Left = styled.div`
   h1 {
     font-size: 2.3rem;
     margin: 0;
-    width: 75%;
+    /* width: 75%; */
     text-transform: capitalize;
     margin-bottom: 30px;
     font-weight: 300;
