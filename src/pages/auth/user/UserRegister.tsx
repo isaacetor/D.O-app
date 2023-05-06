@@ -7,15 +7,20 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { Loading, allStations, createUser } from "../../../utils";
 import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 
 const UserRegister = () => {
   const navigate = useNavigate();
 
   // get all stations
+
   const { data } = useQuery({
     queryKey: ["stationId"],
     queryFn: allStations,
   });
+
+  //force all stations to run anytime the page is opened
+  useEffect(() => {}, [data]);
 
   // console.log(`this is the stations`, data);
 

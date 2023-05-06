@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 const H = styled.div`
-  font-size: 27px;
+  font-size: 23px;
   @media screen and (min-width: 1000px) {
     font-size: 31px;
     font-weight: 500;
@@ -44,6 +44,7 @@ const H = styled.div`
 const P = styled.div`
   margin-top: 10px;
   font-weight: 400;
+  font-size: 15px;
   @media screen and (min-width: 1000px) {
     font-size: 20px;
   }
