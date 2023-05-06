@@ -179,13 +179,13 @@ const Container = styled.div`
   flex-direction: column;
   position: fixed;
   overflow: hidden;
-  @media screen and (max-width: 801px) {
-    display: none;
-  }
 
   @media screen and (max-width: 1051px) {
     display: flex;
     width: 70px;
+  }
+  @media screen and (max-width: 799px) {
+    display: none;
   }
 `;
 const Logo = styled.div`

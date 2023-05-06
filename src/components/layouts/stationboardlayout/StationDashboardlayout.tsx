@@ -13,8 +13,8 @@ import { RxPerson } from "react-icons/rx";
 const StationDashboardlayout = () => {
   return (
     <div>
+      <StationSideNav />
       <Container>
-        <StationSideNav />
         <Out>
           <Outlet />
         </Out>
@@ -61,11 +61,17 @@ const MobileHold = styled.div`
 `;
 const Out = styled.div`
   width: calc(100% - 250px);
-  @media screen and (max-width: 801px) {
-    width: 100vw;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
   }
   @media screen and (max-width: 1051px) {
     width: calc(100vw - 70px);
+    margin-left: 70px;
+  }
+  @media screen and (max-width: 800px) {
+    width: 100vw;
+    margin-left: 0px;
   }
 `;
 const AtMobile = styled.div`
