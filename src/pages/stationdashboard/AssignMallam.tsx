@@ -37,7 +37,8 @@ const AssignMallam = () => {
           style={{
             fontWeight: "500",
             color: "grey",
-          }}>
+          }}
+        >
           Subscription Requests
         </div>
         <DynamicTablesHeads
@@ -69,7 +70,8 @@ const AssignMallam = () => {
           style={{
             fontWeight: "500",
             color: "grey",
-          }}>
+          }}
+        >
           Special Requests
         </div>
         <DynamicTablesHeads
@@ -104,6 +106,10 @@ const Container = styled.div`
   width: 100%;
   background-color: #a08f8f32;
   min-height: 100vh;
+
+  @media screen and (max-width: 1051px) {
+    width: calc(100vw - 70px);
+  }
 `;
 const Body = styled.div`
   margin-top: 17vh;
