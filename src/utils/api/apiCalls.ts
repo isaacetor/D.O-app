@@ -72,6 +72,11 @@ const allStations = async () => {
     .get(`${URL}/api/stations/all-stations`)
     .then((res) => res.data);
 };
+const allRequest = async () => {
+  return await axios
+    .get(`${URL}/api/requests`)
+    .then((res) => res.data);
+};
 
 const makeRequest = async ({ user, station }: any) => {
   return await axios
@@ -85,4 +90,4 @@ const makeRequest = async ({ user, station }: any) => {
       return err;
     });
 };
-export { AllUsers, allStations, loginUser, makeRequest, loginDirector };
+export { AllUsers, allStations, loginUser, makeRequest, loginDirector,allRequest };

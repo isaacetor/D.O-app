@@ -2,71 +2,35 @@ import react from "react"
 import { IoMdPerson } from "react-icons/io";
 import { TfiAngleRight } from "react-icons/tfi";
 import styled from "styled-components"
+import { allRequest } from "../../utils";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 const Recent=()=>{
+  const Product=useQuery({
+    queryKey:["Req"],
+    queryFn:allRequest,
+})
+console.log("product",Product)
+if(Product?.data?.loading) return <h2>Loading...</h2>
+
     return(
         <Two>
         <Tit>Recent Request</Tit>
-        <Pro>
-          <Ips>
-            <IoMdPerson/>
-          </Ips>
-          <Ad>
-            <Nam>Iya Sodiq</Nam>
-            <Ads>3, Asafa street</Ads>
-          </Ad>
-          <Ij>
-            <TfiAngleRight/>
-          </Ij>
-        </Pro>
-        <Pro>
-          <Ips>
-            <IoMdPerson/>
-          </Ips>
-          <Ad>
-            <Nam>Iya Sodiq</Nam>
-            <Ads>3, Asafa street</Ads>
-          </Ad>
-          <Ij>
-            <TfiAngleRight/>
-          </Ij>
-        </Pro>
-        <Pro>
-          <Ips>
-            <IoMdPerson/>
-          </Ips>
-          <Ad>
-            <Nam>Iya Sodiq</Nam>
-            <Ads>3, Asafa street</Ads>
-          </Ad>
-          <Ij>
-            <TfiAngleRight/>
-          </Ij>
-        </Pro>
-        <Pro>
-          <Ips>
-            <IoMdPerson/>
-          </Ips>
-          <Ad>
-            <Nam>Iya Sodiq</Nam>
-            <Ads>3, Asafa street</Ads>
-          </Ad>
-          <Ij>
-            <TfiAngleRight/>
-          </Ij>
-        </Pro>
-        <Pro>
-          <Ips>
-            <IoMdPerson/>
-          </Ips>
-          <Ad>
-            <Nam>Iya Sodiq</Nam>
-            <Ads>3, Asafa street</Ads>
-          </Ad>
-          <Ij>
-            <TfiAngleRight/>
-          </Ij>
-        </Pro>
+         {Product?.data?.data?.map((props:any)=>(
+                 <Pro>
+                 <Ips>
+                   <IoMdPerson/>
+                 </Ips>
+                 <Ad>
+                   <Nam>{props.name}</Nam>
+                   <Ads>{props.address}</Ads>
+                 </Ad>
+                 <Ij>
+                   <TfiAngleRight/>
+                 </Ij>
+               </Pro>
+          ))}
       </Two>
     )
 }
