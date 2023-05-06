@@ -39,7 +39,8 @@ const SideNav = () => {
                 setAccount(true);
                 setLogout(true);
                 navigate("/user/home");
-              }}>
+              }}
+            >
               <Navbars
                 pic={<HiHome />}
                 routeName="Home"
@@ -59,7 +60,8 @@ const SideNav = () => {
                 setAccount(true);
                 setLogout(true);
                 navigate("makepayment");
-              }}>
+              }}
+            >
               <Navbars
                 pic={<FaWallet />}
                 routeName="Make Payment"
@@ -78,7 +80,8 @@ const SideNav = () => {
                 setAccount(true);
                 setLogout(true);
                 navigate("makerequest");
-              }}>
+              }}
+            >
               <Navbars
                 pic={<GiCardPickup />}
                 routeName="Make Request"
@@ -97,7 +100,8 @@ const SideNav = () => {
                 setAccount(true);
                 setLogout(true);
                 navigate("feedback");
-              }}>
+              }}
+            >
               <Navbars
                 pic={<AiFillMessage />}
                 routeName="Support"
@@ -116,7 +120,8 @@ const SideNav = () => {
                 setAccount(false);
                 setLogout(true);
                 navigate("profile");
-              }}>
+              }}
+            >
               <Navbars
                 pic={<BsPersonFill />}
                 routeName="Profile"
@@ -136,7 +141,8 @@ const SideNav = () => {
               setLogout(false);
               dispatch(Logout());
               navigate("/");
-            }}>
+            }}
+          >
             <Navbars
               pic={<CiLogout />}
               routeName="Log Out"
@@ -172,7 +178,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: fixed;
+  /* position: fixed; */
   overflow: hidden;
 
   @media screen and (max-width: 1051px) {

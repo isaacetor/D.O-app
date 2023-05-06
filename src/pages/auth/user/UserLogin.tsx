@@ -49,10 +49,6 @@ const UserLogin = () => {
         didOpen: () => {
           Swal.showLoading();
         },
-
-        willClose: () => {
-          navigate("/user/home");
-        },
       });
     },
     onError: (error: any) => {
