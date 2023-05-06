@@ -24,7 +24,7 @@ const AssignMallam = () => {
   return (
     <Container>
       <StationHeader
-        bg="#a3a2a2"
+        bg="#3b393931"
         subtitle="View Request"
         title="Welcome, Pako Station"
       />
