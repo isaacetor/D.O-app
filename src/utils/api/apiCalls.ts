@@ -50,12 +50,19 @@ export const loginStation = async ({ email, password }: any) => {
     });
 };
 
-export const carrierRegister = async ({ name, phoneNumber, address }: any) => {
+export const carrierRegister = async ({
+  name,
+  phoneNumber,
+  address,
+  email,
+  stationID,
+}: any) => {
   return await axios
-    .post(`${URL}/api/stations/registermalam/:stationID`, {
+    .post(`${URL}/api/stations/registermalam/${stationID}`, {
       name,
       phoneNumber,
       address,
+      email,
     })
     .then((res) => {
       return res.data;

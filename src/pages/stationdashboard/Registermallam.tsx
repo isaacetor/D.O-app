@@ -20,6 +20,8 @@ import { registerCarrier } from "../../services/statemanagement/ReduxState";
 const Registermallam = () => {
   const stationame = useAppSelector((state) => state.stationdetail);
 
+  // console.log(stationame?._id.toString());
+
   //Peristing the data of our  carrier
   const navigate = useNavigate();
   const dispatch = UseAppDispatch();
@@ -29,6 +31,7 @@ const Registermallam = () => {
       name: yup.string().required("please enter a name"),
       address: yup.string().required("please enter a name"),
       phoneNumber: yup.string().required("please enter a name"),
+      email: yup.string().required("please enter an email"),
     })
     .required();
   type formData = yup.InferType<typeof carrierSchema>;
@@ -43,7 +46,16 @@ const Registermallam = () => {
 
   const posting = useMutation({
     mutationKey: ["create-carrier"],
-    mutationFn: carrierRegister,
+    mutationFn: async (data: any) => {
+      const result = await carrierRegister({
+        name: data.name,
+        phoneNumber: data.phoneNumber,
+        email: data.email,
+        address: data.address,
+        stationID: stationame?._id,
+      });
+      return result;
+    },
 
     onSuccess: (mycarrier: any) => {
       // dispatch(registerCarrier(mycarrier.data));
@@ -60,7 +72,7 @@ const Registermallam = () => {
       // handle error here
       Swal.fire({
         title: "creating carrier failed",
-        text: "please try again",
+        text: error?.response?.data?.message,
         icon: "error",
       });
     },
@@ -97,6 +109,10 @@ const Registermallam = () => {
                 type="text"
                 placeholder="Phone-Number"
               />
+            </Hold>
+            <Hold>
+              <HoldText>Email</HoldText>
+              <input {...register("email")} type="email" placeholder="email" />
             </Hold>
             <Hold>
               <HoldText>Address</HoldText>
