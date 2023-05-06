@@ -50,6 +50,18 @@ export const loginStation = async ({ email, password }: any) => {
     });
 };
 
+export const carrierRegister = async ({ name, phoneNumber, address }: any) => {
+  return await axios
+    .post(`${URL}/api/stations/registermalam/:stationID`, {
+      name,
+      phoneNumber,
+      address,
+    })
+    .then((res) => {
+      return res.data;
+    });
+};
+
 const loginDirector = async ({ email, name }: any) => {
   return await axios
     .post(`${URL}/api/director/login-director`, { email, name })

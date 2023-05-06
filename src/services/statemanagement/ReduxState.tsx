@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit/dist/createAction";
-import { stationData, userData } from "../../types";
+import { registercarrying, stationData, userData } from "../../types";
 import { agentData } from "../../types";
 import { agentInfo } from "../../types";
 const initialState = {
   userDetails: {} as userData | null,
   directorDetails: {} as agentData | null,
+
+  registerCarrier: {} as registercarrying | null,
 
   stationdetail: {} as stationData | null,
 
@@ -27,6 +29,9 @@ const ReduxState = createSlice({
       state.directorDetails = payload;
     },
 
+    registerCarrier: (state, { payload }: PayloadAction<registercarrying>) => {
+      state.registerCarrier = payload;
+    },
     stationLogin: (state, { payload }: PayloadAction<stationData>) => {
       state.stationdetail = payload;
     },
@@ -52,6 +57,7 @@ export const {
   createStations,
   upDateRequest,
   stationLogin,
+  registerCarrier,
 } = ReduxState.actions;
 
 // export const { logout, userLogin, upDateRequest, directorLogin } =
