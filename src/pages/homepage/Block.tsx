@@ -84,4 +84,8 @@ const Container = styled.div`
   align-items: center;
   flex-wrap: wrap;
   overflow: hidden;
+
+  @media screen and (max-width: 767px) {
+    border-radius: 0px;
+  }
 `;

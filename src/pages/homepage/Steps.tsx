@@ -14,8 +14,8 @@ const Steps = () => {
             <Focus>
               <Right>
                 <h1>
-                  A Personalized Dashboard for every user, whether a business or
-                  residential.
+                  A Personalized Dashboard for every user, whether a shop owner
+                  or resident.
                 </h1>
               </Right>
               <Left>
@@ -47,6 +47,10 @@ const Left = styled.div`
   p {
     width: 80%;
     font-size: 20px;
+
+    @media screen and (max-width: 425px) {
+      font-size: 18px;
+    }
   }
   button {
     padding: 13px 29px;
@@ -99,9 +103,10 @@ const Right = styled.div`
       width: 75%;
       font-size: 2.1rem;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 425px) {
       width: 80%;
       line-height: 2.5rem;
+      font-size: 2rem;
     }
   }
 `;

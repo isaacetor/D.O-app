@@ -53,4 +53,9 @@ const P = styled.div`
 const Picture = styled.img`
   width: 50px;
   height: 50px;
+
+  @media screen and (max-width: 425px) {
+    width: 40px;
+    height: 40px;
+  }
 `;

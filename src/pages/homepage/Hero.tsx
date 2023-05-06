@@ -177,6 +177,10 @@ const Left = styled.div`
     height: 62vh;
     width: 100%;
   }
+  @media screen and (max-width: 425px) {
+    height: 72vh;
+    width: 100%;
+  }
   @media screen and (max-width: 1440px) {
     min-width: 50%;
   }
