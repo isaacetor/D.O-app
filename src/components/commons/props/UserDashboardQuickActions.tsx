@@ -107,7 +107,7 @@ const UserDashboardQuick = () => {
 export default UserDashboardQuick;
 
 const InBody = styled.div`
-  width: 93%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
