@@ -145,6 +145,10 @@ const Top = styled.div`
   @media screen and (max-width: 1050px) {
     width: calc(100% - 20px);
   }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 const HoldC = styled.div<{ bg: string }>`
   display: flex;
