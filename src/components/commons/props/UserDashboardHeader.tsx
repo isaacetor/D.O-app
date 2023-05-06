@@ -139,7 +139,6 @@ const WithdrawButton = styled.button<{ btnDisplay: string }>`
 const Container = styled.div<{ height: string }>`
   width: calc(100% - 270px);
   height: ${({ height }) => height};
-
   @media screen and (max-width: 800px) {
     height: 100px;
   }
