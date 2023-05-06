@@ -12,9 +12,6 @@ const UserDashboardLayout = () => {
   return (
     <Container>
       <Sidenav />
-
-      <Outlet />
-
       <Outlet />
       <AtMobile>
         <MobileNav
