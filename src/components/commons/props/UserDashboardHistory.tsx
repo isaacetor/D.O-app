@@ -1,22 +1,34 @@
 import React from "react";
+import { RiNotificationBadgeFill } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const UserDashboardHistory = () => {
   return (
     <Pending>
       <div style={{ marginBottom: "10px", fontWeight: "bold" }}>History</div>
-      <PendingActions>
+      <NavLink to="makerequest" style={{ textDecoration: "none" }}>
+        <PendingActions>
+          <div style={{ fontSize: "13px", fontWeight: "600" }}>
+            See all request
+          </div>
+          <PendSign>
+            <RiNotificationBadgeFill />
+          </PendSign>
+        </PendingActions>
+      </NavLink>
+
+      <NavLink to="makepayment" style={{ textDecoration: "none" }}>
+           <PendingActions>
         <div style={{ fontSize: "13px", fontWeight: "600" }}>
-          Set transaction pin
+          See all Payments
         </div>
-        <PendSign>PENDING</PendSign>
+        <PendSign>
+          <RiNotificationBadgeFill />
+        </PendSign>
       </PendingActions>
-      <PendingActions>
-        <div style={{ fontSize: "13px", fontWeight: "600" }}>
-          Add default banks
-        </div>
-        <PendSign>PENDING</PendSign>
-      </PendingActions>
+          </NavLink>
+   
     </Pending>
   );
 };
@@ -40,8 +52,7 @@ const PendingActions = styled.div`
 const PendSign = styled.div`
   padding: 1px 7px;
   border-radius: 2px;
-  color: white;
+  color: green;
   font-weight: 600;
-  background-color: orange;
   font-size: 14px;
 `;

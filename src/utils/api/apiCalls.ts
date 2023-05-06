@@ -50,6 +50,25 @@ export const loginStation = async ({ email, password }: any) => {
     });
 };
 
+export const carrierRegister = async ({
+  name,
+  phoneNumber,
+  address,
+  email,
+  stationID,
+}: any) => {
+  return await axios
+    .post(`${URL}/api/stations/registermalam/${stationID}`, {
+      name,
+      phoneNumber,
+      address,
+      email,
+    })
+    .then((res) => {
+      return res.data;
+    });
+};
+
 const loginDirector = async ({ email, name }: any) => {
   return await axios
     .post(`${URL}/api/director/login-director`, { email, name })
@@ -64,8 +83,6 @@ const loginUser = async ({ email, password }: any) => {
       return res.data;
     });
 };
-
-const AllUsers = async () => {};
 
 const allStations = async () => {
   return await axios
@@ -90,4 +107,6 @@ const makeRequest = async ({ user, station }: any) => {
       return err;
     });
 };
-export { AllUsers, allStations, loginUser, makeRequest, loginDirector,allRequest };
+
+export {allStations, loginUser, makeRequest, loginDirector,allRequest };
+

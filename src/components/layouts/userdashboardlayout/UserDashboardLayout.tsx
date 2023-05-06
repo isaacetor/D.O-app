@@ -29,7 +29,7 @@ const UserDashboardLayout = () => {
           fifthText="Profile"
           fifthLink="profile"
           colours="#009700"
-          // popUp
+          popUp
         />
       </AtMobile>
     </Container>
@@ -38,28 +38,16 @@ const UserDashboardLayout = () => {
 
 export default UserDashboardLayout;
 
-const Body = styled.div`
-  @media screen and (max-width: 1051px) {
-    margin-left: 70px;
-    width: 100%;
-  }
-  @media screen and (max-width: 800px) {
-    margin-left: 0px;
-    width: 100%;
-  }
-`;
-
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-
   @media screen and (max-width: 1051px) {
-    /* width: calc(100vw - 70px); */
     justify-content: flex-start;
   }
-  /* @media screen and (max-width: 800px) {
+  @media screen and (max-width: 800px) {
     width: 100%;
-  } */
+    justify-content: center;
+  }
 `;
 
 const AtMobile = styled.div`

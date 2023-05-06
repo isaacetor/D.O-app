@@ -81,6 +81,9 @@ const Main = styled.div<{ bg: string }>`
     width: 100%;
     /* height: fit-content; */
   }
+  @media screen and (max-width: 1051px) {
+    width: calc(100vw - 70px);
+  }
 `;
 const Left = styled.div`
   display: flex;

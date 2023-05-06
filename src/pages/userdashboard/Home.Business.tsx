@@ -145,6 +145,10 @@ const Top = styled.div`
   @media screen and (max-width: 1050px) {
     width: calc(100% - 20px);
   }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 const HoldC = styled.div<{ bg: string }>`
   display: flex;
@@ -175,6 +179,10 @@ const Container = styled.div`
   @media screen and (max-width: 1024px) {
     width: calc(100vw - 70px);
   }
+  /* @media screen and (max-width: 800px) {
+    width: 100%;
+    background-color: red;
+  } */
 `;
 const Body = styled.div`
   width: 100%;
@@ -200,4 +208,11 @@ const Body = styled.div`
     align-items: center;
     justify-content: center;
   } */
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    margin-top: 130px;
+    /* margin-left: 0px; */
+    align-items: center;
+    justify-content: center;
+  }
 `;

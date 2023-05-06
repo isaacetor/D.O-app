@@ -8,20 +8,7 @@ import {
   StationDashboardlayout,
   StationAuthLayout,
 } from "../components";
-import {
-  AgentRegister,
-  AgentLogin,
-  Feedback,
-  Landing,
-  MakePayment,
-  MakeRequest,
-  Profile,
-  StationHome,
-  UserHome,
-  UserLogin,
-  UserRegister,
-  Stationlogin,
-} from "../pages";
+
 import Stations from "../pages/directordashboard/DirectorStation";
 import AgentHome from "../pages/directordashboard/DirectorHome";
 import { ErrorBoundary, NotFound } from "../utils";
@@ -33,6 +20,19 @@ import DirectorAuth from "../components/layouts/directorAurhLayout/DirectorAuth"
 import { useAppSelector } from "../services/statemanagement/Store";
 import { useEffect } from "react";
 import { PrivateRoute } from "./privateroute";
+
+const AgentRegister = lazy(() => import("../pages/auth/agent/AgentRegister"));
+const AgentLogin = lazy(() => import("../pages/auth/agent/AgentLogin"));
+const Feedback = lazy(() => import("../pages/userdashboard/Feedback"));
+const Landing = lazy(() => import("../pages/homepage/Landing"));
+const MakePayment = lazy(() => import("../pages/userdashboard/MakePayment"));
+const MakeRequest = lazy(() => import("../pages/userdashboard/MakeRequest"));
+const Profile = lazy(() => import("../pages/userdashboard/Profile"));
+const StationHome = lazy(() => import("../pages/stationdashboard/StationHome"));
+const UserHome = lazy(() => import("../pages/userdashboard/UserHome"));
+const UserLogin = lazy(() => import("../pages/auth/user/UserLogin"));
+const UserRegister = lazy(() => import("../pages/userdashboard/UserHome"));
+const Stationlogin = lazy(() => import("../pages/auth/user/UserLogin"));
 
 const PrivateRouteConfig = () => {
   const navigate = useNavigate();
@@ -58,7 +58,12 @@ export const element = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Landing />,
+        // element: <Landing />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Landing />
+          </Suspense>
+        ),
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
@@ -76,31 +81,58 @@ export const element = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <UserHome />,
+        // element: <UserHome />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <UserHome />
+          </Suspense>
+        ),
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
       {
         path: "makepayment",
-        element: <MakePayment />,
+
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <MakePayment />
+          </Suspense>
+        ),
+
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
       {
         path: "makerequest",
-        element: <MakeRequest />,
+        // element: <MakeRequest />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <MakeRequest />
+          </Suspense>
+        ),
+
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
       {
         path: "feedback",
-        element: <Feedback />,
+        // element: <Feedback />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Feedback />
+          </Suspense>
+        ),
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
       {
         path: "profile",
-        element: <Profile />,
+
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Profile />
+          </Suspense>
+        ),
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
@@ -114,7 +146,12 @@ export const element = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <UserRegister />,
+
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <UserRegister />
+          </Suspense>
+        ),
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
@@ -126,7 +163,12 @@ export const element = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <UserLogin />,
+        // element: <UserLogin />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <UserLogin />,
+          </Suspense>
+        ),
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
@@ -160,14 +202,25 @@ export const element = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <AgentRegister />,
+        // element: <AgentRegister />,
+
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <AgentRegister />
+          </Suspense>
+        ),
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
       {
         path: "/director/register/login",
         index: true,
-        element: <AgentLogin />,
+
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <AgentLogin />
+          </Suspense>
+        ),
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
@@ -180,7 +233,12 @@ export const element = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Stationlogin />,
+
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Stationlogin />
+          </Suspense>
+        ),
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
@@ -195,7 +253,12 @@ export const element = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <StationHome />,
+
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <StationHome />
+          </Suspense>
+        ),
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },

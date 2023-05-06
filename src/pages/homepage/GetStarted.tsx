@@ -40,6 +40,7 @@ const Hero = () => {
               heading="Close a request"
               par="After trash pick up, you can close the request to show that your trash has been picked up"
             />
+            <Picture2 src={pic} />
           </Cards>
         </Wrapper>
       </Container>
@@ -64,7 +65,7 @@ const Wrapper = styled.div`
   }
 `;
 const H = styled.div`
-  font-size: 31px;
+  font-size: 28px;
   font-weight: bold;
   color: #333333;
   text-transform: capitalize;

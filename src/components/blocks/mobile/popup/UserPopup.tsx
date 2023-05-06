@@ -73,7 +73,7 @@ const Popup = () => {
               </div>
               <div
                 style={{
-                  fontSize: "14px",
+                  fontSize: "13px",
                   color: "gray",
                 }}>{`Request for trash pickup at special events around your area`}</div>
             </Ups>
@@ -94,7 +94,7 @@ const Popup = () => {
               </div>
               <div
                 style={{
-                  fontSize: "14px",
+                  fontSize: "13px",
                   color: "gray",
                 }}>
                 {"Keep track of your request transactions"}
@@ -130,17 +130,19 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
 `;
 const Action1 = styled.div`
-  margin-top: 5%;
-  height: 28%;
+  margin-top: 2%;
+  height: 25%;
   width: 90%;
   display: flex;
   gap: 5%;
   cursor: pointer;
 `;
 const Action2 = styled.div`
-  height: 40%;
+  height: 50%;
   width: 90%;
   border-bottom: 1px solid #a0a0a05a;
   border-top: 1px solid #a0a0a05a;
@@ -151,9 +153,10 @@ const Action2 = styled.div`
   align-items: center;
 `;
 const Action3 = styled.div`
-  height: 27%;
+  height: 25%;
   width: 90%;
   cursor: pointer;
+  margin-bottom: 2%;
 `;
 const Left1 = styled.div`
   width: 75%;

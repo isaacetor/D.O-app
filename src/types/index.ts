@@ -93,6 +93,12 @@ export type stationHeader = {
   subtitle: string;
 };
 
+export type registercarrying = {
+  name: string;
+  phoneNumber: number;
+  address: string;
+};
+
 export type mobileNav = {
   firstIcon: any;
   firstText: string;

@@ -7,17 +7,20 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { Loading, allStations, createUser } from "../../../utils";
 import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 
 const UserRegister = () => {
   const navigate = useNavigate();
 
   // get all stations
+
   const { data } = useQuery({
     queryKey: ["stationId"],
     queryFn: allStations,
   });
 
-  // console.log(`this is the stations`, data);
+  //force all stations to run anytime the page is opened
+  useEffect(() => {}, [data]);
 
   //create user
   const userSchema = yup
@@ -34,7 +37,6 @@ const UserRegister = () => {
   const {
     handleSubmit,
     formState: { errors },
-    reset,
     register,
   } = useForm<formData>({
     resolver: yupResolver(userSchema),
@@ -61,7 +63,6 @@ const UserRegister = () => {
 
   const Submit = handleSubmit(async (data: any) => {
     posting.mutate(data);
-    // reset()
   });
 
   return (

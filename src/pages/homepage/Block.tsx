@@ -38,7 +38,7 @@ const Left = styled.div`
   h1 {
     font-size: 2.3rem;
     margin: 0;
-    width: 75%;
+    /* width: 75%; */
     text-transform: capitalize;
     margin-bottom: 30px;
     font-weight: 300;
@@ -84,4 +84,8 @@ const Container = styled.div`
   align-items: center;
   flex-wrap: wrap;
   overflow: hidden;
+
+  @media screen and (max-width: 767px) {
+    border-radius: 0px;
+  }
 `;

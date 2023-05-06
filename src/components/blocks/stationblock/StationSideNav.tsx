@@ -23,114 +23,92 @@ const StationSideNav = () => {
   // const dispatch = UseAppDispatch();
 
   return (
-    <div>
-      <Container>
-        <Wrapper>
-          <Logo>Ecobin</Logo>
+    <Container>
+      <Wrapper>
+        <Logo>Ecobin</Logo>
 
-          <Bars>
-            <div
-              onClick={() => {
-                setHome(false);
+        <Bars>
+          <div
+            onClick={() => {
+              setHome(false);
 
-                setWallet(true);
-                setNotify(true);
-                setSupport(true);
-                setAccount(true);
-                setLogout(true);
-                navigate("/station");
-              }}
-            >
-              <Navbars
-                pic={<HiHome />}
-                routeName="Dashboard"
-                cl={home ? "#f1f1f1" : "white"}
-                bd={home ? "" : "4px solid white"}
-                hov={home ? " #03B903F" : ""}
-              />
-            </div>
+              setWallet(true);
+              setNotify(true);
+              setSupport(true);
+              setAccount(true);
+              setLogout(true);
+              navigate("/station");
+            }}
+          >
+            <Navbars
+              pic={<HiHome />}
+              routeName="Dashboard"
+              cl={home ? "#f1f1f1" : "white"}
+              bd={home ? "" : "4px solid white"}
+              hov={home ? " #03B903F" : ""}
+            />
+          </div>
 
-            <div
-              onClick={() => {
-                setHome(true);
+          <div
+            onClick={() => {
+              setHome(true);
 
-                setWallet(false);
-                setNotify(true);
-                setSupport(true);
-                setAccount(true);
-                setLogout(true);
-                navigate("mallam");
-              }}
-            >
-              <Navbars
-                pic={<FaWallet />}
-                routeName="Register Carrier"
-                cl={wallet ? "#f1f1f1" : "white"}
-                bd={wallet ? "" : "4px solid white"}
-                hov={wallet ? " #03B903" : ""}
-              />
-            </div>
-            <div
-              onClick={() => {
-                setHome(true);
+              setWallet(false);
+              setNotify(true);
+              setSupport(true);
+              setAccount(true);
+              setLogout(true);
+              navigate("mallam");
+            }}
+          >
+            <Navbars
+              pic={<FaWallet />}
+              routeName="Register Carrier"
+              cl={wallet ? "#f1f1f1" : "white"}
+              bd={wallet ? "" : "4px solid white"}
+              hov={wallet ? " #03B903" : ""}
+            />
+          </div>
+          <div
+            onClick={() => {
+              setHome(true);
 
-                setWallet(true);
-                setNotify(false);
-                setSupport(true);
-                setAccount(true);
-                setLogout(true);
-                navigate("notify");
-              }}
-            >
-              <Navbars
-                pic={<GiCardPickup />}
-                routeName="Asssign Carrier"
-                cl={notify ? "#f1f1f1" : "white"}
-                bd={notify ? "" : "4px solid white"}
-                hov={notify ? " #03B903" : ""}
-              />
-            </div>
-            <div
-              onClick={() => {
-                setHome(true);
+              setWallet(true);
+              setNotify(false);
+              setSupport(true);
+              setAccount(true);
+              setLogout(true);
+              navigate("notify");
+            }}
+          >
+            <Navbars
+              pic={<GiCardPickup />}
+              routeName="Asssign Carrier"
+              cl={notify ? "#f1f1f1" : "white"}
+              bd={notify ? "" : "4px solid white"}
+              hov={notify ? " #03B903" : ""}
+            />
+          </div>
+          <div
+            onClick={() => {
+              setHome(true);
 
-                setWallet(true);
-                setNotify(true);
-                setSupport(false);
-                setAccount(true);
-                setLogout(true);
-                navigate("assign");
-              }}
-            >
-              <Navbars
-                pic={<AiFillMessage />}
-                routeName="View Request"
-                cl={support ? "#f1f1f1" : "white"}
-                bd={support ? "" : "4px solid white"}
-                hov={support ? " #03B903" : ""}
-              />
-            </div>
-            <div
-              onClick={() => {
-                setHome(true);
-
-                setWallet(true);
-                setNotify(true);
-                setSupport(true);
-                setAccount(false);
-                setLogout(true);
-                navigate("profile");
-              }}
-            >
-              <Navbars
-                pic={<BsPersonFill />}
-                routeName="Profile"
-                cl={account ? "#f1f1f1" : "white"}
-                bd={account ? "" : "4px solid white"}
-                hov={account ? " #03B903" : ""}
-              />
-            </div>
-          </Bars>
+              setWallet(true);
+              setNotify(true);
+              setSupport(false);
+              setAccount(true);
+              setLogout(true);
+              navigate("assign");
+            }}
+          >
+            <Navbars
+              pic={<AiFillMessage />}
+              routeName="View Request"
+              cl={support ? "#f1f1f1" : "white"}
+              bd={support ? "" : "4px solid white"}
+              hov={support ? " #03B903" : ""}
+            />
+          </div>
           <div
             onClick={() => {
               setHome(true);
@@ -138,23 +116,43 @@ const StationSideNav = () => {
               setWallet(true);
               setNotify(true);
               setSupport(true);
-              setAccount(true);
-              setLogout(false);
-              // dispatch(LogOut());
-              navigate("/");
+              setAccount(false);
+              setLogout(true);
+              navigate("profile");
             }}
           >
             <Navbars
-              pic={<CiLogout />}
-              routeName="Log Out"
-              cl={logout ? "#f1f1f1" : "white"}
-              bd={logout ? "" : "4px solid white"}
-              hov={logout ? " #03B903" : ""}
+              pic={<BsPersonFill />}
+              routeName="Profile"
+              cl={account ? "#f1f1f1" : "white"}
+              bd={account ? "" : "4px solid white"}
+              hov={account ? " #03B903" : ""}
             />
           </div>
-        </Wrapper>
-      </Container>
-    </div>
+        </Bars>
+        <div
+          onClick={() => {
+            setHome(true);
+
+            setWallet(true);
+            setNotify(true);
+            setSupport(true);
+            setAccount(true);
+            setLogout(false);
+            // dispatch(LogOut());
+            navigate("/");
+          }}
+        >
+          <Navbars
+            pic={<CiLogout />}
+            routeName="Log Out"
+            cl={logout ? "#f1f1f1" : "white"}
+            bd={logout ? "" : "4px solid white"}
+            hov={logout ? " #03B903" : ""}
+          />
+        </div>
+      </Wrapper>
+    </Container>
   );
 };
 
@@ -173,12 +171,6 @@ const Container = styled.div`
   width: 250px;
   height: 100vh;
   background-color: #009700;
-  /* background: rgb(3, 185, 3);
-  background: linear-gradient(
-    180deg,
-    rgba(3, 185, 3, 1) 17%,
-    rgba(0, 151, 0, 1) 76%
-  ); */
   z-index: 10;
   padding-top: 10px;
   display: flex;
@@ -188,9 +180,13 @@ const Container = styled.div`
   position: fixed;
   overflow: hidden;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1051px) {
+    display: flex;
+    width: 70px;
+  }
+  @media screen and (max-width: 799px) {
     display: none;
-  } ;
+  }
 `;
 const Logo = styled.div`
   color: white;

@@ -1,37 +1,66 @@
 import React from "react";
 import styled from "styled-components";
 
-import { useAppSelector } from "../../services/statemanagement/Store";
+import {
+  UseAppDispatch,
+  useAppSelector,
+} from "../../services/statemanagement/Store";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import Globalbutton from "../../components/commons/props/Globalbutton";
+import { carrierRegister } from "../../utils";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { registerCarrier } from "../../services/statemanagement/ReduxState";
 
+//for the station name
 const Registermallam = () => {
-  const userSchema = yup
+  const stationame = useAppSelector((state) => state.stationdetail);
+
+  // console.log(stationame?._id.toString());
+
+  //Peristing the data of our  carrier
+  const navigate = useNavigate();
+  const dispatch = UseAppDispatch();
+
+  const carrierSchema = yup
     .object({
       name: yup.string().required("please enter a name"),
       address: yup.string().required("please enter a name"),
       phoneNumber: yup.string().required("please enter a name"),
+      email: yup.string().required("please enter an email"),
     })
     .required();
-  type formData = yup.InferType<typeof userSchema>;
+  type formData = yup.InferType<typeof carrierSchema>;
   const {
     handleSubmit,
     formState: { errors },
     reset,
     register,
   } = useForm<formData>({
-    resolver: yupResolver(userSchema),
+    resolver: yupResolver(carrierSchema),
   });
 
   const posting = useMutation({
     mutationKey: ["create-carrier"],
-    mutationFn: Registermallam,
+    mutationFn: async (data: any) => {
+      const result = await carrierRegister({
+        name: data.name,
+        phoneNumber: data.phoneNumber,
+        email: data.email,
+        address: data.address,
+        stationID: stationame?._id,
+      });
+      return result;
+    },
 
-    onSuccess: (myData: any) => {
+    onSuccess: (mycarrier: any) => {
+      // dispatch(registerCarrier(mycarrier.data));
+      console.log("This is the mallam data", mycarrier.data);
+
       Swal.fire({
         icon: "success",
         title: "Carrier created",
@@ -43,7 +72,7 @@ const Registermallam = () => {
       // handle error here
       Swal.fire({
         title: "creating carrier failed",
-        text: "please try again",
+        text: error?.response?.data?.message,
         icon: "error",
       });
     },
@@ -57,28 +86,44 @@ const Registermallam = () => {
   return (
     <Cont>
       <Wrap>
-        <MainHead>Pako station</MainHead>
+        <MainHead>{stationame?.station}</MainHead>
         <Main>
           <Details>
             <p>Register Carriers</p>
           </Details>
         </Main>
-        <Info>
+        <Info onSubmit={Submit}>
           <Infos>
             <Hold>
               <HoldText>Name of Carrier</HoldText>
-              <input type="text" placeholder="Full name" />
+              <input
+                {...register("name")}
+                type="text"
+                placeholder="Full name"
+              />
             </Hold>
             <Hold>
               <HoldText>Phone Number</HoldText>
-              <input type="text" placeholder="Phone-Number" />
+              <input
+                {...register("phoneNumber")}
+                type="text"
+                placeholder="Phone-Number"
+              />
+            </Hold>
+            <Hold>
+              <HoldText>Email</HoldText>
+              <input {...register("email")} type="email" placeholder="email" />
             </Hold>
             <Hold>
               <HoldText>Address</HoldText>
-              <input type="text" placeholder="Address" />
+              <input
+                {...register("address")}
+                type="text"
+                placeholder="Address"
+              />
             </Hold>
           </Infos>
-          <ButHold>
+          <ButHold type="submit">
             <Globalbutton
               bg="#03b903"
               col="#fff"
@@ -120,8 +165,6 @@ const Wrap = styled.div`
     width: 100%;
     /* height: 100vh; */
     margin-left: 20px;
-    /* margin-bottom: 100px; */
-    /* padding: 20px; */
   }
 `;
 
@@ -162,7 +205,7 @@ const Details = styled.div`
     }
   }
 `;
-const Info = styled.div`
+const Info = styled.form`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -221,6 +264,9 @@ const HoldText = styled.div`
     font-size: 14px;
   }
 `;
-const ButHold = styled.div`
+const ButHold = styled.button`
   display: flex;
+  outline: none;
+  border: none;
+  background-color: transparent;
 `;
