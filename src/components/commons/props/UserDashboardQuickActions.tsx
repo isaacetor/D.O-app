@@ -123,7 +123,6 @@ const QuickActions = styled.div`
   }
 `;
 const QuickContain = styled.div`
-  /* width: 100vw; */
   background: rgb(3, 185, 3);
   background: linear-gradient(
     163deg,
@@ -137,8 +136,8 @@ const QuickContain = styled.div`
   overflow: hidden;
 
   @media screen and (max-width: 800px) {
-    /* width: 100%; */
-    padding: 50px 0;
+    width: 100%;
+    /* padding: 50px 0; */
   }
 `;
 const QuickWrap = styled.div`
@@ -147,7 +146,6 @@ const QuickWrap = styled.div`
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
-
   padding: 55px 0;
 `;
 const QuickComponent = styled.div`
@@ -160,8 +158,8 @@ const QuickComponent = styled.div`
   @media screen and (min-width: 800px) {
     width: 50%;
   }
-  @media screen and (max-width: 799px) {
-    width: 60%;
+  @media screen and (max-width: 750px) {
+    width: 100%;
     position: relative;
     top: 50px;
     left: 30px;
@@ -178,6 +176,13 @@ const QuickImage = styled.div`
   p {
     color: #fff;
     font-size: 16px;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 130px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100px;
   }
 `;
 const HText = styled.div`
