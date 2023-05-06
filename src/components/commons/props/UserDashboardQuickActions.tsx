@@ -59,7 +59,7 @@ const UserDashboardQuick = () => {
             <QuickComponent>
               <HText>Make a Request with just a click</HText>
 
-              <LText style={{ fontSize: "20px" }}>
+              <LText style={{ fontSize: "19px" }}>
                 Is your waste full? request for trash pick up now!
               </LText>
 
@@ -105,8 +105,9 @@ const UserDashboardQuick = () => {
   );
 };
 export default UserDashboardQuick;
+
 const InBody = styled.div`
-  width: 93%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -177,13 +178,6 @@ const QuickImage = styled.div`
     color: #fff;
     font-size: 16px;
   }
-
-  @media screen and (max-width: 800px) {
-    width: 130px;
-  }
-  @media screen and (max-width: 500px) {
-    width: 100px;
-  }
 `;
 const HText = styled.div`
   font-size: 2.7rem;
@@ -195,11 +189,17 @@ const HText = styled.div`
   @media screen and (max-width: 799px) {
     font-size: 30px;
   }
+  @media screen and (max-width: 410px) {
+    line-height: 40px;
+  }
 `;
 const LText = styled.div`
   font-size: 12px;
   color: #fdfdfddd;
   @media screen and (min-width: 800px) {
     font-size: 22px;
+  }
+  @media screen and (min-width: 400px) {
+    font-size: 18px;
   }
 `;

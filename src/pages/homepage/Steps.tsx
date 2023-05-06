@@ -44,7 +44,6 @@ export default Steps;
 
 const Left = styled.div`
   width: 50%;
-
   p {
     width: 80%;
     font-size: 20px;
@@ -53,11 +52,11 @@ const Left = styled.div`
     padding: 13px 29px;
     margin-top: 40px;
     font-size: 14.5px;
-    border: 2px solid #fff;
+    border: 2px solid #03b903;
     background-color: transparent;
     text-transform: capitalize;
     transition: all ease-in-out 0.2s;
-    color: rgb(247, 247, 247);
+    color: #03b903;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -122,18 +121,15 @@ const Bottom = styled.div`
   height: 90vh;
   margin-top: 30px;
   margin-bottom: 30px;
-
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
-
   @media screen and (max-width: 768px) {
     height: 50vh;
   }
 `;
-
 const Wrapper = styled.div`
   width: 90%;
   margin: auto;
@@ -141,7 +137,8 @@ const Wrapper = styled.div`
 `;
 const Container = styled.div`
   width: 100%;
-  background: #03b903;
+  background: #f5f5f5a6;
   margin-top: 40px;
-  color: rgb(247, 247, 247);
+  /* color: rgb(247, 247, 247); */
+  color: #02b102;
 `;
