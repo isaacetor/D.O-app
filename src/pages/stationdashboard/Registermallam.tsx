@@ -20,7 +20,7 @@ import { registerCarrier } from "../../services/statemanagement/ReduxState";
 const Registermallam = () => {
   const stationame = useAppSelector((state) => state.stationdetail);
 
-  // console.log(stationame?._id.toString());
+  console.log("station: ", stationame);
 
   //Peristing the data of our  carrier
   const navigate = useNavigate();

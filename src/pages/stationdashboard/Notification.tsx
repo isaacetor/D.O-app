@@ -3,25 +3,17 @@ import styled from "styled-components";
 import StationHeader from "../../components/commons/props/StationHeader";
 import DynamicTablesHeads from "../../components/commons/props/DynamicTablesHeads";
 import DynamicTablesData from "../../components/commons/props/DynamicTablesData";
-
-const dummy = [
-  { name: "Hakeem Ziyech", phone: "09078645310", amount: 5, status: "Free" },
-  {
-    name: "Achraft Hakimi",
-    phone: "08078776655",
-    amount: 7,
-    status: "On Duty",
-  },
-  {
-    name: "Yusuf En Nesir",
-    phone: "09078645310",
-    amount: 3,
-    status: "On Duty",
-  },
-  { name: "Cenk Tosun", phone: "09089897656", amount: 4, status: "Free" },
-];
+import { useQuery } from "@tanstack/react-query";
+import { getallcarrier } from "../../utils";
 
 const Notification = () => {
+  //querying the data
+  const Allcarriers = useQuery({
+    queryKey: ["Allmallams"],
+    queryFn: getallcarrier,
+  });
+  console.log("This is all carriers", Allcarriers?.data?.data);
+
   return (
     <Container>
       <StationHeader
@@ -37,10 +29,12 @@ const Notification = () => {
           title4="Status"
           title5="Activity"
         />
-        {dummy.map((props) => (
+
+        {Allcarriers?.data?.data.map((props: any) => (
           <DynamicTablesData
+            // key={props._id}
             content1={props.name}
-            content2={props.phone}
+            content2={props.phoneNumber}
             content3={`.  total (${props.amount})`}
             content4={props.status === "Free" ? "" : "5"}
             buttons
