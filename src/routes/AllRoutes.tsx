@@ -203,7 +203,6 @@ export const element = createBrowserRouter([
       {
         index: true,
         // element: <AgentRegister />,
-
         element: (
           <Suspense fallback={<div>Loading...</div>}>
             <AgentRegister />

@@ -4,6 +4,7 @@ import StationHeader from "../../components/commons/props/StationHeader";
 import DynamicTablesHeads from "../../components/commons/props/DynamicTablesHeads";
 import DynamicTablesData from "../../components/commons/props/DynamicTablesData";
 import BinaryButton from "../../components/commons/props/BinaryButton";
+import { useAppSelector } from "../../services/statemanagement/Store";
 
 const dummy = [
   {
@@ -21,6 +22,10 @@ const dummy = [
 ];
 
 const AssignMallam = () => {
+  const station = useAppSelector((state) => state.stationdetail);
+  // const station = useAppSelector((state) => state);
+  console.log("station is :", station);
+
   return (
     <Container>
       <StationHeader
@@ -37,12 +42,11 @@ const AssignMallam = () => {
           style={{
             fontWeight: "500",
             color: "grey",
-          }}
-        >
+          }}>
           Subscription Requests
         </div>
         <DynamicTablesHeads
-          title1="ID"
+          title1="Address"
           title2="Date"
           title3="User"
           title4="Assigned"
@@ -70,12 +74,11 @@ const AssignMallam = () => {
           style={{
             fontWeight: "500",
             color: "grey",
-          }}
-        >
+          }}>
           Special Requests
         </div>
         <DynamicTablesHeads
-          title1="ID"
+          title1="Address"
           title2="Date"
           title3="User"
           title4="Assigned"
