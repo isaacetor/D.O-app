@@ -178,7 +178,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* position: fixed; */
+  position: fixed;
   overflow: hidden;
 
   @media screen and (max-width: 1051px) {

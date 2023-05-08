@@ -12,8 +12,8 @@ import Swal from "sweetalert2";
 import axios from "axios";
 
 const BusinessHome = () => {
-  const user = useAppSelector((state) => state.userDetails);
-  const station = useAppSelector((state) => state.userDetails?.station);
+  const user = useAppSelector((state) => state?.userDetails);
+  const station = useAppSelector((state) => state?.userDetails?.station);
 
   return (
     <Container>
