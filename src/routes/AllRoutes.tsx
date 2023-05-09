@@ -58,9 +58,14 @@ export const element = createBrowserRouter([
     children: [
       {
         index: true,
-        // element: <Landing />,
+
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <Landing />
           </Suspense>
         ),
