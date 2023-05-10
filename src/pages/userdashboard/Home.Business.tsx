@@ -12,8 +12,8 @@ import Swal from "sweetalert2";
 import axios from "axios";
 
 const BusinessHome = () => {
-  const user = useAppSelector((state) => state.userDetails);
-  const station = useAppSelector((state) => state.userDetails?.station);
+  const user = useAppSelector((state) => state?.userDetails);
+  const station = useAppSelector((state) => state?.userDetails?.station);
 
   return (
     <Container>
@@ -140,7 +140,8 @@ const BusinessHome = () => {
 
 export default BusinessHome;
 const Top = styled.div`
-  width: 95%;
+  width: 90%;
+  margin-top: 30px;
 
   @media screen and (max-width: 1050px) {
     width: calc(100% - 20px);

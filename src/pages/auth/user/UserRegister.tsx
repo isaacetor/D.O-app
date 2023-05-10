@@ -45,24 +45,21 @@ const UserRegister = () => {
   const posting = useMutation({
     mutationKey: ["newUser"],
     mutationFn: createUser,
-
     onSuccess: (myData: any) => {
       Swal.fire({
-        // title: "Registration succesfull",
-        title: `${console.log(myData)}`,
+        title: "Registration succesfull",
         html: "Redirecting you to login",
         timer: 2000,
         timerProgressBar: true,
-
         willClose: () => {
           navigate("/user/login");
         },
       });
     },
   });
-
   const Submit = handleSubmit(async (data: any) => {
     posting.mutate(data);
+    // reset()
   });
 
   return (
@@ -105,7 +102,7 @@ const UserRegister = () => {
             <InputHold>
               <span>Select Station</span>
 
-              <select {...register("stationName")}>
+              <select {...register("stationName")} required>
                 {data?.data?.map((props: any) => (
                   <option value={props?.station} key={props?._id}>
                     {props?.station}

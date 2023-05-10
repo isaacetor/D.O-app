@@ -89,6 +89,16 @@ const allStations = async () => {
     .get(`${URL}/api/stations/all-stations`)
     .then((res) => res.data);
 };
+const allRequest = async () => {
+  return await axios.get(`${URL}/api/requests`).then((res) => res.data);
+};
+
+const getallcarrier = async () => {
+  return await axios
+    .get(`${URL}/api/stations/all-malams`)
+    .then((res) => res.data)
+    .catch((err) => err.message);
+};
 
 const makeRequest = async ({ user, station }: any) => {
   return await axios
@@ -102,4 +112,11 @@ const makeRequest = async ({ user, station }: any) => {
       return err;
     });
 };
-export { allStations, loginUser, makeRequest, loginDirector };
+export {
+  allStations,
+  loginUser,
+  makeRequest,
+  loginDirector,
+  getallcarrier,
+  allRequest,
+};

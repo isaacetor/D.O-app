@@ -147,7 +147,8 @@ const QuickWrap = styled.div`
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 55px 0;
+  padding: 90px 0;
+
 `;
 const QuickComponent = styled.div`
   color: white;
@@ -201,5 +202,6 @@ const LText = styled.div`
   }
   @media screen and (min-width: 400px) {
     font-size: 18px;
+    width: 80%;
   }
 `;
