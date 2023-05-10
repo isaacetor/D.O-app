@@ -25,8 +25,7 @@ const UserDashboardHeader: FC<userHeader> = ({
               <Eye
                 onClick={() => {
                   setShow(!show);
-                }}
-              >
+                }}>
                 {show ? (
                   <AiFillEye
                     style={{
@@ -152,7 +151,7 @@ const Container = styled.div<{ height: string }>`
   position: fixed;
   top: 0px;
   right: 0;
-  z-index: 20;
+  /* z-index: 20; */
 
   @media screen and (max-width: 1051px) {
     width: calc(100vw - 70px);

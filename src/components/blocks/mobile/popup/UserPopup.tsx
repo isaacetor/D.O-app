@@ -77,6 +77,7 @@ const Popup = () => {
                   color: "gray",
                 }}>{`Request for trash pickup at special events around your area`}</div>
             </Ups>
+            <br />
             <Downs>
               <WrapDown>
                 <input placeholder="Address" type="text" />
@@ -86,7 +87,6 @@ const Popup = () => {
           </Wrap>
         </Action2>
         <Action3>
-          <br />
           <LastWrap>
             <div>
               <div style={{ fontWeight: "600", fontSize: "17px" }}>
@@ -103,6 +103,7 @@ const Popup = () => {
             <button>GO</button>
           </LastWrap>
         </Action3>
+        <Action4>Log Out</Action4>
       </Wrapper>
     </Container>
     //02tvseries.com
@@ -122,7 +123,7 @@ const Container = styled.div`
   align-items: center;
 `;
 const Wrapper = styled.div`
-  height: 50%;
+  /* height: 60%; */
   width: 80%;
   background-color: white;
   color: gray;
@@ -130,19 +131,21 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
+  z-index: 5;
 `;
 const Action1 = styled.div`
   margin-top: 2%;
-  height: 25%;
+  height: fit-content;
   width: 90%;
   display: flex;
   gap: 5%;
   cursor: pointer;
 `;
 const Action2 = styled.div`
-  height: 50%;
+  height: fit-content;
   width: 90%;
   border-bottom: 1px solid #a0a0a05a;
   border-top: 1px solid #a0a0a05a;
@@ -151,12 +154,23 @@ const Action2 = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;
 const Action3 = styled.div`
-  height: 25%;
+  height: fit-content;
   width: 90%;
   cursor: pointer;
-  margin-bottom: 2%;
+`;
+const Action4 = styled.div`
+  height: fit-content;
+  width: 90%;
+  cursor: pointer;
+  font-weight: 600;
+  border-top: 1px solid #a0a0a05a;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;
 const Left1 = styled.div`
   width: 75%;
@@ -173,8 +187,8 @@ const Right1 = styled.div`
   justify-content: flex-end;
   align-items: center;
   button {
-    width: 70%;
-    height: 45%;
+    width: 50px;
+    height: 40px;
     border: none;
     border-radius: 5px;
     background-color: #00a078;
@@ -222,12 +236,12 @@ const Downs = styled.div`
 `;
 const WrapDown = styled.div`
   width: 100%;
-  height: 70%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   input {
-    height: 85%;
+    height: 39px;
     width: 65%;
     border: none;
     outline: none;
@@ -240,8 +254,8 @@ const WrapDown = styled.div`
     }
   }
   button {
-    width: 15%;
-    height: 100%;
+    width: 50px;
+    height: 40px;
     border: none;
     border-radius: 5px;
     background-color: #00a078;
@@ -256,8 +270,8 @@ const LastWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   button {
-    width: 15%;
-    height: 100%;
+    width: 50px;
+    height: 40px;
     border: none;
     border-radius: 5px;
     background-color: #00a078;
