@@ -32,7 +32,7 @@ const StationHome = lazy(() => import("../pages/stationdashboard/StationHome"));
 const UserHome = lazy(() => import("../pages/userdashboard/UserHome"));
 const UserLogin = lazy(() => import("../pages/auth/user/UserLogin"));
 const UserRegister = lazy(() => import("../pages/auth/user/UserRegister"));
-const Stationlogin = lazy(() => import("../pages/auth/user/UserLogin"));
+const Stationlogin = lazy(() => import("../pages/auth/station/Stationlogin"));
 
 const PrivateRouteConfig = () => {
   const navigate = useNavigate();
