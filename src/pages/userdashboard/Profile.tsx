@@ -13,7 +13,7 @@ const Profile = () => {
 
   let initials: string | undefined = user?.name
     .split(" ")
-    .map((word) => word.charAt(0))
+    .map((word:any) => word.charAt(0))
     .join("");
   return (
     <div>

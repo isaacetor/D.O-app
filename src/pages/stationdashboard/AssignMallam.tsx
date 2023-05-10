@@ -4,27 +4,23 @@ import StationHeader from "../../components/commons/props/StationHeader";
 import DynamicTablesHeads from "../../components/commons/props/DynamicTablesHeads";
 import DynamicTablesData from "../../components/commons/props/DynamicTablesData";
 import BinaryButton from "../../components/commons/props/BinaryButton";
+import { useQuery } from "@tanstack/react-query";
+import { getAllUserRequest } from "../../utils";
 import { useAppSelector } from "../../services/statemanagement/Store";
 
-const dummy = [
-  {
-    name: "mjknojnuinuio",
-    phone: "May 21, 2023",
-    amount: "Mama Emeka",
-    status: "Pending...",
-  },
-  {
-    name: "mjknojnuinuio",
-    phone: "May 21, 2023",
-    amount: "Iya Beji",
-    status: "Hakeem Ziyech",
-  },
-];
-
 const AssignMallam = () => {
-  const station = useAppSelector((state) => state.stationdetail);
-  // const station = useAppSelector((state) => state);
-  console.log("station is :", station);
+  //Quering the data
+  // const UserRequest = useQuery({
+  //   queryKey: ["AllUserRequests"],
+  //   queryFn: () => {
+  //     getAllUserRequest;
+  //   },
+  // });
+
+  // console.log("This is the all user requests", UserRequest);
+  const getRequest = useAppSelector((state) => state.stationdetail);
+
+  console.log("station detail:", getRequest);
 
   return (
     <Container>
@@ -52,7 +48,7 @@ const AssignMallam = () => {
           title4="Assigned"
           title5="Activity"
         />
-        {dummy.map((props) => (
+        {/* {UserRequest((props: any) => (
           <DynamicTablesData
             content1={props.name}
             content2={props.phone}
@@ -66,7 +62,7 @@ const AssignMallam = () => {
               )
             }
           />
-        ))}
+        ))} */}
         <br />
         <br />
         <br />
@@ -84,7 +80,7 @@ const AssignMallam = () => {
           title4="Assigned"
           title5="Activity"
         />
-        {dummy.map((props) => (
+        {/* {UserRequest.map((props: any) => (
           <DynamicTablesData
             content1={props.name}
             content2={props.phone}
@@ -98,7 +94,7 @@ const AssignMallam = () => {
               )
             }
           />
-        ))}
+        ))} */}
       </Body>
     </Container>
   );

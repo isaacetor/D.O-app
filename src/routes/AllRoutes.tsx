@@ -49,7 +49,9 @@ const PrivateRouteConfig = () => {
   }, []);
 };
 
-export const element = createBrowserRouter([
+
+
+ export const element = createBrowserRouter([
   // landing page routes
   //dd
   {
@@ -303,3 +305,5 @@ export const element = createBrowserRouter([
     element: <NotFound />,
   },
 ]);
+
+// export default withServiceWorker(element)
