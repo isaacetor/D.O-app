@@ -4,23 +4,24 @@ import StationHeader from "../../components/commons/props/StationHeader";
 import DynamicTablesHeads from "../../components/commons/props/DynamicTablesHeads";
 import DynamicTablesData from "../../components/commons/props/DynamicTablesData";
 import BinaryButton from "../../components/commons/props/BinaryButton";
-
-const dummy = [
-  {
-    name: "mjknojnuinuio",
-    phone: "May 21, 2023",
-    amount: "Mama Emeka",
-    status: "Pending...",
-  },
-  {
-    name: "mjknojnuinuio",
-    phone: "May 21, 2023",
-    amount: "Iya Beji",
-    status: "Hakeem Ziyech",
-  },
-];
+import { useQuery } from "@tanstack/react-query";
+import { getAllUserRequest } from "../../utils";
+import { useAppSelector } from "../../services/statemanagement/Store";
 
 const AssignMallam = () => {
+  //Quering the data
+  // const UserRequest = useQuery({
+  //   queryKey: ["AllUserRequests"],
+  //   queryFn: () => {
+  //     getAllUserRequest;
+  //   },
+  // });
+
+  // console.log("This is the all user requests", UserRequest);
+  const getRequest = useAppSelector((state) => state.stationdetail);
+
+  console.log("station detail:", getRequest);
+
   return (
     <Container>
       <StationHeader
@@ -48,7 +49,7 @@ const AssignMallam = () => {
           title4="Assigned"
           title5="Activity"
         />
-        {dummy.map((props) => (
+        {/* {UserRequest((props: any) => (
           <DynamicTablesData
             content1={props.name}
             content2={props.phone}
@@ -62,7 +63,7 @@ const AssignMallam = () => {
               )
             }
           />
-        ))}
+        ))} */}
         <br />
         <br />
         <br />
@@ -81,7 +82,7 @@ const AssignMallam = () => {
           title4="Assigned"
           title5="Activity"
         />
-        {dummy.map((props) => (
+        {/* {UserRequest.map((props: any) => (
           <DynamicTablesData
             content1={props.name}
             content2={props.phone}
@@ -95,7 +96,7 @@ const AssignMallam = () => {
               )
             }
           />
-        ))}
+        ))} */}
       </Body>
     </Container>
   );

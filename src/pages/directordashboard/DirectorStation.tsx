@@ -107,7 +107,7 @@ const Stations=()=>{
     })
     if(Product?.data?.loading) return <h2>Loading...</h2>
   
-  const dater = new Date().toDateString()
+
 
     return(
         <Cont>
@@ -207,9 +207,9 @@ const Stations=()=>{
                         <DetInfo>
                             S/N
                         </DetInfo>
-                        {/* <DetInfo>
+                        <DetInfo>
                             D/T
-                        </DetInfo> */}
+                        </DetInfo>
                         <DetInfo>
                             Name of Station
                         </DetInfo>
@@ -223,43 +223,18 @@ const Stations=()=>{
                             Status
                         </DetInfo>
                     </DetailHead>
-                    {/* {Product?.data?.data?.map((props:any)=>( */}
+                    {Product?.data?.data?.map((props:any)=>(
                          <User>
                          <Num>1</Num>
-                         {/* <Dat style={{marginLeft:"-50px"}}>{dater}</Dat> */}
-                         <Station style={{marginLeft:"-50px"}}>Wema</Station>
+                         <Dat style={{marginLeft:"-50px"}}>{props?.createdAt}</Dat>
+                         <Station style={{marginLeft:"-50px"}}>{props?.station}</Station>
                          <Req style={{marginLeft:"-30px"}}>10</Req>
                          <ReqSta>21</ReqSta>
                          <span ></span>
                       </User>
-                         <User>
-                         <Num>2</Num>
-                         {/* <Dat style={{marginLeft:"-50px"}}>{dater}</Dat> */}
-                         <Station style={{marginLeft:"-50px"}}>Ashafa</Station>
-                         <Req style={{marginLeft:"-30px"}}>10</Req>
-                         <ReqSta>21</ReqSta>
-                         <span ></span>
-                      </User>
-                         <User>
-                         <Num>3</Num>
-                         {/* <Dat style={{marginLeft:"-50px"}}>{dater}</Dat> */}
-                         <Station style={{marginLeft:"-50px"}}>Chidi</Station>
-                         <Req style={{marginLeft:"-30px"}}>10</Req>
-                         <ReqSta>21</ReqSta>
-                         <span ></span>
-                      </User>
-                         <User>
-                         <Num>4</Num>
-                         {/* <Dat style={{marginLeft:"-50px"}}>{dater}</Dat> */}
-                         <Station style={{marginLeft:"-50px"}}>Alakoto</Station>
-                         <Req style={{marginLeft:"-30px"}}>10</Req>
-                         <ReqSta>21</ReqSta>
-                         <span ></span>
-                      </User>
-                    {/* ))} */}
+                    ))}
                 </DetailHold>
-                </Col>
-                ) : null}
+                </Col>) : null}
             </Wrap>
         </Cont>
     )
@@ -294,27 +269,11 @@ span{
     width: 95%;
 }
 `
-const Num=styled.div`
-@media screen and (max-width:425px){
-    font-size: 12px;
-}
-`
+const Num=styled.div``
 const Dat=styled.div``
-const Station=styled.div`
-@media screen and (max-width:425px){
-    font-size: 12px;
-}
-`
-const Req=styled.div`
-@media screen and (max-width:425px){
-    font-size: 12px;
-}
-`
-const ReqSta=styled.div`
-@media screen and (max-width:425px){
-    font-size: 12px;
-}
-`
+const Station=styled.div``
+const Req=styled.div``
+const ReqSta=styled.div``
 const DetailHold=styled.div`
 width: 96%;
 display: flex;
@@ -322,7 +281,6 @@ flex-direction: column;
 @media screen and (max-width:425px){
     justify-content:center;
     align-items: center;
-    margin-bottom: 200px;
 }
 
 /* overflow: hidden; */
@@ -390,7 +348,6 @@ display: flex;
 flex-direction: column;
 /* justify-content: center; */
 align-items: center;
-/* margin-bottom: 1050px; */
 `
 const Cont=styled.div`
 width: calc(100% - 270px);
