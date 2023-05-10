@@ -36,6 +36,11 @@
     "styled-components": "^5.3.9",
     "sweetalert2": "^11.7.3",
     "web-vitals": "^2.1.4",
+    "workbox-background-sync": "^6.5.4",
+    "workbox-expiration": "^6.5.4",
+    "workbox-precaching": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4",
     "yup": "^1.0.2"
   },
   "scripts": {
@@ -64,6 +69,7 @@
   },
   "devDependencies": {
     "@types/react-scroll": "^1.8.6",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "workbox-webpack-plugin": "^6.5.4"
   }
 }
