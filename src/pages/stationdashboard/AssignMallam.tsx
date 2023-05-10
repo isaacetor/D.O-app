@@ -9,18 +9,11 @@ import { getAllUserRequest } from "../../utils";
 import { useAppSelector } from "../../services/statemanagement/Store";
 
 const AssignMallam = () => {
-  //Quering the data
-  // const UserRequest = useQuery({
-  //   queryKey: ["AllUserRequests"],
-  //   queryFn: () => {
-  //     getAllUserRequest;
-  //   },
-  // });
+  const getRequest: any = useAppSelector((state) => state.stationdetail);
+  const getSpecialRequest: any = useAppSelector((state) => state.stationdetail);
 
-  // console.log("This is the all user requests", UserRequest);
-  const getRequest = useAppSelector((state) => state.stationdetail);
-
-  console.log("station detail:", getRequest);
+  // console.log("station detail:", getRequest?.requests!);
+  console.log("This is a special request", getSpecialRequest?.specialRequests);
 
   return (
     <Container>
@@ -30,8 +23,8 @@ const AssignMallam = () => {
         title="Welcome, Pako Station"
       />
       <Body>
-        <br />
-        <br />
+        {/* <br />
+        <br /> */}
         <br />
         <br />
         <div
@@ -49,12 +42,12 @@ const AssignMallam = () => {
           title4="Assigned"
           title5="Activity"
         />
-        {/* {UserRequest((props: any) => (
+        {getRequest?.requests.map((props: any) => (
           <DynamicTablesData
-            content1={props.name}
-            content2={props.phone}
-            content3={props.amount}
-            content4={props.status}
+            content1={props.requestMessage}
+            content2=""
+            content3=""
+            content4=""
             content5={
               props.status === "Pending..." ? (
                 <BinaryButton swap />
@@ -63,7 +56,7 @@ const AssignMallam = () => {
               )
             }
           />
-        ))} */}
+        ))}
         <br />
         <br />
         <br />
@@ -82,12 +75,12 @@ const AssignMallam = () => {
           title4="Assigned"
           title5="Activity"
         />
-        {/* {UserRequest.map((props: any) => (
+        {getSpecialRequest?.specialRequests.map((props: any) => (
           <DynamicTablesData
-            content1={props.name}
-            content2={props.phone}
-            content3={props.amount}
-            content4={props.status}
+            content1={props.requestMessage}
+            content2=""
+            content3=""
+            content4=""
             content5={
               props.status === "Pending..." ? (
                 <BinaryButton swap />
@@ -96,7 +89,7 @@ const AssignMallam = () => {
               )
             }
           />
-        ))} */}
+        ))}
       </Body>
     </Container>
   );
