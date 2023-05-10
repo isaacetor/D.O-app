@@ -4,7 +4,8 @@ import { registercarrying, stationData, userData } from "../../types";
 import { agentData } from "../../types";
 import { agentInfo } from "../../types";
 const initialState = {
-  userDetails: {} as userData | null,
+  // userDetails: {} as userData | null,
+  userDetails: {} as any | null,
   directorDetails: {} as agentData | null,
 
   registerCarrier: {} as registercarrying | null,
