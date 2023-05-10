@@ -33,38 +33,44 @@ const Stationlogin = () => {
     mutationKey: ["Station"],
     mutationFn: loginStation,
 
-    onSuccess: (myStation: any) => {
-      dispatch(stationLogin(myStation.data));
+    onSuccess: (data: any) => {
+      dispatch(stationLogin(data.data));
 
-      Swal.fire({
-        icon: "success",
-        title: "Login succesful",
-        html: "Taking you to your dashboard",
-        timer: 1200,
+      if (data.data) {
+        console.log("s", data);
 
-        didOpen: () => {
-          Swal.showLoading();
-        },
+        Swal.fire({
+          icon: "success",
+          title: "Login succesful",
+          html: "Taking you to your dashboard",
+          timer: 1200,
 
-        willClose: () => {
-          navigate("/station");
-        },
-      });
+          didOpen: () => {
+            Swal.showLoading();
+          },
+
+          willClose: () => {
+            navigate("/station");
+          },
+        });
+      } else {
+        Swal.fire({
+          title: "login failed",
+          text: `${data.response.data.err}`,
+          icon: "error",
+        });
+        console.log("here", data);
+      }
     },
-    onError: (error: any) => {
-      console.log("this is error", error);
-
-      // handle error here
-      Swal.fire({
-        title: "login failed",
-        text: "email or password incorrect",
-        icon: "error",
-      });
-    },
+    // onError: (error: any) => {
+    //   console.log("this is error", error.message);
+    // },
   });
 
   const Submit = handleSubmit(async (data) => {
     posting.mutate(data);
+    console.log("dada", data);
+
     // reset()
   });
 
