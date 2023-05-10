@@ -1,4 +1,3 @@
-import React from "react";
 import { MobileNav, Sidenav } from "../../blocks";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
