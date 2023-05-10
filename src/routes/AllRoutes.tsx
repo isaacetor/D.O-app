@@ -11,7 +11,7 @@ import {
 
 import Stations from "../pages/directordashboard/DirectorStation";
 import AgentHome from "../pages/directordashboard/DirectorHome";
-import { ErrorBoundary, NotFound } from "../utils";
+import { ErrorBoundary, HomeLoading, NotFound } from "../utils";
 import Registermallam from "../pages/stationdashboard/Registermallam";
 import Notification from "../pages/stationdashboard/Notification";
 import AssignMallam from "../pages/stationdashboard/AssignMallam";
@@ -58,9 +58,14 @@ export const element = createBrowserRouter([
     children: [
       {
         index: true,
-        // element: <Landing />,
+
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <Landing />
           </Suspense>
         ),
@@ -137,6 +142,12 @@ export const element = createBrowserRouter([
         hasErrorBoundary: true,
       },
     ],
+  },
+
+  // to testtttttttttttttttttttttttttttttt
+  {
+    path: "/loading",
+    element: <HomeLoading />,
   },
 
   //user Authentication routes
