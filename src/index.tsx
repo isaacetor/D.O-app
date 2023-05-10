@@ -12,9 +12,6 @@ import { Store } from "./services/statemanagement/Store";
 import { element } from "./routes";
 
 
-// register('/sw.js');
-
-
 
 const queryQlient = new QueryClient();
 let persitstore = persistStore(Store);
