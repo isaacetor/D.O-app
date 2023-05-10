@@ -21,9 +21,6 @@ import { useAppSelector } from "../services/statemanagement/Store";
 import { useEffect } from "react";
 import { PrivateRoute } from "./privateroute";
 
-
-
-
 const AgentRegister = lazy(() => import("../pages/auth/agent/AgentRegister"));
 const AgentLogin = lazy(() => import("../pages/auth/agent/AgentLogin"));
 const Feedback = lazy(() => import("../pages/userdashboard/Feedback"));
