@@ -8,7 +8,7 @@ declare const self: ServiceWorkerGlobalScope;
 precacheAndRoute(self.__WB_MANIFEST);
 
 registerRoute(
-  ({ url }) => url.pathname.startsWith("/api/" || "/dirty-online"),
+({ url }) => url.pathname.startsWith("/api/") || url.pathname.startsWith("/dirty-online"),
   new StaleWhileRevalidate()
 );
 
