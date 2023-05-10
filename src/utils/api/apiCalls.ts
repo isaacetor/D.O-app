@@ -89,6 +89,11 @@ const allStations = async () => {
     .get(`${URL}/api/stations/all-stations`)
     .then((res) => res.data);
 };
+const allRequest = async () => {
+  return await axios
+    .get(`${URL}/api/requests`)
+    .then((res) => res.data);
+};
 
 const getallcarrier = async () => {
   return await axios
