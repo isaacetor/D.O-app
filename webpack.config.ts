@@ -1,12 +1,15 @@
-const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+import { InjectManifest } from 'workbox-webpack-plugin';
+
 
 module.exports = {
   //...
   plugins: [
     //...
-    new WorkboxWebpackPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
+    new InjectManifest({
+      swSrc: './src/sw.js',
+      swDest: 'sw.js',
+      exclude: [/\.map$/, /^manifest.*\.js(?:on)?$/],
     }),
   ],
 };
+
