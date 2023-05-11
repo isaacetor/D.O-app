@@ -4,15 +4,22 @@ import {
   UseAppDispatch,
   useAppSelector,
 } from "../../../../services/statemanagement/Store";
-import { upDateRequest } from "../../../../services/statemanagement/ReduxState";
+import {
+  logout,
+  upDateRequest,
+} from "../../../../services/statemanagement/ReduxState";
 import { CircularProgressbar } from "react-circular-progressbar";
 import axios from "axios";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Popup = () => {
+  const user = useAppSelector((state) => state?.userDetails);
+  const station = useAppSelector((state) => state?.userDetails?.station);
   const dispatch = UseAppDispatch();
   const requestNum = useAppSelector((state) => state.requestNumber);
-  const user = useAppSelector((state) => state.userDetails);
   const percentage = requestNum;
+  const navigate = useNavigate();
 
   const URL = "https://dirty-online.onrender.com";
 
@@ -81,7 +88,50 @@ const Popup = () => {
             <Downs>
               <WrapDown>
                 <input placeholder="Address" type="text" />
-                <button>GO</button>
+                <button
+                  onClick={async () => {
+                    Swal.fire({
+                      title: "Send Us A Message",
+                      text: "used up your request or having a party? let's help you with your trash needs",
+                      input: "text",
+                      inputAttributes: {
+                        autocapitalize: "true",
+                        placeholder: "please enter location address here",
+                      },
+                      showCancelButton: true,
+                      cancelButtonColor: "#d33",
+                      confirmButtonText: "Make Custom Request",
+                      confirmButtonColor: "#009700",
+                      showLoaderOnConfirm: true,
+                      preConfirm: (message) => {
+                        return axios
+                          .patch(
+                            `https://dirty-online.onrender.com/api/users/make-special-request/${user?._id}/${station?._id}`
+                          )
+                          .then((response) => {
+                            if (response.status !== 200) {
+                              throw new Error(response.statusText);
+                            }
+
+                            return response?.data?.message;
+                          })
+                          .catch((error) => {
+                            Swal.showValidationMessage(
+                              `error sending request: ${error}`
+                            );
+                          });
+                      },
+                      allowOutsideClick: () => !Swal.isLoading(),
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                        Swal.fire({
+                          title: `${result.value}`,
+                        });
+                      }
+                    });
+                  }}>
+                  GO
+                </button>
               </WrapDown>
             </Downs>
           </Wrap>
@@ -100,10 +150,21 @@ const Popup = () => {
                 {"Keep track of your request transactions"}
               </div>
             </div>
-            <button>GO</button>
+            <button
+              onClick={() => {
+                navigate("/user/home/makerequest");
+              }}>
+              GO
+            </button>
           </LastWrap>
         </Action3>
-        <Action4>Log Out</Action4>
+        <Action4
+          onClick={() => {
+            dispatch(logout());
+            navigate("/");
+          }}>
+          Log Out
+        </Action4>
       </Wrapper>
     </Container>
     //02tvseries.com
