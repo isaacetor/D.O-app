@@ -49,9 +49,7 @@ const PrivateRouteConfig = () => {
   }, []);
 };
 
-
-
- export const element = createBrowserRouter([
+export const element = createBrowserRouter([
   // landing page routes
   //dd
   {
@@ -67,7 +65,8 @@ const PrivateRouteConfig = () => {
               <div>
                 <HomeLoading />
               </div>
-            }>
+            }
+          >
             <Landing />
           </Suspense>
         ),
@@ -192,6 +191,7 @@ const PrivateRouteConfig = () => {
   {
     path: "/director/home",
     element: <DirectorDashboardLayout />,
+
     children: [
       {
         index: true,
@@ -261,6 +261,7 @@ const PrivateRouteConfig = () => {
   {
     path: "/station",
     element: <StationDashboardlayout />,
+
     children: [
       {
         index: true,
@@ -305,5 +306,3 @@ const PrivateRouteConfig = () => {
     element: <NotFound />,
   },
 ]);
-
-// export default withServiceWorker(element)
