@@ -8,7 +8,7 @@ const HomeLoading = () => {
     <div>
       <Container>
         <img src={logo} alt="" />
-        <h3>The home page is loading...</h3>
+        <h3>The page is loading...</h3>
         {/* <img src={loader} alt="" /> */}
       </Container>
     </div>
