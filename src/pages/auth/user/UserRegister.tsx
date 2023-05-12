@@ -20,7 +20,6 @@ const UserRegister = () => {
   });
 
   // console.log(`station`, data);
-  
 
   //force all stations to run anytime the page is opened
   useEffect(() => {}, [data]);
@@ -45,19 +44,16 @@ const UserRegister = () => {
     resolver: yupResolver(userSchema),
   });
 
-    const posting = useMutation({
+  const posting = useMutation({
     mutationKey: ["newUser"],
     mutationFn: async (data: any) => {
       const result = await createUser({
-       name: data.name,
+        name: data.name,
         phoneNumber: data.phoneNumber,
         email: data.email,
         address: data.address,
         stationName: data.stationName,
         password: data.password,
-
-       
-        
       });
       return result;
     },
@@ -69,13 +65,11 @@ const UserRegister = () => {
         timer: 2000,
         timerProgressBar: true,
         willClose: () => {
-          navigate("/user/login");
+          navigate("/verify-account");
         },
       });
     },
     onError: (error: any) => {
-      console.log("this is error", error);
-
       // handle error here
       Swal.fire({
         title: "error creating user",
@@ -104,8 +98,7 @@ const UserRegister = () => {
                 textDecoration: "none",
                 margin: "3px",
                 color: "#03b903",
-              }}
-            >
+              }}>
               Log in
             </NavLink>
           </p>
