@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import logo from "../../assets/images/ecobinLogoWithText.png";
 import loading from "../../assets/gifs/loading.gif";
-// import logo from "../../../assets/images/ecobinLogoWithText.png";
 
 const HomeLoading = () => {
   return (

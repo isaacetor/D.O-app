@@ -66,8 +66,7 @@ export const element = createBrowserRouter([
               <div>
                 <HomeLoading />
               </div>
-            }
-          >
+            }>
             <Landing />
           </Suspense>
         ),
@@ -176,13 +175,8 @@ export const element = createBrowserRouter([
     element: <Verification />,
   },
   {
-    path: "/verified",
+    path: "/verified/:id/:token",
     element: <Verified />,
-  },
-  // to testtttttttttttttttttttttttttttttt
-  {
-    path: "/loading",
-    element: <HomeLoading />,
   },
 
   //user Authentication routes
