@@ -45,7 +45,7 @@ export default StationHeader;
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-left: 5px;
 
   @media screen and (max-width: 800px) {
@@ -53,6 +53,8 @@ const Wrapper = styled.div`
   }
   @media screen and (max-width: 500px) {
     width: 100%;
+    display: flex;
+    /* background-color: yellow; */
   }
 `;
 const Right = styled.div`
@@ -73,16 +75,16 @@ const Main = styled.div<{ bg: string }>`
   background-color: ${({ bg }) => bg};
   position: fixed;
   top: 0;
+
   @media screen and (max-width: 800px) {
     width: 100%;
     /* height: fit-content; */
   }
   @media screen and (max-width: 500px) {
     width: 100%;
-    /* height: fit-content; */
   }
   @media screen and (max-width: 1051px) {
-    width: calc(100vw - 70px);
+    width: 100%;
   }
 `;
 const Left = styled.div`

@@ -3,27 +3,30 @@ import styled from "styled-components";
 import wave from "../../../assets/picture1.svg";
 import wave1 from "../../../assets/picture1.svg";
 import p1 from "../../../assets/images/dash1.png";
+import { NavLink } from "react-router-dom";
 
 const StationDashboardCard = () => {
   return (
-    <One>
+    <Container>
       <Detail>
         <Pop>
           <h2>Maximum Productivity.</h2>
           <p>track all today's requests with our intuitive system</p>
-          <Hold1>View Request</Hold1>
+          <NavLink to="">
+            <Hold1>View Request</Hold1>
+          </NavLink>
         </Pop>
         <Pip>
           <img src={p1} alt="" />
         </Pip>
       </Detail>
-    </One>
+    </Container>
   );
 };
 
 export default StationDashboardCard;
 
-const One = styled.div`
+const Container = styled.div`
   display: flex;
   width: 100%;
   /* margin-left: 20px; */
