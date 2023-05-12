@@ -3,7 +3,7 @@ import styled from "styled-components";
 import wave from "../../../assets/picture1.svg";
 import wave1 from "../../../assets/picture1.svg";
 import p1 from "../../../assets/images/dash1.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const StationDashboardCard = () => {
   return (
@@ -12,9 +12,9 @@ const StationDashboardCard = () => {
         <Pop>
           <h2>Maximum Productivity.</h2>
           <p>track all today's requests with our intuitive system</p>
-          <NavLink to="">
+          <Link style={{ textDecoration: "none" }} to="/station/assign">
             <Hold1>View Request</Hold1>
-          </NavLink>
+          </Link>
         </Pop>
         <Pip>
           <img src={p1} alt="" />

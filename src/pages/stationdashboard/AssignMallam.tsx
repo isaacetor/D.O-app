@@ -9,16 +9,19 @@ import { getAllUserRequest } from "../../utils";
 import { useAppSelector } from "../../services/statemanagement/Store";
 
 const AssignMallam = () => {
-  const getRequest: any = useAppSelector((state) => state.stationdetail);
-  const getSpecialRequest: any = useAppSelector((state) => state.stationdetail);
+  const UserRequest = useQuery({
+    queryKey: ["AllUserRequest"],
+    queryFn: getAllUserRequest,
+  });
 
-  console.log("station detail:", getRequest?.requests!);
-  console.log("This is a special request", getSpecialRequest?.specialRequests);
+  console.log("This is user request", UserRequest?.data?.data);
+
+  let usercut: any = UserRequest?.createdAt.split(" ");
 
   return (
     <Container>
       <StationHeader
-        bg="#979494"
+        bg="#d7cece"
         subtitle="View Request"
         title="Welcome, Pako Station"
       />
@@ -36,20 +39,20 @@ const AssignMallam = () => {
           Subscription Requests
         </div>
         <DynamicTablesHeads
-          title1="Address"
-          title2="Date"
-          title3="User"
+          title1="Name"
+          title2="Address"
+          title3="Date"
           title4="Assigned"
           title5="Activity"
         />
-        {getRequest?.data?.data?.map((props: any) => (
+        {UserRequest?.data?.data?.map((props: any) => (
           <DynamicTablesData
-            content1={props.requestMessage}
-            content2=""
-            content3=""
-            content4=""
+            content1={usercut}
+            content2={props.address}
+            content3={props.createdAt}
+            content4={props.DoneBy}
             content5={
-              props.status === "Pending..." ? (
+              props.requestStatus === "Pending..." ? (
                 <BinaryButton swap />
               ) : (
                 <BinaryButton swap={false} />
@@ -75,14 +78,14 @@ const AssignMallam = () => {
           title4="Assigned"
           title5="Activity"
         />
-        {getSpecialRequest?.data?.data?.map((props: any) => (
+        {UserRequest?.data?.data?.map((props: any) => (
           <DynamicTablesData
-            content1={props.requestMessage}
-            content2={props.name}
+            content1={props.user}
+            content2={props.address}
             content3={props.assigned}
             content4={props.done}
             content5={
-              props.status === "Pending..." ? (
+              props.requestStatus === "Pending..." ? (
                 <BinaryButton swap />
               ) : (
                 <BinaryButton swap={false} />
