@@ -78,9 +78,9 @@ const AssignMallam = () => {
         {getSpecialRequest?.specialRequests.map((props: any) => (
           <DynamicTablesData
             content1={props.requestMessage}
-            content2=""
-            content3=""
-            content4=""
+            content2={props.name}
+            content3={props.assigned}
+            content4={props.done}
             content5={
               props.status === "Pending..." ? (
                 <BinaryButton swap />
