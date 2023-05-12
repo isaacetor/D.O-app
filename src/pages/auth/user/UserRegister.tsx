@@ -61,7 +61,7 @@ const UserRegister = () => {
     onSuccess: (myData: any) => {
       Swal.fire({
         title: "Registration succesfull",
-        html: "Redirecting you to login",
+        html: "Redirecting to email to verify your email",
         timer: 2000,
         timerProgressBar: true,
         willClose: () => {
