@@ -60,7 +60,7 @@ const UserLogin = () => {
       // handle error here
       Swal.fire({
         title: "login failed",
-        text: "email or password incorrect",
+        text: error?.response?.data?.message,
         icon: "error",
       });
     },
@@ -86,8 +86,7 @@ const UserLogin = () => {
                 textDecoration: "none",
                 margin: "3px",
                 color: "#03b903",
-              }}
-            >
+              }}>
               Create one
             </NavLink>
           </p>

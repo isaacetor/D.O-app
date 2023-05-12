@@ -119,6 +119,15 @@ const makeRequest = async ({ user, station }: any) => {
       return err;
     });
 };
+
+export const UserVerification = async (userID: string) => {
+  try {
+    return await axios.get(`${URL}/api/users//verify-user/${userID}`);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export {
   allStations,
   loginUser,
