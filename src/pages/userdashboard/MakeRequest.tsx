@@ -112,6 +112,7 @@ const HoldC = styled.div<{ bg: string }>`
   }
   @media screen and (max-width: 800px) {
     width: 80%;
+    display: none;
   }
 `;
 
@@ -133,6 +134,7 @@ const First = styled.div`
   @media screen and (max-width: 800px) {
     padding-left: 0px;
     justify-content: center;
+    display: none;
   }
 `;
 

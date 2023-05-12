@@ -225,7 +225,6 @@ export const element = createBrowserRouter([
       {
         index: true,
         // element: <AgentRegister />,
-
         element: (
           <Suspense fallback={<div>Loading...</div>}>
             <AgentRegister />
@@ -237,7 +236,6 @@ export const element = createBrowserRouter([
       {
         path: "/director/register/login",
         index: true,
-
         element: (
           <Suspense fallback={<div>Loading...</div>}>
             <AgentLogin />
