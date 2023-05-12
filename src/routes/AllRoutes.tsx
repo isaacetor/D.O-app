@@ -90,7 +90,12 @@ export const element = createBrowserRouter([
         index: true,
         // element: <UserHome />,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <UserHome />
           </Suspense>
         ),
@@ -101,7 +106,12 @@ export const element = createBrowserRouter([
         path: "makepayment",
 
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <MakePayment />
           </Suspense>
         ),
@@ -113,7 +123,12 @@ export const element = createBrowserRouter([
         path: "makerequest",
         // element: <MakeRequest />,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <MakeRequest />
           </Suspense>
         ),
@@ -125,7 +140,12 @@ export const element = createBrowserRouter([
         path: "feedback",
         // element: <Feedback />,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <Feedback />
           </Suspense>
         ),
@@ -136,7 +156,12 @@ export const element = createBrowserRouter([
         path: "profile",
 
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <Profile />
           </Suspense>
         ),
@@ -169,7 +194,12 @@ export const element = createBrowserRouter([
         index: true,
 
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <UserRegister />
           </Suspense>
         ),
@@ -186,7 +216,12 @@ export const element = createBrowserRouter([
         index: true,
         // element: <UserLogin />,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <UserLogin />,
           </Suspense>
         ),
@@ -226,7 +261,12 @@ export const element = createBrowserRouter([
         index: true,
         // element: <AgentRegister />,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <AgentRegister />
           </Suspense>
         ),
@@ -237,7 +277,12 @@ export const element = createBrowserRouter([
         path: "/director/register/login",
         index: true,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <AgentLogin />
           </Suspense>
         ),
@@ -255,7 +300,12 @@ export const element = createBrowserRouter([
         index: true,
 
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <Stationlogin />
           </Suspense>
         ),
@@ -276,7 +326,12 @@ export const element = createBrowserRouter([
         index: true,
 
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                <HomeLoading />
+              </div>
+            }>
             <StationHome />
           </Suspense>
         ),
