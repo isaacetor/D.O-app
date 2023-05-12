@@ -31,12 +31,11 @@ const AssignMallam = () => {
           style={{
             fontWeight: "500",
             color: "grey",
-          }}
-        >
+          }}>
           Subscription Requests
         </div>
         <DynamicTablesHeads
-          title1="ID"
+          title1="Address"
           title2="Date"
           title3="User"
           title4="Assigned"
@@ -64,12 +63,11 @@ const AssignMallam = () => {
           style={{
             fontWeight: "500",
             color: "grey",
-          }}
-        >
+          }}>
           Special Requests
         </div>
         <DynamicTablesHeads
-          title1="ID"
+          title1="Address"
           title2="Date"
           title3="User"
           title4="Assigned"
