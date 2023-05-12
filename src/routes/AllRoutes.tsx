@@ -15,11 +15,12 @@ import { ErrorBoundary, HomeLoading, NotFound } from "../utils";
 import Registermallam from "../pages/stationdashboard/Registermallam";
 import Notification from "../pages/stationdashboard/Notification";
 import AssignMallam from "../pages/stationdashboard/AssignMallam";
-import Verification from "../components/commons/props/Verification";
 import DirectorAuth from "../components/layouts/directorAurhLayout/DirectorAuth";
 import { useAppSelector } from "../services/statemanagement/Store";
 import { useEffect } from "react";
 import { PrivateRoute } from "./privateroute";
+import { Verification } from "../pages";
+import Verified from "../pages/auth/user/Verified";
 
 const AgentRegister = lazy(() => import("../pages/auth/agent/AgentRegister"));
 const AgentLogin = lazy(() => import("../pages/auth/agent/AgentLogin"));
@@ -145,6 +146,14 @@ export const element = createBrowserRouter([
     ],
   },
 
+  {
+    path: "/verify-account",
+    element: <Verification />,
+  },
+  {
+    path: "/verified",
+    element: <Verified />,
+  },
   // to testtttttttttttttttttttttttttttttt
   {
     path: "/loading",
@@ -295,12 +304,6 @@ export const element = createBrowserRouter([
         hasErrorBoundary: true,
       },
     ],
-  },
-
-  //OTP Routes
-  {
-    path: "/Verification",
-    element: <Verification />,
   },
 
   {
