@@ -19,6 +19,9 @@ const UserRegister = () => {
     queryFn: allStations,
   });
 
+  // console.log(`station`, data);
+  
+
   //force all stations to run anytime the page is opened
   useEffect(() => {}, [data]);
 
@@ -42,9 +45,23 @@ const UserRegister = () => {
     resolver: yupResolver(userSchema),
   });
 
-  const posting = useMutation({
+    const posting = useMutation({
     mutationKey: ["newUser"],
-    mutationFn: createUser,
+    mutationFn: async (data: any) => {
+      const result = await createUser({
+       name: data.name,
+        phoneNumber: data.phoneNumber,
+        email: data.email,
+        address: data.address,
+        stationName: data.stationName,
+        password: data.password,
+
+       
+        
+      });
+      return result;
+    },
+
     onSuccess: (myData: any) => {
       Swal.fire({
         title: "Registration succesfull",
@@ -54,6 +71,16 @@ const UserRegister = () => {
         willClose: () => {
           navigate("/user/login");
         },
+      });
+    },
+    onError: (error: any) => {
+      console.log("this is error", error);
+
+      // handle error here
+      Swal.fire({
+        title: "error creating user",
+        text: error?.response?.data?.message,
+        icon: "error",
       });
     },
   });

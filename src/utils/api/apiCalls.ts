@@ -89,6 +89,13 @@ const allStations = async () => {
     .get(`${URL}/api/stations/all-stations`)
     .then((res) => res.data);
 };
+
+const getAllUserRequest = async () => {
+  return await axios
+    .get(`${URL}/api/station/all-requests`)
+    .then((res) => res.data)
+    .catch((err) => err.message);
+};
 const allRequest = async () => {
   return await axios.get(`${URL}/api/requests`).then((res) => res.data);
 };
@@ -119,4 +126,5 @@ export {
   loginDirector,
   getallcarrier,
   allRequest,
+  getAllUserRequest,
 };

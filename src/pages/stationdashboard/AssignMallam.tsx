@@ -4,23 +4,17 @@ import StationHeader from "../../components/commons/props/StationHeader";
 import DynamicTablesHeads from "../../components/commons/props/DynamicTablesHeads";
 import DynamicTablesData from "../../components/commons/props/DynamicTablesData";
 import BinaryButton from "../../components/commons/props/BinaryButton";
-
-const dummy = [
-  {
-    name: "mjknojnuinuio",
-    phone: "May 21, 2023",
-    amount: "Mama Emeka",
-    status: "Pending...",
-  },
-  {
-    name: "mjknojnuinuio",
-    phone: "May 21, 2023",
-    amount: "Iya Beji",
-    status: "Hakeem Ziyech",
-  },
-];
+import { useQuery } from "@tanstack/react-query";
+import { getAllUserRequest } from "../../utils";
+import { useAppSelector } from "../../services/statemanagement/Store";
 
 const AssignMallam = () => {
+  const getRequest: any = useAppSelector((state) => state.stationdetail);
+  const getSpecialRequest: any = useAppSelector((state) => state.stationdetail);
+
+  // console.log("station detail:", getRequest?.requests!);
+  console.log("This is a special request", getSpecialRequest?.specialRequests);
+
   return (
     <Container>
       <StationHeader
@@ -29,31 +23,30 @@ const AssignMallam = () => {
         title="Welcome, Pako Station"
       />
       <Body>
-        <br />
-        <br />
+        {/* <br />
+        <br /> */}
         <br />
         <br />
         <div
           style={{
             fontWeight: "500",
             color: "grey",
-          }}
-        >
+          }}>
           Subscription Requests
         </div>
         <DynamicTablesHeads
-          title1="ID"
+          title1="Address"
           title2="Date"
           title3="User"
           title4="Assigned"
           title5="Activity"
         />
-        {dummy.map((props) => (
+        {getRequest?.requests.map((props: any) => (
           <DynamicTablesData
-            content1={props.name}
-            content2={props.phone}
-            content3={props.amount}
-            content4={props.status}
+            content1={props.requestMessage}
+            content2=""
+            content3=""
+            content4=""
             content5={
               props.status === "Pending..." ? (
                 <BinaryButton swap />
@@ -70,23 +63,22 @@ const AssignMallam = () => {
           style={{
             fontWeight: "500",
             color: "grey",
-          }}
-        >
+          }}>
           Special Requests
         </div>
         <DynamicTablesHeads
-          title1="ID"
+          title1="Address"
           title2="Date"
           title3="User"
           title4="Assigned"
           title5="Activity"
         />
-        {dummy.map((props) => (
+        {getSpecialRequest?.specialRequests.map((props: any) => (
           <DynamicTablesData
-            content1={props.name}
-            content2={props.phone}
-            content3={props.amount}
-            content4={props.status}
+            content1={props.requestMessage}
+            content2=""
+            content3=""
+            content4=""
             content5={
               props.status === "Pending..." ? (
                 <BinaryButton swap />
