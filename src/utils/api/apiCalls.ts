@@ -122,7 +122,7 @@ const makeRequest = async ({ user, station }: any) => {
 
 export const UserVerification = async (userID: string) => {
   try {
-    return await axios.get(`${URL}/api/users//verify-user/${userID}`);
+    return await axios.get(`${URL}/api/users/verify-user/${userID}`);
   } catch (error) {
     console.log(error);
   }
