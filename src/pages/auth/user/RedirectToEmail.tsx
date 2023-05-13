@@ -4,7 +4,7 @@ import mail from "../../../assets/images/mail-sent.png";
 import logo from "../../../assets/images/ecobinLogoWithText.png";
 import { NavLink } from "react-router-dom";
 
-const Verification = () => {
+const RedirectToEmail = () => {
   return (
     <div>
       <Container>
@@ -29,7 +29,7 @@ const Verification = () => {
   );
 };
 
-export default Verification;
+export default RedirectToEmail;
 
 const Logo = styled.img`
   width: 20px;
