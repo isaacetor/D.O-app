@@ -111,9 +111,9 @@ const makeRequest = async ({ user, station }: any) => {
   return await axios
     .patch(`${URL}/api/users/make-request/${user}/${station}`)
     .then((res: any) => {
-      console.log(res.data);
+      // console.log(res.data);
 
-      // return res.data;
+      return res.data;
     })
     .catch((err) => {
       return err;
@@ -122,7 +122,7 @@ const makeRequest = async ({ user, station }: any) => {
 
 export const UserVerification = async (userID: string) => {
   try {
-    return await axios.get(`${URL}/api/users//verify-user/${userID}`);
+    return await axios.get(`${URL}/api/users/verify-user/${userID}`);
   } catch (error) {
     console.log(error);
   }

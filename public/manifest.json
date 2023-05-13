@@ -1,6 +1,22 @@
 {
   "name": "ecoBIN",
   "short_name": "ecoBIN",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#03B903",
+  "background_color": "#ffffff",
+  "description": "An eco-friendly waste management app.",
+  "lang": "en-US",
+  "orientation": "any",
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://ecobin.pages.dev"
+    }
+  ],
+  "scope": "/",
+  "categories": ["environment", "productivity"],
+
   "icons": [
     {
       "src": "ecoBinLogo64.png",
@@ -17,25 +33,5 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#03B903",
-  "background_color": "#ffffff",
-  "description": "An eco-friendly waste management app.",
-  "lang": "en-US",
-  "orientation": "portrait",
-  "related_applications": [
-    {
-      "platform": "web",
-      "url": "https://ecobin.pages.dev"
-    }
-  ],
-  "scope": "/",
-  "categories": [
-    "environment",
-    "productivity"
   ]
-
-
 }

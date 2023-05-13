@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { createBrowserRouter, useNavigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import {
   DirectorDashboardLayout,
   UserAuthLayout,
@@ -16,11 +16,10 @@ import Registermallam from "../pages/stationdashboard/Registermallam";
 import Notification from "../pages/stationdashboard/Notification";
 import AssignMallam from "../pages/stationdashboard/AssignMallam";
 import DirectorAuth from "../components/layouts/directorAurhLayout/DirectorAuth";
-import { useAppSelector } from "../services/statemanagement/Store";
-import { useEffect } from "react";
 import { PrivateRoute } from "./privateroute";
-import { Verification } from "../pages";
-import Verified from "../pages/auth/user/Verified";
+import { RedirectToEmail, Verified } from "../pages";
+import RecyclablePayment from "../blog/RecyclablePayment";
+import RecyclePost from "../blog/articles/RecyclePost";
 
 const AgentRegister = lazy(() => import("../pages/auth/agent/AgentRegister"));
 const AgentLogin = lazy(() => import("../pages/auth/agent/AgentLogin"));
@@ -35,41 +34,19 @@ const UserLogin = lazy(() => import("../pages/auth/user/UserLogin"));
 const UserRegister = lazy(() => import("../pages/auth/user/UserRegister"));
 const Stationlogin = lazy(() => import("../pages/auth/station/Stationlogin"));
 
-const PrivateRouteConfig = () => {
-  const navigate = useNavigate();
-  const user = useAppSelector((state) => state.userDetails);
-
-  useEffect(() => {
-    if (user?.name !== "" && user?.role === "User") {
-      navigate("/user/home", { replace: true });
-    } else if (user?.name !== "" && user?.role === "director") {
-      navigate("/director/home", { replace: true });
-    } else if (user?.name !== "" && user?.role === "station") {
-      navigate("/station", { replace: true });
-    }
-  }, []);
-};
-
 export const element = createBrowserRouter([
   // landing page routes
-  //dd
   {
     path: "/",
-    element: <HomeLayout />,
+    element: (
+      <Suspense fallback={<HomeLoading />}>
+        <HomeLayout />
+      </Suspense>
+    ),
     children: [
       {
         index: true,
-
-        element: (
-          <Suspense
-            fallback={
-              <div>
-                <HomeLoading />
-              </div>
-            }>
-            <Landing />
-          </Suspense>
-        ),
+        element: <Landing />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
@@ -80,24 +57,16 @@ export const element = createBrowserRouter([
   {
     path: "/user/home",
     element: (
-      <PrivateRoute>
-        <UserDashboardLayout />
-      </PrivateRoute>
+      <Suspense fallback={<HomeLoading />}>
+        <PrivateRoute>
+          <UserDashboardLayout />
+        </PrivateRoute>
+      </Suspense>
     ),
     children: [
       {
         index: true,
-        // element: <UserHome />,
-        element: (
-          <Suspense
-            fallback={
-              <div>
-                <HomeLoading />
-              </div>
-            }>
-            <UserHome />
-          </Suspense>
-        ),
+        element: <UserHome />,
         errorElement: <ErrorBoundary />,
         hasErrorBoundary: true,
       },
@@ -110,7 +79,8 @@ export const element = createBrowserRouter([
               <div>
                 <HomeLoading />
               </div>
-            }>
+            }
+          >
             <MakePayment />
           </Suspense>
         ),
@@ -127,7 +97,8 @@ export const element = createBrowserRouter([
               <div>
                 <HomeLoading />
               </div>
-            }>
+            }
+          >
             <MakeRequest />
           </Suspense>
         ),
@@ -144,7 +115,8 @@ export const element = createBrowserRouter([
               <div>
                 <HomeLoading />
               </div>
-            }>
+            }
+          >
             <Feedback />
           </Suspense>
         ),
@@ -160,7 +132,8 @@ export const element = createBrowserRouter([
               <div>
                 <HomeLoading />
               </div>
-            }>
+            }
+          >
             <Profile />
           </Suspense>
         ),
@@ -169,17 +142,30 @@ export const element = createBrowserRouter([
       },
     ],
   },
+  //blog
 
+  //user Authentication routes
+  {
+    path: "/blog",
+    element: <RecyclablePayment />,
+    children: [
+      {
+        index: true,
+        element: <RecyclePost />,
+
+        errorElement: <ErrorBoundary />,
+        hasErrorBoundary: true,
+      },
+    ],
+  },
   {
     path: "/verify-account",
-    element: <Verification />,
+    element: <RedirectToEmail />,
   },
   {
     path: "/verified/:id/:token",
     element: <Verified />,
   },
-
-  //user Authentication routes
   {
     path: "/user/register",
     element: <UserAuthLayout />,
@@ -193,7 +179,8 @@ export const element = createBrowserRouter([
               <div>
                 <HomeLoading />
               </div>
-            }>
+            }
+          >
             <UserRegister />
           </Suspense>
         ),
@@ -215,7 +202,8 @@ export const element = createBrowserRouter([
               <div>
                 <HomeLoading />
               </div>
-            }>
+            }
+          >
             <UserLogin />,
           </Suspense>
         ),
@@ -260,7 +248,8 @@ export const element = createBrowserRouter([
               <div>
                 <HomeLoading />
               </div>
-            }>
+            }
+          >
             <AgentRegister />
           </Suspense>
         ),
@@ -276,7 +265,8 @@ export const element = createBrowserRouter([
               <div>
                 <HomeLoading />
               </div>
-            }>
+            }
+          >
             <AgentLogin />
           </Suspense>
         ),
@@ -299,7 +289,8 @@ export const element = createBrowserRouter([
               <div>
                 <HomeLoading />
               </div>
-            }>
+            }
+          >
             <Stationlogin />
           </Suspense>
         ),
@@ -325,7 +316,8 @@ export const element = createBrowserRouter([
               <div>
                 <HomeLoading />
               </div>
-            }>
+            }
+          >
             <StationHome />
           </Suspense>
         ),
