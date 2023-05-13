@@ -19,8 +19,7 @@ import DirectorAuth from "../components/layouts/directorAurhLayout/DirectorAuth"
 import { useAppSelector } from "../services/statemanagement/Store";
 import { useEffect } from "react";
 import { PrivateRoute } from "./privateroute";
-import { Verification } from "../pages";
-import Verified from "../pages/auth/user/Verified";
+import { RedirectToEmail, Verified } from "../pages";
 
 const AgentRegister = lazy(() => import("../pages/auth/agent/AgentRegister"));
 const AgentLogin = lazy(() => import("../pages/auth/agent/AgentLogin"));
@@ -170,16 +169,15 @@ export const element = createBrowserRouter([
     ],
   },
 
+  //user Authentication routes
   {
     path: "/verify-account",
-    element: <Verification />,
+    element: <RedirectToEmail />,
   },
   {
     path: "/verified/:id/:token",
     element: <Verified />,
   },
-
-  //user Authentication routes
   {
     path: "/user/register",
     element: <UserAuthLayout />,
