@@ -108,6 +108,7 @@ export type mobileNav = {
   secondLink: string;
   thirdIcon: any;
   popUp?: boolean;
+  logOut?: boolean;
   thirdLink?: any;
   fourthIcon: any;
   fourthText: string;

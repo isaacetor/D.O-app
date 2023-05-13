@@ -70,7 +70,7 @@ const MakeRequest = () => {
               title4="Status"
               title5="Activity"
             />
-            {[].map((props: any) => (
+            {user?.requests.map((props: any) => (
               <DynamicTablesData
                 content1={props.name}
                 content2={props.phone}

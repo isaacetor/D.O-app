@@ -35,6 +35,7 @@ const StationDashboardlayout = () => {
             fifthText="Profile"
             fifthLink="/station/profile"
             colours="#009700"
+            logOut
           />
         </AtMobile>
       </Container>
