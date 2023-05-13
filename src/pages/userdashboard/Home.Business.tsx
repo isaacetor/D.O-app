@@ -21,8 +21,6 @@ const BusinessHome = () => {
     navigate("/blog");
   };
 
-  const toBlog = navigate("/blog");
-
   return (
     <Container>
       <UserDashboardHeader

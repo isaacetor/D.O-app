@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import verified from "../../../assets/gifs/verified.gif";
 import logo from "../../../assets/images/ecobinLogoWithText.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
+import { UserVerification } from "../../../utils";
 
 const Verified = () => {
+  const { id }: any = useParams();
+
+  useEffect(() => {
+    UserVerification(id);
+  });
   return (
     <div>
       <Container>

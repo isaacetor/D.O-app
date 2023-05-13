@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import { animateScroll as scroll, Link } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 import { GlobalButton } from "../../commons";
 import { IoIosMenu } from "react-icons/io";
 import { MdOutlineClose } from "react-icons/md";
@@ -10,7 +10,6 @@ import { MdOutlineClose } from "react-icons/md";
 const BlogHeader = () => {
   const [show, setShow] = React.useState(false);
   const [toTopshow, settoTopShow] = React.useState(false);
-  const [isActive, setIsActive] = React.useState(null);
   const [showNav, setSHowNav] = React.useState(false);
 
   const changeHeaderColor = () => {
@@ -61,9 +60,9 @@ const BlogHeader = () => {
             </LogoNav>
 
             <ButtonHold>
-              <NavLink to="/user/register" style={{ textDecoration: "none" }}>
+              <NavLink to="/user/home" style={{ textDecoration: "none" }}>
                 <GlobalButton
-                  text="Create an account"
+                  text="Back to Dashboard"
                   bg="#03B903"
                   col="#fff"
                   padding="15px 15px"
@@ -100,9 +99,9 @@ const BlogHeader = () => {
                 <MNav>join us</MNav>
               </NavLink>
 
-              <NavLink to="/user/register" style={{ textDecoration: "none" }}>
+              <NavLink to="/user/home" style={{ textDecoration: "none" }}>
                 <GlobalButton
-                  text="Create an account"
+                  text="Back to dashboard"
                   bg="#03B903"
                   col="#fff"
                   padding="10px 10px"
@@ -141,9 +140,9 @@ const BlogHeader = () => {
             </LogoNav>
 
             <ButtonHold>
-              <NavLink to="/user/register" style={{ textDecoration: "none" }}>
+              <NavLink to="/user/home" style={{ textDecoration: "none" }}>
                 <GlobalButton
-                  text="Create an account"
+                  text="Back to dashboard"
                   bg="#03B903"
                   col="#fff"
                   padding="15px 15px"
@@ -179,9 +178,9 @@ const BlogHeader = () => {
               <NavLink to="/user/register" style={{ textDecoration: "none" }}>
                 <MNav>join us</MNav>
               </NavLink>
-              <NavLink to="/user/register" style={{ textDecoration: "none" }}>
+              <NavLink to="/user/home" style={{ textDecoration: "none" }}>
                 <GlobalButton
-                  text="Create an account"
+                  text="Back to dashboard"
                   bg="#03B903"
                   col="#fff"
                   padding="10px 10px"

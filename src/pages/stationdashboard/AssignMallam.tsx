@@ -12,13 +12,13 @@ const AssignMallam = () => {
   const getRequest: any = useAppSelector((state) => state.stationdetail);
   const getSpecialRequest: any = useAppSelector((state) => state.stationdetail);
 
-  // console.log("station detail:", getRequest?.requests!);
+  console.log("station detail:", getRequest?.requests!);
   console.log("This is a special request", getSpecialRequest?.specialRequests);
 
   return (
     <Container>
       <StationHeader
-        bg="#3b393931"
+        bg="#979494"
         subtitle="View Request"
         title="Welcome, Pako Station"
       />
@@ -31,7 +31,8 @@ const AssignMallam = () => {
           style={{
             fontWeight: "500",
             color: "grey",
-          }}>
+          }}
+        >
           Subscription Requests
         </div>
         <DynamicTablesHeads
@@ -41,7 +42,7 @@ const AssignMallam = () => {
           title4="Assigned"
           title5="Activity"
         />
-        {getRequest?.requests.map((props: any) => (
+        {getRequest?.data?.data?.map((props: any) => (
           <DynamicTablesData
             content1={props.requestMessage}
             content2=""
@@ -63,7 +64,8 @@ const AssignMallam = () => {
           style={{
             fontWeight: "500",
             color: "grey",
-          }}>
+          }}
+        >
           Special Requests
         </div>
         <DynamicTablesHeads
@@ -73,12 +75,12 @@ const AssignMallam = () => {
           title4="Assigned"
           title5="Activity"
         />
-        {getSpecialRequest?.specialRequests.map((props: any) => (
+        {getSpecialRequest?.data?.data?.map((props: any) => (
           <DynamicTablesData
             content1={props.requestMessage}
-            content2=""
-            content3=""
-            content4=""
+            content2={props.name}
+            content3={props.assigned}
+            content4={props.done}
             content5={
               props.status === "Pending..." ? (
                 <BinaryButton swap />
