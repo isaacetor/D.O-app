@@ -75,6 +75,7 @@ const Head = styled.div`
 const Message = styled.div`
   font-size: 13px;
   display: flex;
+  text-overflow: ellipsis;
   @media screen and (max-width: 800px) {
     font-size: 10px;
   }

@@ -169,7 +169,10 @@ const Up = styled.div`
     font-size: 18px;
     margin-top: 20px;
     font-weight: 500;
+
     color: #ffff;
+
+    text-overflow: ellipsis;
     @media screen and (max-width: 500px) {
       font-size: 16px;
     }

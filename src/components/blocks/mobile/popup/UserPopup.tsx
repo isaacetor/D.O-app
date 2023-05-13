@@ -158,13 +158,6 @@ const Popup = () => {
             </button>
           </LastWrap>
         </Action3>
-        <Action4
-          onClick={() => {
-            dispatch(logout());
-            navigate("/");
-          }}>
-          Log Out
-        </Action4>
       </Wrapper>
     </Container>
     //02tvseries.com
@@ -194,7 +187,7 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 20px;
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 25px;
   z-index: 5;
 `;
 const Action1 = styled.div`
@@ -223,15 +216,6 @@ const Action3 = styled.div`
   height: fit-content;
   width: 90%;
   cursor: pointer;
-`;
-const Action4 = styled.div`
-  height: fit-content;
-  width: 90%;
-  cursor: pointer;
-  font-weight: 600;
-  border-top: 1px solid #a0a0a05a;
-  padding-top: 20px;
-  padding-bottom: 20px;
 `;
 const Left1 = styled.div`
   width: 75%;
