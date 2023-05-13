@@ -91,7 +91,7 @@ const BusinessHome = () => {
                   preConfirm: (message) => {
                     return axios
                       .patch(
-                        `https://dirty-online.onrender.com/api/users/make-special-request/${user?._id}/${station?._id}`
+                        `https://dirty-online.onrender.com/api/users/make-special-request/${user?._id}/${station}`
                       )
                       .then((response) => {
                         if (response.status !== 200) {
