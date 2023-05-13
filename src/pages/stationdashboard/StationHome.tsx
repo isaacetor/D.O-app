@@ -16,7 +16,7 @@ const StationHome = () => {
   return (
     <Container>
       <Wrap>
-        <StationHeader bg="#d7cece" title="Welcome" subtitle="Pako Station" />
+        <StationHeader bg="#979494" title="Welcome" subtitle="Pako Station" />
         <Sec>
           <Wrapper>
             <HoldCard>

@@ -14,17 +14,11 @@ const AssignMallam = () => {
     queryFn: getAllUserRequest,
   });
 
-  console.log("This is user request", UserRequest?.data?.data);
-
-  let usercut: any = UserRequest?.createdAt.split(" ");
+  // console.log("This is user request", UserRequest?.data?.data);
 
   return (
     <Container>
-      <StationHeader
-        bg="#d7cece"
-        subtitle="View Request"
-        title="Welcome, Pako Station"
-      />
+      <StationHeader bg="#979494" subtitle="View Request" title="Welcome," />
       <Body>
         {/* <br />
         <br /> */}
@@ -47,7 +41,7 @@ const AssignMallam = () => {
         />
         {UserRequest?.data?.data?.map((props: any) => (
           <DynamicTablesData
-            content1={usercut}
+            content1={props.user}
             content2={props.address}
             content3={props.createdAt}
             content4={props.DoneBy}

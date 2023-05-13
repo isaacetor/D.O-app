@@ -16,11 +16,7 @@ const Notification = () => {
 
   return (
     <Container>
-      <StationHeader
-        bg="#3b393931"
-        subtitle="View Request"
-        title="Welcome, Pako Station"
-      />
+      <StationHeader bg="#979494" subtitle="View Request" title="Welcome," />
       <Body>
         <DynamicTablesHeads
           title1="Name"
