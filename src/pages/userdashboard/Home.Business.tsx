@@ -10,16 +10,22 @@ import request from "../../assets/images/request.png";
 import recycle from "../../assets/images/recycle.png";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const BusinessHome = () => {
   const user = useAppSelector((state) => state?.userDetails);
   const station = useAppSelector((state) => state?.userDetails?.station);
+  const navigate = useNavigate();
+
+  const toBlogs = () => {
+    navigate("/blog");
+  };
 
   return (
     <Container>
       <UserDashboardHeader
         title={`welcome, ${user?.name}`}
-        amount="₦ 2000"
+        amount="₦ 0.00"
         button="Top-up balance"
         display="flex"
         height="24vh"
@@ -129,6 +135,9 @@ const BusinessHome = () => {
               bor="1px solid #fff"
               hovCol="#fff"
               width="210px"
+              onClick={async () => {
+                await toBlogs();
+              }}
             />
           </HoldC>
         </Hold>
