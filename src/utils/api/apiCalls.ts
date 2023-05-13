@@ -111,9 +111,9 @@ const makeRequest = async ({ user, station }: any) => {
   return await axios
     .patch(`${URL}/api/users/make-request/${user}/${station}`)
     .then((res: any) => {
-      console.log(res.data);
+      // console.log(res.data);
 
-      // return res.data;
+      return res.data;
     })
     .catch((err) => {
       return err;
