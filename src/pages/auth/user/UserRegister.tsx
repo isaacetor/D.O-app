@@ -63,7 +63,6 @@ const UserRegister = () => {
         title: "Registration succesfull",
         html: "Redirecting to email to verify your email",
         timer: 2000,
-        timerProgressBar: true,
         willClose: () => {
           navigate("/verify-account");
         },
@@ -98,7 +97,8 @@ const UserRegister = () => {
                 textDecoration: "none",
                 margin: "3px",
                 color: "#03b903",
-              }}>
+              }}
+            >
               Log in
             </NavLink>
           </p>

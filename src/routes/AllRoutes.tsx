@@ -17,8 +17,7 @@ import Notification from "../pages/stationdashboard/Notification";
 import AssignMallam from "../pages/stationdashboard/AssignMallam";
 import DirectorAuth from "../components/layouts/directorAurhLayout/DirectorAuth";
 import { PrivateRoute } from "./privateroute";
-import { Verification } from "../pages";
-import Verified from "../pages/auth/user/Verified";
+import { RedirectToEmail, Verified } from "../pages";
 import RecyclablePayment from "../blog/RecyclablePayment";
 import RecyclePost from "../blog/articles/RecyclePost";
 
@@ -145,6 +144,7 @@ export const element = createBrowserRouter([
   },
   //blog
 
+  //user Authentication routes
   {
     path: "/blog",
     element: <RecyclablePayment />,
@@ -160,14 +160,12 @@ export const element = createBrowserRouter([
   },
   {
     path: "/verify-account",
-    element: <Verification />,
+    element: <RedirectToEmail />,
   },
   {
     path: "/verified/:id/:token",
     element: <Verified />,
   },
-
-  //user Authentication routes
   {
     path: "/user/register",
     element: <UserAuthLayout />,
