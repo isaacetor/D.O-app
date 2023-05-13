@@ -2,14 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { HiHome, HiBell } from "react-icons/hi";
 import { GiCardPickup } from "react-icons/gi";
-import { FaWallet } from "react-icons/fa";
+import { FaRegAddressCard, FaWallet } from "react-icons/fa";
 import { AiFillMessage } from "react-icons/ai";
 import { CiLogout } from "react-icons/ci";
-import { BsPersonFill } from "react-icons/bs";
+import { BsPersonCheck, BsPersonFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 // import { UseAppDispatch } from "../../../Global/Store";
 // import { logout as LogOut } from "../../../Global/ReduxState";
 import { Navbars } from "../../commons";
+import { MdOutlinePreview } from "react-icons/md";
 
 const StationSideNav = () => {
   const [home, setHome] = React.useState(true);
@@ -62,7 +63,7 @@ const StationSideNav = () => {
             }}
           >
             <Navbars
-              pic={<FaWallet />}
+              pic={<FaRegAddressCard />}
               routeName="Register Carrier"
               cl={wallet ? "#f1f1f1" : "white"}
               bd={wallet ? "" : "4px solid white"}
@@ -82,7 +83,7 @@ const StationSideNav = () => {
             }}
           >
             <Navbars
-              pic={<GiCardPickup />}
+              pic={<BsPersonCheck />}
               routeName="Asssign Carrier"
               cl={notify ? "#f1f1f1" : "white"}
               bd={notify ? "" : "4px solid white"}
@@ -102,7 +103,7 @@ const StationSideNav = () => {
             }}
           >
             <Navbars
-              pic={<AiFillMessage />}
+              pic={<MdOutlinePreview />}
               routeName="View Request"
               cl={support ? "#f1f1f1" : "white"}
               bd={support ? "" : "4px solid white"}

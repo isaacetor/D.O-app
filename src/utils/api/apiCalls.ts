@@ -92,7 +92,7 @@ const allStations = async () => {
 
 const getAllUserRequest = async () => {
   return await axios
-    .get(`${URL}/api/station/all-requests`)
+    .get(`${URL}/api/requests/all-requests`)
     .then((res) => res.data)
     .catch((err) => err.message);
 };

@@ -16,11 +16,7 @@ const Notification = () => {
 
   return (
     <Container>
-      <StationHeader
-        bg="#3b393931"
-        subtitle="View Request"
-        title="Welcome, Pako Station"
-      />
+      <StationHeader bg="#979494" subtitle="View Request" title="Welcome," />
       <Body>
         <DynamicTablesHeads
           title1="Name"
@@ -35,7 +31,7 @@ const Notification = () => {
             // key={props._id}
             content1={props.name}
             content2={props.phoneNumber}
-            content3={`.  total (${props.amount})`}
+            content3={`total (${props.amount})`}
             content4={props.status === "Free" ? "" : "5"}
             buttons
           />
