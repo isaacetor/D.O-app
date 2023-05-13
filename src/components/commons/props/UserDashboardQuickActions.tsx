@@ -20,10 +20,11 @@ const UserDashboardQuick = () => {
 
   const makeRequest = async () => {
     return await axios
-      .patch(`${URL}/api/users/make-request/${user?._id}/${user?.station?._id}`)
+      .patch(`${URL}/api/users/make-request/${user?._id}/${user?.station}`)
       .then((res) => {
         //  return res.data;
         dispatch(upDateRequest(res.data.RequestData.numberOfRequests));
+        console.log("resposne", res.data.response);
       })
       .catch((err) => {
         console.log(err);
@@ -148,7 +149,6 @@ const QuickWrap = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 90px 0;
-
 `;
 const QuickComponent = styled.div`
   color: white;
