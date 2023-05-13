@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { mobileNav } from "../../../types";
 import { NavLink, useNavigate } from "react-router-dom";
 import Popup from "./popup/UserPopup";
+import { SlOptionsVertical } from "react-icons/sl";
+import { UseAppDispatch } from "../../../services/statemanagement/Store";
+import { logout } from "../../../services/statemanagement/ReduxState";
 
 const MobileNav: React.FC<mobileNav> = ({
   firstIcon,
@@ -21,6 +24,7 @@ const MobileNav: React.FC<mobileNav> = ({
   fifthLink,
   colours,
   popUp,
+  logOut,
 }) => {
   const navigate = useNavigate();
   const [first, setFirst] = React.useState(false);
@@ -68,6 +72,8 @@ const MobileNav: React.FC<mobileNav> = ({
     setFourth(false);
     setFifth(true);
   };
+  const dispatch = UseAppDispatch();
+  const [showLog, setShowLog] = useState(false);
 
   return (
     <Container>
@@ -75,17 +81,15 @@ const MobileNav: React.FC<mobileNav> = ({
         <LeftPair>
           <Item
             to={firstLink}
-            cl={first ? colours : "silver"}
-            onClick={firstFunction}
-          >
+            cl={first ? colours : "#525252a7"}
+            onClick={firstFunction}>
             <Icon>{firstIcon}</Icon>
             <Text>{firstText}</Text>
           </Item>
           <Item
             to={secondLink}
-            cl={second ? colours : "silver"}
-            onClick={secondFunction}
-          >
+            cl={second ? colours : "#525252a7"}
+            onClick={secondFunction}>
             <Icon>{secondIcon}</Icon>
             <Text>{secondText}</Text>
           </Item>
@@ -97,37 +101,77 @@ const MobileNav: React.FC<mobileNav> = ({
         ) : (
           <LoneMid
             to={thirdLink}
-            cl={third ? colours : "silver"}
-            onClick={thirdFunction}
-          >
+            cl={third ? colours : "#525252a7"}
+            onClick={thirdFunction}>
             {thirdIcon}
           </LoneMid>
         )}
         <RightPair>
           <Item
             to={fourthLink}
-            cl={fourth ? colours : "silver"}
-            onClick={fourthFunction}
-          >
+            cl={fourth ? colours : "#525252a7"}
+            onClick={fourthFunction}>
             <Icon>{fourthIcon}</Icon>
             <Text>{fourthText}</Text>
           </Item>
           <Item
             to={fifthLink}
-            cl={fifth ? colours : "silver"}
-            onClick={fifthFunction}
-          >
+            cl={fifth ? colours : "#525252a7"}
+            onClick={fifthFunction}>
             <Icon>{fifthIcon}</Icon>
             <Text>{fifthText}</Text>
           </Item>
         </RightPair>
       </Wrapper>
       {toggle ? <Popup /> : null}
+      {logOut ? (
+        <div
+          onClick={() => {
+            setShowLog(!showLog);
+          }}
+          style={{ position: "absolute", right: "8px" }}>
+          <Dots>
+            <SlOptionsVertical />
+          </Dots>
+          {showLog ? (
+            <div
+              onClick={() => {
+                dispatch(logout);
+                navigate("/");
+              }}
+              style={{
+                cursor: "pointer",
+                position: "absolute",
+                right: "20px",
+                top: "-40px",
+              }}>
+              <LogoutDisplay>Log Out</LogoutDisplay>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
     </Container>
   );
 };
 
 export default MobileNav;
+
+const LogoutDisplay = styled.div`
+  min-width: 65px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+`;
+
+const Dots = styled.div`
+  height: 100%;
+  color: #525252ca;
+`;
 
 const Container = styled.div`
   width: 100%;

@@ -17,18 +17,16 @@ const UserDashboardHistory = () => {
           </PendSign>
         </PendingActions>
       </NavLink>
-
       <NavLink to="makepayment" style={{ textDecoration: "none" }}>
-           <PendingActions>
-        <div style={{ fontSize: "13px", fontWeight: "600" }}>
-          See all Payments
-        </div>
-        <PendSign>
-          <RiNotificationBadgeFill />
-        </PendSign>
-      </PendingActions>
-          </NavLink>
-   
+        <PendingActions>
+          <div style={{ fontSize: "13px", fontWeight: "600" }}>
+            See all Payments
+          </div>
+          <PendSign>
+            <RiNotificationBadgeFill />
+          </PendSign>
+        </PendingActions>
+      </NavLink>
     </Pending>
   );
 };
