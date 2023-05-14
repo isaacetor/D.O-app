@@ -32,7 +32,7 @@ const StationHeader: React.FC<stationHeader> = ({ bg, subtitle, title }) => {
             <Bi>
               <CiBellOn />
             </Bi>
-            <span>0</span>
+            <span>{stationuser?.request?.length}</span>
           </Noti>
         </Right>
       </Wrapper>

@@ -49,6 +49,7 @@ export type stationData = {
   email: string;
   password: string;
   station: string;
+  request: string;
 };
 
 //types for manageing our agent information

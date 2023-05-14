@@ -26,7 +26,10 @@ const StationHome = () => {
               <div
                 style={{
                   fontWeight: "900",
-                  color: "black",
+                  color: "#03b903",
+                  background: "#e0f0ff",
+                  padding: "20px",
+                  borderRadius: "5px",
                 }}
               >
                 Incoming Requests
