@@ -66,9 +66,9 @@ const AssignMallam = () => {
           Special Requests
         </div>
         <DynamicTablesHeads
-          title1="Address"
-          title2="Date"
-          title3="User"
+          title1="Name"
+          title2="Address"
+          title3="Date"
           title4="Assigned"
           title5="Activity"
         />
